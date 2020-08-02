@@ -8,8 +8,8 @@ import time
 path = './chromedriver'
 options = Options()
 
-username = "MarcelGerard"
-password = "1234567890"
+username = input('username:')
+password = input('password:')
 message = 'Am vazut ca te chinui sa rezolvi probleme pe pbinfo.Eu si echipa mea avem un canal cu tutoriale despre programare pe YT,poate vrei sa arunci un ochi;).\nhttps://www.youtube.com/user/MihaiMatraguna'
 
 def sql_connect(db_file):
@@ -126,8 +126,6 @@ class Pbinfo_Bot:
                                                                                                     29:] + '(probabil are contul pe privat...)')
 
                     sql_insertUser(conn, strUsername)
-                    #users.append(strUsername)
-                    #users_file.write(strUsername + '\n')
                     time.sleep(1)
 
         print('[' + time.ctime() + ']: ' + 'Am trimis ' + str(messages_on_this_problem) + ' de mesaje la problema cu id-ul ' + problem_details)
@@ -165,8 +163,6 @@ class Pbinfo_Bot:
 #sqlFile = r"C:\sqlite\db\pythonsqlite.db"
 sqlFile = r"./dbpbinfo.sqlite"
 conn = sql_connect(sqlFile)
-
-#read_users_file(users)
 
 set_options(options)
 bot = Pbinfo_Bot(username, password, message, get_browser(path, options))

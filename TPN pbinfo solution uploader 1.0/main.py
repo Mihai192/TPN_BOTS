@@ -1,3 +1,6 @@
+'''
+	Add db functionality
+'''
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -7,16 +10,12 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import StaleElementReferenceException
 
 import os
-import sys
+import platform
 import time 
 import re
 
-email = input('email:')
-password = input('password:')
-path = 'C:\\Drivers\\ChromeDriver\\chromedriver.exe'
-login_page = 'https://tutoriale-pe.net/wp-login.php'
-problem_path = '.\\Rezolvari PBInfo'
 pbinfo_url = 'https://www.pbinfo.ro/'
+login_page = 'https://tutoriale-pe.net/wp-login.php'
 options = Options()
 
 def set_options(options):
@@ -71,7 +70,6 @@ class TPN_post_problems_bot:
 
 		return file
 	
-
 	def check_boxes(self):
 		check_box_pbinfo = WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable((By.ID, "in-category-706")))
 		check_box_cpp = WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable((By.ID, "in-category-8")))
@@ -139,8 +137,8 @@ class TPN_post_problems_bot:
 		
 	def login(self):
 		self.driver.get(login_page)
-		self.send_keys_to_element_with_id('user_login', email)
-		self.send_keys_to_element_with_id('user_pass', password)
+		self.send_keys_to_element_with_id('user_login', self.email)
+		self.send_keys_to_element_with_id('user_pass', self.password)
 		self.click_on_element_with_id('wp-submit')
 
 	def start_posting_problems(self):
@@ -174,12 +172,16 @@ class TPN_post_problems_bot:
 def main():
 	set_options(options)
 
+	email = input('email:')
+	password = input('password:')
+
+	# modify here path according to your os
+	path = f'.\\chromedriver.exe'
+	problem_path = f'.\\Rezolvari PBInfo'
+
 	bot = TPN_post_problems_bot(email, password, webdriver.Chrome(executable_path=path, options=options))
-
 	bot.login()
-
 	bot.start_posting_problems()
-
 	bot.driver.quit()
 
 if __name__ == '__main__':

@@ -9,7 +9,6 @@ options = Options()
 users = []
 users_file = open("users.txt", 'r+t')
 
-
 username = input('nume sau email:')
 password = input('parola:')
 message = 'Am vazut ca te chinui sa rezolvi probleme pe pbinfo.Eu si echipa mea avem un canal cu tutoriale despre programare pe YT,poate vrei sa arunci un ochi;).\nhttps://www.youtube.com/user/MihaiMatraguna'
