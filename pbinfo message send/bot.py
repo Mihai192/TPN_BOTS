@@ -8,9 +8,6 @@ import time
 path = './chromedriver'
 options = Options()
 
-users = []
-users_file = open("users.txt", 'r+t')
-
 username = "MarcelGerard"
 password = "1234567890"
 message = 'Am vazut ca te chinui sa rezolvi probleme pe pbinfo.Eu si echipa mea avem un canal cu tutoriale despre programare pe YT,poate vrei sa arunci un ochi;).\nhttps://www.youtube.com/user/MihaiMatraguna'
@@ -44,11 +41,6 @@ def set_options(options):
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--ignore-ssl-errors')
     options.add_argument('--incognito')
-
-
-def read_users_file(users):
-    for user in users_file:
-        users.append(user[:-1])
 
 
 def get_browser(path, options):
@@ -180,5 +172,3 @@ set_options(options)
 bot = Pbinfo_Bot(username, password, message, get_browser(path, options))
 bot.login()
 bot.start_sending_messages()
-
-users_file.close()
