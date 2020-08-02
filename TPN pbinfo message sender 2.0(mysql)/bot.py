@@ -104,31 +104,33 @@ class Pbinfo_Bot:
         messages_on_this_problem = 0
 
         last_page_index += step
-        for index in range(first_page_index, last_page_index, step):
-            page_link = problem_link + '?start=' + str(index)
 
-            self.driver.get(page_link)
-            time.sleep(1)
+        while True:
+            for index in range(first_page_index, last_page_index, step):
+                page_link = problem_link + '?start=' + str(index)
 
-            Users = self.driver.find_elements_by_tag_name('a')
-            Users = [user.get_attribute('href') for user in Users if
-                     re.search('profil', str(user.get_attribute('href')))]
+                self.driver.get(page_link)
+                time.sleep(1)
 
-            for user in Users:
-                strUsername = user[29:]
-                if sql_checkUser(conn, strUsername) is False:
-                    try:
-                        self.sent_user_message(user[29:])
-                        print('[' + time.ctime() + ']: ' + 'Am trimis mesaj user-ului ' + user[29:])
-                        messages_on_this_problem += 1
-                    except:
-                        print('[' + time.ctime() + ']: ' + 'Nu am putut trimite mesaj user-ului ' + user[
-                                                                                                    29:] + '(probabil are contul pe privat...)')
+                Users = self.driver.find_elements_by_tag_name('a')
+                Users = [user.get_attribute('href') for user in Users if
+                         re.search('profil', str(user.get_attribute('href')))]
+                
+                for user in Users:
+                    strUsername = user[29:]
+                    if sql_checkUser(conn, strUsername) is False:
+                        try:
+                            self.sent_user_message(user[29:])
+                            print('[' + time.ctime() + ']: ' + 'Am trimis mesaj user-ului ' + user[29:])
+                            messages_on_this_problem += 1
+                        except:
+                            print('[' + time.ctime() + ']: ' + 'Nu am putut trimite mesaj user-ului ' + user[
+                                                                                                        29:] + '(probabil are contul pe privat...)')
 
-                    sql_insertUser(conn, strUsername)
-                    time.sleep(1)
+                        sql_insertUser(conn, strUsername)
+                        time.sleep(1)
 
-        print('[' + time.ctime() + ']: ' + 'Am trimis ' + str(messages_on_this_problem) + ' de mesaje la problema cu id-ul ' + problem_details)
+            print('[' + time.ctime() + ']: ' + 'Am trimis ' + str(messages_on_this_problem) + ' de mesaje la problema cu id-ul ' + problem_details)
 
     def start_sending_messages(self):
         problems_list = 'https://www.pbinfo.ro/?pagina=probleme-lista&clasa=-1&start='
