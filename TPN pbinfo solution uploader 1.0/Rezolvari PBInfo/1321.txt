@@ -1,0 +1,92 @@
+<h1>Cerința</h1>
+
+<p>Un şir se numeşte <code>şir munte</code>, dacă are un singur maxim pe poziţia <code>v</code>, numit <code>vârf</code> şi respectă următoarele proprietăţi:<br>
+</p><ul>
+	<li>În stânga şi în dreapta vârfului există cel puţin câte un element.</li>
+	<li>Secvenţa <code>a[1], a[2], ... , a[v]</code> este strict crescătoare.</li>
+	<li>Secvenţa <code>a[v], a[v+1], ... , a[n]</code> este strict descrescătoare.</li><br>
+</ul><p></p>
+
+<p>Se citeşe un şir cu <code>n</code> elemente. Să se verifice dacă este şir munte. </p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi <code>n</code> numere naturale, separate prin spații.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Programul va afișa pe ecran unul dintre mesajele <code>DA</code> sau <code>NU</code> în funcţie că este şir munte sau nu.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>3 ≤ n ≤ 1000</code></li>
+	<li><code>0 ≤ elementele şirului ≤ 1 000 000 000</code></li>
+</ul>
+
+<h1>Exemplu 1:</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+1 2 3 4 5</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">NU</pre>
+
+<h1>Exemplu 2:</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+1 2 3 4 3</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">DA</pre>
+
+<h3>Explicație</h3>
+
+<p>Primul exemplu nu este şir munte, pe când al doilea exemplu este şir munte.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+using namespace std;
+
+int main()
+{
+    int i , n , nr_varfuri=0;
+    cin>>n; 
+    int v[n+1];
+    cin>>v[1]>>v[2];
+    if(v[1]>v[2]||v[1]==v[2])
+    {
+        cout<<"NU";
+        return 0;
+    }
+    for(i=3;i<n;i++)
+    {
+        cin>>v[i];  
+        if(v[i]==v[i-1])
+        {
+            cout<<"NU";
+            return 0;
+        }
+        else if(nr_varfuri==0 &amp;&amp; v[i-1]>v[i])
+        {
+            nr_varfuri++;   
+        }
+        else if(nr_varfuri==1 &amp;&amp; v[i-1]<v[i])
+        {
+            cout<<"NU";
+            return 0;
+        }   
+    }
+    cin>>v[n];
+    if(v[n-1]==v[n] || v[n-1]<v[n])
+    {
+        cout<<"NU";
+        return 0;
+    }
+    cout<<"DA"; 
+    return 0;
+}</pre>

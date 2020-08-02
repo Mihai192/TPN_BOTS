@@ -1,0 +1,67 @@
+<p>În portul Constanţa sunt ancorate două vapoare pline cu marfă. Ele fac curse repetate către două destinaţii diferite. Se ştie că primul vapor ajunge la destinaţia stabilită după un număr <code>X</code> de săptămâni, iar al doilea vapor după un număr <code>Y</code> de săptămâni. Drumul înapoi ia acelaşi timp. Armatorul celor <code>2</code> vapoare vrea să ştie după câte zile cele <code>2</code> vapoare pleacă din nou concomitent din port. Se mai ştie faptul că pentru manevrarea mărfurilor primului vapor îi sunt necesare <code>z1</code> zile, iar celui de al doilea <code>z2</code> zile.</p>
+
+<h1>Cerința</h1>
+
+<p>Scrieţi un program care determină numărul de zile după care cele <code>2</code> vapoare pleacă din nou concomitent din portul din care au plecat.</p>
+
+<h1>Date de intrare</h1>
+
+<p>De pe prima linie din fişierul de intrare <code>vapoare.in</code> se citesc cele două numere <code>X şi Y</code>, separate printr-un spaţiu, reprezentând numărul de săptămâni necesare ajungerii la destinaţie pentru cele două vapoare. Linia a doua a fişierului de intrare conţine valorile <code>z1 şi z2</code>, separate printr-un spaţiu, reprezentând numărul de zile necesare celor două vapoare pentru manevrarea mărfurilor.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Pe prima linie a fişierului de ieşire <code>vapoare.out</code> se va afişa numărul de zile după care cele două vapoare se reîntâlnesc în portul de plecare.</p>
+
+<h1>Restricții și precizări</h1>
+
+<p>• <code>0 &lt; X,Y ≤ 100000</code><br>
+• <code>0 &lt;= z1, z2 &lt;= 31</code></p>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595358867&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2114%2Fvapoare&amp;flash=0&amp;wgl=1&amp;dt=1595358867638&amp;bpp=3&amp;bdt=247&amp;idt=193&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=1542612353828&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595358868&amp;ga_hid=1354668202&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1310&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=1390257876671135&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2566%2Fdaruri&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=H4oi1jPdyA&amp;p=https%3A//www.pbinfo.ro&amp;dtd=200" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CMy88PSG3-oCFVXJuwgdj4wIUA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>vapoare.in</code></p>
+
+<pre contenteditable="true" editable="true">1 2
+2 2</pre>
+
+<p><code>vapoare.out</code></p>
+
+<pre contenteditable="true" editable="true">240</pre>
+
+<h3>Explicație</h3>
+
+<p>Primul vapor are nevoie de 16 zile pentru a junge în portul de unde a plecat, iar al doilea vapor are nevoie de 30 de zile, astfel încât, dupa 240 de zile cele două vapoare se întâlnesc din nou în portul de plecare</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream fin("vapoare.in");
+ofstream fout("vapoare.out");
+
+int main()
+{
+    int n,m;
+    fin >> n >> m;
+    int z1 , z2;
+    fin >> z1 >> z2;
+    long long int a = n*2*7+z1;
+    long long int b = m*2*7+z2;
+    long long int ca=a;
+    long long int cb=b;
+    while(b)
+    {
+        int r=a%b;
+        a=b;
+        b=r;
+    }
+    fout << ca/a*cb;
+    
+    fin.close();
+    fout.close();
+    
+    return 0;
+}</pre>

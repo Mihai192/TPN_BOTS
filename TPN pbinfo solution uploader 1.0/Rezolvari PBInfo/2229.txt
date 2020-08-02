@@ -1,0 +1,129 @@
+<p>Ionel are de rezolvat mai multe probleme de divizibilitate. Unele dintre ele îi cer să afle câte numere au anumite proprietăţi.  Vă rugăm să-l ajutaţi să termine tema mai repede.</p>
+
+<h1>Cerința</h1>
+
+<p>Scrieţi un program care citeşte un număr natural <code>n</code> şi două numere prime <code>u</code> şi <code>v</code> mai mici decât <code>10</code> şi determină câte numere naturale mai mici sau egale cu <code>n</code> au proprietatea că nu sunt divizibile nici cu <code>u</code>, nici cu <code>v</code>.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>numere20.in</code> conţine pe prima linie numărul natural <code>n</code> şi cifrele <code>u</code> şi <code>v</code>, separate prin câte un spaţiu.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>numere20.out</code> va conţine o singură linie pe care va fi scris numărul de numere naturale mai mici sau egale cu <code>n</code> care nu sunt divizibile nici cu <code>u</code>, nici cu <code>v</code>.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li>Numărul natural <code>n</code> are cel mult <code>100</code> de cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595353222&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2229%2Fnumere20&amp;flash=0&amp;wgl=1&amp;dt=1595353221962&amp;bpp=19&amp;bdt=264&amp;idt=142&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=7551099338&amp;frm=20&amp;pv=1&amp;ga_vid=1744050990.1595352838&amp;ga_sid=1595353222&amp;ga_hid=373427252&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=814&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1194&amp;biw=1200&amp;bih=647&amp;scr_x=0&amp;scr_y=0&amp;eid=44717727&amp;oid=3&amp;pvsid=2341480113193210&amp;pem=168&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2313%2Fferma1&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C770%2C1200%2C647&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=VKnPJeJ4Dm&amp;p=https%3A//www.pbinfo.ro&amp;dtd=150" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CK_d5PDx3uoCFe7Fuwgda9sOHQ"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>numere20.in</code></p>
+
+<pre contenteditable="true" editable="true">30  3  7</pre>
+
+<p><code>numere20.out</code></p>
+
+<pre contenteditable="true" editable="true">17</pre>
+
+<h3>Explicație</h3>
+
+<p>Numerele care au proprietatea din enunţ sunt: <code>1</code>, <code>2</code>, <code>4</code>, <code>5</code>, <code>8</code>, <code>10</code>, <code>11</code>, <code>13</code>, <code>16</code>, <code>17</code>, <code>19</code>, <code>20</code>, <code>22</code>, <code>23</code>, <code>25</code>, <code>26</code>, <code>29</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <cstring>
+#include <algorithm>
+using namespace std;
+
+ifstream cin("numere20.in");
+ofstream cout("numere20.out");
+
+int a[101] , b[101] , c[101] , n[101];
+void impartire(int a[] , int &amp;n , int x)
+{
+      int c = 0;
+      for(int i = 1 ; i <= n ; i++)
+      {
+          c = c * 10 + a[i];
+          a[i] = c / x;
+          c =  c % x;
+      }
+      if(a[1] == 0)
+      {
+          for(int i = 1 ; i <= n ; i++)
+              a[i] = a[i+1];
+          a[n] = 0;
+          n--;
+      }
+}
+
+void invers(int a[] , int n)
+{
+    int i = 1 , j = n;
+    while(i <= j)
+    {
+        swap(a[i] , a[n - i + 1]);
+        i++;
+        j--;
+    }
+}
+
+void scadere(int a[] , int &amp;n , int b[] , int m)
+{
+    invers(a , n);
+    invers(b , m);
+    int t = 0;
+    for(int i = 1 ; i <= n ; i++)
+    {
+        int c = a[i] - b[i] + t;
+        if(c < 0)
+        {
+            c += 10;
+            t = -1;
+        }
+        else t = 0;
+        a[i] = c;
+    }
+    if(a[n] == 0) n--;
+    invers(a , n);
+}
+
+void adunare(int a[] , int &amp;n , int b[] , int m)
+{
+    invers(a , n);
+    invers(b , m);
+    int t = 0;
+    if(m > n) n = m;
+    for(int i = 1 ; i <= n ; i++)
+    {
+        int c = a[i] + b[i] + t;
+        a[i] = c % 10;
+        t = c / 10;
+    }
+    if(t > 0) a[++n] = t;
+
+    invers(a , n);
+}
+int main()
+{
+    ///nr = n / u + n / v - n /(u*v);
+    int u , v , cnt = 0;
+    char s[101];
+    cin >> s >> u >> v;
+    int nr = strlen(s);
+    for(int i = 0 ; i < nr ; i++) a[i+1] = s[i] - '0' , b[i+1] = s[i] - '0' , c[i+1] = s[i] - '0' , n[i+1] = s[i] - '0';
+    int nr1 = nr , nr2 = nr , num = nr;
+    impartire(a , nr , u);
+    impartire(b , nr1 , v);
+    impartire(c , nr2 , u*v);
+    scadere(n , num , a , nr);
+    scadere(n , num , b , nr1);
+    adunare(n , num , c , nr2);
+    for(int i = 1 ; i <= num ; i++) cout << n[i];
+}</pre>

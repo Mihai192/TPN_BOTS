@@ -1,0 +1,65 @@
+<h1>Cerinţa</h1>
+
+<p>Să se scrie un program care citește numărul natural <code>n</code> și determină valoarea lui <code>n!=1*2*3*...*n</code>.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Programul afișează pe prima linie a ecranului valoarea lui <code>n!</code>.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>0 ≤ n ≤ 1000</code></li>
+	<li>prin definiție, <code>0! = 1</code></li>
+</ul>
+
+<h1>Exemplul 1:</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">4</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">24</pre>
+
+<h1>Exemplul 2:</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">25</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">15511210043330985984000000</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, a[10001]={0}, c=1;
+    cin >> n;
+    a[1]=1;
+    for(int i = 1; i <= n; i++)
+    {
+        int t = 0;
+        for(int j = 1; j <= c; j++)
+        {
+            int cif = a[j] * i + t;
+            a[j] = cif % 10;
+            t = cif / 10;
+        }
+        while(t)
+        {
+            a[++c] = t % 10;
+            t /=10;
+        }
+    }
+    for(int i = c ; i >= 1; i--)
+        cout << a[i];
+    return 0;
+}</pre>

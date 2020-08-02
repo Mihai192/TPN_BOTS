@@ -1,0 +1,96 @@
+<h1>Cerința</h1>
+
+<p>Se dau două mulțimi de numere naturale. Să se afișeze reuniunea și intersecția lor.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură, în ordine:</p>
+
+<ul>
+	<li>numărul <code>n</code> de elemente ale primei mulțimi</li>
+	<li><code>n</code> numere naturale diferite, ordonate crescător, reprezentând elementele primei mulțimi</li>
+	<li>numărul <code>m</code> de elemente ale celei de-a doua mulțimi</li>
+	<li><code>m</code> numere naturale diferite, ordonate crescător, reprezentând elementele celei de-a doua mulțimi</li>
+</ul>
+
+<h1>Date de ieșire</h1>
+
+<p>Programul va afișa pe ecran elementele reuniunii celor două mulțimi, în ordine crescătoare, separate prin exact un spațiu, iar pe rândul următor elementele intersecției celor două mulțimi, în ordine crescătoare, separate de asemenea prin exact un spațiu.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n , m ≤ 100.000</code></li>
+	<li>elementele celor două mulțimi vor fi mai mici decât <code>1.000.000.000</code></li>
+	<li>cele două mulțimi date au cel puțin un element comun</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595361749&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F530%2Fmultimi1&amp;flash=0&amp;wgl=1&amp;dt=1595361749290&amp;bpp=7&amp;bdt=220&amp;idt=155&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=2571236716498&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595361749&amp;ga_hid=1873815735&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1120&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066357%2C21066612&amp;oid=3&amp;pvsid=4054044845209664&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F242%2Finterclasm&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=u8MLSeGCJi&amp;p=https%3A//www.pbinfo.ro&amp;dtd=160" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CP7R9NKR3-oCFeacsgodU0oKiQ"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+3 6 8 9 12
+7
+2 5 6 7 8 9 11</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">2 3 5 6 7 8 9 11 12 
+6 8 9 </pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int n, m, k1 = 0, k2 = 0;
+    int a[100001], b[100001], c[200001], d[100001];
+    cin >> n;
+    for(int i = 1; i <= n; ++i)
+        cin >> a[i];
+    cin >> m;
+    for(int i = 1; i <= m; ++i)
+        cin >> b[i];
+
+    int i = 1, j = 1;
+    while(i <= n &amp;&amp; j <= m)
+        if(a[i] < b[j])
+            c[++k1] = a[i], i++;
+        else
+            if(a[i] > b[j])
+                c[++k1] = b[j], j++;
+            else
+                i++;
+
+    while(i <= n)
+        c[++k1] = a[i], i++;
+
+    while(j <= m)
+        c[++k1] = b[j], j++;
+
+    i = 1, j = 1;
+    while(i <= n &amp;&amp; j <= m)
+        if(a[i] == b[j])
+            d[++k2] = a[i], i++, j++;
+        else
+            if(a[i] < b[j])
+                i++;
+            else
+                j++;
+
+    for(int i = 1; i <= k1; ++i)
+        cout << c[i] << " ";
+
+    cout << endl;
+
+    for(int i = 1; i <= k2; ++i)
+        cout << d[i] << " ";
+
+    return 0;
+}</pre>

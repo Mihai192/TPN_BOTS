@@ -1,0 +1,116 @@
+<h1>Cerința</h1>
+
+<p>Se dau două numere <code>n p</code> și o listă de <code>n</code> elemente cu urcările în autobuz a mai multor persoane a căror structura este <code>prenume nume bilet_platit</code>, fiecare intrare fiind plasată pe câte o linie. Câmpurile <code>prenume</code> și <code>nume</code> sunt șiruri de caractere, iar <code>bilet_platit</code> este un număr care poate fi <code>0</code> sau <code>1</code>; <code>0</code> dacă persoana respectivă nu a plătit biletul sau <code>1</code> dacă a plătit biletul. Pentru fiecare bilet neplătit se va contoriza o penalizare persoanei.</p>
+
+<p>Se cere :</p>
+
+<p>a) Prenumele, numele și numărul de penalizări al persoanei care are număr maxim de penalizări. Dacă există mai multe persoane cu număr maxim de penalizări se cere afișarea persoanei care apare prima în ordine alfabetică.<br>
+b) Ordonarea listei de persoane descrescător după numărul de penalizări, la număr de penalizări egale, crescător după prenume, la prenume identice, crescător după nume.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>ratc2.in</code> conține pe prima linie numerele <code>n p</code>, iar pe următoarele <code>n</code> linii datele despre fiecare urcare în autobuz separate prin spații.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Dacă <code>p = 1</code> se va rezolva cerința a). În acest caz, fișierul <code>ratc2.out</code> va conține pe prima linie datele cu semnificația din enunț separate printr-un spațiu.<br>
+Dacă <code>p = 2</code> se va rezolva cerința b). În acest caz, fișierul <code>ratc2.out</code> va conține pe câte o linie datele cu semnificația din enunț separate printr-un spațiu.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 100</code></li>
+	<li>șirurile de caractere vor avea maxim <code>50</code> de caractere</li>
+	<li><code>Atenție, persoanele care urcă în autobuz se pot repeta!</code></li>
+</ul>
+
+<h1>Exemplu cerința 1:</h1>
+
+<p><code>ratc2.in</code></p>
+
+<pre contenteditable="true" editable="true">5 1
+Jotaro Kujo 1
+Dio Brando 0
+Joseph Joestar 1
+Dio Brando 1
+Andreescu Ionel 0</pre>
+
+
+<p><code>ratc2.out</code></p>
+
+<pre contenteditable="true" editable="true">Andreescu Ionel 1</pre>
+
+<h3>Explicație</h3>
+
+<p>Dio Brando și Andreescu Ionel au același număr de penalizări dar Andreescu Ionel e primul în ordine alfabetică.</p>
+
+<h1>Exemplu cerința 2:</h1>
+
+<p><code>ratc2.in</code></p>
+
+<pre contenteditable="true" editable="true">5 2
+Jotaro Kujo 1
+Dio Brando 0
+Joseph Joestar 1
+Dio Brando 1
+Andreescu Ionel 0</pre>
+
+
+<p><code>ratc2.out</code></p>
+
+<pre contenteditable="true" editable="true">Andreescu Ionel 1
+Dio Brando 1
+Joseph Joestar 0
+Jotaro Kujo 0</pre>
+
+
+<h3>Explicație</h3>
+
+<p>Listă a fost ordonată dupa criteriile precizate la cerința b).</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+int n, p, cnt;
+
+ifstream cin("ratc2.in");
+ofstream cout("ratc2.out");
+
+struct co{
+    string nume, prenume;
+    int pe;
+}v[101];
+
+void invart(co a, co b){
+    swap(a, b);
+}
+
+int main(){
+    cin >> n >> p;
+    for(int i = 1; i <= n; ++i){
+        string a, b;
+        cin >> a >> b;
+        bool val;
+        cin >> val;
+        bool gasit = false;
+        for(int j = 1; j <= cnt; ++j){
+            if(a == v[j].prenume &amp;&amp; b == v[j].nume)
+                v[j].pe += !val, gasit = true;
+        }
+        if(!gasit)
+            v[++cnt].prenume = a, v[cnt].nume = b, v[cnt].pe = !val;
+    }
+    for(int i = 1; i < cnt; ++i)
+        for(int j = i + 1; j <= cnt; ++j)
+            if(v[i].pe < v[j].pe)
+                swap(v[i], v[j]);
+            else if(v[i].pe == v[j].pe &amp;&amp; v[i].prenume > v[j].prenume)
+                swap(v[i], v[j]);
+            else if(v[i].pe == v[j].pe &amp;&amp; v[i].prenume == v[j].prenume &amp;&amp; v[i].nume > v[j].nume)
+                swap(v[i], v[j]);
+    if(p == 1)
+        cout << v[1].prenume << ' ' << v[1].nume << ' ' << v[1].pe;
+    else
+        for(int i = 1; i <= cnt; ++i)
+            cout << v[i].prenume << ' ' << v[i].nume << ' ' << v[i].pe << endl;
+    return 0;
+}</pre>

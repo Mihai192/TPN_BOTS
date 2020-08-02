@@ -1,0 +1,90 @@
+<h1>Cerința</h1>
+
+<p>Indicatorul lui Euler, <code>φ(n)</code> – uneori numită <em>funcția phi</em>, este folosit pentru a determina câte numere mai mici decât <code>n</code> sunt relativ prime cu <code>n</code>. De exemplu, cum <code>1</code>, <code>2</code>, <code>4</code>, <code>5</code>, <code>7</code> și <code>8</code> sunt toate mai mici decât <code>9</code> și relativ prime la <code>9</code>, <code>φ(9)=6</code>.</p>
+
+<table border="3" width="40%" bordercolor="#125798" cellspacing="6" cellpadding="6">
+<tbody><tr><td align="center">n</td><td align="center">Relativ prime</td><td align="center">φ(n)</td><td align="center">n/φ(n)</td></tr>
+<tr><td align="center">2</td><td align="center">1</td><td align="center">1</td><td align="center">2</td></tr>
+<tr><td align="center">3</td><td align="center">1,2</td><td align="center">2</td><td align="center">1.5</td></tr>
+<tr><td align="center">4</td><td align="center">1,3</td><td align="center">2</td><td align="center">2</td></tr>
+<tr><td align="center">5</td><td align="center">1,2,3,4</td><td align="center">4</td><td align="center">1.25</td></tr>
+<tr><td align="center">6</td><td align="center">1,5</td><td align="center">2</td><td align="center">3</td></tr>
+<tr><td align="center">7</td><td align="center">1,2,3,4,5,6</td><td align="center">6</td><td align="center">1.1666….</td></tr>
+<tr><td align="center">8</td><td align="center">1,3,5,7</td><td align="center">4</td><td align="center">2</td></tr>
+<tr><td align="center">9</td><td align="center">1,2,4,5,7,8</td><td align="center">6</td><td align="center">1.5</td></tr>
+<tr><td align="center">10</td><td align="center">1,3,7,9</td><td align="center">4</td><td align="center">2.5</td></tr>
+</tbody></table>
+
+<p>Se poate vedea că <code>n=6</code> produce valoarea maximă <code>n/φ(n)</code> pentru <code>n ≤ 10</code>.</p>
+
+<p>Se consideră un șir de numere naturale mai mari decât <code>1</code>, numere formate din cel mult <code>9</code> cifre. Să se scrie un program care determină dintre acestea numărul <code>n</code> pentru care raportul <code>n/φ(n)</code> are valoare maximă. În cazul în care sunt mai multe valori pentru care raportul <code>n/φ(n)</code> este maxim se va afișa prima dintre ele.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>maxprimeintreele.in</code> conține pe prima linie cel mult <code>10000</code> numere naturale din intervalul <code>[2,999999999]</code> separate prin spații.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>maxprimeintreele.out</code> va conține pe prima linie numărul <code>k</code>, reprezentând numărul <code>n</code> pentru care raportul <code>n/φ(n)</code> are valoare maximă.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li>numerele din fișierul de intrare sunt din intervalul <code>[2, 999999999]</code></li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595359017&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3289%2Fmaxprimeintreele&amp;flash=0&amp;wgl=1&amp;dt=1595359016884&amp;bpp=23&amp;bdt=248&amp;idt=178&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=7475049983923&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595359017&amp;ga_hid=1297722945&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1321&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=3601662312913654&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F462%2Fdivprimmax&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=yomPDQ6jHW&amp;p=https%3A//www.pbinfo.ro&amp;dtd=184" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CMvrhLyH3-oCFd3huwgdP7QIHw"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>maxprimeintreele.in</code></p>
+
+<pre contenteditable="true" editable="true">2 3 4 5 6 7 8 9 10</pre>
+
+<p><code>maxprimeintreele.out</code></p>
+
+<pre contenteditable="true" editable="true">6</pre>
+
+<h3>Explicație</h3>
+
+<p>Dintre numerele aflate în fișierul de intrare, numărul <code>6</code>  are raportul <code>n/φ(n)</code> cu valoare maximă și anume <code>3</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin("maxprimeintreele.in");
+ofstream cout("maxprimeintreele.out");
+
+double maxi = 0;
+int nrmaxi;
+
+long Totient(long nr)
+{
+  long i,rank = nr;
+  if(nr==1) return 0;
+  if (!(nr%2))
+   {
+         rank -= rank/2;
+         while(!(nr%2)) nr /= 2;
+   }
+  for (i = 3; i*i <= nr; i += 2)
+   if (!(nr%i))
+        {
+          rank -= rank/i;
+          while (!(nr%i)) nr /= i;
+        }
+  if (nr>1) rank -= rank/nr;
+  return rank;
+}
+
+int main(){
+    int x;
+    while(cin >> x){
+        if((double) x / Totient(x) > maxi)
+            maxi = (double) x / Totient(x), nrmaxi = x;
+    }
+    cout << nrmaxi;
+    return 0;
+}</pre>

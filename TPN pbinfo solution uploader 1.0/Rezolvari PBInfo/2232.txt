@@ -1,0 +1,119 @@
+<h1>Cerinţa</h1>
+
+<p>Se dau <code>n</code> numere întregi. Calculaţi cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi <code>n</code> numere întregi, separate prin spaţii.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Programul afișează pe ecran numărul <code>MIN</code>, reprezentând cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1000</code></li>
+	<li>cele <code>n</code> numere citite vor avea cel mult <code>9</code> cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Date de intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+7 6 9 6 8</pre>
+
+<p><strong>Date de ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">6</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <algorithm>
+#include <vector>
+#include <stack>
+using namespace std;
+
+ifstream cin("retea1.in");
+ofstream cout("retea1.out");
+
+stack <int> S;
+int rezi[301] , u , ok;
+int n , m , x , y , v[1001] , L[1001] , cnt , inS[1001] , rez , e , s[1001] , viz[1001] , a[301][301] , f[301];
+vector <int> G[1001];
+vector <int> P[1001];
+vector <int>c;
+vector <vector<int>> cc;
+
+void tarjan(int nod)
+{
+    cnt++;
+    v[nod] = L[nod] = cnt;
+    S.push(nod);
+    inS[nod] = 1;
+    for(auto i:G[nod])
+    {
+        if(!v[i]) tarjan(i) , L[nod] = min(L[nod] , L[i]);
+        else if(inS[i] == 1) L[nod] = min(L[nod] , v[i]);
+    }
+    if(v[nod] == L[nod])
+    {
+        c.clear();
+        while(1)
+        {
+            int val = S.top();
+            S.pop();
+            c.push_back(val);
+            inS[val] = 0;
+            if(nod == val) break;
+        }
+        rez++;
+        for(auto i:c)
+            s[i] = rez;
+    }
+}
+
+int main()
+{
+    cin >> n;
+    for(int i = 1 ; i <= n ; i++)
+        for(int j = 1 ; j <= n ; j++)
+        {
+            cin >> a[i][j];
+            if(a[i][j] == 1)
+                G[i].push_back(j);
+        }
+    for(int i = 1 ; i <= n ; i++)
+        if(!v[i]) tarjan(i);
+
+    for(int i = 1 ; i <= n ; i++)
+        f[s[i]]++;
+
+    for(int i = 1 ; i <= n ; i++)
+    {
+        if(f[i] > 1)
+        {
+            for(int j = 1 ; j <= n ; j++)
+                if(i == s[j]) rezi[++u] = j;
+        }
+        else if(f[i] == 1)
+        {
+            for(int j = 1 ; j <= n ; j++)
+                if(i == s[j] &amp;&amp; a[j][j] == 1) rezi[++u] = j;
+        }
+    }
+    sort(rezi + 1 , rezi + u + 1);
+    cout << "{";
+    for(int i = 1 ; i <= u ; i++)
+    {
+        if(ok == 0) cout << rezi[i] , ok++;
+        else cout << "," << rezi[i];
+    }
+    cout << "}";
+
+
+}</pre>

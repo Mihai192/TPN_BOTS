@@ -1,0 +1,96 @@
+<h1>Enunț</h1>
+
+<p>Pe un continent reprezentat printr-o matrice cu <code>n</code> linii și <code>m</code> coloane se află mai multe state, toate în conflict. Astfel, fiecare si-a mobilizat oastea. Fiecare element al matricei reprezintă o regiune.<br>
+Două elemente, din matrice, învecinate pe linie sau pe coloană (nu si pe diagonală) reprezintă două regiuni care aparțin aceluiași stat. <br>
+Un element din matrice ce contine cifra <code>0</code> este o regiune neutră care delimitează statele si nu are soldați. <br>
+Elementul ce conține o cifră <code>c</code> nenulă este o regiune ce aparține unui stat și are <code>c</code> soldați.</p>
+
+<h1>Cerința</h1>
+
+<p>Să se determine numărul <code>S</code> maxim de soldați dintr-un stat al continentului precum și numărul <code>R</code> minim de regiuni pe care le poate avea un stat cu <code>S</code> soldati.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>oaste2.in</code> conține pe prima linie numerele naturale <code>n</code> si <code>m</code>, iar pe fiecare dintre următoarele <code>n</code> linii conține câte <code>m</code> cifre, separate prin câte un spațiu.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>oaste2.out</code> va conține pe prima linie cele două numere <code>S R</code> separate printr-un spațiu, cu semnificația din enunț</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>n</code> si <code>m</code> vor fi numere naturale cu valori intre <code>1</code> si <code>100</code> inclusiv;</li>
+	<li>fiecare element al matricei va avea valori naturale cuprinse intre <code>0</code> si <code>9</code> inclusiv;</li>
+	<li>există cel puțin o cifră nenula în matrice</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595357855&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3341%2Foaste2&amp;flash=0&amp;wgl=1&amp;dt=1595357855439&amp;bpp=4&amp;bdt=222&amp;idt=146&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=7025180204684&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595357856&amp;ga_hid=43352097&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1251&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=4074860351955625&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2741%2Fsao1&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=GlBjzKdfuk&amp;p=https%3A//www.pbinfo.ro&amp;dtd=162" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CMPzmpKD3-oCFcfGuwgdj0QE-A"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>oaste2.in</code></p>
+
+<pre contenteditable="true" editable="true">4 6
+0 1 1 0 2 9
+9 0 2 0 1 0
+0 1 1 0 0 2
+0 0 1 1 1 1</pre>
+
+<p><code>oaste2.out</code></p>
+
+<pre contenteditable="true" editable="true">12 3</pre>
+
+<h3>Explicație</h3>
+
+<p><br>
+Harta din fișierul de intrare contine <code>3</code> state având: <code>12</code> soldați (culoarea rosu – <code>10</code> regiuni), <code>12</code> soldați (culoare galben – <code>3</code> regiuni), <code>9</code> soldați (culoare verde – <code>1</code> regiune)<br>
+<img alt="" src="https://ibb.co/GFXG0Yb"><br>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/XV96b0v/oaste2.png" alt="oaste2" border="0"></a></p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin("oaste2.in");
+ofstream cout("oaste2.out");
+
+int n, m, a[101][101], c, sum, cmin = 1000000, smax = 0;
+
+bool inmat(int i, int j){
+    return i >= 1 &amp;&amp; j >= 1 &amp;&amp; i <= n &amp;&amp; j <= m;
+}
+
+int di[]={0,0,-1,1}, dj[]={-1,1,0,0};
+
+void fill(int i, int j){
+    c++;
+    sum += a[i][j];
+    a[i][j] = 0;
+    for(int d = 0; d < 4; ++d){
+        int inou = i + di[d];
+        int jnou = j + dj[d];
+        if(inmat(inou, jnou) &amp;&amp; a[inou][jnou])
+            fill(inou, jnou);
+    }
+}
+
+int main(){
+    cin >> n >> m;
+    for(int i = 1; i <= n; ++i)
+        for(int j = 1; j <= m; ++j)
+            cin >> a[i][j];
+    for(int i = 1; i <= n; ++i)
+        for(int j = 1; j <= m; ++j)
+            if(a[i][j]){
+                c = 0, sum = 0;
+                fill(i,j);
+                if(sum > smax)
+                    smax = sum, cmin = c;
+                else if(sum == smax &amp;&amp; c < cmin)
+                    cmin = c;
+            }
+    cout << smax << ' ' << cmin;
+    return 0;
+}</pre>

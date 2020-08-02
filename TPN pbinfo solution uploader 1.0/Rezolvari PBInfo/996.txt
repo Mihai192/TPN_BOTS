@@ -1,0 +1,73 @@
+<h1>Cerinţa</h1>
+
+<p>Se dă un şir cu <code>n</code> elemente, numere naturale. Să se afişeze elementele şirului pentru care suma cifrelor este divizibilă cu <code>3</code>.</p>
+
+<p>Se va defini şi apela o funcţie <code>suma_cifre</code> care returnează suma cifrelor unui număr natural, transmis ca parametru.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Pe prima linie a fişierului <code>div3.in</code> se află numărul <code>n</code>, iar pe a doua linie <code>n</code> numere naturale.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Pe prima linie a fişierului <code>div3.out</code> se vor afla elementele şirului dat pentru care suma cifrelor este divizibilă cu <code>3</code>, separate printr-un spațiu.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1000</code></li>
+	<li>elementele şirului vor avea cel mult <code>9</code> cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595358226&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F996%2Fdiv3&amp;flash=0&amp;wgl=1&amp;dt=1595358225919&amp;bpp=12&amp;bdt=232&amp;idt=162&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=1348148253185&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595358226&amp;ga_hid=1233010480&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1054&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066005&amp;oid=3&amp;pvsid=657648092048999&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F988%2Fprime&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=fYdDVe6b5O&amp;p=https%3A//www.pbinfo.ro&amp;dtd=168" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CM-x8MKE3-oCFRmIsgod5z4IOw"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>div3.in</code></p>
+
+<pre contenteditable="true" editable="true">7
+124 51 231 7 24 31 5</pre>
+
+<p><code>div3.out</code></p>
+
+<pre contenteditable="true" editable="true">51 231 24</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream fin("div3.in");
+ofstream fout("div3.out");
+
+int suma_cifre(int n)
+{
+    int s=0;
+    while (n)
+    {
+        s+=n%10;
+        n/=10;
+    }
+    if (s%3==0)
+        return 1;
+    else
+        return 0;
+}
+
+int main()
+{
+    int n;
+    fin >> n;
+    int a[1001];
+    for (int i = 0 ; i < n ; ++i)
+    {
+        fin >> a[i];
+        if (suma_cifre(a[i]))
+            fout << a[i] << ' ';
+    }
+    
+    fin.close();
+    fout.close();
+    
+    return 0;
+}</pre>

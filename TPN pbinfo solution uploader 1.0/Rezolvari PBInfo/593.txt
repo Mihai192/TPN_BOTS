@@ -1,0 +1,102 @@
+<h1>Cerinţa</h1>
+
+<p>Se dau <code>n</code> numere întregi. Calculaţi cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi <code>n</code> numere întregi, separate prin spaţii.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Programul afișează pe ecran numărul <code>MIN</code>, reprezentând cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1000</code></li>
+	<li>cele <code>n</code> numere citite vor avea cel mult <code>9</code> cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Date de intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+7 6 9 6 8</pre>
+
+<p><strong>Date de ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">6</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <vector>
+#include <queue>
+using namespace std;
+
+ifstream cin("parc.in");
+ofstream cout("parc.out");
+
+const int Inf = 0x3f3f3f3f;
+using PI  = pair<int, int>;
+using VP  = vector<PI>;
+using VVP = vector<VP>;
+using VI  = vector<int>;
+
+int n , p , m , mini = 999999999;
+VI d;
+VVP G;
+
+void Dijkstra(int x, VI&amp; d)
+{
+    d = VI(n + 1, Inf);
+    priority_queue<PI, vector<PI>, greater<PI>> Q;
+    d[x] = 0;
+    Q.push({0, x});
+    int y, w, dist;
+    while (!Q.empty())
+    {
+        x = Q.top().second;
+        dist = Q.top().first;
+        Q.pop();
+        if (dist > d[x])
+            continue;
+
+        for (auto&amp; p : G[x])
+        {
+            y = p.first;
+            w = p.second;
+            if (d[y] > d[x] + w)
+            {
+                d[y] = d[x] + w;
+                Q.push({d[y], y});
+            }
+        }
+    }
+}
+
+
+int main()
+{
+    int x , y , w , a , q , rez;
+    cin >> n >> m >> p;
+
+    G = VVP(n + 1);
+    for(int i = 1 ; i <= m ; i++)
+    {
+        cin >> x >> y >> w;
+        G[x].emplace_back(y , w);
+        G[y].emplace_back(x , w);
+    }
+    cin >> q;
+    for(int i = 1 ; i <= q ; i++)
+    {
+        cin >> a;
+        Dijkstra(a, d);
+        if(d[p] < mini) mini = d[p] , rez = a;
+    }
+    cout << rez;
+}</pre>

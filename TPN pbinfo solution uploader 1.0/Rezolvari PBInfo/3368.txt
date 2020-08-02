@@ -1,0 +1,82 @@
+<p>Bil Gheiț, patronul Companiei Macrosoft, vă pune la dispoziție o matrice cu <code>n</code> linii, numerotate de la <code>1</code> la <code>n</code> și <code>n</code> coloane, numerotate de la <code>1</code> la <code>n</code>, care memorează numere naturale. Un drum în matrice care pornește de la poziția <code>(1,1)</code> și se termină la poziția <code>(n,n)</code> este constituit din componente adiacente două câte două pe linii și coloane. Costul drumului este egal cu suma costurilor componentelor prin care trece drumul.</p>
+
+<h1>Cerința</h1>
+
+<p>Determinați costul minim al unui drum care pornește de la poziția <code>(1,1)</code> și se termină la poziția <code>(n,n)</code> și domnul Bil Gheiț vă va angaja imediat la compania sa pe post de fochist.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Pentru toate testele, matricea se va genera aleator. Se citesc de la tastatură mai întâi numerele naturale <code>n</code>, <code>X</code>, <code>Y</code>, <code>Z</code>, <code>T</code>, iar apoi exact <code>n</code> numere naturale reprezentând prima linie din matrice. Restul elementelor se vor genera după formula: <code>a[i][j] = 1 + (a[i-1][j-1] * X + a[i-1][j] * Y + a[i-1][j+1] * Z) % T</code>, <code>i=2..n</code>, <code>j=1..n</code>. Se observă că unele elemente din formulă pot fi <code>0</code>, de exemplu, atunci când se calculează valoarea lui <code>a[2,1]</code> care depinde de <code>a[1, 0]</code>.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Programul va afișa la ecran, ca să vadă și Bil, suma minimă a unui drum de la <code>(1,1)</code> la <code>(n,n)</code>.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1500</code></li>
+	<li><code>1 ≤ X, Y, Z, T ≤ 500</code></li>
+	<li><code>1 ≤ a[i,j] ≤ 500</code>, pentru orice <code>i=1..n</code>, <code>j=1..n</code></li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595356598&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3368%2Flee2&amp;flash=0&amp;wgl=1&amp;adsid=NT&amp;dt=1595356598397&amp;bpp=5&amp;bdt=526&amp;idt=203&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=4126280448150&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595356599&amp;ga_hid=1917678094&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=21&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1176&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066623&amp;oid=3&amp;pvsid=1156307790115197&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1795%2Fgigelajungeacasa&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=oBLyT7BjdI&amp;p=https%3A//www.pbinfo.ro&amp;dtd=209" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CIqt6br-3uoCFRfauwgdEckJTA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">8 21 23 57 31
+253 416 101 476 248 159 387 209 </pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">446</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+#include <queue>
+using namespace std;
+
+int n, X, Y, Z, T, inf = 1000000001;
+int a[1501][1501];
+int d[1501][1501];
+
+bool inmat(int i, int j){
+    return i >= 1 &amp;&amp; i <= n &amp;&amp; j >= 1 &amp;&amp; j <= n;
+}
+
+int di[]={0,-1,1,0};
+int dj[]={-1,0,0,1};
+
+void lee(int i, int j){
+    priority_queue<pair<int, pair<int, int>>,vector<pair<int, pair<int,int>>>, greater<pair<int, pair<int, int>>>> Q;
+    for(int i = 1; i <= n; ++i)
+        for(int j = 1; j <= n; ++j)
+            d[i][j] = inf;
+    d[i][j] = a[i][j];
+    Q.push({a[i][j],{i, j}});
+    while(!Q.empty()){
+        pair<int, pair<int, int>> x = Q.top();
+        for(int i = 0; i <= 3; ++i){
+            int inou = x.second.first + di[i];
+            int jnou = x.second.second + dj[i];
+            if(inmat(inou, jnou) &amp;&amp; d[x.second.first][x.second.second] + a[inou][jnou] < d[inou][jnou])
+                d[inou][jnou] = d[x.second.first][x.second.second] + a[inou][jnou], Q.push({d[inou][jnou], {inou, jnou}});
+        }
+        Q.pop();
+    }
+    cout << d[n][n];
+}
+
+int main(){
+    cin >> n >> X >> Y >> Z >> T;
+    for(int i = 1; i <= n; ++i)
+        cin >> a[1][i];
+    for(int i = 2; i <= n; ++i)
+        for(int j = 1; j <= n; ++j)
+             a[i][j] = 1 + (a[i-1][j-1] * X + a[i-1][j] * Y + a[i-1][j+1] * Z) % T;
+    lee(1, 1);
+    return 0;
+}</pre>

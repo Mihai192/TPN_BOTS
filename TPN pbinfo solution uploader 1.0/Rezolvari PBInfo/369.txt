@@ -1,0 +1,58 @@
+<h1>Cerinţă</h1>
+
+<p>Se dă un număr natural <code>n</code>. Calculaţi oglinditul sumei cifrelor sale.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul va citi de la tastatură un număr natural <code>n</code>.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Programul va afişa pe ecran oglinditul sumei cifrelor lui <code>n</code>.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li>numărul citit va fi mai mic decât <code>2</code><sup><code>31</code></sup>.</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display: inline-block; width: 728px; height: 0px;" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display: inline-table; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 728px; background-color: transparent;"><ins id="aswift_1_anchor" style="display: block; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 728px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595359909&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F369%2Foglindit3&amp;flash=0&amp;wgl=1&amp;dt=1595359909342&amp;bpp=5&amp;bdt=233&amp;idt=198&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=8271729187332&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595359909&amp;ga_hid=144737492&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=944&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066358%2C21066624&amp;oid=3&amp;pvsid=801439700385903&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F665%2Fdivcif&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=3Wh7UWEw2V&amp;p=https%3A//www.pbinfo.ro&amp;dtd=205" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-google-query-id="CPjozOWK3-oCFTTauwgdctMHdg" data-load-complete="true"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>Intrare</code></p>
+
+<pre contenteditable="true" editable="true">2705</pre>
+
+<p><code>Ieşire</code></p>
+
+<pre contenteditable="true" editable="true">41</pre>
+
+<h1>Explicație</h1>
+
+<p>Suma cifrelor lui <code>2705</code> este <code>14</code>, iar oglinditul lui <code>14</code> este <code>41</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+using namespace std;
+int main ()
+{
+    int n,s=0,ogl=0;
+    cin >> n;
+    while (n != 0)
+    {
+        s=s+n%10;
+        n=n/10;
+    }
+
+    while (s)
+    {
+        ogl=ogl*10+s%10;
+        s=s/10;
+    }
+    cout << ogl;
+    return 0;
+
+
+}</pre>

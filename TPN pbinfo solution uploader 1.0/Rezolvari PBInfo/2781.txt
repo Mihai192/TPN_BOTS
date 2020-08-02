@@ -1,0 +1,77 @@
+<p>Se consideră o pădure ce conține <code>n•m</code> copaci aranjați pe <code>n</code> linii și <code>m</code> coloane în care s-a produs un incendiu. Pădurarii cunosc coordonatele <code>x</code> și <code>y</code> ale copacului de la care a izbucnit focul și modalitatea prin care acesta se extinde. Astfel, dacă un copac se aprinde într-o anumită zi, în ziua următoare se vor aprind copacii vecini cu acesta pe linie sau coloană care nu sunt încă afectați de incendiu.</p>
+
+<h1>Cerința</h1>
+
+<p>Știind <code>x</code> și <code>y</code>, coordonatele inițiale ale focului și <code>n</code> și <code>m</code>, dimensiunile pădurii, ajutați pădurarii să determine numărul minim de zile după care întreaga pădure va fi afectată.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numerele <code>x y n m</code>, cu semnificația de mai sus.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Programul va afișa pe ecran numărul <code>Z</code>, reprezentând numărul de zile după care va fi afectată întreaga pădure.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ x ≤ n ≤ 1.000.000.000</code></li>
+	<li><code>1 ≤ y ≤ m ≤ 1.000.000.000</code></li>
+</ul>
+
+<h1>Exemplu 1:</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">2 2 4 5</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">6</pre>
+
+<h3>Explicație</h3>
+
+<p>În funcție de numărul de zile, fiecare zonă va fi distrusă în numărul de zile corespunzător figurii de mai jos:</p>
+
+<pre contenteditable="true" editable="true">3 2 3 4 5
+2 1 2 3 4
+3 2 3 4 5
+4 3 4 5 6</pre>
+
+<h1>Exemplu 2:</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">3 3 9 9</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">13</pre>
+
+<h3>Explicație</h3>
+
+<p>În funcție de numărul de zile, fiecare zonă va fi distrusă în numărul de zile corespunzător figurii de mai jos:</p>
+
+<pre contenteditable="true" editable="true">5 4 3 4 5 6 7 8 9
+4 3 2 3 4 5 6 7 8
+3 2 1 2 3 4 5 6 7
+4 3 2 3 4 5 6 7 8
+5 4 3 4 5 6 7 8 9
+6 5 4 5 6 7 8 9 10
+7 6 5 6 7 8 9 10 11
+8 7 6 7 8 9 10 11 12
+9 8 7 8 9 10 11 12 13</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+using namespace std;
+
+int main()
+{
+    int x , y , n , m;
+    cin >> x >> y >> n >> m;
+    int lc1 = x + y - 2;
+    int lc2 = x - 1 + m - y;
+    int lc3 = y - 1 + n - x;
+    int lc4 = m - y + n - x;
+    cout << max(max(max(lc1 , lc2) , lc3) , lc4) + 1;
+    return 0;
+}</pre>

@@ -1,0 +1,81 @@
+<p>Gigel a aflat la matematică definiţia factorialului unui număr natural nenul <code>n</code>. Acesta este produsul tuturor numerelor naturale începând cu <code>1</code> şi terminând cu numărul respectiv şi se notează cu <code>n!</code>. Astfel, factorialul numărului natural <code>6</code> este <code>6!=1*2*3*4*5*6</code> şi este egal cu <code>720</code>. Factorialele numerelor naturale cresc însă extrem de repede. De exemplu, <code>7!=5040</code> în timp ce <code>10!=3628800</code>.</p>
+
+<p>Fiind un bun matematician, Gigel a imaginat o altă metodă de a indica factorialul unui număr. Astfel, el ştie că un număr natural nenul se poate descompune în factori primi. De exemplu <code>720</code> poate fi scris ca <code>2</code><sup><code>4</code></sup><code>*3</code><sup><code>2</code></sup><code>*5</code><sup><code>1</code></sup>.  Gigel codifică descompunerea în factori primi astfel: <code>4 2 1</code> însemnând faptul că în descompunerea lui <code>720</code> în factori primi apare factorul <code>2</code> de <code>4</code> ori, factorul <code>3</code> apare de două ori şi factorul <code>5</code> apare o dată. Cu alte cuvinte, Gigel indică pentru fiecare număr prim <code>≤ n</code> puterea la care acesta apare în descompunerea în factori primi a lui <code>n!</code>.</p>
+
+<h1>Cerința</h1>
+
+<p>Scrieţi un program care să citească o secvenţă de numere naturale nenule şi care să afişeze în modul descris în enunţ factorialele numerelor citite.</p>
+
+
+<h1>Date de intrare</h1>
+
+<p>Fişierul de intrare <code>factori.in</code> conţine mai multe numere naturale nenule, câte un număr pe linie. Ultima linie a fişierului de intrare conţine valoarea <code>0</code> indicând faptul că setul de numere s-a terminat.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fişierul de ieşire <code>factori.out</code> va conţine câte o linie pentru fiecare număr nenul din fişierul de intrare. Pe linia <code>i</code> din fişierul de ieşire va fi descrisă descompunerea în factori primi a factorialului numărului de pe linia <code>i</code> din fişierul de intrare, în modul descris în enunţ. Numerele scrise pe aceeaşi linie vor fi separate prin câte un spaţiu.</p>
+
+<h1>Restricții și precizări</h1>
+
+<p>Numerele naturale din fişierul de intrare (exceptând ultimul) sunt din intervalul <code>[2, 60000]</code>.<br>
+Fişierul de intrare conţine maxim <code>10</code> numere naturale nenule.</p>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595360578&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2175%2Ffactori&amp;flash=0&amp;wgl=1&amp;dt=1595360578226&amp;bpp=19&amp;bdt=227&amp;idt=148&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=2320341527839&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595360578&amp;ga_hid=1494647092&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1390&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066624&amp;oid=2&amp;pvsid=1098713868484416&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1096%2Fexpresie8&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=UFPB3X5JV2&amp;p=https%3A//www.pbinfo.ro&amp;dtd=153" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CNaiwqSN3-oCFU39sgodv-UAbA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>factori.in</code></p>
+
+<pre contenteditable="true" editable="true">2
+8
+15
+10
+0</pre>
+
+
+<p><code>factori.out</code></p>
+
+<pre contenteditable="true" editable="true">1
+7 2 1 1
+11 6 3 2 1 1
+8 4 2 1</pre>
+
+<h3>Explicație</h3>
+
+<p>2!=2<br>
+8!=2*2*2*2*2*2*2*3*3*5*7<br>
+15!= 2*2*2*2*2*2*2*2*2*2*2*3*3*3*3*3*3*5*5*5*7*7*11*13<br>
+10!=2*2*2*2*2*2*2*2*3*3*3*3*5*5*7</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+ifstream fin("factori.in");
+ofstream fout("factori.out");
+int main()
+{
+    int v[60001]={0} , n ;
+    fin >> n;
+    while(n != 0)
+    {
+        for(int i = 1 ; i <= n ; ++i) v[i] = 0;
+        for(int i = 1 ; i <= n ; ++i)
+        {
+            int aux = i , d = 2;
+            while(aux > 1)
+            {
+                int p = 0;
+                while(aux % d == 0) p++, aux /= d;
+                if(p) v[d] += p;
+                d++;
+                if(d*d > aux) d=aux;
+            }
+        }
+        for(int j = 1  ; j <= n ; ++j)
+            if(v[j] != 0)fout << v[j] << " ";
+        fout << endl;
+        fin >> n;
+    }
+    return 0;
+}</pre>

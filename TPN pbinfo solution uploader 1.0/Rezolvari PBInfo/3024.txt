@@ -1,0 +1,84 @@
+<h1>Cerința</h1>
+
+<p>Pe strada lui Dorel casele sunt aşezate doar de o parte a străzii. Cu ocazia sărbătorilor de Paşti, fiecare proprietar împarte ouă roşii vecinilor cei mai apropiaţi de casa lui. Se ştie că pe strada lui Dorel sunt <code>n</code> case, fiecare proprietar <code>i</code> are <code>O[i]</code> ouă, fiecare proprietar împarte ouă la un număr egal de case situate în stânga şi în dreapta lui, de asemenea fiecare vrea să împartă ouă la un număr maxim de case, un număr egal de ouă, cât mai mare, la fiecare casă. Dacă obiceiul de împărţire a ouălor are loc simultan, aflaţi câte ouă va avea fiecare la sfârşitul zilei. </p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>ou.in</code> conține pe prima linie numărul <code>n</code>, iar pe a doua linie <code>n</code> numere naturale separate prin spații, reprezentând numărul ouălor din fiecare casă.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>ou.out</code> va conține pe prima linie <code>n</code> numere, reprezentând numărul ouălor avute de fiecare proprietar la sfârşitul zilei.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>3 ≤ n ≤ 100.000</code></li>
+	<li>numerele de pe a doua linie a fișierului de intrare vor fi naturale nenule, mai mici decât <code>1.000.000.000</code></li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595361496&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3024%2Fou&amp;flash=0&amp;wgl=1&amp;dt=1595361496569&amp;bpp=4&amp;bdt=211&amp;idt=170&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=7403970892723&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595361497&amp;ga_hid=96617446&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1110&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066004&amp;oid=3&amp;pvsid=3655690328412324&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1027%2Fcool&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=jImU1XafT2&amp;p=https%3A//www.pbinfo.ro&amp;dtd=181" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>ou.in</code></p>
+
+<pre contenteditable="true" editable="true">5
+13 2 7 44 5</pre>
+
+<p><code>ou.out</code></p>
+
+<pre contenteditable="true" editable="true">15 1 26 1 28</pre>
+
+<h3>Explicație</h3>
+
+<p>Al doilea proprietar împarte câte un ou la câte un vecin stânga-dreapta, al treilea câte un ou la cei patru vecini iar al patrulea câte 22 de ouă la cei doi vecini cei mai apropiaţi.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <vector>
+
+using namespace std;
+
+ifstream cin ("ou.in");
+ofstream cout ("ou.out");
+
+#define Max 100001
+long long n;
+long long a[Max], anou[Max];
+int main()
+{
+    cin >> n;
+    for (long long i = 1, nro, bpo; i <= n; i ++)
+    {
+        cin >> a[i];
+        nro = min(i - 1, n - i);
+        if (nro * 2 > a[i])
+            nro = a[i]/2;
+
+        if (nro)
+        {
+            bpo = a[i] / (nro * 2);
+
+            anou[i] += (a[i] - bpo*nro*2);
+            anou[i + 1] -= (a[i] - bpo*nro*2);
+
+            anou[i - nro] += bpo;
+            anou[i] -= bpo;
+
+            anou[i + 1] += bpo;
+            anou[i + nro + 1] -= bpo;
+        }
+        else
+        {
+            anou[i] += a[i];
+            anou[i + 1] -= a[i];
+        }
+    }
+    for (int i = 1; i <= n; i ++)
+        anou[i] += anou[i - 1];
+    for (int i = 1; i <= n; i ++)
+        cout << anou[i] << ' ';
+    return 0;
+}</pre>

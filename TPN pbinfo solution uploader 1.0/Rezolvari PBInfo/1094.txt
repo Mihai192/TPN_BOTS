@@ -1,0 +1,125 @@
+<h1>Cerinţa</h1>
+
+<p>Se dau <code>n</code> numere întregi. Calculaţi cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi <code>n</code> numere întregi, separate prin spaţii.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Programul afișează pe ecran numărul <code>MIN</code>, reprezentând cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1000</code></li>
+	<li>cele <code>n</code> numere citite vor avea cel mult <code>9</code> cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Date de intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+7 6 9 6 8</pre>
+
+<p><strong>Date de ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">6</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <vector>
+
+using namespace std;
+
+ifstream cin ("immortal.in");
+ofstream cout ("immortal.out");
+
+const int di[] = {1, 0, -1, 0};
+const int dj[] = {0, 1, 0, -1};
+
+const int di2[] = {2, 0, -2, 0};
+const int dj2[] = {0, 2, 0, -2};
+
+int n, m, nrf;
+bool mort[500], ok;
+int a[21][21];
+
+vector< pair<int, int> > fr;
+
+struct patru
+{
+    int a, b, c, d;
+}rasp[500];
+
+void afis();
+void back(int);
+bool inside(int, int);
+
+int main()
+{
+    cin >> n >> m >> nrf;
+    fr = vector< pair<int, int> >(nrf + 1);
+
+    for (int i = 1; i <= nrf; i ++)
+    {
+        cin >> fr[i].first >> fr[i].second;
+        a[fr[i].first][fr[i].second] = i;
+    }
+    back(1);
+    return 0;
+}
+void back(int ind)
+{
+    if (ok)return;
+    if (ind == nrf)
+    {
+        afis();
+        ok = 1;
+        return;
+    }
+    int x, y;
+    for (int i = 1; i <= nrf; ++ i)
+        if (!mort[i])
+        {
+            x = fr[i].first;
+            y = fr[i].second;
+            for (int d = 0, p; d < 4; ++ d)
+                if (a[x + di[d]][y + dj[d]] &amp;&amp; !a[x + di2[d]][y + dj2[d]] &amp;&amp; inside(x + di2[d], y + dj2[d]))
+                {
+                    p = a[x + di[d]][y + dj[d]];
+                    mort[a[x + di[d]][y + dj[d]]] = 1;
+                    a[x + di[d]][y + dj[d]] = 0;
+                    a[x + di2[d]][y + dj2[d]] = i;
+                    a[x][y] = 0;
+                    fr[i].first = x + di2[d];
+                    fr[i].second = y + dj2[d];
+
+                    rasp[ind].a = x; rasp[ind].b = y;
+                    rasp[ind].c = x + di2[d]; rasp[ind].d = y + dj2[d];
+
+                    back(ind + 1);
+
+                    mort[p] = 0;
+                    a[x + di[d]][y + dj[d]] = p;
+                    a[x + di2[d]][y + dj2[d]] = 0;
+                    a[x][y] = i;
+                    fr[i].first = x;
+                    fr[i].second = y;
+                }
+        }
+}
+void afis()
+{
+    for (int i = 1; i <= nrf - 1; ++ i)
+        cout << rasp[i].a << ' ' << rasp[i].b << ' ' << rasp[i].c << ' ' << rasp[i].d << '\n';
+}
+bool inside(int x, int y)
+{
+    return x <= n &amp;&amp; y <= m &amp;&amp; x >= 1 &amp;&amp; y >= 1;
+}</pre>

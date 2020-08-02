@@ -1,0 +1,57 @@
+<h1>Cerința</h1>
+
+<p>Cei <code>n</code> copii de la grădiniță stau cuminți în șir și așteaptă cadourile de la Moș Crăciun. Ei sunt numerotați de la <code>1</code> la <code>n</code> (se consideră că <code>n</code> este par) și în prima jumătate sunt copiii de la grupa mare iar în a doua jumătate sunt cei de la grupa mică (numărul de copii din fiecare grupă este același, <code>n/2</code>). După ce trece Moș Crăciun se știe câte cadouri a primit fiecare copil și noi dorim să aflăm câți copii din grupa mică au primit mai multe cadouri decât orice copil din grupa mare.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi <code>n</code> numere naturale, separate prin spații, reprezentând, în ordine, numărul de cadouri ale fiecărui copil.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Programul va afișa pe ecran numărul <code>c</code>, valoarea cerută.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>2 ≤ n ≤ 20</code>, par</li>
+	<li>cele <code>n</code> numere citite vor fi naturale nenule mai mici decât <code>1.000.000.000</code></li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=1958414068&amp;w=728&amp;lmt=1595362829&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3285%2Fmoscraciun&amp;flash=0&amp;wgl=1&amp;dt=1595362829514&amp;bpp=21&amp;bdt=249&amp;idt=170&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=1851665275482&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595362830&amp;ga_hid=1562827035&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1076&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066392&amp;oid=3&amp;pvsid=4167920968015975&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F172%2Fdifmin&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=vKBnNotdkx&amp;p=https%3A//www.pbinfo.ro&amp;dtd=181" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CNic_9WV3-oCFbPFuwgd1YMACg"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">6
+1 6 3 6 8 2</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">1</pre>
+
+<h3>Explicație</h3>
+
+<p>Copiii de la grupa mare au primit <code>1</code>, <code>6</code> și respectiv <code>3</code> cadouri. Din grupa mică un singur copil a primit mai multe cadouri decât toți cei de la grupa mare, și anume acela care a primit <code>8</code> cadouri.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+using namespace std;
+
+int n, a[100001];
+
+int main(){
+    cin >> n;
+    int maxi = -1, cnt = 0;
+    for(int i = 1; i <= n; ++i)
+        cin >> a[i];
+    for(int j = 1; j <= n/2; ++j)
+        if(a[j] > maxi)
+            maxi = a[j];
+    for(int i = n/2 + 1; i <= n; ++i)
+        if(maxi < a[i])
+            cnt ++;
+    cout << cnt;
+    return 0;
+}</pre>

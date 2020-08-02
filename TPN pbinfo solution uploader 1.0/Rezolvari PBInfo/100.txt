@@ -1,0 +1,65 @@
+<p>Se citeşte <code>n</code> şi un şir de <code>n</code> numere naturale.</p>
+
+<h1>Cerinţa</h1>
+
+<p>Să se determine câte elemente din şir sunt numere prime.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fişierul de intrare <code>nrapprime.in</code> conţine pe prima linie numărul <code>n</code> şi pe a doua linie <code>n</code> numere naturale separate prin spaţii.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Fişierul de ieşire <code>nrapprime.out</code> va conţine pe prima linie un singur număr natural, reprezentând numărul de elemente prime din şir.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+    <li><code>0 < n < 100</code></li> 
+    <li>numerele de pe a doua linie a fişierului de intrare vor fi mai mici decât <code>1.000.000.000</code></li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595362514&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F100%2Fnrapprime&amp;flash=0&amp;wgl=1&amp;dt=1595362514615&amp;bpp=12&amp;bdt=215&amp;idt=154&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=6325874164558&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595362515&amp;ga_hid=510843286&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1022&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066005%2C21066623%2C21066706&amp;oid=3&amp;pvsid=2653490067854767&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F132%2Felempp&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=OEFvq0FTQq&amp;p=https%3A//www.pbinfo.ro&amp;dtd=162" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CMfA7L-U3-oCFdr6sgodoQEK_A"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>nrapprime.in</code></p>
+
+<pre contenteditable="true" editable="true">5
+25 17 2 10 13</pre>
+
+<p><code>nrapprime.out</code></p>
+
+<pre contenteditable="true" editable="true">3</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+int prim (int n)
+{
+    if(n==0 || n==1) return 0;
+    if(n==2) return 1;
+    if(n%2==0) return 0;
+    for (int i=3;i*i<=n;i += 2)
+    {
+        if(n%i==0) return 0;
+    }
+    return 1;
+}
+int main ()
+{
+    ifstream fin ("nrapprime.in");
+    ofstream fout ("nrapprime.out");
+    int n,x,cate=0;
+    fin >> n;
+    for (int j=1;j<=n;++j)
+    {
+        fin >> x;
+        if(prim(x)) cate++;
+    }
+    fout << cate;
+    fin.close();
+    fout.close();
+    return 0;
+}</pre>

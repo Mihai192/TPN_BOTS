@@ -1,0 +1,132 @@
+<h1>Enunț</h1>
+
+<p>Într-o pădure sunt plantați <code>N*M</code> copaci, pe <code>N</code> rânduri şi <code>M</code> coloane, fiecare copac aflându-se la egală distanţă de copacii vecini. Întrucât în pădure este cam întuneric, pădurarul (care supraveghează pădurea) montează <code>K</code> becuri (câte un bec într-un copac). Aceste becuri au consum diferit de energie electrică. Fiecare bec luminează doar o parte dintre copaci. Un copac este luminat de un bec dacă, trasând o linie dreaptă de la el la bec, niciun alt copac sau bec nu se află pe acea linie. <br>
+Energia electrică fiind scumpă, pădurarul va trebui să renunţe la <code>K-1</code> becuri şi să păstreze doar becul care luminează numărul maxim <code>C</code> de copaci. Dacă mai multe becuri dintre cele <code>K</code> luminează <code>C</code> copaci, pădurarul îl va păstra pe cel mai util adică care are cel mai mic consum de energie electrică. </p>
+
+<p><img alt="" src="https://ibb.co/h5GLg"><br>
+<a href="https://imgbb.com/"><img src="https://image.ibb.co/kv1Wob/poza_bec.jpg" alt="poza_bec" border="0"></a><br>
+<a target="_blank" href="https://imgbb.com/">quick image uploader</a><br>
+</p>
+
+<h1>Cerința</h1>
+
+<p>Să se scrie un program care să determine: <br>
+<code>1.</code> numărul maxim <code>X</code> de copaci ce pot fi luminați de unul dintre cele <code>K</code> becuri<br>
+<code>2.</code> poziția (rândul <code>R</code> şi coloana <code>C</code>) becului cel mai util păstrat de pădurar. </p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>bec.in</code> conține:<br>
+</p><ul>
+	<li>pe prima linie, patru numere naturale <code>P N M K</code>, separate prin câte un spaţiu, reprezentând: cerința <code>P</code> ce trebuie rezolvată (<code>1</code> sau <code>2</code>), numărul <code>N</code> de rânduri,  numărul <code>M</code> de coloane, şi  numărul <code>K</code> de becuri</li>
+	<li>pe fiecare din următoarele <code>K</code> linii, câte trei numere naturale <code>A B C</code>, separate prin câte un spaţiu, reprezentând rândul <code>A</code> şi coloana <code>B</code> în care se află fiecare bec şi consumul <code>C</code> de energie electrică a acestuia.</li><br>
+</ul><p></p>
+
+<h1>Date de ieșire</h1>
+
+<p>Dacă <code>P=1</code>, atunci fișierul de ieșire <code>bec.out</code> va conține pe prima linie numărul <code>X</code> ( răspunsul la cerința <code>1</code>). Altfel, dacă <code>P=2</code>, atunci fişierul de ieşire <code>bec.out</code> va conţine pe prima linie cele două numere naturale <code>R C</code> (răspunsul la cerința <code>2</code>) separate prin câte un spațiu, cu semnificația din enunț. </p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>2 ≤ N ≤ 150</code>; <code>2 ≤ M ≤ 150</code></li>
+	<li><code>1 ≤ K ≤ N</code>; <code>1 ≤ K ≤ M</code>; <code>1 ≤ K ≤ 100</code></li>
+	<li><code>1 ≤ A ≤ N</code>; <code>1 ≤ B ≤ M</code>; <code>1 ≤ C ≤ 10000</code>  pentru fiecare bec</li>
+	<li>nu există două becuri asezate pe același rând  și aceeași coloanâ</li>
+	<li>nu există două becuri cu același consum de energie electrică</li>
+	<li>se acordă <code>50%</code> din punctaj pentru rezolvarea corectă a cerinței <code>1</code> și <code>50%</code> din punctaj pentru rezolvarea corectă a cerinței <code>2</code>.</li>
+</ul>
+
+<h1>Exemplul 1:</h1>
+
+<p><code>bec.in</code></p>
+
+<pre contenteditable="true" editable="true">1 5 4 3
+2 3 80
+4 2 100
+4 3 70</pre>
+
+<p><code>bec.out</code></p>
+
+<pre contenteditable="true" editable="true">14 </pre>
+
+<h3>Explicație</h3>
+
+<p><code>P=1</code> . Se rezolvă cerința 1.<br>
+Numerotăm copacii ca în tabloul alăturat. Primul bec, situat în rândul 2 şi coloana 3 (consum energie 80) luminează 14 copaci (nu îi luminează pe cei numerotați cu 5, 12 şi 16). <br>
+Al doilea bec, situat în rândul 4 şi coloana 2 (consum energie 100) luminează 13 copaci (nu îi luminează pe cei numerotați cu 2, 6, 7 şi 13). <br>
+Al treilea bec, situat în rândul 4 şi coloana 3 (consum energie 70) luminează 14 copaci (nu le luminează pe cei numerotați cu 3, 5 şi 12).</p>
+
+<h1>Exemplul 2:</h1>
+
+<p><code>bec.in</code></p>
+
+<pre contenteditable="true" editable="true">2 5 4 3
+2 3 80
+4 2 100
+4 3 70</pre>
+
+<p><code>bec.out</code></p>
+
+<pre contenteditable="true" editable="true">4 3 </pre>
+
+<h3>Explicație</h3>
+
+<p><code>P=2</code>. Se rezolvă cerința 2.<br>
+Becurile ce luminează numărul maxim de copaci (X=14) sunt: 1 (consum de energie 80) și 3 (consum de energie 70). Becul 3 are consumul de energie mai mic decât cel al primului bec (70&lt;80) și se află în rândul R=4 şi coloana C=3 </p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <cstdlib>
+using namespace std;
+
+ifstream cin("bec.in");
+ofstream cout("bec.out");
+
+int A[151][151],n,m,k,p;
+int X[101],Y[101],C[101];
+
+int cmmdc(int a,int b)
+{
+    while(b!=0)
+    {
+        int r=a%b;
+        a=b;
+        b=r;
+    }
+    return a;
+}
+
+int main()
+{
+    cin>>p>>n>>m>>k;
+    for(int i=1;i<=k;i++)
+    {
+        cin>>X[i]>>Y[i]>>C[i];
+        A[X[i]][Y[i]]=1;
+    }
+    int c,xmin=0,cmin=10000,cmax=0;
+    for(int x=1;x<=k;x++)
+    {
+        c=0;
+        for(int i=1;i<=n;i++)
+            for(int j=1;j<=m;j++)
+                if(A[i][j]==0 &amp;&amp; cmmdc(abs(X[x]-i),abs(Y[x]-j))==1)
+                    c++;
+        if(c>cmax)
+        {
+            cmax=c;
+            xmin=x;
+            cmin=C[x];
+        }
+        else
+            if(c==cmax &amp;&amp; C[x]<cmin)
+        {
+            xmin=x;
+            cmin=C[x];
+        }
+    }
+    if(p==1)
+        cout<<cmax;
+    else
+        cout<<X[xmin]<<" "<<Y[xmin];
+    return 0;
+}</pre>

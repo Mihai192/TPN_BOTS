@@ -1,0 +1,112 @@
+<p>În baza de date a unui magazin online există <code>n</code> produse. Fiecare are un cod numeric, alcătuit din cel mult nouă cifre, cu următoarea semnificație:</p>
+
+<ul>
+	<li>prima cifră reprezintă categoria produsului;</li>
+	<li>a doua cifră reprezintă starea produsului – pară pentru produsele existente pe stoc și impară pentru cele cu stoc epuizat;</li>
+	<li>restul cifrelor din cod reprezintă identificatorul produsului.</li>
+</ul>
+
+<h1>Cerința</h1>
+
+<p>Se dau cele <code>n</code> coduri ale produselor din baza de date.</p>
+
+<p>1) Determinați câte produse există pe stoc și câte au stoc epuizat.<br>
+2) Pentru fiecare categorie, determinați lista produselor, în ordinea crescătoare a codurilor numerice.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>produse.in</code> conține pe prima linie numerele <code>c n</code>, iar pe a doua linie <code>n</code> numere naturale, separate prin spații, reprezentând codurile produselor.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Dacă <code>c=1</code>, fișierul de ieșire <code>produse.out</code> va conține pe prima linie numerele <code>S E</code>, separate printr-un un spațiu, reprezentând numărul de produse existente pe stoc, respectiv numărul de produse cu stoc epuizat.</p>
+
+<p>Dacă <code>c=2</code>, fișierul de ieșire <code>produse.out</code> va conține mai multe linii, câte una pentru fiecare categorie de produs, în ordinea crescătoare a acestora. Fiecare linie începe cu categoria, urmată de un spațiu, apoi de codurile produselor din acea categorie, în ordine crescătoare, separate și ele prin câte un spațiu.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1000</code>;</li>
+	<li>cele <code>n</code> coduri vor fi mai mari decât <code>99</code> și mai mici decât <code>1.000.000.000</code>;</li>
+	<li>pentru 30% din teste, <code>c=1</code>.</li>
+</ul>
+
+<h1>Exemplul 1</h1>
+
+<p><code>produse.in</code></p>
+
+<pre contenteditable="true" editable="true">1 5
+15123 24897 4217 142 2736</pre>
+
+<p><code>produse.out</code></p>
+
+<pre contenteditable="true" editable="true">3 2</pre>
+
+<h3>Explicație</h3>
+
+<p>Produsele existente pe stoc au codurile <code>24897 4217 142</code>, iar cele cu stoc epuizat au codurile <code>15123 2736</code>.</p>
+
+<h1>Exemplul 2</h1>
+
+<p><code>produse.in</code></p>
+
+<pre contenteditable="true" editable="true">2 5
+15123 24897 4217 142 2736</pre>
+
+<p><code>produse.out</code></p>
+
+<pre contenteditable="true" editable="true">1 142 15123
+2 2736 24897
+4 4217</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <algorithm>
+using namespace std;
+
+ifstream cin("produse.in");
+ofstream cout("produse.out");
+
+int n, m, cer, a[1001];
+
+bool epuizat(int n){
+    while(n > 99)
+        n/=10;
+    return (n % 10) % 2 == 1;
+}
+
+int pc(int n){
+    while(n>9)
+        n/=10;
+    return n;
+}
+
+int main(){
+    cin >> cer >> n;
+    for(int i = 1; i <= n; ++i)
+        cin >> a[i];
+    if(cer == 1){
+        int cnt1 = 0, cnt2 = 0;
+        for(int i = 1; i <= n; ++i)
+            if(epuizat(a[i]))
+                cnt1++;
+            else
+                cnt2++;
+        cout << cnt2 << ' ' << cnt1 << ' ';
+    }
+    else{
+        sort(a + 1, a + n + 1);
+        for(int i = 1; i <= 9; ++i){
+            bool ok = false;
+            for(int j = 1; j <= n; ++j)
+                if(pc(a[j]) == i)
+                    ok = true;
+            if(ok){
+                cout << i << ' ';
+                for(int j = 1; j <= n; ++j)
+                    if(pc(a[j]) == i)
+                        cout << a[j] << ' ';
+                cout << endl;
+            }
+        }
+    }
+    return 0;
+}</pre>

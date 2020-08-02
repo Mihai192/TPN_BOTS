@@ -1,0 +1,176 @@
+<h1>Cerința</h1>
+
+<p>Fie <code>a</code> și <code>b</code> două numere naturale nenule. Cu ajutorul lor se pot forma ecuațiile matematice de tipul: </p>
+
+<p>1)	<code>a+x=b</code><br>
+2)	<code>x+a=b</code><br>
+3)	<code>a-x=b</code><br>
+4)	<code>x-a=b</code><br>
+5)	<code>a*x=b</code>  (unde <code>a</code> divide <code>b</code>)<br>
+6)	<code>x*a=b</code>  (unde <code>a</code> divide <code>b</code>)<br>
+7)	<code>a:x=b</code>  (unde <code>b</code> divide <code>a</code>) <br>
+8)	<code>x:a=b</code></p>
+
+<p>Scrieți un program care să citească din fișierul <code>ecuatie.in</code> o ecuaţie de tipul precizat în enunț şi care să determine:</p>
+
+<p>a)	tipul ecuației citite;<br>
+b)	soluția ecuației obținută prin rezolvarea acestei ecuații.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fişierul <code>ecuatie2.in</code> conţine pe prima linie ecuația, ca în exemplu.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fişierul de ieşire <code>ecuatie2.out</code> va conține pe prima linie un număr natural reprezentând tipul ecuaţiei, iar pe a doua linie, un număr natural reprezentând soluția ecuației.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ a ≤ 30 000</code></li>
+	<li><code>1 ≤ b ≤ 30 000</code></li>
+	<li>Fișierul de intrare conține o singură ecuație; soluția ecuației este un număr natural.</li>
+</ul>
+
+<h1>Exemplul 1:</h1>
+
+<p><code>ecuatie2.in</code></p>
+
+<pre contenteditable="true" editable="true">23+x=100</pre>
+
+<p><code>ecuatie2.out</code></p>
+
+<pre contenteditable="true" editable="true">1
+77</pre>
+
+<h1>Exemplul 2:</h1>
+
+<p><code>ecuatie2.in</code></p>
+
+<pre contenteditable="true" editable="true">x*20=1400</pre>
+
+<p><code>ecuatie2.out</code></p>
+
+<pre contenteditable="true" editable="true">6
+70</pre>
+
+<h1>Exemplul 3:</h1>
+
+<p><code>ecuatie2.in</code></p>
+
+<pre contenteditable="true" editable="true">15:x=3</pre>
+
+<p><code>ecuatie2.out</code></p>
+
+<pre contenteditable="true" editable="true">7
+5</pre>
+
+<h1>Explicații</h1>
+
+<p>Pentru primul exemplu, ecuația este de tipul <code>1</code>. Soluția ecuaţiei <code>23+x=100</code> este <code>x=77</code>.</p>
+
+<p>Pentru al doilea exemplu, ecuația este de tipul <code>6</code>. Soluția ecuaţiei <code>x*20=1400</code> este <code>x=70</code>.</p>
+
+<p>Pentru al treilea exemplu, ecuația este de tipul <code>7</code>. Soluția ecuaţiei <code>15:x=3</code> este <code>x=5</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+ifstream cin("ecuatie2.in");
+ofstream cout("ecuatie2.out");
+int main()
+{
+    char s;
+    cin >> s;
+    if(s == 'x')
+    {
+        int a = 0 , b = 0;
+        cin >> s;
+        if(s == '+')
+        {
+            cout << 2 << '\n';
+            cin >> s;
+            while(s != '=')
+            {
+                a = a * 10 + (int)s - 48;
+                cin >> s;
+            }
+            cin >> b;
+            cout << b - a;
+        }
+        if(s == '-')
+        {
+            cout << 4 << '\n';
+            cin >> s;
+            while(s != '=')
+            {
+                a = a * 10 + (int)s - 48;
+                cin >> s;
+            }
+            cin >> b;
+            cout << a + b;
+        }
+        if(s == '*')
+        {
+            cout << 6 << '\n';
+            cin >> s;
+            while(s != '=')
+            {
+                a = a * 10 + (int)s - 48;
+                cin >> s;
+            }
+            cin >> b;
+            cout << b / a;
+        }
+        if(s == ':')
+        {
+            cout << 8 << '\n';
+            cin >> s;
+            while(s != '=')
+            {
+                a = a * 10 + (int)s - 48;
+                cin >> s;
+            }
+            cin >> b;
+            cout << a * b;
+        }
+
+    }
+    else
+    {
+        int a = 0 , b = 0;
+        while(s >= '0' &amp;&amp; s  <= '9')
+        {
+            a = a * 10 + (int)s - 48;
+            cin >> s;
+        }
+        if(s == '+')
+        {
+            cin >> s;
+            cout << 1 << '\n';
+            cin >> s >> b;
+            cout << b - a;
+        }
+        if(s == '-')
+        {
+            cin >> s;
+            cout << 3 << '\n';
+            cin >> s >> b;
+            cout << a - b;
+        }
+        if(s == '*')
+        {
+            cin >> s;
+            cout << 5 << '\n';
+            cin >> s >> b;
+            cout << b / a;
+        }
+        if(s == ':')
+        {
+            cin >> s;
+            cout << 7 << '\n';
+            cin >> s >> b;
+            cout << a / b;
+        }
+
+    }
+
+}</pre>

@@ -1,0 +1,98 @@
+<p>Mai sunt câteva săptămâni și vine Crăciunul. Ajuns într-un magazin de jucării, Robert îl roagă pe tatăl său să-i cumpere cea mai frumoasă mașină cu telecomandă. Tatăl său îi spune că nu a fost cuminte în timpul anului și nu merită această jucărie, însă după dispute intense acesta hotaraste să-i mai acorde o sansă, doar dacă va rezolva următoarea problema: </p>
+
+<p>Având un string <code>S</code>, putem să obținem un palindrom din acest șir ștergând un singur caracter? </p>
+
+<p>Robert nu se prea descurca la algoritmică așa că vă roagă foarte mult să-i rezolvați problema pentru a se putea juca cu mașina cu telecomandă. În schimbul acestei mașini el vă va recompensa cu 100 puncte.</p>
+
+<h1>Cerința</h1>
+
+<p>Find dat un string <code>S</code>, se poate obține un palindrom din șirul inițial ștergând doar un singur caracter ?</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fişierul de intrare <code>constructpalindrom.in</code> conţine pe prima linie o valoare <code>T</code> reprezentând numărul de teste. Pe următoarele T linii vom avea cate un string reprezentând întrebarea adresata lui Robert de către tatăl sau.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fişierul de ieşire <code>constructpalindrom.out</code> va conține <code>T</code> linii cu răspunsul <code>YES</code> daca se poate obține un palindrom ștergând un singur caracter și <code>NO</code> dacă nu se poate obține.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 &lt;= T &lt;= 100</code></li>
+	<li>Dimensiunea stringului <code>&lt;= 100000</code></li>
+	<li>Pentru 10% din punctaj dimensiunea stringului <code>&lt;= 1000</code></li>
+	<li>String-ul conține caractere de la <code>a</code> la <code>z</code>.</li>
+	<li>Dimensiunea string-ului după ștergerea unui caracter va fi mai mică decât a fost înainte.</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=1958414068&amp;w=728&amp;lmt=1595356885&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1413%2Fconstructpalindrom&amp;flash=0&amp;wgl=1&amp;dt=1595356885791&amp;bpp=25&amp;bdt=277&amp;idt=186&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=7502164233155&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595356886&amp;ga_hid=409248387&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1390&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21065725%2C21066392&amp;oid=3&amp;pvsid=2664393535142266&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2195%2Fsumpow2&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=GBYh1dptd2&amp;p=https%3A//www.pbinfo.ro&amp;dtd=195" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CMer78P_3uoCFdOMsgod-HgOAA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>constructpalindrom.in</code></p>
+
+<pre contenteditable="true" editable="true">4
+aaa
+abc
+abdbca
+abba</pre>
+
+<p><code>constructpalindrom.out</code></p>
+
+<pre contenteditable="true" editable="true">YES
+NO
+YES
+YES</pre>
+
+<h3>Explicație</h3>
+
+<p>Pentru primul exemplu (<code>aaa</code>): Putem șterge orice <code>a</code>, string-ul rezultat este <code>aa</code>, care este palindrom.</p>
+
+<p>Pentru al doilea exemplu (<code>abc</code>): Nu este posibil să eliminăm exact un caracter și să obtinem un palindrom.</p>
+
+<p>Pentru al treilea exemplu (<code>abdbca</code>): ștergem caracterul <code>c</code>, string-ul rezultat este <code>abdba</code> care este palindrom.</p>
+
+<p>Pentru exemplul al patrulea (<code>abba</code>): Ștergem <code>b</code>, obținem <code>aba</code> care este palindrom.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <cstring>
+using namespace std;
+
+char s[100001];
+
+ifstream cin("constructpalindrom.in");
+ofstream cout("constructpalindrom.out");
+
+int main()
+{
+    int t;
+    cin >> t;
+    for(int q = 1 ; q <= t ; ++q)
+    {
+        cin >> s;
+        int n = strlen(s);
+        int cnt = 0;
+        bool ok = true;
+        for(int i = 0 , j = n - 1 ; i < j ; ++i , j--)
+            if(s[i]!=s[j])
+            {
+                j--;
+                cnt++;
+                if(s[i]!=s[j])
+                    j++,i--;
+                if(s[i]!=s[j])
+                {
+                    ok=false;
+                    break;
+                }
+            }
+        if(ok == true &amp;&amp; cnt <= 1)
+            cout << "YES" << endl;
+        else
+            cout << "NO" << endl;
+    }
+    return 0;
+}</pre>

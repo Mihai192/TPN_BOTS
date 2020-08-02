@@ -1,0 +1,192 @@
+<p>Vasilică a devenit filatelist pasionat. Din acest motiv toți prietenii i-au adus de ziua lui timbre, foarte multe timbre. Acum încearcă să organizeze timbrele primite. Fiecare timbru face parte dintr-o serie și are o valoare. Timbre distincte din aceeași serie au valori distincte. Este posibil ca Vasilică să fi primit și dubluri (adică să fi primit același timbru de mai multe ori). Valoarea unei serii este egală cu suma valorilor timbrelor distincte din seria respectivă. Dublurile nu contribuie la valoarea seriei, dar Vasilică le poate folosi pentru a face schimb de timbre cu alți filateliști.</p>
+
+<h1>Cerința</h1>
+
+<p>Cunoscând lista timbrelor primite, scrieți un program care să rezolve următoarele cerințe:<br>
+1. determină numărul de serii distincte din care fac parte timbrele primite;<br>
+2. determină numărul de timbre unicat (care nu au dublură);<br>
+3. determină seriile cu cea mai mare valoare.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>timbre.in</code> conţine pe prima linie cerinţa care trebuie să fie rezolvată (<code>1</code>, <code>2</code> sau <code>3</code>). Pe a doua linie se află un număr natural <code>N</code>, reprezentând numărul de timbre primite de Vasilică. Pe fiecare dintre următoarele <code>N</code> linii este descris câte un timbru sub forma serie valoare, unde serie reprezintă denumirea seriei din care face parte timbrul respectiv, iar valoare este un număr reprezentând valoarea timbrului respectiv; seria și valoarea sunt separate printr-un singur spațiu.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Dacă cerința este <code>1</code> sau <code>2</code>, fișierul de ieșire <code>timbre.out</code> va conține pe prima linie un număr reprezentând răspunsul la cerința respectivă. Dacă cerința este <code>3</code>,  fișierul de ieșire <code>timbre.out</code> va conține denumirile seriilor cu valoarea cea mai mare, câte o denumire pe o linie, în ordine lexicografică.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ N ≤ 100</code></li>
+	<li>Valorile timbrelor sunt numere naturale nenule mai mici sau egale cu <code>1000</code>.</li>
+	<li>Denumirile seriilor sunt formate din cel mult <code>50</code> de caractere (litere, cifre, spațiu, cratimă).</li>
+	<li>Pentru fiecare cerință se acordă <code>30%</code> din punctajul obținut pe teste.</li>
+</ul>
+
+<h1>Exemplul 1:</h1>
+
+<p><code>timbre.in</code></p>
+
+<pre contenteditable="true" editable="true">1
+9
+Cap-de-bour 4
+Romania 100 10
+Cap-de-bour 7
+Cap-de-bour 4
+Romania 100 5
+Romania 100 5
+Romania 100 5
+CRACIUN 2018 15
+Romania 100 10</pre>
+
+<p><code>timbre.out</code></p>
+
+<pre contenteditable="true" editable="true">3</pre>
+
+<h3>Explicație</h3>
+
+<p>Există trei serii distincte (<code>Cap-de-bour</code>, <code>Romania 100</code> și <code>CRACIUN 2018</code>).</p>
+
+<h1>Exemplul 2:</h1>
+
+<p><code>timbre.in</code></p>
+
+<pre contenteditable="true" editable="true">2
+9
+Cap-de-bour 4
+Romania 100 10
+Cap-de-bour 7
+Cap-de-bour 4
+Romania 100 5
+Romania 100 5
+Romania 100 5
+CRACIUN 2018 15
+Romania 100 10</pre>
+
+<p><code>timbre.out</code></p>
+
+<pre contenteditable="true" editable="true">2</pre>
+
+<h3>Explicație</h3>
+
+<p>În aceste serii există doar două timbre unicat (timbrul cu valoarea <code>7</code> din seria Cap-de-bour și cel din seria <code>CRACIUN 2018</code>). </p>
+
+<h1>Exemplul 3:</h1>
+
+<p><code>timbre.in</code></p>
+
+<pre contenteditable="true" editable="true">3
+9
+Cap-de-bour 4
+Romania 100 10
+Cap-de-bour 7
+Cap-de-bour 4
+Romania 100 5
+Romania 100 5
+Romania 100 5
+CRACIUN 2018 15
+Romania 100 10</pre>
+
+<p><code>timbre.out</code></p>
+
+<pre contenteditable="true" editable="true">CRACIUN 2018
+Romania 100</pre>
+
+<h3>Explicație</h3>
+
+<p>Seriile având valoarea cea mai mare (<code>15</code>) sunt (în ordine lexicografică) <code>CRACIUN 2018</code> și <code>Romania 100</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <cstring>
+#include <algorithm>
+using namespace std;
+ifstream cin("timbre.in");
+ofstream cout("timbre.out");
+int n , cer , ind;
+char s[200];
+int nr;
+struct poz
+{
+    char ch[200];
+    int val[101], sum;
+}v[200];
+int cif(char s)
+{
+    return s >= '0' &amp;&amp; s <= '9';
+}
+
+int cauta(char s[])
+{
+    for(int i = 0 ; i < ind ; i++)
+        if(strcmp(s , v[i].ch) == 0) return i;
+    return -1;
+}
+
+bool comp(poz A, poz B)
+{
+    if (strcmp(A.ch, B.ch) > 0)return 0;
+    else return 1;
+}
+int main()
+{
+    cin >> cer;
+    cin >> n;
+    cin.getline(s, 200);
+    for(int i = 1 ; i <= n; i++)
+    {
+        cin.getline(s , 200);
+        int j = strlen(s) - 1 , nr = 0, t = 1;
+        while(s[j] != ' ' &amp;&amp; cif(s[j]) )
+        {
+            nr = nr + (s[j] - '0')*t;
+            t *= 10;
+            j--;
+        }
+        s[j] = '\0';
+        int pozi = cauta(s);
+        if(pozi != -1)
+        {
+            v[pozi].val[++ v[pozi].val[0]] = nr;
+        }
+        else
+        {
+            strcpy(v[ind].ch , s);
+            v[ind].val[++ v[ind].val[0]] = nr;
+            ind++;
+        }
+    }
+    int cnt = 0;
+    for (int i = 0, l; i < ind; ++ i)
+    {
+        l = v[i].val[0];
+        sort(v[i].val + 1, v[i].val + 1 + l);
+
+        if (v[i].val[1] != v[i].val[2])cnt ++;
+        if (l > 1 &amp;&amp; v[i].val[l] != v[i].val[l - 1])cnt ++;
+
+        for (int j = 2; j < l; ++ j)
+            if (v[i].val[j] != v[i].val[j + 1] &amp;&amp; v[i].val[j] != v[i].val[j - 1])
+                cnt ++;
+
+        v[i].sum = 0;
+        for (int j = 1; j < l; ++ j)
+            if (v[i].val[j] != v[i].val[j + 1])
+                v[i].sum += v[i].val[j];
+
+        v[i].sum += v[i].val[l];
+    }
+    if(cer == 1) cout << ind;
+    else if(cer == 2) cout << cnt;
+    else
+    {
+        sort (v, v + ind, comp);
+
+        int maxi = 0;
+        for (int i = 0; i < ind; ++ i)
+            maxi = max(maxi, v[i].sum);
+
+        for (int i = 0; i < ind; ++ i)
+            if (v[i].sum == maxi)
+                cout << v[i].ch << '\n';
+    }
+}</pre>

@@ -1,0 +1,37 @@
+<h1>Cerinţa</h1>
+
+<p>Să se scrie o <strong>funcție C++ recursivă</strong> care să determine cifra maximă și cifra minimă a unui număr natural transmis ca parametru. Funcția va întoarce rezultatele prin intermediul unor parametri de ieșire.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li>numele funcției va fi <code>cifmaxmin</code></li>
+	<li>funcția va avea trei parametri:
+	<ul>
+		<li><code>n</code>, numărul dat</li>
+		<li><code>max</code>, cifra maximă a lui <code>n</code></li>
+		<li><code>min</code>, cifra minimă a lui <code>n</code></li>
+	</ul></li>
+	<li>ordinea parametrilor este: <code>n max min</code></li>
+	<li><code>n</code> va fi mai mic decât <code>2.000.000.000</code></li>
+</ul>
+
+<h1>Important</h1>
+
+<p>Soluţia propusă va conţine doar definiţia funcţiei cerute. Prezenţa în soluţie a altor instrucţiuni poate duce erori de compilare sau de execuţie care vor avea ca efect depunctarea soluţiei.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">int cnt = 0;
+int cifmaxmin(int n, int&amp; maxi, int&amp; mini){
+    if(n == 0 &amp;&amp; cnt == 0)
+        maxi = 0, mini = 0;
+    else if(n == 0)
+        maxi = 0, mini = 9;
+    else{
+        cnt++;
+        int c = n % 10;
+        cifmaxmin(n/10, maxi, mini);
+        if(c > maxi)
+            maxi = c;
+        if(c < mini)
+            mini = c;
+    }
+}</pre>

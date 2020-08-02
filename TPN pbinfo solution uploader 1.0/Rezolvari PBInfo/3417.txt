@@ -1,0 +1,98 @@
+<h1>Cerinţa</h1>
+
+<p>Se dau <code>n</code> numere întregi. Calculaţi cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi <code>n</code> numere întregi, separate prin spaţii.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Programul afișează pe ecran numărul <code>MIN</code>, reprezentând cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1000</code></li>
+	<li>cele <code>n</code> numere citite vor avea cel mult <code>9</code> cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Date de intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+7 6 9 6 8</pre>
+
+<p><strong>Date de ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">6</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+#include <queue>
+using namespace std;
+
+int n, di[]={0,0,-2,2,1,-1}, dj[]={-2,2,0,0,1,-1}, a[101][101];
+
+bool inmat(int i, int j){
+    return i <= n &amp;&amp; j <= n &amp;&amp; i >= 1 &amp;&amp; j >= 1;
+}
+
+queue<pair<int, pair<int, int>>> Q;
+
+void lee(){
+    while(!Q.empty()){
+        int cost = Q.front().first;
+        int i = Q.front().second.first;
+        int j = Q.front().second.second;
+        for(int d = 0; d <= 5; ++d){
+            int inou = i + di[d];
+            int jnou = j + dj[d];
+            if(inmat(inou, jnou) &amp;&amp; a[inou][jnou] == 0){
+                a[inou][jnou] = cost + 1;
+                Q.push({cost + 1, {inou,jnou}});
+            }
+        }
+        Q.pop();
+    }
+}
+
+void lee1(){
+    while(!Q.empty()){
+        int cost = Q.front().first;
+        int i = Q.front().second.first;
+        int j = Q.front().second.second;
+        for(int d = 0; d <= 5; ++d){
+            int inou = i + di[d];
+            int jnou = j + dj[d];
+            if(inmat(inou, jnou) &amp;&amp; a[inou][jnou] == 0){
+                a[inou][jnou] = cost - 1;
+                Q.push({cost - 1, {inou,jnou}});
+            }
+        }
+        Q.pop();
+    }
+}
+
+int main(){
+    cin >> n;
+    Q.push({1, {1,1}});
+    Q.push({1, {n,n}});
+    a[1][1] = 1, a[n][n] = 1;
+    a[2][1] = n, a[n][n-1] = n;
+    a[1][2] = n, a[n-1][n] = n;
+    lee();
+    Q.push({n, {2, 1}});
+    Q.push({n, {1, 2}});
+    Q.push({n, {n, n-1}});
+    Q.push({n, {n-1, n}});
+    lee1();
+    for(int i = 1; i <= n; ++i, cout << '\n')
+        for(int j = 1; j <= n; ++j)
+            cout << a[i][j] << ' ';
+    return 0;
+}</pre>

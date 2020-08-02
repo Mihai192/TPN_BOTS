@@ -1,0 +1,71 @@
+<h1>Cerința</h1>
+
+<p>Se dau două șiruri cu câte <code>n</code>, respectiv <code>m</code> elemente. Dacă înmulțim fiecare element din primul șir cu fiecare element din al doilea șir, să se afle câte produse sunt mai mici decât <code>p</code>. </p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numerele <code>n</code> și <code>p</code>, iar apoi <code>n</code> numere naturale, separate prin spații, reprezentând elementele primului șir, după care citește numărul <code>m</code> urmat de  <code>m</code> numere naturale, reprezentând elementele celui de-al doilea șir.  </p>
+
+<h1>Date de ieșire</h1>
+
+<p>Programul va afișa pe ecran numărul <code>nr</code>, reprezentând numărul produselor mai mici decât <code>p</code>.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ p ≤ 200.000</code></li>
+	<li><code>1 ≤ n , m ≤ 50.000</code></li>
+	<li>elementele celor două șiruri sunt numere naturale mai mici decât <code>10.000</code></li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595361307&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1010%2Fprodus&amp;flash=0&amp;wgl=1&amp;dt=1595361307200&amp;bpp=15&amp;bdt=245&amp;idt=159&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=518747986719&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595361307&amp;ga_hid=1813837480&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1066&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066623&amp;oid=3&amp;pvsid=2372330478781984&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2737%2Fnrdivprod&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=eQk4r3I5oN&amp;p=https%3A//www.pbinfo.ro&amp;dtd=164" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="COKCj4CQ3-oCFT7kuwgdioAI4Q"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5 99
+1 2 3 4 5
+2
+25 34</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">5</pre>
+
+<h1>Explicație</h1>
+
+<p>Efectuând înmulțirile dintre elementele primului șir și ale celui de-al doilea obținem rezultatele: <code>25</code>, <code>34</code>, <code>50</code>, <code>68</code>, <code>75</code>, <code>102</code>, <code>100</code>, <code>136</code>, <code>125</code>, <code>170</code>. Dintre acestea <code>5</code> sunt mai mici decât <code>99</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+using namespace std;
+
+int main()
+{
+    int f[10001]={0} , g[10001]={0} , n , m , p;
+    long long int c=0;
+    cin >> n >> p ;
+    for(int i = 0 ; i < n ; ++i)
+    {
+        int x;
+        cin >> x;
+        f[x]++;
+    }
+    cin >> m;
+    for(int i =0 ; i < m ; ++i)
+    {
+        int x;
+        cin >> x;
+        g[x]++;
+    }
+    for(int i = 0 ; i < 10000 ; ++i)
+    {
+        for(int j = 0 ; j < 10000 &amp;&amp; i * j < p ; ++j)
+            c+=f[i]*g[j];
+    }
+    cout << c;
+
+    return 0;
+}</pre>

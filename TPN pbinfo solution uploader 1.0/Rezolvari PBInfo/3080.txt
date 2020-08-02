@@ -1,0 +1,123 @@
+<h1>Cerința</h1>
+
+<p>Se dă un șir de caractere. Sa se determine numărul scris cu cifrele existente în șirul dat. Să se afișeze  numărul obținut și, pe linia următoare, toate caracterele din șir care nu fac parte din număr, cu excepția spațiilor.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură un șir de caractere.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Programul afișează pe ecran numărul determinat, iar pe linia următoare, separate prin câte un spațiu, toate caracterele din șir care nu fac parte din număr, cu excepția spațiilor, în ordinea din șir.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li>șirul dat va avea cel mult <code>100</code> de caractere;</li>
+	<li>dacă șirul dat reprezintă un număr natural, programul va afișa numai mesajul <code>CORECT</code>;</li>
+	<li>dacă șirul dat nu conține nicio cifră, programul va afișa numai mesajul <code>NaN</code>;</li>
+	<li>dacă șirul nu conține alte cifre în afară de <code>0</code>, numărul rezultat va fi reprezentat de ultima apariție în șir a cifrei <code>0</code>;</li>
+</ul>
+
+<h1>Exemplu 1:</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">00573a9 3ee</pre>
+
+<p><strong>Ieșire</strong></p>
+
+
+<pre contenteditable="true" editable="true">57393
+0 0 a e e</pre>
+
+<h1>Exemplu 2:</h1>
+
+<p><strong>Intrare</strong></p>
+
+
+<pre contenteditable="true" editable="true">ab0 efj0</pre>
+
+<p><strong>Ieșire</strong></p>
+
+
+<pre contenteditable="true" editable="true">0
+a b 0 e f j</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+#include <cstring>
+using namespace std;
+
+char s[201];
+
+bool nr(char ch)
+{
+    return ch >= '0' &amp;&amp; ch <= '9';
+}
+
+int main()
+{
+    cin.getline(s, 150);
+    int i = 0;
+    int cnt = 0;
+    while(s[i])
+    {
+        if(nr(s[i]))
+            cnt++;
+        i++;
+    }
+    if(cnt == strlen(s))
+        cout << "CORECT";
+    else if(cnt == 0)
+        cout << "NaN";
+    else
+    {
+        i = 0;
+        int ind = 0;
+        cnt = 0;
+        int cnt0 = 0;
+        while(s[i])
+        {
+            if(nr(s[i]))
+                cnt++;
+            if(s[i] == '0')
+                cnt0++, ind = i;
+            i++;
+        }
+        if(cnt == cnt0)
+        {
+            cout << 0 << endl;
+            i = 0;
+            while(s[i])
+            {
+                if(i != ind &amp;&amp; s[i] != ' ')
+                    cout << s[i] << ' ';
+                i++;
+            }
+        }
+        else
+        {
+            bool zp = false;
+            i = 0;
+            while(s[i])
+            {
+                if(s[i] == '0' &amp;&amp; !zp) ;
+                else if(nr(s[i]))
+                    cout << s[i], zp = true;
+                i++;
+            }
+            cout << endl;
+            i = 0;
+            zp = false;
+            while(s[i])
+            {
+                if(s[i] == '0' &amp;&amp; !zp) cout << 0 << ' ';
+                else if(nr(s[i]))
+                    zp = true;
+                else if(s[i] != ' ')
+                    cout << s[i] << ' ';
+                i++;
+            }
+        }
+    }
+    return 0;
+}</pre>

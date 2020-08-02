@@ -1,0 +1,113 @@
+<h1>Cerința</h1>
+
+<p>Se citesc două matrice rare și se cere să se calculeze suma lor.</p>
+
+<p>O matrice <code>A(n,m)</code> se numește rară dacă majoritatea elementelor sale sunt egale cu zero (cel puţin jumătate). Datorită numărului mic de numere nenule, o matrice rară <code>A(n,m)</code>, având <code>k</code> elemente nenule, poate fi memorată folosind un șir <code>X</code> conţinând <code>k</code> triplete de forma <code>(linie, coloană , valoare)</code>, corespunzătoare valorilor nenule ale matricei. Elementele șirului <code>X</code> se memorează în ordine lexicografică după <code>(linie,coloana)</code>.</p>
+
+<p>De exemplu matricea cu <code>n = m = 3</code></p>
+
+<pre contenteditable="true" editable="true">1 0 2
+0 0 5
+0 2 0</pre>
+
+<p>se va memora sub forma sirului <code>X</code> continand <code>4</code> triplete : <code>{(1,1,1) , (1,3,2) , (2,3,5) , (3,2,2)}</code>.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>matrice_rara.in</code> conține pe prima linie , dimensiunile celor două matrice <code>n m</code> – reprezentând numărul de linii şi coloane, şi  <code>N1 N2</code>, numărul de elemente nenule ale matricei <code>A</code>, respectiv matricei <code>B</code>. Apoi următoarele <code>N1</code> linii vor conține triplete – elementele nenule ale matricei <code>A</code> în ordine lexicografică, iar ultimele <code>N2</code> linii vor conține triplete reprezentând elementele nenule ale matricei <code>B</code>, tot în ordine lexicografică .</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>matrice_rara.out</code> va conține pe prima linie numărul de elemente diferite de <code>0</code> din matricea sumă <code>C</code> şi apoi matricea în sine sub forma tripletelor în ordine lexicografică, câte unul pe o linie .</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n , m ≤ 1.000.000</code></li>
+	<li><code>1 ≤ N1 , N2 ≤ 300.000</code></li>
+	<li><code>-1.000.000.000 ≤ A[i][j], B [i][j]≤ 1.000.000.000</code></li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595356745&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1323%2Fmatrice-rara&amp;flash=0&amp;wgl=1&amp;adsid=NT&amp;dt=1595356745767&amp;bpp=5&amp;bdt=195&amp;idt=169&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=4716096835577&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595356746&amp;ga_hid=881932361&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=49&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1301&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=2200607447944728&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1506%2Fserbare1&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=ih74wGqMpH&amp;p=https%3A//www.pbinfo.ro&amp;dtd=176" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="COeSioH_3uoCFTDPuwgdy5IJnA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>matrice_rara.in</code></p>
+
+<pre contenteditable="true" editable="true">5 6 3 3
+1 1 2
+3 4 3
+4 6 1
+1 2 3
+3 4 -2
+4 6 2</pre>
+
+<p><code>matrice_rara.out</code></p>
+
+<pre contenteditable="true" editable="true">4
+1 1 2
+1 2 3
+3 4 1
+4 6 3</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin("matrice_rara.in");
+ofstream cout("matrice_rara.out");
+
+struct andra
+{
+    int i , j , val;
+};
+andra a[300001] , c[300001] , b[300001];
+
+void citire(andra a[] , int n)
+{
+    for(int i = 1 ; i <= n ; i++)
+        cin >> a[i].i >> a[i].j >> a[i].val;
+}
+
+void afisare(andra a[] , int n)
+{
+    cout << n << '\n';
+    for(int i = 1 ; i <= n ; i++)
+        cout << a[i].i << " " << a[i].j << " " << a[i].val << '\n';
+}
+
+int maimic(andra a , andra b)
+{
+    return a.i < b.i || a.i == b.i &amp;&amp; a.j < b.j;
+}
+
+long long  n , m , nc , n1 , n2;
+
+int main()
+{
+    cin >> n >> m >> n1 >> n2;
+    citire(a , n1);
+    citire(b , n2);
+    int i = 1 , j = 1;
+    while(i <= n1 &amp;&amp; j <= n2)
+    {
+        if(maimic(a[i] , b[j])) c[++nc] = a[i++];
+        else if(maimic(b[j] , a[i])) c[++nc] = b[j++];
+        else
+        {
+            if(a[i].val + b[j].val != 0)
+            {
+                c[++nc] = a[i];
+                c[nc].val += b[j].val;
+            }
+            i++;
+            j++;
+        }
+    }
+    while(i <= n1) c[++nc] = a[i++];
+    while(j <= n2) c[++nc] = b[j++];
+    cout << nc << '\n';
+    for(int i = 1 ; i <= nc ; i++)
+        cout << c[i].i << " " << c[i].j << " " << c[i].val << '\n';
+}</pre>

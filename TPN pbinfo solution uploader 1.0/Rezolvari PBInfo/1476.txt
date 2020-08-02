@@ -1,0 +1,48 @@
+<p>Se consideră o listă liniară simplu înlănțuită, alocată dinamic, în care elementele sunt de tipul declarat mai jos:</p>
+
+<pre class="code_c cm-s-default" data-lang="text/x-csrc" contenteditable="true" editable="true"><span class="cm-keyword">struct</span> <span class="cm-variable">nod</span>{
+    <span class="cm-keyword">int</span> <span class="cm-variable">info</span>;
+    <span class="cm-variable">nod</span> <span class="cm-operator">*</span><span class="cm-variable">urm</span>;
+};</pre>
+
+<p>în care câmpul <code>info</code> memorează un număr întreg, iar câmpul <code>urm</code> memorează adresa următorului element al listei.</p>
+
+<h3>Cerința</h3>
+
+<p>Să se scrie o funcție C++ cu următorul prototip:</p>
+
+<pre class="code_c cm-s-default" data-lang="text/x-csrc" contenteditable="true" editable="true"><span class="cm-keyword">void</span> <span class="cm-variable">sortareCrescator</span>(<span class="cm-variable">nod</span> <span class="cm-operator">*&amp;</span><span class="cm-variable">prim</span>)</pre>
+
+<p>care sortează crescător elementele listei al cărei prim element are adresa memorată în <code>prim</code>.</p>
+
+<h3>Restricții și precizări</h3>
+
+<ul>
+	<li>numele funcției va fi <code>sortareCrescator</code></li>
+	<li>lista va conține cel puțin <code>3</code> elemente</li>
+</ul>
+
+<h3>Exemplu:</h3>
+
+<p>Dacă lista este formată din valorile <code>(5, 3, 9, 4, 2, 12)</code>, după apelul funcţiei ea va conţine elementele <code>(2, 3, 4, 5, 9, 12)</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">void sortareCrescator(nod *&amp;prim)
+{
+    nod* pi = prim;
+    nod* pj = prim;
+    int aux;
+    while (pi != NULL)
+    {
+        pj = pi -> urm;
+        while (pj != NULL)
+        {
+            if ((pi -> info) > (pj -> info))
+            {
+                aux = pi -> info;
+                pi -> info = pj -> info;
+                pj -> info = aux;
+            }
+            pj = pj -> urm;
+        }
+        pi = pi -> urm;
+    }
+}</pre>

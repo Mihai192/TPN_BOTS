@@ -1,0 +1,132 @@
+<p><img align="right" alt="" src="/resurse/9dc152/p-1001-1050/clepsidru1.png"> O <strong>clepsidră</strong> este un dispozitiv folosit pentru a măsura timpul. Clepsidra este alcătuită din două incinte de sticlă, conectate printr-un tub fin. Una dintre incinte este umplută cu nisip, acesta scurgându-se în cea de-a doua incintă, cu o viteză constantă. Clepsidra poate fi întoarsă, pentru a măsura o altă perioadă de timp.</p>
+
+<p>Arheologii au descoperit un dispozitiv, pe care l-au denumit <strong>clepsidru</strong>, format din <code>n</code> clepsidre identice, suprapuse, numerotate de la <code>1</code> la <code>n</code>, prin care nisipul poate circula de la o clepsidră la alta datorită forţei gravitaţionale.</p>
+
+<p>Studiind acest obiect, arheologii au constatat că&nbsp;:</p>
+
+<ul>
+	<li>dispozitivul poate fi utilizat atât în poziţia <code>1</code>, când clepsidrele sunt în ordinea <code>1</code>, <code>2</code> ,…, <code>n</code> cu clepsidra <code>n</code> aşezată pe sol, cât şi în poziţia <code>2</code>, când clepsidrele sunt în ordinea <code>n</code>, <code>n-1</code>,…, <code>1</code> cu clepsidra <code>1</code> aşezată pe sol;</li>
+	<li>viteza de trecere a nisipului de la o incintă la alta, a aceleiaşi clepsidre, este de <code>1</code> bob de nisip/secundă, pentru toate clepsidrele, indiferent de poziţie;</li>
+	<li>trecerea clepsidrului dintr-o poziţie în alta presupune răsturnarea acestuia şi reaşezarea boabelor de nisip;</li>
+	<li>timpul de trecere a boabelor de nisip de la o clepsidră la alta este 0.</li>
+</ul>
+
+<p>Arheologii studiază comportarea clepsidrului realizând două experimente diferite, după cum urmează:</p>
+
+<p>a) Se aşează clepsidrul în poziţia <code>1</code>, se introduc în incinta de sus a clepsidrei <code>1</code> un număr <code>b</code> de boabe de nisip şi se determină după câte secunde vor ajunge toate boabele de nisip în incinta de jos a ultimei clepsidre;<br>
+b) Se aşează clepsidrul în poziţia <code>1</code>, se introduc în incinta de sus a clepsidrei <code>1</code> un număr <code>b</code> de boabe de nisip, apoi se aşează clepsidrul în <code>k</code> stări consecutive, o stare fiind caracterizată de valorile <code>s</code><sub><code>i</code></sub> şi <code>p</code><sub><code>i</code></sub> , <code>1 ≤ i ≤ k</code>, ce reprezintă numărul de secunde, respectiv poziţia, în care este menţinut nemişcat clepsidrul, iar la final se determină numărul de boabe de nisip din incintele fiecărei clepsidre.</p>
+
+<p><img align="right" alt="" src="/resurse/9dc152/p-1001-1050/clepsidru2.png"> Spre exemplu, dacă clepsidrul este format din <code>n=2</code> clepsidre, iar în incinta de sus a primei clepsidre se introduc <code>b=3</code> boabe de nisip, la primul experiment se va obţine valoarea <code>4</code>.</p>
+
+<p>La al doilea experiment se aşează clepsidrul în <code>k=2</code> stări, caracterizate prin  <code>s</code><sub><code>1</code></sub><code>=3</code>, <code>p</code><sub><code>1</code></sub><code>=1</code>; <code>s</code><sub><code>2</code><sub><code>=1</code>, <code>p</code><sub><code>2</code></sub><code>=2</code>.  </sub></sub></p>
+
+<p>Numărul de boabe de nisip din clepsidre va evolua ca în figura alăturată.</p>
+
+<h1>Cerința</h1>
+
+<p>Să se scrie un program care citeşte valorile <code>n</code> şi <code>b</code>, precum şi valorile <code>k</code>, <code>s</code><sub><code>i</code></sub>, <code>p</code><sub><code>i</code></sub> , <code>1 ≤ i ≤ k</code>, şi calculează valorile obţinute de arheologi la realizarea celor două experimente.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>clepsidru.in</code> conține pe prima linie două numere naturale nenule <code>n</code> şi <code>b</code>, separate printr-un singur spaţiu, cu semnificaţia din enunţ; a doua linie conţine numărul natural nenul <code>k</code> având semnificaţia din enunţ, iar următoarele <code>k</code> linii conţin fiecare câte o pereche de valori <code>s</code><sub><code>i</code></sub> şi <code>p</code><sub><code>i</code></sub>, <code>1 ≤ i ≤ k</code>, separate printr-un singur spaţiu, cu semnificaţia din enunţ.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>clepsidru.out</code> va conține pe prima linie un număr natural ce reprezintă valoarea obţinută la primul experiment, iar pe următoarele <code>n</code> linii va conţine câte o pereche de numere naturale, separate printr-un singur spaţiu, ce reprezintă cantităţile de boabe de nisip din incintele de sus şi de jos ale celor <code>n</code> clepsidre, scrise în ordinea de la <code>1</code> la <code>n</code> a clepsidrelor, după realizarea celui de-al doilea experiment.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1 000</code>;</li>
+	<li><code>1 ≤ b ≤ 1 000 000 000</code>;</li>
+	<li><code>1 ≤ k ≤ 1 000</code>;</li>
+	<li><code>1 ≤ si ≤ 1 000</code>, <code>1 ≤ i ≤ k</code>;</li>
+	<li><code>p</code><sub><code>i</code></sub> aparține <code>{1, 2}</code>, <code>1 ≤ i ≤ k</code>;</li>
+	<li>pentru rezolvarea corectă a primei cerinţe se acordă <code>25%</code> din punctaj, iar pentru rezolvarea corectă a celei de-a doua cerinţe se acordă <code>75%</code> din punctaj.</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595360557&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1040%2Fclepsidru&amp;flash=0&amp;wgl=1&amp;dt=1595360556940&amp;bpp=5&amp;bdt=208&amp;idt=189&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=402801120385&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595360557&amp;ga_hid=656928399&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1934&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066358&amp;oid=3&amp;pvsid=3301403860424779&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1618%2Fcifre12&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=oP5ZgOPhqq&amp;p=https%3A//www.pbinfo.ro&amp;dtd=196" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CIXUsJqN3-oCFSviuwgdN8IOpA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>clepsidru.in</code></p>
+
+<pre contenteditable="true" editable="true">2 3
+2
+3 1
+1 2</pre>
+
+<p><code>clepsidru.out</code></p>
+
+<pre contenteditable="true" editable="true">4
+1 1
+0 1</pre>
+
+<h1>Explicație</h1>
+
+<ul>
+	<li>Clepsidrul este format din <code>n=2</code> clepsidre şi în incinta de sus a primei clepsidre se introduc <code>b=3</code> boabe de nisip.</li>
+	<li>Toate boabele de nisip vor ajunge în incinta de jos a ultimei clepsidre după <code>4</code> secunde.</li>
+	<li>După ce clepsidrul este aşezat <code>3</code> secunde în poziţia <code>1</code> şi <code>1</code> secundă în poziţia <code>2</code>,  în clepsidre se vor găsi câte <code>(1,1)</code>, <code>(0,1)</code> boabe de nisip.</li>
+</ul>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+int main()
+{
+    int n,b,k,timp,p,ljos,lsup,a0=0,an=0;
+    ifstream fin("clepsidru.in");
+    ofstream fout("clepsidru.out");
+    fin >> n >> b;
+    fout << n + b - 1 <<'\n';
+    ljos = a0 = an = 0;
+    lsup = 1 - b;
+    fin >> k;
+    for (int i=1;i<=k; i++)
+    {
+        fin>>timp>>p;
+        if (p==1)
+        {
+            if (lsup<n)
+            {
+                lsup += timp;
+                ljos += timp;
+                if (lsup>=n)
+                {
+                    lsup=n;
+                    ljos=n+b-1;
+                }
+            }
+        }
+        else
+        {
+            if(ljos > 0)
+            {
+                ljos -=timp;
+                lsup -=timp;
+                if (ljos <=0)
+                {
+                    ljos = 0;
+                    lsup=1-b;
+                }
+
+            }
+        }
+
+    }
+    if (lsup <=0) a0 = 1-lsup;
+    if (ljos >=n) an = ljos -n+1;
+    fout << a0 << " ";
+    for (int i =1;i<n; ++i)
+        if ((i>=lsup ) &amp;&amp; (i<=ljos))
+            if (p==1) fout << "0\n1 ";
+            else fout <<"1\n0 ";
+        else  fout << "0\n0 ";
+    fout << an << "\n";
+    fin.close();
+    fout.close();
+    return 0;
+
+}</pre>

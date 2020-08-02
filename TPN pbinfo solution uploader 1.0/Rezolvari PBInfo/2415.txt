@@ -1,0 +1,117 @@
+<h1>Cerința</h1>
+
+<p>Se dau <code>n</code> întrebări de forma: <strong>Câte palindromuri există în intervalul <code>[a, b]</code>?</strong>, unde <code>a</code> și <code>b</code> sunt numere naturale date, cu <code>a ≤ b</code>.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>nr_pal.in</code> conține pe prima linie numărul natural nenul <code>n</code>, iar pe următoarele <code>n</code> linii, <code>n</code> perechii de forma <code>a b</code> ce reprezintă capetele intervalelor.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>nr_pal.out</code> va conține răspunsurile la cele <code>n</code> întrebări, fiecare pe câte un rând.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>0 &lt; n ≤ 100.000</code></li>
+	<li><code>0 ≤ a ≤ b ≤ 1.000.000.000</code></li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display: inline-block; width: 728px; height: 0px;" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display: inline-table; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 728px; background-color: transparent;"><ins id="aswift_1_anchor" style="display: block; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 728px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595359915&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2415%2Fnr-pal&amp;flash=0&amp;wgl=1&amp;dt=1595359914905&amp;bpp=42&amp;bdt=278&amp;idt=183&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=5641582776902&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595359915&amp;ga_hid=1496525272&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1022&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066428%2C21066623&amp;oid=3&amp;pvsid=1888695331465286&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F369%2Foglindit3&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=4tU6Pmkdhe&amp;p=https%3A//www.pbinfo.ro&amp;dtd=188" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-google-query-id="CKCTnuiK3-oCFfnEuwgdL0sFdw" data-load-complete="true"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>nr_pal.in</code></p>
+
+<pre contenteditable="true" editable="true">2
+5 23
+1 255</pre>
+
+<p><code>nr_pal.out</code></p>
+
+<pre contenteditable="true" editable="true">7
+34</pre>
+
+<h3>Explicație</h3>
+
+<p>La prima întrebare în intervalul <code>[5,23]</code> exista <code>7</code> palindromuri: <code>5,6,7,8,9,11,22</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+ifstream cin("nr_pal.in");
+ofstream cout("nr_pal.out");
+
+int nrcif(int n)
+{
+    int cnt = 0;
+    if(n <= 9)
+        return 1;
+    while(n)
+    {
+        cnt++;
+        n /= 10;
+    }
+    return cnt;
+}
+
+int put(int n)
+{
+    int p = 1;
+    for(int i = 1 ; i <= n ; i++) p *= 10;
+    return p;
+}
+
+int f(int n)
+{
+    int ogl = n;
+    while(n)
+    {
+        ogl = ogl * 10 + n % 10;
+        n /= 10;
+    }
+    return ogl;
+}
+
+int ff(int n)
+{
+    int ogl = n;
+    n /= 10;
+    while(n)
+    {
+        ogl = ogl * 10 + n % 10;
+        n /= 10;
+    }
+    return ogl;
+}
+
+int pal(int n)
+{
+    int cnt = 0;
+    int nr = nrcif(n);
+    for(int i = 1 ; i < nr ; ++i)
+        cnt = cnt+ put((i - 1) / 2) * 9;
+    int p = put((nr - 1)/2);
+    int y = n/put((nr / 2));
+    cnt = cnt + (y - p + 1);
+    if(nr % 2 == 0)
+    {
+        if(f(y) > n) cnt--;
+    }
+    else if(ff(y) > n) cnt--;
+    return cnt;
+}
+
+int main()
+{
+    int n;
+    int a , b;
+    cin >> n;
+    for(int i = 0 ; i < n ; ++i)
+    {
+        cin >> a >> b;
+        cout << pal(b) - pal(a - 1) << '\n';
+    }
+    return 0;
+}</pre>

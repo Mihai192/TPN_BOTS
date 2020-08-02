@@ -1,0 +1,126 @@
+<h1>Cerinţa</h1>
+
+<p>Se dau <code>n</code> numere întregi. Calculaţi cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi <code>n</code> numere întregi, separate prin spaţii.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Programul afișează pe ecran numărul <code>MIN</code>, reprezentând cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1000</code></li>
+	<li>cele <code>n</code> numere citite vor avea cel mult <code>9</code> cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Date de intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+7 6 9 6 8</pre>
+
+<p><strong>Date de ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">6</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <vector>
+#include <queue>
+using namespace std;
+#define Inf 0x3f3f3f3f
+
+ifstream cin("dragoni.in");
+ofstream cout("dragoni.out");
+
+using PI = pair<int , int>;
+int cer , n , m , x , y , w , dr[1001] , v[1001] , s , D[1001][1001] , d[10001];
+vector <pair<int , int>> G[801];
+
+void dfs(int nod , int dist , int &amp;s)
+{
+    v[nod] = 1;
+    for(auto x : G[nod])
+        if(!v[x.first] &amp;&amp; x.second <= dist)
+        {
+           v[x.first] = 1;
+           if(dr[x.first] > s)
+                s = dr[x.first];
+           dfs(x.first , dist , s);
+        }
+}
+
+void dijkstra(int s)
+{
+    priority_queue <PI , vector<PI> , greater<PI>> Q;
+    D[s][s] = 0;
+    Q.push({0 , s});
+    while(!Q.empty())
+    {
+       x = Q.top().second;
+       y = Q.top().first;
+       Q.pop();
+       if(y > D[s][x]) continue;
+       for(auto&amp; i:G[x])
+       {
+           int nodnou = i.first;
+           int costnou = i.second;
+           if(dr[s] >= costnou &amp;&amp; D[s][nodnou] > y + costnou)
+           {
+               D[s][nodnou] = y + costnou;
+               Q.push({D[s][nodnou] , nodnou});
+           }
+       }
+    }
+}
+
+int main()
+{
+    cin >> cer >> n >> m;
+    for(int i = 1 ; i <= n ; ++i)
+        cin >> dr[i];
+    for(int i = 1 ; i <= m ; ++i)
+    {
+        cin >> x >> y >> w;
+        G[x].push_back({y , w});
+        G[y].push_back({x , w});
+    }
+    if(cer == 1)
+    {
+        dfs(1 , dr[1] , s);
+        cout << s;
+    }
+    else
+    {
+        for(int i = 1 ; i <= n ; i++)
+            for(int j = 1 ; j <= n ; j++)
+                D[i][j] = Inf;
+
+        for(int i = 1 ; i <= n ; i++)
+            dijkstra(i) , d[i] = D[1][i];
+
+        /*for(int i = 1 ; i <= n ; i++)
+        {
+            for(int j = 1 ; j <= n ; j++)
+                cout << D[i][j] << " ";
+            cout << 'n';
+        }*/
+
+        for(int i = 1 ; i <= n ; i++)
+        {
+            for(int j = 1 ; j <= n ; j++)
+                if(d[i] > d[j] + D[j][i])
+                    d[i] = d[j] + D[j][i];
+        }
+        cout << d[n];
+
+    }
+}</pre>

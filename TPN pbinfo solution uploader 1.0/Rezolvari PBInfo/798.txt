@@ -1,0 +1,40 @@
+<p>Un interval cu proprietatea că există un singur număr natural, <code>n</code> (<code>2≤n</code>), pentru care valoarea produsului <code>1·2·3·...·n</code> aparține acestui interval este numit interval factorial al lui <code>n</code>.<br>
+<strong>Exemplu</strong>: <code>[5,8]</code> și <code>[3,23]</code> sunt intervale factoriale ale lui <code>3</code>, dar <code>[1,15]</code> și <code>[7,10]</code> nu sunt intervale factoriale ale niciunui număr.</p>
+
+<h1>Cerinţa</h1>
+
+<p>Să se scrie o funcție C++ care, pentru un număr natural <code>n</code> transmis ca parametru, determină și întoarce prin intermediul unor parametrii de ieșire un interval factorial al lui <code>n</code> de lungime maximă.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<p>Numele funcției va fi <code>interval</code> și va avea exact trei parametri, în această ordine:</p>
+
+<ul>
+	<li>primul parametru, <code>n</code>, reprezintă un număr natural din intervalul <code>[2,10]</code></li>
+	<li><code>a</code> și <code>b</code>, prin care furnizează câte un număr natural, astfel încât expresia <code>b-a</code> să aibă valoare maximă, iar <code>[a,b]</code> să fie interval factorial al lui <code>n</code>.</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=1806232942&amp;w=728&amp;lmt=1595358719&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F798%2Finterval-factorial&amp;flash=0&amp;wgl=1&amp;dt=1595358719256&amp;bpp=4&amp;bdt=236&amp;idt=109&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=1050098632743&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595358719&amp;ga_hid=481031299&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1014&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=23216289548437&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F800%2Fperfect&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=3OSDzL8OxM&amp;p=https%3A//www.pbinfo.ro&amp;dtd=119" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CPWli66G3-oCFTzJuwgdzNEOGA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p>Dacă <code>n=3</code>, apelul subprogramului va furniza prin parametrul <code>a</code> valoarea <code>3</code>, iar prin <code>b</code> valoarea <code>23</code>.</p>
+
+<h1>Important</h1>
+
+<p>Soluţia propusă va conţine doar definiţia funcţiei cerute. Prezenţa în soluţie a altor instrucţiuni poate duce erori de compilare sau de execuţie care vor avea ca efect depunctarea soluţiei.
+		</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">int fact(int n){
+    int val = 1;
+    for(int i = 1; i <= n; ++i)
+        val *= i;
+    return val;
+}
+
+void interval(int n, int&amp; a, int&amp; b){
+    a = fact(n - 1) + 1;
+    b = fact(n + 1) - 1;
+}</pre>

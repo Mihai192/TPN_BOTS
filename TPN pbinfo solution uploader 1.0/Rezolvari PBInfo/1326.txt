@@ -1,0 +1,82 @@
+<h1>Cerința</h1>
+
+<p>Un şir se numeşte <code>şir vale</code>, dacă are un singur minim pe poziţia <code>v</code> şi respectă următoarele proprietăţi:<br>
+</p><ul>
+	<li>În stânga şi în dreapta minimului există cel puţin câte un element.</li>
+	<li>Secvenţa <code>a[1], a[2], ... , a[v]</code> este strict descrescătoare.</li>
+	<li>Secvenţa <code>a[v], a[v+1], ... , a[n]</code> este strict crescătoare.</li><br>
+</ul><p></p>
+
+<p>Se citeşte un şir cu <code>n</code> elemente. Să se verifice dacă este şir vale. </p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi <code>n</code> numere naturale, separate prin spații.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Programul va afișa pe ecran unul dintre mesajele <code>DA</code> sau <code>NU</code> în funcţie că este şir vale sau nu.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>3 ≤ n ≤ 1000</code></li>
+	<li><code>0 ≤</code> elementele şirului <code>≤ 1 000 000 000</code></li>
+</ul>
+
+<h1>Exemplu 1:</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+1 2 3 4 5</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">NU</pre>
+
+<h1>Exemplu 2:</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+4 3 2 1 2</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">DA</pre>
+
+<h3>Explicație</h3>
+
+<p>Primul exemplu NU este şir vale, pe când al doilea exemplu este şir vale.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+using namespace std;
+int main()
+{
+  int v,n,i,ok=1;
+  cin>>n;
+  int a[n+1];
+  a[n+1]=-1;
+  cin>>a[1];
+  for(i=2;i<=n;i++)
+    cin>>a[i];
+  for(i=2;i<=n;i++)
+  if(a[i-1]>a[i] &amp;&amp; a[i+1]>a[i])
+        v=i;
+  for(i=1;i<v;i++)
+    if(a[i+1]>=a[i])
+    {
+    cout<<"NU"; ok=0;
+    break;
+    }
+  if(ok)
+    for(i=v;i<n;i++)
+      if(a[i]>=a[i+1])
+      {
+      cout<<"NU"; ok=0;
+      break;
+      }
+  if(ok)
+        cout<<"DA";
+        return 0;
+}</pre>

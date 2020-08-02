@@ -1,0 +1,77 @@
+<p>Fie <code>X</code> un număr natural format din exact <code>K</code> cifre, toate nenule, iar <code>S</code> suma cifrelor lui <code>X</code>. Pornind de la aceste numere, se construiește mulțimea <code>M</code> a tuturor numerelor naturale care:</p>
+
+<ul>
+	<li>au suma cifrelor egală cu <code>S</code></li>
+	<li>sunt formate fiecare din exact <code>K</code> cifre, toate cifrele fiind nenule.</li>
+</ul>
+
+<p>Pentru fiecare număr din mulțimea <code>M</code> se calculează produsul cifrelor sale. Fie <code>P</code> valoarea maximă a produselor calculate.</p>
+
+<p>Cel mai mic număr din mulțimea <code>M</code> care are produsul cifrelor egal cu <code>P</code> îl vom denumi elementul primar al mulțimii. </p>
+
+<h1>Cerinţă</h1>
+
+<p>Scrieţi un program care să citească numerele <code>K</code> și <code>X</code> (cu semnificația din enunț) şi care să determine elementul primar al mulțimii <code>M</code>.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numerele <code>K X</code>, numărul <code>X</code> fiind format din <code>K</code> cifre.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Programul va afișa pe ecran un număr natural de <code>K</code> cifre reprezentând elementul primar al mulțimii <code>M</code>.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ K ≤ 33</code></li>
+	<li>toate cifrele lui <code>X</code> sunt nenule</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595362776&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F966%2Fxmin&amp;flash=0&amp;wgl=1&amp;dt=1595362776726&amp;bpp=16&amp;bdt=221&amp;idt=148&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=3729677558430&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595362777&amp;ga_hid=297530902&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1206&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=3714005905846708&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1875%2Fplatou1&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=ksQbPTnCKH&amp;p=https%3A//www.pbinfo.ro&amp;dtd=154" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CM3a6LyV3-oCFfrssgodhh8MwA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">3
+124</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">223</pre>
+
+<h1>Explicație</h1>
+
+<p>Suma cifrelor numărului <code>X=124</code> este <code>S=7</code>, iar mulțimea construită este: <code>M = {115,151,511,124,142,214,241,412,421,133,313, 331,223,232,322}</code>. Se obţin următoarele valori ale produselor cifrelor numerelor din <code>M</code>: <code>5,5,5,8,8,8,8,8,8,9,9,9,12,12,12</code>. Valoarea <code>P=12</code> se obţine pentru numerele: <code>223</code>, <code>232</code> și <code>322</code>, iar cel mai mic număr dintre acestea este <code>223</code>. Astfel, elementul primar al mulțimii <code>M</code> este <code>223</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int k, a[101];
+char n[40];
+
+int main(){
+    cin >> k;
+    cin >> n;
+    int sum = 0;
+    int i = 0;
+    while(n[i]){
+        sum += (int)(n[i] - '0');
+        i++;
+    }
+    int poz = 1;
+    while(k){
+        a[poz] = sum / k;
+        sum -= a[poz];
+        poz++;
+        k--;
+    }
+    sort(a + 1, a + poz);
+    for(int i = 1; i < poz; ++i)
+        cout << a[i];
+    return 0;
+}</pre>

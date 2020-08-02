@@ -1,0 +1,82 @@
+<h1>Cerința</h1>
+
+<p>Se citește un text de maxim <code>256</code> caractere și o cheie de număr egal de caractere cu textul citit. După aplicarea <code>Encripției XOR</code>, caracterele rezultate se vor afișa în <code>format binar</code> deoarece în majoritatea cazurilor se obțin caractere neprintabile.</p>
+
+<p><code>Encripția XOR</code> presupune aplicarea operatorului pe biți <code>XOR</code> între text și cheie, între fiecare caracter din text și caracterul din cheie de pe aceeași poziție cu cel din text: <code>text[i] XOR cheie[i]</code>. Pentru decriptare, operatorul se aplică între cheie și textul criptat.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>xorcrypt.in</code> conține:<br>
+</p><ol>
+	<li>Pe prima linie un text format din maxim <code>256</code> caractere.</li>
+	<li>Pe a doua linie cheia, de lungime egală cu textul.</li><br>
+</ol><p></p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>xorcrypt.out</code> va conține o singură linie, având caracterele în <code>format binar</code> separate prin spațiu.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li>Se va folosi alfabetul englez.</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595357038&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3101%2Fxorcrypt&amp;flash=0&amp;wgl=1&amp;adsid=NT&amp;dt=1595357038244&amp;bpp=5&amp;bdt=220&amp;idt=178&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=8212025553051&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595357038&amp;ga_hid=52588992&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1152&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=1943650450152851&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F964%2Fcod&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=3z7SN8u5en&amp;p=https%3A//www.pbinfo.ro&amp;dtd=185" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CPTmxYyA3-oCFQ3GuwgdDLMMag"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>xorcrypt.in</code></p>
+
+<pre contenteditable="true" editable="true">xor
+key</pre>
+
+<p><code>xorcrypt.out</code></p>
+
+<pre contenteditable="true" editable="true">00010011 00001010 00001011</pre>
+
+<h3>Explicație</h3>
+
+<p><code>x^k -&gt; 00010011</code><br>
+<code>o^e -&gt; 00001010</code><br>
+<code>r^y -&gt; 00001011</code></p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <cstring>
+using namespace std;
+
+ifstream cin("xorcrypt.in");
+ofstream cout("xorcrypt.out");
+
+char a[256] , b[256] , rez[8];
+int n , x , y;
+
+void schimb(int n)
+{
+    for(int i = 0 ; i < 8 ; i++)
+        rez[i] = '0';
+
+    int ind = 7;
+    while(n != 0)
+    {
+        rez[ind] = n % 2 + '0';
+        ind--;
+        n /= 2;
+    }
+    cout << rez << " ";
+}
+
+int main()
+{
+    cin.getline(a , 260);
+    cin.getline(b , 260);
+    n = strlen(a);
+    for(int i = 0 ; i < n ; i++)
+    {
+        x = int(a[i]) , y = int(b[i]);
+        schimb(x^y);
+    }
+    return 0;
+}</pre>

@@ -1,0 +1,105 @@
+<p>Un schior profesionist se află pe un platou montan. Harta platoului este împărțită în <code>n</code> rânduri (numerotate de la <code>1</code> la <code>n</code>) a câte <code>m</code> parcele (numerotate de la <code>1</code> la <code>m</code>), fiecare parcelă reprezentând o zonă de teren de formă pătrată cu latura de <code>1</code> metru. Pe fiecare parcelă de pe hartă este scris un număr, ce reprezintă altitudinea parcelei respective. Schiorul se poate deplasa din parcela curentă în oricare din cele opt parcele învecinate (pe orizontală, verticală sau diagonală), cu condiția ca altitudinea noii parcele să fie mai mică sau egală cu altitudinea parcelei în care se afla anterior.</p>
+
+<h1>Cerința</h1>
+
+<p>Cunoscând coordonatele parcelei în care se află inițial schiorul, să se determine altitudinea minimă la care poate ajunge acesta.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Pe prima linie a fișierului text <code>schior.in</code> se găsesc, separate printr-un spațiu, <code>n</code> și <code>m</code>, dimensiunile hărții. Pe a doua linie se găsesc, separate printr-un spațiu, <code>l</code> și <code>c</code>, coordonatele parcelei în care se află inițial schiorul. Pe următoarele <code>n</code> linii se găsesc câte <code>m</code> valori, separate prin câte un spațiu, reprezentând altitudinea fiecărei parcele de pe hartă.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>schior.out</code> se va scrie un număr natural ce reprezintă altitudinea minimă la care poate ajunge schiorul.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 100</code>, <code>1 ≤ m ≤ 100</code>, <code>1 ≤ l ≤ 100</code>, <code>1 ≤ c ≤ 100</code> numere naturale</li>
+	<li><code>0 ≤ valorile altitudinilor ≤ 9999</code></li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595353629&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2184%2Fschior&amp;flash=0&amp;wgl=1&amp;dt=1595353629464&amp;bpp=17&amp;bdt=234&amp;idt=205&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=5573011640187&amp;frm=20&amp;pv=1&amp;ga_vid=1744050990.1595352838&amp;ga_sid=1595353630&amp;ga_hid=384763&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=814&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1344&amp;biw=1200&amp;bih=647&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=2497681653315224&amp;pem=168&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2496%2Froad&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C770%2C1200%2C647&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=WLTm3Loqm4&amp;p=https%3A//www.pbinfo.ro&amp;dtd=210" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CK6_kLPz3uoCFfnEuwgdL0sFdw"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>schior.in</code></p>
+
+<pre contenteditable="true" editable="true">5 4
+1 3
+4 3 5 6
+2 8 8 3
+3 5 9 3
+1 1 4 5
+1 4 5 1</pre>
+
+<p><code>schior.out</code></p>
+
+<pre contenteditable="true" editable="true">2</pre>
+
+<h3>Explicație</h3>
+
+<p>Din parcela <code>(1,3)</code> schiorul se poate deplasa prin parcelele <code>(1,2)</code>, <code>(2,1)</code>, ajungând la altitudinea <code>2</code>, sau prin parcelele <code>(2,4)</code>, <code>(3,4)</code>, ajungând la altitudinea <code>3</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <queue>
+using namespace std;
+
+ifstream cin("schior.in");
+ofstream cout("schior.out");
+
+struct poz
+{
+    int i , j;
+};
+
+const int di[] = {-1 , -1 , -1 ,  0 , 0 ,  1 , 1 , 1};
+const int dj[] = {-1 ,  0 ,  1 , -1 , 1 , -1 , 0 , 1};
+
+int a[101][101] , n , m , ip , jp , is , js , mini = 10000 , b[101][101];
+
+queue < poz>Q;
+int inside(int i , int j)
+{
+    return i >= 1 &amp;&amp; i <= n &amp;&amp; j >= 1 &amp;&amp; j <=m;
+}
+
+void lee(int i , int j)
+{
+    poz x;
+    x.i = i;
+    x.j = j;
+    Q.push(x);
+    b[i][j] = 1;
+    if(a[i][j] < mini) mini = a[i][j];
+    while(!Q.empty())
+    {
+        x = Q.front();
+        for(int i = 0 ; i < 8 ; i++)
+        {
+            int inou = x.i + di[i];
+            int jnou = x.j + dj[i];
+            if(inside(inou , jnou) &amp;&amp; b[inou][jnou] == 0 &amp;&amp; a[inou][jnou] <= a[x.i][x.j])
+            {
+                poz y;
+                y.i = inou;
+                y.j = jnou;
+                Q.push(y);
+                b[inou][jnou] = 1;
+                if(a[inou][jnou] < mini) mini = a[inou][jnou];
+            }
+        }
+        Q.pop();
+    }
+}
+int main()
+{
+    cin >> n >> m >> ip >> jp;
+    for(int i = 1 ; i <= n ; i++)
+        for(int j = 1 ; j <= m ; j++)
+        cin >> a[i][j];
+    lee(ip , jp);
+    cout << mini;
+}</pre>

@@ -1,0 +1,66 @@
+<p>Se consideră o listă liniară simplu înlănțuită, alocată dinamic, în care elementele sunt de tipul declarat mai jos:</p>
+
+<pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true"><span class="cm-keyword">struct</span> <span class="cm-variable">nod</span>{
+    <span class="cm-keyword">int</span> <span class="cm-variable">info</span>;
+    <span class="cm-variable">nod</span> <span class="cm-operator">*</span> <span class="cm-variable">urm</span>;
+};</pre>
+
+<p>în care câmpul <code>info</code> memorează un număr întreg, iar câmpul <code>urm</code> memorează adresa următorului element al listei.</p>
+
+<p>Informațiile din listă sunt ordonate crescător.</p>
+
+<h1>Cerința</h1>
+
+<p>Să se scrie o funcție C++ cu următorul prototip:</p>
+
+<pre class="code_cpp cm-s-default" data-lang="text/x-c++src" contenteditable="true" editable="true"><span class="cm-keyword">void</span> <span class="cm-variable">ins_cresc</span>(<span class="cm-variable">nod</span> <span class="cm-operator">*&amp;</span><span class="cm-variable">p</span>, <span class="cm-keyword">int</span> <span class="cm-variable">x</span>);</pre>
+
+<p>care inserează în listă un nou nod care memorează valoarea <code>x</code> astfel încât informațiile din lista să fie în continuare ordonate crescător; pointerul <code>p</code> are ca valoarea adresa primului element din listă.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li>numele funcției va fi <code>ins_cresc</code>.</li>
+	<li>lista conține inițial cel puțin un nod.</li>
+</ul>
+
+<h1>Important</h1>
+
+<p>Soluţia propusă va conţine definiţia funcţiei cerute. Prezenţa în soluţie a altor instrucţiuni poate duce erori de compilare sau de execuţie care vor avea ca efect depunctarea soluţiei.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">void inserare_elem(nod * &amp; p, nod * q, int x)
+{
+    nod* nou = new nod;
+    nou -> info = x;
+
+    if (q == p)
+    {
+        nou -> urm = q;
+        p = nou;
+        return;
+    }
+    nod* pi = p;
+    while(pi -> urm != q)
+        pi = pi -> urm;
+
+    pi -> urm = nou;
+    nou -> urm = q;
+}
+void ins_cresc(nod *&amp;p, int x)
+{
+    nod* pi = p;
+    while(pi != NULL &amp;&amp; (x > pi-> info))
+        pi = pi -> urm;
+    
+    if (pi == NULL)
+    {
+        nod* nou = new nod;
+        nou -> info = x;
+        nou -> urm = NULL;
+        
+        pi = p;
+        while(pi -> urm != NULL)
+             pi = pi -> urm;
+        pi -> urm = nou;
+    }
+    else inserare_elem(p, pi, x);
+}</pre>

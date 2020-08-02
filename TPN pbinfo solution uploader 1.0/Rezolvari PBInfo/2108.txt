@@ -1,0 +1,95 @@
+<p>Alina este pasionată de rebus şi literatură. Recent, a citit un articol în limba engleză despre fraze denumite <code>pangram</code>. O frază <code>pangram</code> este formată din cuvinte, separate printr-un singur caracter (spaţiu sau virgulă) şi care folosește fiecare literă din alfabetul unei limbi cel puțin o dată. <br>
+O frază pangram perfectă este o frază pangram care folosește fiecare literă din alfabet doar o singură dată. Alina se decide să stabilească frazele pangram, numărul de fraze pangram şi numărul de fraze pangram perfecte dintr-un text. Fiecare frază din text începe cu o literă mare şi se încheie cu caracterul punct.</p>
+
+<h1>Cerința</h1>
+
+<p>Scrieţi un program care să determine numărul de fraze pangram, numărul de fraze pangram perfecte dintr-un text dat şi să afişeze frazele pangram în ordine lexicografică.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fişierul de intrare <code>fraze.in</code> conţine un text pe mai multe linii, format din fraze ce se încheie cu caracterul punct. Fiecare frază ocupă o linie din text.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fişierul de ieşire <code>fraze.out</code> conţine pe prima linie două numere naturale, separate printr-un spaţiu, ce reprezintă numărul de fraze pangram şi numărul de fraze pangram perfecte din textul dat în fişierul de intrare. Pe următoarele linii din fişier sunt scrise frazele pangram, în ordine lexicografică. Fiecare frază se scrie pe o linie.</p>
+
+<h1>Restricții și precizări</h1>
+
+<p>• Fiecare linie din text începe cu o literă mare şi se incheie cu <code>Enter</code><br>
+• Un cuvânt reprezintă o succesiune de litere mari şi mici din alfabetul englez<br>
+• O frază conţine cuvinte separate prin unul din caracterele spaţiu sau virgulă, se încheie cu caracterul punct şi are cel mult <code>255</code> de caractere<br>
+• <code>2 ≤</code> Numărul de fraze din text <code>≤ 100</code></p>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595353189&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2108%2Ffraze&amp;flash=0&amp;wgl=1&amp;dt=1595353189585&amp;bpp=4&amp;bdt=202&amp;idt=182&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=726004443417&amp;frm=20&amp;pv=1&amp;ga_vid=1744050990.1595352838&amp;ga_sid=1595353190&amp;ga_hid=1501882832&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=814&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1388&amp;biw=1200&amp;bih=647&amp;scr_x=0&amp;scr_y=0&amp;eid=21066623%2C21066716&amp;oid=3&amp;pvsid=2883640383136111&amp;pem=168&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2116%2Fsmiley&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C770%2C1200%2C647&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=uReSCvQ42U&amp;p=https%3A//www.pbinfo.ro&amp;dtd=187" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="COi2r-Hx3uoCFdfisgodktsFjA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>fraze.in</code></p>
+
+<pre contenteditable="true" editable="true">Pangrams are used to test fonts because they provide a quick view of all the letters.
+Din cauza marilor distante si lipsei de lumina proprie planetele extrasolare nu pot fi vazute direct.
+Quasarul descoperit se afla in galaxia Zwicky si va mai fi observat joi in constelatia Hora.
+The quick brown fox  jumps over the lazy dog.
+Pentru numele oficial al planetelor care inconjoara o stea se folosesc litere.
+Skp,xqlon,trhyf,wgcam,bej,vid,uz.
+Sfinx,Kripton,Willy sunt in echipa de handbal GQ si vor juca maine,in zori.</pre>
+
+<p><code>fraze.out</code></p>
+
+<pre contenteditable="true" editable="true">4 1
+Quasarul descoperit se afla in galaxia Zwicky si va mai fi observat joi in constelatia Hora.
+Sfinx,Kripton,Willy sunt in echipa de handbal GQ si vor juca maine,in zori.
+Skp,xqlon,trhyf,wgcam,bej,vid,uz.
+The quick brown fox  jumps over the lazy dog.</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <cstring>
+
+using namespace std;
+
+ifstream cin("fraze.in");
+ofstream cout("fraze.out");
+
+char A[101][256];
+int f[30];
+void ordonare(char a[][256] , int n)
+{
+    for(int i = 1 ; i <= n ; i++)
+        for(int j = i + 1 ; j <=n ; j++)
+            if(strcmp(a[i] , a[j]) > 0)
+            {
+                char aux[256];
+                strcpy(aux , a[i]);
+                strcpy(a[i] , a[j]);
+                strcpy(a[j] , aux);
+            }
+}
+int main()
+{
+    int nrperf = 0, ind = 0;
+
+    char s[256];
+    while(cin.getline(s , 256))
+    {
+        int n = strlen(s);
+        for(int i = 0 ; i < n ; i++)
+        {
+            if(s[i] != ' ' &amp;&amp; s[i] != ',')
+                f[(int)(tolower(s[i])) - 'a']++;
+        }
+        int ok = 1, perf = 1;
+        for(int i = 0; i < 26; i ++)
+            if (f[i] == 0)ok = 0, perf = 0;
+            else if (f[i] != 1)perf = 0, f[i] = 0;
+            else f[i] = 0;
+
+        if (perf == 1)nrperf ++;
+        if (ok == 1) strcpy(A[++ ind], s);
+    }
+    cout << ind << ' ' << nrperf << '\n';
+    ordonare(A , ind);
+    for (int i = 1; i <= ind; i ++)
+        cout << A[i] << '\n';
+}</pre>

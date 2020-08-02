@@ -1,0 +1,149 @@
+<p>Fie <code>c</code> o cifră, iar <code>s</code> un şir de <code>n</code> numere naturale. Utilizând toate cifrele impare ale unităţilor numerelor din <code>s</code>,  se construieşte un nou şir de numere naturale <code>v</code> cu proprietăţile următoare:</p>
+
+<ol>
+	<li>toate numerele din şirul <code>v</code> au  acelaşi număr de cifre</li>
+	<li>fiecare număr din <code>v</code> este format doar din cifre identice</li>
+	<li>şirul <code>v</code> este format din cel mai mic număr de valori naturale care au proprietăţile 1. şi 2.</li>
+</ol>
+
+<h1>Cerinţe</h1>
+
+<p>Scrieţi un program care să citească numerele <code>c</code>, <code>n</code> şi şirul <code>s</code>, şi să determine:<br>
+a) suma tuturor numerelor din şirul <code>s</code> care au proprietatea că sunt numere prime <br>
+b) numărul de apariţii ale cifrei <code>c</code> în scrierea zecimală a tuturor numerelor din şirul <code>s</code><br>
+c) numărul minim de numere din şirul <code>v</code></p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numerele <code>n c</code>, iar apoi cele <code>n</code> elemente ale șirului <code>s</code>.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Programul va afișa pe ecran trei numere, câte unul pe o linie, reprezentând în ordine:</p>
+
+<ul>
+	<li>suma tuturor numerelor din şirul <code>s</code> care au proprietatea că sunt numere prime</li>
+	<li>numărul de apariţii ale cifrei <code>c</code> în scrierea zecimală a tuturor numerelor din şirul <code>s</code></li>
+	<li>numărul minim de valori din şirul <code>v</code></li>
+</ul>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li>Numerele <code>n</code> şi <code>c</code> sunt naturale</li>
+	<li><code>2 ≤ n ≤ 10000</code></li>
+	<li><code>0 ≤ c ≤ 9</code></li>
+	<li>toate cele <code>n</code> numere naturale din şirul <code>s</code> sunt mai mici sau egale cu <code>30000</code></li>
+	<li>pentru rezolvarea cerinţei   a) se  acordă <code>40%</code> din punctaj, pentru cerinţa b) <code>20%</code> din punctaj  şi  pentru  cerinţa c) <code>40%</code> din punctaj.</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595359143&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F967%2Fcifre8&amp;flash=0&amp;wgl=1&amp;dt=1595359143632&amp;bpp=7&amp;bdt=270&amp;idt=139&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=8169121495742&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595359144&amp;ga_hid=1552287015&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1346&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066717&amp;oid=2&amp;pvsid=1645503697580269&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1319%2Fdescompunere-factori&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=dcPxmqseEW&amp;p=https%3A//www.pbinfo.ro&amp;dtd=147" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="COuWuviH3-oCFRvKuwgd7iwEfg"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">10 9
+1943 31 19 1199 34 941 7971 131 223 6</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">1345
+6
+4</pre>
+
+<h1>Explicație</h1>
+
+<p>a) numerele prime din şirul <code>s</code> sunt: <code>31</code>, <code>19</code>, <code>941</code>, <code>131</code> şi <code>223</code>. Suma acestora este <code>1345</code>.<br>
+b) cifra <code>c=9</code> apare de <code>6</code> ori în scrierea numerelor din <code>s</code>.<br>
+c) cifrele impare ale unităţilor numerelor din <code>s</code> sunt, în ordine crescătoare: <code>1</code>, <code>1</code>, <code>1</code>, <code>1</code>, <code>3</code>, <code>3</code>, <code>9</code>, <code>9</code>. Se pot forma minimum <code>4</code> numere cu toate cifrele identice: <code>11</code>, <code>11</code>, <code>33</code>, <code>99</code>, fiecare număr din noul şir având numărul maxim posibil de cifre, adică <code>2</code>. Numărul minim de termeni ai şirului este egal cu <code>4</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+using namespace std;
+
+int prim(int n)
+{
+    int d=2 , cnt=1;
+    while(n>1)
+    {
+        int p = 0;
+        while(n%d==0)
+        {
+            n/=d;
+            p++;
+        }
+        if(p!=0)
+        cnt*=(p+1);
+        d++;
+        if(d*d>n)
+        d=n;
+    }
+    if(cnt==2)
+    return 1;
+    else
+    return 0;
+}
+
+int cmmdc(int a , int b)
+{
+    while(b)
+    {
+        int r=a%b;
+        a=b;
+        b=r;
+    }
+    return a;
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    int y;
+    cin >> y;
+    int a[10000];
+    int v[10000];
+    int f[10]={0};
+    int s=0 , cnt=0;
+    int p = 0;
+    for(int i = 0 ; i < n ; ++i)
+    {
+        cin >> a[i];
+        if(prim(a[i]))
+        s+=a[i];
+        int x=a[i];
+        while(x)
+        {
+            if(x%10==y)
+            cnt++;
+            x/=10;
+        }
+        if((a[i]%10)%2==1)
+        {
+            v[p]=a[i]%10;
+            p++;
+        }
+    }
+    for(int i = 0 ; i < p ; ++i)
+    {
+        f[v[i]]++;
+    }
+    int c , b=-1 , cmd=1 , i;
+    for(i = 0 ; i <= 9 ; ++i)
+    {
+        while(f[i]==0 &amp;&amp; b==-1)
+        {
+            i++;
+            b=f[i];
+        }
+        while(f[i]==0)
+        i++;
+        c=f[i];
+        cmd=cmmdc(c , b);
+        b=cmd;
+    }
+    cout << s << endl << cnt << endl << p/cmd;
+    return 0;    
+}</pre>

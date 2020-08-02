@@ -1,0 +1,89 @@
+<h1>Cerința</h1>
+
+<p>În această problemă veţi primi două numere natural <code>N</code>, şi <code>K</code>. Definim magnitudinea unui număr ca fiind diferenţa dintre cifra maximă şi cifra minimă ale lui. De exemplu, magnitudinea lui <code>9748</code> este <code>9</code> – <code>4</code> = <code>5</code>. </p>
+
+<p>Eliminaţi maxim <code>K</code> cifre din numărul <code>N</code>, astfel încât magnitudinea numărului obţinut să fie cât mai mică.</p>
+
+<h1>Date de intrare</h1>
+
+<p>În fișierul <code>magnitudine.in</code> se află pe prima linie numerele <code>N</code> si <code>K</code> separate prin spaţii.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Afișați în fișierul <code>magnitudine.out</code> magnitudinea minimă care se poate obţine după eliminarea a <code>K</code> cifre ale lui <code>N</code>.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1</code> ≤ <code>N</code> ≤ <code>10</code> ^ <code>18</code></li>
+	<li>pentru teste în valoare de <code>30</code> puncte, <code>K</code> = <code>0</code></li>
+	<li>pentru teste în valoare de <code>30</code> puncte, <code>K</code> = <code>1</code></li>
+	<li>pentru teste în valoare de <code>40</code> puncte, <code>K</code> = <code>2</code></li>
+</ul>
+
+<h1>Exemplu 1:</h1>
+
+<p><code>magnitudine.in</code></p>
+
+<pre contenteditable="true" editable="true">9748 1</pre>
+
+<p><code>magnitudine.out</code></p>
+
+<pre contenteditable="true" editable="true">2</pre>
+
+<h3>Explicație</h3>
+
+<p>Daca eliminam cifra <code>4</code> obtinem <code>978</code> cu magnitudine = <code>2</code>.</p>
+
+<h1>Exemplu 2:</h1>
+
+<p><code>magnitudine.in</code></p>
+
+<pre contenteditable="true" editable="true">90021 1</pre>
+
+<p><code>magnitudine.out</code></p>
+
+<pre contenteditable="true" editable="true">2</pre>
+
+<h3>Explicație</h3>
+
+<p>Daca eliminam cifra <code>9</code> obtinem <code>0021</code> cu magnitudine = <code>2</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <algorithm>
+using namespace std;
+
+ifstream cin("magnitudine.in");
+ofstream cout("magnitudine.out");
+
+int main()
+{
+    long long int n , k;
+    cin >> n >> k;
+    long long int p = 0;
+    int a[22];
+    while(n)
+    {
+        a[p]=n%10;
+        n/=10;
+        p++;
+    }
+    sort(a , a+p);
+    if(k==0)
+        cout << a[p-1]-a[0];
+    else if(k==1)
+    {
+        if(a[p-2]-a[0] <= a[p-1]-a[1])
+            cout << a[p-2]-a[0];
+        else
+            cout << a[p-1]-a[1];
+        }
+    else
+    {
+        if(a[p-3]-a[0] <= a[p-1]-a[2] &amp;&amp; a[p-3]-a[0] <= a[p-2]-a[1])
+            cout << a[p-3]-a[0];
+        else if(a[p-1]-a[2] <= a[p-3]-a[0] &amp;&amp; a[p-1]-a[2] <= a[p-2]-a[1])
+            cout << a[p-1]-a[2];
+        else
+            cout << a[p-2]-a[1];
+    }
+}</pre>

@@ -1,0 +1,83 @@
+<h1>Cerinţa</h1>
+
+<p>Se dau <code>n</code> numere întregi. Calculaţi cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi <code>n</code> numere întregi, separate prin spaţii.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Programul afișează pe ecran numărul <code>MIN</code>, reprezentând cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1000</code></li>
+	<li>cele <code>n</code> numere citite vor avea cel mult <code>9</code> cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Date de intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+7 6 9 6 8</pre>
+
+<p><strong>Date de ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">6</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin("deminare.in");
+ofstream cout("deminare.out");
+
+int n , m , cer , maxi , a , s[502][502] , F[502] , x , y , cnt , p[201] , nrmax;
+int main()
+{
+    cin >> cer >> n >> m >> a;
+    for(int i = 1 ; i <= a ; i++)
+    {
+        cin >> x >> y;
+        s[x][y] = 1;
+        F[x]++;
+        if(F[x] > maxi) maxi = F[x];
+    }
+    if(cer == 1)
+    {
+        for(int i = 1 ; i <= n ; i++)
+            if(F[i] == maxi) cout << i << " ";
+    }
+    else
+    {
+        for(int i = 1 ; i * i <= a ; i++)
+            if(a % i == 0)
+            {
+                cnt++;
+                p[cnt] = i;
+                if(i * i != a)
+                {
+                    cnt++;
+                    p[cnt] = a / i;
+                }
+            }
+        for(int i = 1 ; i <= n ; i++)
+            for(int j = 1 ; j <= m ; j++)
+                s[i][j] += s[i - 1][j] + s[i][j - 1] - s[i - 1][j - 1];
+        for(int k = 1; k <= cnt ; k++)
+            for(int i = 1 ; i <= n - p[k] + 1; i++)
+                for(int j = 1 ; j <= m - a / p[k] + 1 ; j++)
+                {
+                    int rez = s[i + p[k] - 1][j + a / p[k] - 1] - s[i + p[k] - 1][j - 1] - s[i - 1][j + a / p[k] - 1] + s[i - 1][j - 1];
+                    if(rez > nrmax) nrmax = rez;
+                }
+        if(nrmax == 0) cout << -1;
+        else cout << a - nrmax;
+    }
+}</pre>

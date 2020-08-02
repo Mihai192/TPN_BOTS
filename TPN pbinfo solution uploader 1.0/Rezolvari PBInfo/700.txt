@@ -1,0 +1,166 @@
+<p>Şoricelul Jerry este (pentru a câta oară ?) în labirint.  Labirintul poate fi codificat ca o matrice cu <code>n</code> linii şi <code>m</code> coloane formată din <code>n*m</code> celule pătratice identice. Liniile se numerotează de la <code>1</code> la <code>n</code>, iar coloanele de la <code>1</code> la <code>m</code>.  Labirintul este format din celule libere şi din celule ocupate de pereţii labirintului.</p>
+
+<p>La momentul iniţial, Jerry se găseşte într-o anumită celulă liberă şi misiunea lui este să ajungă la destinaţie într-o altă celulă liberă precizată. Șoricelul se poate deplasa din celula curentă în oricare dintre cele patru celule cu care aceasta are în comun o latură şi nu poate ieşi în afara labirintului. Este posibil ca el să nu poată să ajungă de la poziţia iniţială la cea finală trecând doar prin celule libere. În această situație el este nevoit să sfărâme peretele în anumite celule. Jerry şi-a pregătit dinamită în acest scop, pentru că nu i se pare optim să roadă peretele cu dinţii. </p>
+
+<h1>Cerința</h1>
+
+<p>Cunoscând dimensiunile <code>n</code> şi <code>m</code> ale labirintului, coordonatele celulei de plecare şi ale celulei destinaţie, precum şi coordonatele celulelor ocupate de pereţi, să se determine numărul minim de celule ocupate, pe care Jerry trebuie să le dinamiteze pentru a putea să ajungă la destinaţie.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fişierul de intrare <code>labir.in</code> conţine pe prima linie două numere naturale  <code>n</code> şi <code>m</code> separate printr-un spaţiu, reprezentând numărul de linii, respectiv numărul de coloane ale matricei care codifică labirintul.</p>
+
+<p>Pe linia a doua se găsesc patru numere naturale <code>xi yi xf yf</code> separate prin câte un spaţiu, reprezentând poziţia de plecare, respectiv poziţia destinaţie.</p>
+
+<p>Pe linia a treia se găseşte un număr natural <code>k</code>, reprezentând numărul de celule ocupate.</p>
+
+<p>Pe fiecare dintre următoarele <code>k</code> linii se vor găsi câte două numere <code>x</code> şi <code>y</code> separate printr-un spaţiu, reprezentând linia şi coloana unei celule ocupate.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Pe prima linie a fişierului <code>labir.out</code> se va scrie un singur număr natural  <code>D</code>, reprezentând numărul minim de celule pe care Jerry trebuie să le dinamiteze pentru a ajunge la destinaţie.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>2 ≤ n, m ≤ 5000</code></li>
+	<li><code>1 ≤ k ≤ 50 000</code></li>
+	<li>Se garantează că pentru toate testele există cel puţin <code>n/2</code> linii şi/sau  <code>m/2</code> coloane formate numai din celule <strong>neocupate</strong>.</li>
+	<li>Pentru <code>30%</code> dintre teste  <code>n,m ≤ 1000</code>.</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3229452458&amp;w=728&amp;lmt=1595356497&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F700%2Flabir&amp;flash=0&amp;wgl=1&amp;dt=1595356497532&amp;bpp=4&amp;bdt=550&amp;idt=247&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=2203932622419&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595356498&amp;ga_hid=115373075&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=3&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1542&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066717&amp;oid=2&amp;pvsid=1304807496539025&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2F&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=WuyCgRygJU&amp;p=https%3A//www.pbinfo.ro&amp;dtd=256" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CMKT4Yr-3uoCFZSnsgod8RAL6w"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>labir.in</code></p>
+
+<pre contenteditable="true" editable="true">7 8
+1 1 7 8
+6
+2 1
+1 2
+3 1
+6 7
+6 8
+6 2</pre>
+
+<p><code>labir.out</code></p>
+
+<pre contenteditable="true" editable="true">1</pre>
+
+<h1>Explicație</h1>
+
+<p><img alt="" height="239" src="/resurse/probleme/651-700/700-labir.png" width="280"> </p>
+
+<p>Celulele ocupate au fost colorate în gri. Șoricelul pleacă din celula notată cu <code>P</code> și sosește în celula <code>S</code>. Pentru aceasta el dinamitează celula <code>(1, 2)</code> și ajunge în <code>S</code> dinamitând un număr minim <code>D = 1</code>, de celule ocupate. </p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <bitset>
+#include <deque>
+using namespace std;
+ifstream cin("labir.in");
+ofstream cout("labir.out");
+const int di[] = {0 , 0 , -1 , 1};
+const int dj[] = {-1 , 1 , 0 , 0};
+int n , m , k , ip , jp , is , js , x , y;
+int X[5002] , Y[5002] , C1[5002] , C2[5002];
+unsigned short b[5001][5001];
+bitset <5002>a[5002];
+struct poz
+{
+    int i , j;
+};
+poz v[50002];
+bool inside(int i ,  int j)
+{
+    return i >= 1 &amp;&amp; i <= n &amp;&amp; j >= 1 &amp;&amp; j <= m;
+}
+int comprimare(int i , int j)
+{
+
+}
+deque <poz> D;
+int lee(poz str)
+{
+    poz p;
+    p.i = str.i , p.j = str.j;
+    D.push_back(p);
+    b[ip][jp] = 1;
+    while(! D.empty())
+    {
+        p = D.front();
+        D.pop_front();
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            int inou = p.i + di[i];
+            int jnou = p.j + dj[i];
+            if(inside(inou , jnou) &amp;&amp; b[inou][jnou] == 0)
+            {
+                if(a[inou][jnou] == 1)
+                {
+                    b[inou][jnou] = b[p.i][p.j] + 1;
+                    D.push_back({inou , jnou});
+                }
+                else
+                {
+                    b[inou][jnou] = b[p.i][p.j];
+                    D.push_front({inou , jnou});
+                }
+            }
+        }
+    }
+    return b[is][js] - 1;
+}
+int main()
+{
+    cin >> n >> m;
+    cin >> ip >> jp >> is >> js;
+    cin >> k;
+    for(int i = 1 ; i <= k ; i++)
+    {
+        cin >> x >> y;
+        X[x] = 1;
+        Y[y] = 1;
+        v[i] = {x , y};
+    }
+
+    for(int i = 1 ; i <= n ; i++)
+    {
+        if(X[i] == 0 &amp;&amp; (X[i-1] == 0 || X[i-1] == -1) &amp;&amp; i != ip &amp;&amp; i != is)
+        {
+            X[i] = -1;
+            C1[i] = 1;
+        }
+    }
+    for(int i = 1 ; i <= m ; i++)
+    {
+        if(Y[i] == 0 &amp;&amp; (Y[i-1] == 0 || Y[i-1] == -1) &amp;&amp; i != jp &amp;&amp; i != js)
+        {
+            Y[i] = -1;
+            C2[i] = 1;
+        }
+    }
+
+    for(int i = 1 ; i <= n ; i++)
+        C1[i] = C1[i] + C1[i-1];
+    for(int i = 1 ; i <= m ; i++)
+        C2[i] = C2[i] + C2[i-1];
+    n -= C1[n];
+    m -= C2[m];
+    ip -= C1[ip];
+    is -= C1[is];
+    jp -= C2[jp];
+    js -= C2[js];
+
+    for(int i = 1 ; i <= k ; i++)
+    {
+        a[v[i].i - C1[v[i].i]][v[i].j - C2[v[i].j]] = 1;
+    }
+    poz str;
+    str.i = ip , str.j = jp;
+    cout << lee(str);
+
+}</pre>

@@ -1,0 +1,75 @@
+<h1>Cerința</h1>
+
+<p>Se consideră un şir de cel puțin <code>11</code> şi cel mult un <code>10.000</code> de numere naturale, despărțite prin câte un spațiu. Fiecare număr are cel puțin două şi cel mult nouă cifre. Primul termen al şirului are numărul de ordine <code>1</code>, al doilea are numărul de ordine <code>2</code> etc. Se citeşte şirul din fişier şi se cere să se determine numărul de ordine al unui termen al şirului care este precedat în fişier de un număr maxim de valori care au cifra zecilor egală cu a sa. Dacă sunt mai mulți termeni cu această proprietate se afişează numărul de ordine al primului.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>cifrazecmax.in</code> conține pe prima linie cel puțin <code>11</code> şi cel mult un <code>10.000</code> de numere naturale, despărțite prin câte un spațiu.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>cifrazecmax.out</code> va conține pe prima linie numărul de ordine al termenului care este precedat în fişier de un număr maxim de valori care au cifra zecilor egală cu a sa.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li>numerele din fișierul de intrare au cel puțin <code>2</code> cifre  și sunt mai mici decât <code>1.000.000.000</code></li>
+	<li>în fișier sunt cel mult <code>10000</code> de numere</li>
+</ul>
+
+<h1>Exemplul 1:</h1>
+
+<p><code>cifrazecmax.in</code></p>
+
+<pre contenteditable="true" editable="true">12 36 265 18 139 19 32 34 112 14 68</pre>
+
+<p><code>cifrazecmax.out</code></p>
+
+<pre contenteditable="true" editable="true">10</pre>
+
+<h3>Explicație</h3>
+
+<p><code>10</code> este numărul de ordine al termenului <code>14</code>. Pe poziția zecilor sunt <code>5 cifre de 1</code>, <code>4 cifre de 3</code> și <code>2 cifre de 6</code>. Cel mai mare este <code>5</code> corespunzător cifrei <code>1</code>. Ultimul termen al șirului care are cifra zecilor <code>1</code> este <code>14</code> și are numărul de ordine <code>10</code>.</p>
+
+<h1>Exemplul 2:</h1>
+
+<p><code>cifrazecmax.in</code></p>
+
+<pre contenteditable="true" editable="true">12 63 265 88 139 19 32 34 68 112 74 </pre>
+
+<p><code>cifrazecmax.out</code></p>
+
+<pre contenteditable="true" editable="true">8</pre>
+
+<h3>Explicație</h3>
+
+<p><code>8</code> este numărul de ordine al termenului <code>34</code>. Pe poziția zecilor sunt <code>3 cifre de 1</code>, <code>3 cifre de 3</code>, <code>3 cifre de 6</code>, <code>o cifră de 8</code> și <code>una de 7</code>. Contorul cel mai mare este <code>3</code> corespunzător cifrelor <code>1</code>, <code>3</code> și <code>6</code>. Primul termen care este precedat în fişier de un număr maxim de valori care au cifra zecilor egală cu a sa este <code>34</code> și are numărul de ordine <code>8</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin("cifrazecmax.in");
+ofstream cout("cifrazecmax.out");
+
+int a[10001], c[10001];
+
+int main(){
+    int i = 1;
+    while(cin >> a[i]){
+        c[i] = a[i] % 100 / 10;
+        i++;
+    }
+    int maxi = 0, cmaxi, pozf;
+    for(int k = 0; k <= 9; ++k){
+        int cnt = 0, poz;
+        for(int j = 1; j < i; ++j){
+            if(c[j] == k)
+                ++cnt, poz = j;
+        }
+        if(cnt > maxi)
+            maxi = cnt, cmaxi = k, pozf = poz;
+        if(cnt == maxi &amp;&amp; poz < pozf)
+            pozf = poz;
+    }
+    cout << pozf;
+    return 0;
+}</pre>

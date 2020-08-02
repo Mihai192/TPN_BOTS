@@ -1,0 +1,90 @@
+<h1>Cerința</h1>
+
+<p>Se dau <code>n</code> numere naturale. Pentru fiecare număr aflaţi câţi divizori <i>liberi de pătrate</i> are acesta.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>eratostene4.in</code> conține pe prima linie numărul <code>n</code>, iar pe a doua linie <code>n</code> numere naturale separate prin spații.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>eratostene4.out</code> va conține pe prima linie, pentru fiecare număr din fişierul de intrare, numărul divizorilor liberi de pătrate ai acestuia. </p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 100.000</code></li>
+	<li>numerele de pe a doua linie a fișierului de intrare vor fi mai mici decât <code>10.000.000</code></li>
+	<li>un număr natural se numeşte <i>liber de pătrate</i> dacă nu se divide cu pătratul unui număr prim</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595361260&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3315%2Feratostene4&amp;flash=0&amp;wgl=1&amp;dt=1595361260483&amp;bpp=18&amp;bdt=209&amp;idt=154&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=7333772578271&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595361261&amp;ga_hid=1504469074&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1044&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066717&amp;oid=3&amp;pvsid=2500279477330069&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3316%2Feratostene5&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=BAdnlLp2Pi&amp;p=https%3A//www.pbinfo.ro&amp;dtd=161" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CNq36-mP3-oCFVHisgodFecMGw"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>eratostene4.in</code></p>
+
+<pre contenteditable="true" editable="true">3
+20 8 5</pre>
+
+<p><code>eratostene4.out</code></p>
+
+<pre contenteditable="true" editable="true">4 2 2</pre>
+
+<h3>Explicație</h3>
+
+<p>Divizorii lui <code>20</code>, liberi de pătrate, sunt: <code>1, 2, 5, 10</code>.<br>
+Divizorii lui <code>8</code>, liberi de pătrate, sunt: <code>1, 2</code>. <br>
+Divizorii lui <code>5</code>, liberi de pătrate, sunt: <code>1, 5</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <bitset>
+using namespace std;
+
+ifstream cin("eratostene4.in");
+ofstream cout("eratostene4.out");
+
+int p[500001], P;
+bitset<10000000> e;
+
+void eratostene(){
+    e[0] = e[1] = 1;
+    for(int i = 2; i * i <= 100000; ++i)
+        for(int j = i * i; j <= 100000; j += i)
+            e[j] = 1;
+    for(int i = 1; i <= 100000; ++i)
+        if(!e[i])
+            p[++P] = i;
+}
+
+int desc(int n){
+    int d = 1;
+    int cnt=0;
+    while(n > 1){
+        int pi = 0;
+        while(n % p[d] == 0)
+            n/=p[d], pi++;
+        if(pi)
+            cnt++;
+        d++;
+        if(n > 1 &amp;&amp; p[d] * p[d] > n){
+            cnt++;
+            break;
+        }
+    }
+    return cnt;
+}
+
+int main(){
+    int n;
+    eratostene();
+    cin >> n;
+    for(int i = 1; i <= n; ++i){
+        int x;
+        cin >> x;
+        cout << (1<<desc(x)) <<' ';
+    }
+    return 0;
+}</pre>

@@ -1,0 +1,207 @@
+<h1>Cerinţa</h1>
+
+<p>Se dau <code>n</code> numere întregi. Calculaţi cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi <code>n</code> numere întregi, separate prin spaţii.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Programul afișează pe ecran numărul <code>MIN</code>, reprezentând cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1000</code></li>
+	<li>cele <code>n</code> numere citite vor avea cel mult <code>9</code> cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Date de intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+7 6 9 6 8</pre>
+
+<p><strong>Date de ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">6</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <stdio.h>
+#include <ctype.h>
+#include <vector>
+using namespace std;
+
+class InParser {
+private:
+    FILE *fin;
+    char *buff;
+    int sp;
+
+    char read_ch() {
+        ++sp;
+        if (sp == 4096) {
+            sp = 0;
+            fread(buff, 1, 4096, fin);
+        }
+        return buff[sp];
+    }
+
+public:
+    InParser(const char* nume) {
+        fin = fopen(nume, "r");
+        buff = new char[4096]();
+        sp = 4095;
+    }
+
+    InParser&amp; operator >> (int &amp;n) {
+        char c;
+        while (!isdigit(c = read_ch()) &amp;&amp; c != '-');
+        int sgn = 1;
+        if (c == '-') {
+            n = 0;
+            sgn = -1;
+        } else {
+            n = c - '0';
+        }
+        while (isdigit(c = read_ch())) {
+            n = 10 * n + c - '0';
+        }
+        n *= sgn;
+        return *this;
+    }
+
+    InParser&amp; operator >> (long long &amp;n) {
+        char c;
+        n = 0;
+        while (!isdigit(c = read_ch()) &amp;&amp; c != '-');
+        long long sgn = 1;
+        if (c == '-') {
+            n = 0;
+            sgn = -1;
+        } else {
+            n = c - '0';
+        }
+        while (isdigit(c = read_ch())) {
+            n = 10 * n + c - '0';
+        }
+        n *= sgn;
+        return *this;
+    }
+};
+
+class OutParser {
+private:
+    FILE *fout;
+    char *buff;
+    int sp;
+
+    void write_ch(char ch) {
+        if (sp == 50000) {
+            fwrite(buff, 1, 50000, fout);
+            sp = 0;
+            buff[sp++] = ch;
+        } else {
+            buff[sp++] = ch;
+        }
+    }
+
+
+public:
+    OutParser(const char* name) {
+        fout = fopen(name, "w");
+        buff = new char[50000]();
+        sp = 0;
+    }
+    ~OutParser() {
+        fwrite(buff, 1, sp, fout);
+        fclose(fout);
+    }
+
+    OutParser&amp; operator << (int vu32) {
+        if (vu32 <= 9) {
+            write_ch(vu32 + '0');
+        } else {
+            (*this) << (vu32 / 10);
+            write_ch(vu32 % 10 + '0');
+        }
+        return *this;
+    }
+
+    OutParser&amp; operator << (long long vu64) {
+        if (vu64 <= 9) {
+            write_ch(vu64 + '0');
+        } else {
+            (*this) << (vu64 / 10);
+            write_ch(vu64 % 10 + '0');
+        }
+        return *this;
+    }
+
+    OutParser&amp; operator << (char ch) {
+        write_ch(ch);
+        return *this;
+    }
+    OutParser&amp; operator << (const char *ch) {
+        while (*ch) {
+            write_ch(*ch);
+            ++ch;
+        }
+        return *this;
+    }
+};
+
+InParser cin("episodul1.in");
+OutParser cout("episodul1.out");
+
+struct muchie
+{
+    int i , j , c;
+};
+int T[1000001] , n , cer , m , t;
+long long C[1000001];
+
+void leaga(int a , int b , int c)
+{
+    if(T[a] > T[b]) T[a] = T[b] , C[b] = C[a] + C[b] +  c;
+    else T[b] = T[a] , C[a] = C[a] + C[b] + c;
+}
+
+int radacina(int a)
+{
+    if(a == T[a]) return a;
+    else return T[a] = radacina(T[a]);
+}
+int main()
+{
+    cin >> m;
+    int x , y , c;
+    for(int i = 1 ; i <= m ; i++)
+    {
+        cin >> cer;
+        if(cer == 1) n++ , T[n] = n;
+        else if(cer == 2)
+        {
+            cin >> x >> y >> c;
+            int r1 , r2;
+            r1 = radacina(x);
+            r2 = radacina(y);
+            if(r1 != r2)
+            {
+                t += c;
+                leaga(r1 , r2 , c);
+            }
+        }
+        else
+        {
+            cin >> x;
+            cout << C[radacina(x)] << '\n';
+        }
+    }
+}</pre>

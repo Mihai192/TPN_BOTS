@@ -1,0 +1,99 @@
+<p>În grădina din palatul lui Făt-Frumos a răsărit tulpina fragedă a unui copăcel. Impresionat de gingăşia lui, Făt-Frumos dădu fuga la izvorul fermecat şi aduse nişte apă vie cu care udă copăcelul.</p>
+
+<p>A doua zi, surpriză mare! Copăcelului i-au crescut trei ramuri minunate: una de argint, una de aur şi alta de rubin. Făt-Frumos, fericit, dădu din nou fuga la izvorul fermecat şi aduse apă vie pentru copăcel.</p>
+
+<p>A treia zi, surpriză şi mai mare! Ramura de argint s-a transformat în trei ramuri noi: una de argint, una de aur şi una de rubin. Ramura de aur s-a transformat în două ramuri noi: una de argint şi alta de rubin. Ramura de rubin s-a transformat în două ramuri noi: una de aur şi una de rubin.</p>
+
+<p>Şi în a patra zi, Făt-Frumos observă că fiecare ramură de argint s-a transformat în trei ramuri noi: una de argint, una de aur şi una de rubin; fiecare ramură de aur s-a transformat în două ramuri noi: una de argint şi alta de rubin; fiecare ramură de rubin s-a transformat în două ramuri noi: una de aur şi una de rubin. </p>
+
+<p>Copăcelul era mai bogat şi mai frumos. Strălucea ca un soare, lumina lui ajungând până la palatul Zmeului-Zmeilor. </p>
+
+<p>Zmeul-Zmeilor se îndreptă ca fulgerul spre palatul lui Făt-Frumos. Vroia copacul.  Dar cum să facă? Dacă s-ar lupta cu Făt-Frumos, ar pierde lupta. Mereu s-a întâmplat aşa. Se gândi, se gândi… şi exact când a ajuns în faţa lui Făt-Frumos i-a venit o idee spunându-i acestuia:<br>
+- Făt-Frumos, dacă îmi vei spune câte ramuri de argint, câte ramuri de aur şi câte ramuri de rubin va avea copacul peste <code>n</code> zile începând din ziua asta, atunci copacul va rămâne al tău. De nu, al meu va fi!</p>
+
+<p>Ştiind că ramurile copacului se transformă şi în zilele următoare la fel ca în ziua a patra, ajutaţi-l pe Făt-Frumos să găsească răspunsul la întrebare astfel încât copacul să rămână al lui.</p>
+
+<h1>Cerinţa</h1>
+
+<p>Scrieţi un  program  care  citeşte  un număr natural <code>n</code> şi care să determine şi să afişeze trei numere naturale reprezentând numărul de ramuri de argint, respectiv de aur şi de rubin pe care le va avea copacul peste <code>n</code> zile, în acestă ordine. </p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Programul va afișa pe ecran cele trei numere, în ordinea cerută, separate prin exact un spațiu.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>0 ≤ n ≤ 45</code></li>
+</ul>
+
+<h1>Exemplul 1:</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">2</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">20 25 36</pre>
+
+<h1>Explicație</h1>
+
+<p>Copacul va avea peste <code>n=2</code> zile: <code>20</code> ramuri de argint, <code>25</code> ramuri de aur, <code>36</code> ramuri de rubin</p>
+
+<h1>Exemplul 1:</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">10</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">13001 16212 23427</pre>
+
+<h1>Explicație</h1>
+
+<p>Copacul va avea peste <code>n=10</code> zile: <code>13001</code> ramuri de argint, <code>16212</code> ramuri de aur, <code>23427</code> ramuri de rubin</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    unsigned long long int ar = 2, au = 2, ru = 3;
+    unsigned long long int cntar = 2 , cntau = 2 , cntru = 3;
+    for(int i = 0 ; i <= n ; ++i)
+    {
+        while(cntar)
+        {
+            ar++;
+            au++;
+            ru++;
+            cntar--;
+            ar--;
+        }
+        while(cntau)
+        {
+            au--;
+            ar++;
+            ru++;
+            cntau--;
+        }
+        while(cntru)
+        {
+            ru--;
+            au++;
+            ru++;
+            cntru--;
+        }
+        cntar=ar;
+        cntau=au;
+        cntru=ru;
+    }
+    cout << ar << ' ' << au << ' ' << ru;
+}</pre>

@@ -1,0 +1,37 @@
+<h1>Cerința</h1>
+
+<p>Un număr natural este numit <strong>echilibrat</strong> dacă suma cifrelor sale de pe poziții pare este un număr par, iar suma cifrelor sale de pe poziții impare este un număr impar. Pozițiile cifrelor sunt numerotate de la dreapta la stânga, astfel: cifra unităților este pe poziția <code>0</code>, cifra zecilor este pe poziția <code>1</code> ș.a.m.d.</p>
+
+<p>Subprogramul <code>echilibrat</code> are un singur parametru, <code>n</code>, prin care primește un număr natural (<code>n∈[10,10</code><sup><code>9</code></sup><code>]</code>). Subprogramul returnează valoarea <code>1</code> dacă <code>n</code> este echilibrat sau valoarea <code>0</code> în caz contrar.</p>
+
+<p>Scrieți definiţia completă a subprogramului.</p>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595358489&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2798%2Fechilibrat&amp;flash=0&amp;wgl=1&amp;dt=1595358489620&amp;bpp=11&amp;bdt=221&amp;idt=175&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=6461694454187&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595358490&amp;ga_hid=620542017&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=883&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=3848392756391604&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2144%2Fdiofantic&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=W5zHjaaQmK&amp;p=https%3A//www.pbinfo.ro&amp;dtd=181" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CKH7zcCF3-oCFRDPuwgdVvsJwA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p>Dacă <code>n=25163912</code>, subprogramul returnează valoarea <code>1</code>, iar dacă <code>n=11211</code>, subprogramul returnează valoarea <code>0</code>.</p>
+
+<h1>Important</h1>
+
+<p>Soluția propusă va conține definiția subprogramului cerut. Prezența în soluție a altor instrucțiuni poate duce erori de compilare sau de execuție care vor avea ca efect depunctarea soluției.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">bool echilibrat(int n)
+{
+    int sp = 0 , si = 0;
+    int cnt = 0;
+    while(n)
+    {
+        if(cnt%2==0)
+            sp+=n%10;
+        else
+            si+=n%10;
+        n/=10;
+        cnt++;
+    }
+    if(sp%2==0 &amp;&amp; si%2==1)
+        return 1;
+    return 0;
+}</pre>

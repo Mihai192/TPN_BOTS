@@ -1,0 +1,294 @@
+<p>Ben are un teren pe care se află o pădure cu arbori seculari. Acolo vrea să-şi construiască o cabană, însă el fiind ecologist nu vrea să taie niciun arbore, ci vrea să găsească cea mai mare suprafaţă dreptunghiulară fără arbori. El caută o suprafaţă dreptunghiulară străjuită doar în colţuri de arbori şi cu laturile paralele cu axele de coordonate. Ben cunoaşte coordonatele tuturor arborilor din pădure şi vă roagă să-l ajutaţi să găsească aria dreptunghiului cu suprafaţă maximă care are arbori doar în cele patru colțuri. </p>
+
+<p><img alt="" height="390" src="/resurse/9dc152/p-1100/cabana1.png" width="622"></p>
+
+<h1>Cerința</h1>
+
+<p>Cunoscând  numărul arborilor din pădure şi coordonatele acestora, se cere să se determine aria dreptunghiului de suprafaţă maximă cu copaci doar în cele <code>4</code> colţuri, unde Ben intenţionează să-şi construiască cabana.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>cabana.in</code> conține pe prima linie un număr natural <code>n</code>, reprezentând numărul de arbori din pădure. Pe fiecare dintre următoarele <code>n</code> linii se află două numere întregi, separate printr-un spațiu, ce reprezintă abscisa și ordonata unui arbore. </p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>cabana.out</code> va conține pe prima linie pe prima linie numărul natural <code>a</code>, reprezentând aria dreptunghiului de suprafață maximă.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li>Pentru 10% din teste: <code>1 ≤ n ≤ 10</code>, <code>-10^3 ≤ x ≤ 10^3</code>, <code>-10^3 ≤ y ≤ 10^3</code></li>
+	<li>Pentru 30% din teste: <code>1 ≤ n ≤ 500</code>, <code>-10^3 ≤ x ≤ 10^3</code>, <code>-10^3 ≤ y ≤ 10^3</code></li>
+	<li>Pentru 50% din teste: <code>1 ≤ n ≤ 500</code>, <code>-10^6 ≤ x ≤ 10^6</code>, <code>-10^6 ≤ y ≤ 10^6</code></li>
+	<li>Pentru 70% din teste: <code>1 ≤ n ≤ 3000</code>, <code>-10^9 ≤ x ≤ 10^9</code>, <code>-10^9 ≤ y ≤ 10^9</code></li>
+	<li>Pentru 100% din teste: <code>1 ≤ n ≤ 50000</code>, <code>-10^9 ≤ x ≤ 10^9</code>, <code>-10^9 ≤ y ≤ 10^9</code></li>
+	<li>Nu există doi arbori așezați pe aceeași poziție.</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595353331&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1193%2Fcabana&amp;flash=0&amp;wgl=1&amp;dt=1595353331424&amp;bpp=12&amp;bdt=280&amp;idt=162&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=2433377596725&amp;frm=20&amp;pv=1&amp;ga_vid=1744050990.1595352838&amp;ga_sid=1595353331&amp;ga_hid=50558520&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=814&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1748&amp;biw=1200&amp;bih=647&amp;scr_x=0&amp;scr_y=0&amp;eid=21065725&amp;oid=3&amp;pvsid=4037955010053669&amp;pem=168&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1240%2Fab3&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C770%2C1200%2C647&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=XtnqaYFGw4&amp;p=https%3A//www.pbinfo.ro&amp;dtd=170" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CJargKXy3uoCFUvwsgodumIA9g"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>cabana.in</code></p>
+
+<pre contenteditable="true" editable="true">22
+6 25
+25 22
+15 5
+23 23
+6 7
+11 16
+11 20
+10 22
+6 16
+12 6
+7 19
+10 19
+10 14
+7 14
+7 7
+18 14
+18 7
+10 7
+19 19
+29 19
+29 4
+19 4</pre>
+
+<p><code>cabana.out</code></p>
+
+<pre contenteditable="true" editable="true">150</pre>
+
+<h1>Explicație</h1>
+
+<p>Coordonatele dreptunghiului de arie maximă cu laturile paralele cu axele de coordonate şi care nu conţine arbori decât în colţuri sunt:</p>
+
+<p><code>19 19</code><br>
+<code>29 19</code><br>
+<code>29 4</code><br>
+<code>19 4</code></p>
+
+<p>deci aria maximă este <code>150</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+
+using namespace std;
+
+ifstream fin ("cabana.in");
+ofstream fout("cabana.out");
+
+#define maxn 150010
+#define inf 1000000001
+
+struct punct
+{
+    int x,y,i;
+}v[maxn], v1[maxn], v2[maxn];
+
+bool cmp1 (punct a, punct b)
+{
+    if (a.x == b.x)
+        return a.y > b.y;
+    return a.x < b.x;
+}
+
+bool cmp2 (punct a, punct b)
+{
+    if (a.y == b.y)
+        return a.x < b.x;
+    return a.y > b.y;
+}
+
+int bit[maxn], whichL[maxn], whichC[maxn], posL[maxn], posC[maxn], pointer[maxn];
+int sq, p, nr1, nr2, t, n;
+vector<int> C[maxn], L[maxn];
+
+void create_structure()
+{
+    sq = sqrt(nr1);
+
+    v[0].y = -inf;
+    int maxpoint = 0;
+    t = 0;
+
+    for (int i = 1; i <= nr1; ++i)
+    {
+        if (v[C[i][0]].y > v[maxpoint].y)
+            maxpoint = C[i][0];
+
+        if (i % sq == 0)
+        {
+            ++t;
+            bit[t] = maxpoint;
+            maxpoint = 0;
+        }
+    }
+}
+
+void update (int pos)
+{
+    int whbit = (pos-1)/sq+1;
+
+    if (whbit > t)
+        return;
+
+    int maxpoint = 0;
+
+    for (int i = (whbit-1)*sq + 1; i <= whbit*sq; ++i)
+    {
+        if (v[C[i][pointer[i]]].y > v[maxpoint].y)
+            maxpoint = C[i][pointer[i]];
+    }
+
+    bit[whbit] = maxpoint;
+}
+
+int query (int left, int right)
+{
+    int maxpoint = 0;
+
+    if (right - left + 1 <= sq)
+    {
+        for (int i = left; i <= right; ++i)
+        {
+            if (v[C[i][pointer[i]]].y > v[maxpoint].y)
+            {
+                maxpoint = C[i][pointer[i]];
+            }
+        }
+
+        p = whichC[maxpoint];
+        return v[maxpoint].y;
+    }
+
+    int whleft = (left-1)/sq+1;
+    int whright = (right-1)/sq+1;
+
+    for (int i = whleft+1; i <= whright-1; ++i)
+    {
+        if (v[bit[i]].y > v[maxpoint].y)
+            maxpoint = bit[i];
+    }
+
+    for (int i = left; i <= whleft*sq; ++i)
+    {
+        if (v[C[i][pointer[i]]].y > v[maxpoint].y)
+        {
+            maxpoint = C[i][pointer[i]];
+        }
+    }
+
+    for (int i = (whright-1)*sq +1; i <= right; ++i)
+    {
+        if (v[C[i][pointer[i]]].y > v[maxpoint].y)
+        {
+            maxpoint = C[i][pointer[i]];
+        }
+    }
+
+    p = whichC[maxpoint];
+    return v[maxpoint].y;
+}
+
+int main()
+{
+    fin >> n;
+
+    for (int i = 1; i <= n; ++i)
+    {
+        fin >> v[i].x >> v[i].y;
+        v1[i].x = v[i].x;
+        v1[i].y = v[i].y;
+        v2[i].x = v[i].x;
+        v2[i].y = v[i].y;
+        v1[i].i = i;
+        v2[i].i = i;
+    }
+
+    sort(v1+1, v1+n+1, cmp1);
+    sort(v2+1, v2+n+1, cmp2);
+
+    v1[0].x = -inf;
+
+    for (int i=1 ; i <= n; ++i)
+    {
+        if (v1[i].x != v1[i-1].x)
+        {
+            ++nr1;
+        }
+        C[nr1].push_back(v1[i].i);
+        whichC[v1[i].i] = nr1;
+        posC[v1[i].i] = C[nr1].size()-1;
+    }
+
+    v2[0].y = inf;
+
+    for (int i =1 ; i <= n; ++i)
+    {
+        if (v2[i].y != v2[i-1].y)
+        {
+            ++nr2;
+        }
+
+        L[nr2].push_back(v2[i].i);
+        whichL[v2[i].i] = nr2;
+        posL[v2[i].i] = L[nr2].size()-1;
+    }
+
+    for (int i = 1; i <= nr1; ++i)
+    {
+        pointer[i] = 0;
+        C[i].push_back(0);
+    }
+
+    create_structure();
+    long long answer = 0;
+
+    int cnt = 0;
+
+    while (query(1,nr1) != -inf)
+    {
+        ++cnt;
+        punct LU = v[C[p][pointer[p]]];
+        int whcol = p;
+        int poscol = pointer[p];
+        int whline = whichL[C[p][pointer[p]]];
+        int posline = posL[C[p][pointer[p]]];
+
+        if (posline + 1 < L[whline].size() &amp;&amp; poscol + 1 < C[whcol].size()-1)
+        {
+            int rightp = L[whline][posline+1];
+            int downp = C[whcol][poscol+1];
+
+            punct RU = v[rightp];
+            punct LD = v[downp];
+
+            int newcol = whichC[rightp];
+            int posnewcol = posC[rightp];
+            int newline = whichL[downp];
+            int posnewline = posL[downp];
+
+            if (posnewcol + 1 < C[newcol].size()-1 &amp;&amp; posnewline + 1 < L[newline].size() &amp;&amp; C[newcol][posnewcol+1] == L[newline][posnewline+1])
+            {
+                punct RD = v[C[newcol][posnewcol+1]];
+
+                int rez = query(whcol+1, newcol-1);
+
+                if (rez < RD.y)
+                {
+                    answer = max(answer, 1LL*(RD.x - LD.x)*(RU.y - RD.y));
+                }
+            }
+        }
+
+        ++pointer[whcol];
+        update(whcol);
+    }
+
+    fout << answer;
+}</pre>

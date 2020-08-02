@@ -1,0 +1,99 @@
+<p>O firmă de construcții imobiliare a achiziționat recent un teren dreptunghiular de forma unei fâșii de dimensiune <code>1 × N</code>, fiind apoi împărțit în parcele de dimensiune <code>1 x 1</code>. Pe fiecare dintre cele <code>N</code> parcele de dimensiune <code>1 × 1</code> firma poate construi câte o casă, dacă există clienți interesați. Terenul este amplasat pe una dintre cele șapte coline ale unui oraș vestit. Astfel, dacă numerotăm parcelele cu numere consecutive de la <code>1</code> la <code>N</code>, altitudinile asociate acestor parcele vor fi în ordine strict crescătoare până la o anumită poziție, unde se atinge altitudinea maximă a acestui teren, iar pentru pozițiile următoare altitudinile sunt în ordine strict descrescătoare, fiind de partea cealaltă a vârfului colinei. Mai precis, dacă notăm în ordine cu <code>h</code><sub><code>1</code></sub>, <code>h</code><sub><code>2</code></sub>, …, <code>h</code><sub><code>N</code></sub> altitudinile parcelelor, există un indice <code>vf</code>, <code>1 ≤ vf ≤ N</code>, astfel încât <code>h</code><sub><code>1</code></sub> <code>&lt; h</code><sub><code>2</code></sub> <code>&lt;... &lt; h</code><sub><code>vf-1</code></sub> <code>&lt; h</code><sub><code>vf</code></sub> <code>&gt; h</code><sub><code>vf+1</code></sub> <code>&gt; ... &gt; h</code><sub><code>N</code></sub>.<br>
+Clienții au înregistrat deja cereri de construcție pentru <code>M</code> case. Fiecare dintre aceste cereri specifică însă o restricție mai ciudată, și anume faptul că doresc ca parcela de construcție să se afle exact la altitudinea <code>q</code><sub><code>j</code></sub> (<code>1 ≤ j ≤ M</code>).</p>
+
+<h1>Cerința</h1>
+
+<p>Scrieți un program care determină pentru fiecare cerere <code>j</code> (<code>1 ≤ j ≤ M</code>) dacă firma poate îndeplini restricția respectivă, mai exact dacă există măcar o parcelă <code>i</code> (<code>1 ≤ i ≤ N</code>) pentru care <code>h</code><sub><code>i</code></sub> <code>= q</code><sub><code>j</code></sub>.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>colina.in</code> conține pe prima linie două numere naturale <code>N</code> şi <code>M</code> ce reprezintă numărul de parcele şi respectiv numărul de cereri înregistrate. Pe a doua linie se găsesc <code>N</code> numere naturale <code>h</code><sub><code>1</code></sub>, <code>h</code><sub><code>2</code></sub>, …, <code>h</code><sub><code>N</code></sub>, reprezentând altitudinile parcelelor. Pe ultima linie se găsesc <code>M</code> numere naturale <code>q</code><sub><code>1</code></sub>, <code>q</code><sub><code>2</code></sub>, …, <code>q</code><sub><code>M</code></sub>, reprezentând altitudinile din cererile clienților. Numerele aflate pe aceeași linie sunt separate prin spații.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>colina.out</code> va conține <code>M</code> linii. Pe linia <code>j</code> (<code>1 ≤ j ≤ M</code>) va fi scris mesajul <code>NU</code>, dacă nu este posibilă construirea unei case la altitudinea <code>q</code><sub><code>j</code></sub>. În caz contrar, pe linia <code>j</code> va fi scris mesajul <code>DA</code>, urmat de un spațiu, apoi de indicii <code>i</code> pentru care <code>h</code><sub><code>i</code></sub> <code>= q</code><sub><code>j</code></sub>, separați de asemenea prin câte spațiu și scriși în ordine crescătoare.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ N, M ≤ 100.000</code></li>
+	<li><code>0 &lt; h</code><sub><code>i</code></sub>, <code>q</code><sub><code>j</code></sub> <code>&lt; 2</code><sup><code>31</code></sup> pentru orice <code>1 ≤ i ≤ N</code> și <code>1 ≤ j ≤ M</code>.</li>
+	<li>Valorile <code>q</code><sub><code>j</code></sub> sunt distincte (nu s-au acceptat cereri identice).</li>
+	<li>Pentru teste în valoare de <code>20</code> puncte:  <code>N × M ≤ 100.000</code></li>
+	<li>Pentru teste în valoare de <code>40</code> puncte:  <code>hmax ≤ 100.000</code> unde <code>hmax</code> este altitudinea maximă a parcelelor.</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595361674&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3219%2Fcolina&amp;flash=0&amp;wgl=1&amp;dt=1595361673863&amp;bpp=23&amp;bdt=198&amp;idt=136&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=6786241392859&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595361674&amp;ga_hid=694836646&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1546&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=2367106291282099&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3401%2Fspp&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=JVRoOcgXVC&amp;p=https%3A//www.pbinfo.ro&amp;dtd=141" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CJCt966R3-oCFevIuwgdavsOpA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>colina.in</code></p>
+
+<pre contenteditable="true" editable="true">6 5
+1 5 9 7 2 1
+5 6 1 9 4</pre>
+
+<p><code>colina.out</code></p>
+
+<pre contenteditable="true" editable="true">DA 2
+NU
+DA 1 6
+DA 3
+NU</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <algorithm>
+using namespace std;
+
+ifstream cin("colina.in");
+ofstream cout("colina.out");
+
+int n, m;
+
+struct bla{
+    int val, poz;
+}a[100001];
+
+bool comp(bla a, bla b){
+    if(a.val != b.val)
+        return a.val < b.val;
+    return a.poz < b.poz;
+}
+
+void CB(int x){
+    int st = 1, dr = n;
+    while(st <= dr){
+        int mij = (st + dr) / 2;
+        if(a[mij].val > x)
+            dr = mij-1;
+        else if(a[mij].val < x)
+            st = mij+1;
+        else{
+            int i = mij;
+            while(a[i].val == x)
+                i--;
+            i++;
+            cout << "DA ";
+            while(a[i].val == x)
+                cout << a[i].poz << ' ', i++;
+            cout << "\n";
+            return;
+        }
+    }
+    cout << "NU" << "\n";
+}
+
+int main(){
+    cin >> n >> m;
+    for(int i = 1; i <= n; ++i)
+        cin >> a[i].val, a[i].poz = i;
+    sort(a + 1, a + n + 1, comp);
+    int x;
+    for(int i = 1; i <= m; ++i){
+        cin >> x;
+        CB(x);
+    }
+    return 0;
+}</pre>

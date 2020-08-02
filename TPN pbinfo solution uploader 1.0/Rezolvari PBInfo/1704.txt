@@ -1,0 +1,116 @@
+<p>Un grup de <code>N</code> cercetași, numerotați de la <code>1</code> la <code>N</code>, se află în tabără la munte. Pentru ei, organizatorii au pregătit <code>N</code> scaune, de asemenea numerotate de la <code>1</code> la <code>N</code>, așezate în cerc, astfel încât fiecare cercetaș să aibă locul său (locul cercetașului <code>i</code> este pe scaunul <code>i</code>, <code>1≤i≤N</code>).</p>
+
+<p>Pentru desfășurarea următoarei activități, organizatorii au decis ca <code>M</code> dintre cercetași să prezinte diferite exerciții. Numărul <code>M</code> este egal cu cea mai mare putere a lui <code>2</code> cu proprietatea că numărul <code>N</code> de cercetași aflați în tabără se poate scrie ca sumă de <code>M</code> numere consecutive în mulțimea numerelor impare. Cei <code>M</code> cercetași care vor prezenta sunt cei numerotați cu numerele impare consecutive a căror sumă este <code>N</code>. De exemplu, dacă <code>N=8</code>, atunci <code>M</code> este <code>2</code>, iar exercițiile vor fi prezentate de cercetașii numerotați cu <code>3</code>,  respectiv cu <code>5</code>.</p>
+
+<p>Din joacă, micii cercetași s-au așezat pe scaune la întâmplare. Organizatorii au nevoie pentru a desfășura activitatea ca cel puțin cei <code>M</code> cercetași care vor prezenta exercițiile să se afle pe locurile lor. Pentru aceasta, o parte dintre cercetași trebuie să-și schimbe locul și organizatorii invită micii cercetași să participe la jocul numit  ”Mutare”. Acest joc se desfășoară astfel: unul dintre cercetașii care nu se află pe locul lor se ridică și merge în interiorul cercului. Cercetașul numerotat cu numărul scaunului rămas liber își va ocupa locul, iar locul ocupat de el anterior rămâne astfel liber. Jocul continuă până când scaunul cercetașului aflat în interiorul cercului se eliberează și el se așază pe locul său.</p>
+
+<h1>Cerința</h1>
+
+<p>Fiind dat numărul <code>N</code>, precum și ordinea în care s-au așezat cercetașii pe scaunele numerotate de la <code>1</code> la <code>N</code>, scrieți un program care să determine:</p>
+
+<ul>
+	<li>numărul <code>M</code> de cercetaşi care vor prezenta exerciţii în cadrul activităţii;</li>
+	<li>numerele de identificare ale celor <code>M</code> cercetaşi care vor prezenta exerciţiile, în ordine strict crescătoare;</li>
+	<li>numărul minim de cercetași care își vor schimba locul, astfel încât toţi cei <code>M</code> cercetași care vor prezenta exercițiile să se afle pe locurile lor.</li>
+</ul>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>cercetasi.in</code> conține pe prima linie numărul natural <code>N</code> cu semnificația din enunț. Pe a doua linie, se află <code>N</code> numere naturale distincte din mulțimea <code>{1, 2, ..., N}</code>, separate prin spaţii, reprezentând ordinea în care s-au așezat cei <code>N</code> cercetași pe scaunele numerotate de la <code>1</code> la <code>N</code>.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>cercetasi.out</code> va conține <code>3</code> linii. Pe prima linie se va scrie un singur număr natural repre­zentând numărul <code>M</code> de cercetași care vor prezenta exercițiile. Pe a doua linie se vor scrie <code>M</code> numere naturale, în ordine strict crescătoare, separate prin câte un spaţiu, reprezentând cercetașii care vor prezenta exercițiile. Pe a treia linie se va scrie un număr natural, reprezentând numărul minim de cercetași care își vor schimba locul.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>0 &lt; N ≤ 10000</code> şi <code>N∉ {x ∈ ℕ | x=4*k+2, k∈ ℕ}</code></li>
+	<li>Un joc ”Mutare” odată  început, se va încheia doar atunci când cercetașul din interiorul cercului se așază pe locul său.</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595360343&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1704%2Fcercetasi&amp;flash=0&amp;wgl=1&amp;dt=1595360343194&amp;bpp=26&amp;bdt=223&amp;idt=200&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=3517363965&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595360343&amp;ga_hid=1351767226&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1576&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066715&amp;oid=3&amp;pvsid=2670437587689587&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2141%2Fexp&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=mkiEKYi8vJ&amp;p=https%3A//www.pbinfo.ro&amp;dtd=222" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CLnMvLSM3-oCFY7PuwgdjKsHow"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>cercetasi.in</code></p>
+
+<pre contenteditable="true" editable="true">8 
+2 3 4 1 5 8 6 7</pre>
+
+<p><code>cercetasi.out</code></p>
+
+<pre contenteditable="true" editable="true">2
+3 5
+4</pre>
+
+<h3>Explicație</h3>
+
+<p>Dacă <code>N=8</code>, atunci <code>M</code> este <code>2</code>, iar exercițiile vor fi prezentate de cercetașii numerotați cu <code>3</code>, respectiv cu <code>5</code>.</p>
+
+<p>Cercetașul cu numărul <code>3</code> nu se află pe locul său și va trece în interiorul cercului, astfel scaunul cu numărul <code>2</code> rămâne liber. Cercetașul cu numărul <code>2</code> își ocupă locul și rămâne liber scaunul cu numărul <code>1</code>. Cercetașul cu numărul <code>1</code> își ocupă locul și rămâne liber scaunul cu numărul <code>4</code>. Cercetașul cu numărul <code>4</code> își ocupă locul și rămâne liber scaunul cu numărul <code>3</code> și astfel cercetașul aflat în interiorul cercului se poate așeza pe locul său. In cadrul acestui joc ”Mutare” și-au schimbat locul 4 cercetași. Cum cercetașul cu numărul <code>5</code> se află deja pe locul său, numărul de cercetași care își schimbă locul rămâne <code>4</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream fin ("cercetasi.in");
+ofstream fout ("cercetasi.out");
+
+#define MAX 10001
+
+int n, a[MAX], m, k, kcor, c[MAX], nr, beg, en;
+
+void finish(int i, int sc)
+{
+    if (i == sc)
+    {
+        a[sc] = sc;
+        c[sc] = sc;
+        nr++;
+        return;
+    }
+    nr ++;
+
+    int aux = c[sc];
+    a[sc] = sc;
+    c[sc] = sc;
+
+    a[aux] = 0;
+    finish(i, aux);
+
+}
+
+int main()
+{
+    fin >> n;
+    for (int i = 1; i <= n; i++)
+    {
+        fin >> a[i];
+        c[a[i]] = i;
+    }
+    for (int maux = 1; maux * maux <= n; maux *= 2)
+    {
+        k = n - maux * maux;
+        if (k % (2 * maux) == 0)kcor = k / (2 * maux), m = maux;
+    }
+    beg = 2 * kcor + 1;
+    en = 2 * (kcor + m - 1) + 1;
+    fout << m << '\n';
+    for (int i = beg; i <= en; i += 2)fout << i << ' ';
+    fout << '\n';
+
+    for (int i = beg; i <= en; i+=2)
+    {
+        if (a[i] != i || c[i] != i)
+        {
+            int aux = c[i];
+            c[i] = 0;
+            a[aux] = 0;
+            finish(i, aux);
+        }
+    }
+    fout << nr;
+    return 0;
+}</pre>
