@@ -80,30 +80,32 @@ class Pbinfo_Bot:
 		messages_on_this_problem = 0
 
 		last_page_index += step
-		for index in range(first_page_index, last_page_index, step):
-			page_link = problem_link + '?start=' + str(index)
+
+		while True:
+			for index in range(first_page_index, last_page_index, step):
+				page_link = problem_link + '?start=' + str(index)
+				
+				self.driver.get(page_link)
+				time.sleep(8)
+
+				Users = self.driver.find_elements_by_tag_name('a')
+				Users = [user.get_attribute('href') for user in Users if re.search('profil', str(user.get_attribute('href')))]
 			
-			self.driver.get(page_link)
-			time.sleep(8)
+				for user in Users:
+					if user[29:] not in users:
+						try:
+							self.sent_user_message(user[29:])
+							print('[' + time.ctime() + ']: ' + 'Am trimis mesaj user-ului ' + user[29:])
+							messages_on_this_problem += 1
+						except:
+							print('[' + time.ctime() + ']: ' + 'Nu am putut trimite mesaj user-ului ' + user[29:] + '(probabil are contul pe privat...)')
+						                                                                                                                                        
+						users.append(user[29:])
+						users_file.write(user[29:] + '\n')
+						time.sleep(8)
 
-			Users = self.driver.find_elements_by_tag_name('a')
-			Users = [user.get_attribute('href') for user in Users if re.search('profil', str(user.get_attribute('href')))]
+			print('[' + time.ctime() + ']: ' + 'Am trimis ' + str(messages_on_this_problem) + ' de mesaje la problema cu id-ul ' + problem_details)
 		
-			for user in Users:
-				if user[29:] not in users:
-					try:
-						self.sent_user_message(user[29:])
-						print('[' + time.ctime() + ']: ' + 'Am trimis mesaj user-ului ' + user[29:])
-						messages_on_this_problem += 1
-					except:
-						print('[' + time.ctime() + ']: ' + 'Nu am putut trimite mesaj user-ului ' + user[29:] + '(probabil are contul pe privat...)')
-					                                                                                                                                        
-					users.append(user[29:])
-					users_file.write(user[29:] + '\n')
-					time.sleep(8)
-
-		print('[' + time.ctime() + ']: ' + 'Am trimis ' + str(messages_on_this_problem) + ' de mesaje la problema cu id-ul ' + problem_details)
-
 									
 	def start_sending_messages(self):
 		problems_list = 'https://www.pbinfo.ro/?pagina=probleme-lista&clasa=-1&start='
