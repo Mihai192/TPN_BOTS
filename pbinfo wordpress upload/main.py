@@ -132,6 +132,7 @@ class TPN_post_problems_bot:
 		except StaleElementReferenceException:
 			thumbnail = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.XPATH, f'//*[@aria-label="#{problem_id}"]')))
 
+		
 		thumbnail.click()
 		self.click_on_element_with_xpath('//*[@id="__wp-uploader-id-0"]/div[4]/div/div[2]/button')
 		self.driver.execute_script('window.scrollTo(0, 0)')
