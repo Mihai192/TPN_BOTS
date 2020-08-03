@@ -1,0 +1,99 @@
+<h1>Cerința</h1>
+
+<p>Se dau două numere naturale. Dacă cele două numere au acelaşi număr de cifre, să se afle pe câte poziţii aceste cifre coincid.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură cele două numere naturale, separate prin spații.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Programul va afișa pe ecran <code>NU</code> dacă cele două numere nu au acelaşi număr de cifre, respectiv <code>DA</code> dacă au acelaşi număr de cifre. În caz afirmativ se va afişa pe rândul următor numărul poziţiilor în care cifrele celor două numere coincid.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li>cele două numere citite vor fi mai mici decât <code>2.000.000.000</code></li>
+</ul>
+
+<h1>Exemplul 1:</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">2345 17825</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">NU</pre>
+
+<h3>Explicație</h3>
+
+<p>Cele două numere nu au acelaşi număr de cifre.</p>
+
+<h1>Exemplul 2:</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">102789 307786</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">DA
+3</pre>
+
+<h3>Explicație</h3>
+
+<p>Cele două numere au acelaşi număr de cifre, iar cifrele coincid pe trei poziţii: zeci, sute şi zeci de mii.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+using namespace std;
+
+int main ()
+{
+    int n,m;
+    cin >> n >> m;
+    int p,k;
+    p=n;
+    k=m;
+    int a;
+    int cnt1=0;
+    int cnt2=0;
+    int cnt=0;
+    if (p==0)
+    cnt=1;
+    while (n)
+    {
+        n/=10;
+        cnt1++;
+    }
+    while (m)
+    {
+        m/=10;
+        cnt2++;
+    }
+    if (cnt1==cnt2)
+    {
+        cout << "DA";
+        cout << endl;
+        a=1;
+    }
+    else 
+    {
+        cout << "NU";
+        a=0;
+    }
+    if (a==1)
+    {
+        while (p)
+        {
+            if (p%10 == k%10)
+            {
+                cnt++;    
+            }
+            p/=10;
+            k/=10;
+        }
+        cout << cnt;
+    }
+    
+    return 0;    
+}</pre>

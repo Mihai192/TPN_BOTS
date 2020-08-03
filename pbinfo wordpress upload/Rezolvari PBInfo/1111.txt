@@ -1,0 +1,134 @@
+<p>Olimpia D’Info a găsit o placă gravată ce conţine mai multe cuvinte scrise cu semne grafice necunoscute, fiecare cuvânt fiind format din exact <code>5</code> semne grafice. Studiind cu atenție cuvintele, a dedus că în scrierea acestora sunt utilizate <code>12</code> semne grafice distincte şi a asociat câte o literă mică din alfabetul englez fiecărui semn. După asociere, a stabilit pentru fiecare semn o complexitate, scriind literele în ordinea crescătoare a complexităților pe care le-a stabilit anterior. Olimpia consideră că această ”complexitate” este cel mai potrivit criteriu de ordonare lexicografică.</p>
+
+<h1>Cerinţe</h1>
+
+<p>Cunoscând ordinea semnelor și cuvintele de pe placă determinaţi:<br>
+a) Numărul de cuvinte distincte existente pe placă.<br>
+b) Şirul de cuvinte ordonat lexicografic, conform criteriului formulat de Olimpia.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>zimeria.in</code> conține:</p>
+
+<ul>
+	<li>pe prima linie un numărul natural <code>p</code> din <code>{1,2}</code>, reprezentând varianta cerinţei de rezolvare;</li>
+	<li>pe a doua linie un număr natural <code>n</code> reprezentând numărul de cuvinte de pe placă;</li>
+	<li>pe a treia linie <code>12</code> caractere, litere mici ale alfabetului englez, care reprezintă semnele codificate, în ordinea lexicografică a semnelor;</li>
+	<li>pe fiecare din următoarele <code>n</code> linii câte un cuvânt.</li>
+</ul>
+
+<h1>Date de ieșire</h1>
+
+<p>Dacă valoarea lui <code>p</code> este <code>1</code>, atunci se va rezolva numai punctul a) din cerinţă. În acest caz, fişierul de ieşire <code>zimeria.out</code> va conţine pe prima linie numărul de cuvinte distincte de pe placă.</p>
+
+<p>Dacă valoarea lui <code>p</code> este <code>2</code>, atunci se va rezolva numai punctul b) din cerinţă. În acest caz, fişierul de ieşire <code>zimeria.out</code> va conţine <code>n</code> linii, pe fiecare linie câte un cuvânt în ordine lexicografică, conform complexităţii stabilite de către Olimpia.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>n &lt; 400.000</code>;</li>
+	<li>30% din teste vor avea pe prima linie valoarea <code>1</code>, iar restul de 70% din teste vor avea pe prima linie valoarea <code>2</code>.</li>
+</ul>
+
+<h1>Exemplul 1</h1>
+
+<p><code>zimeria.in</code></p>
+
+<pre contenteditable="true" editable="true">1
+5
+qwertyuiopas
+reeet
+wyuty
+reeet
+oiopp
+oiopp</pre>
+
+<p><code>zimeria.out</code></p>
+
+<pre contenteditable="true" editable="true">3</pre>
+
+<h1>Explicație</h1>
+
+<p>Placa conţine <code>3</code> cuvinte distincte.</p>
+
+
+<h1>Exemplul 2</h1>
+
+<p><code>zimeria.in</code></p>
+
+<pre contenteditable="true" editable="true">2
+5
+qwertyuiopas
+reeet
+wyuty
+reeet
+oiopp
+oiopp</pre>
+
+<p><code>zimeria.out</code></p>
+
+<pre contenteditable="true" editable="true">wyuty
+reeet
+reeet
+oiopp
+oiopp</pre>
+
+<h1>Explicație</h1>
+
+<p>Placa conţine <code>3</code> cuvinte distincte.</p>
+
+<p>Ordonăm cuvintele și obținem <code>wyuty</code>, <code>reeet</code>, <code>reeet</code>, <code>oiopp</code>, <code>oiopp</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin("zimeria.in");
+ofstream cout("zimeria.out");
+
+int f[13][13][13][13][13];
+char s[13];
+
+int poz(char ch)
+{
+    int i = 0;
+    while(s[i]!='\0')
+    {
+        if(s[i]==ch)
+            return i;
+        i++;
+    }
+}
+
+int main()
+{
+    int tr , q;
+    cin >> tr >> q;
+    cin >> s;
+    char a , b , c , d , e;
+    while(cin >> a)
+    {
+        cin >> b >> c >> d >> e;
+        f[poz(a)][poz(b)][poz(c)][poz(d)][poz(e)]++;
+    }
+    if(tr == 1)
+    {
+        int cnt = 0;
+        for(int i = 0 ; i <= 11 ; ++i)
+        for(int j = 0 ; j <= 11 ; ++j)
+            for(int k = 0 ; k <= 11 ; ++k)
+                for(int t = 0 ; t <= 11 ; ++t)
+                    for(int w = 0 ; w <= 11 ; ++w)
+                    if(f[i][j][k][t][w])
+                        cnt++;
+        cout << cnt;
+        return 0;
+    }
+    for(int i = 0 ; i <= 11 ; ++i)
+        for(int j = 0 ; j <= 11 ; ++j)
+            for(int k = 0 ; k <= 11 ; ++k)
+                for(int t = 0 ; t <= 11 ; ++t)
+                    for(int w = 0 ; w <= 11 ; ++w)
+                    if(f[i][j][k][t][w])
+                        for(int g = 0 ; g < f[i][j][k][t][w] ; ++g)
+                            cout << s[i] << s[j] << s[k] << s[t] << s[w] << '\n';
+    return 0;
+}</pre>

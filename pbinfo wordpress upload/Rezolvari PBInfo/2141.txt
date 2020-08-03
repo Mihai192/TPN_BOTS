@@ -1,0 +1,83 @@
+<p>Se dă un şir de <code>n</code> numere naturale nenule <code>x1</code>, <code>x2</code>, …, <code>xn</code> şi un număr natural <code>m</code>.</p>
+
+<h1>Cerința</h1>
+
+<p>Să se verifice dacă valoarea expresiei <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mroot><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&amp;#x22C5;</mo><msub><mi>x</mi><mn>2</mn></msub><mo>&amp;#x22C5;</mo><mo>&amp;#x2026;</mo><mo>&amp;#x22C5;</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><mi>m</mi></mroot></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 8.715em; display: inline-block;"><span style="display: inline-block; position: relative; width: 7.254em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.41em, 1007.25em, 2.708em, -999.997em); top: -2.216em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mroot" id="MathJax-Span-3"><span style="display: inline-block; position: relative; width: 7.254em; height: 0px;"><span style="position: absolute; clip: rect(3.412em, 1006.39em, 4.332em, -999.997em); top: -4.002em; left: 0.814em;"><span class="mrow" id="MathJax-Span-4"><span class="msubsup" id="MathJax-Span-5"><span style="display: inline-block; position: relative; width: 0.977em; height: 0px;"><span style="position: absolute; clip: rect(3.412em, 1000.54em, 4.169em, -999.997em); top: -4.002em; left: 0em;"><span class="mi" id="MathJax-Span-6" style="font-family: MathJax_Math-italic;">x</span><span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="position: absolute; top: -3.839em; left: 0.598em;"><span class="mn" id="MathJax-Span-7" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 4.007em;"></span></span></span></span><span class="mo" id="MathJax-Span-8" style="font-family: MathJax_Main; padding-left: 0.219em;">⋅</span><span class="msubsup" id="MathJax-Span-9" style="padding-left: 0.219em;"><span style="display: inline-block; position: relative; width: 0.977em; height: 0px;"><span style="position: absolute; clip: rect(3.412em, 1000.54em, 4.169em, -999.997em); top: -4.002em; left: 0em;"><span class="mi" id="MathJax-Span-10" style="font-family: MathJax_Math-italic;">x</span><span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="position: absolute; top: -3.839em; left: 0.598em;"><span class="mn" id="MathJax-Span-11" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.007em;"></span></span></span></span><span class="mo" id="MathJax-Span-12" style="font-family: MathJax_Main; padding-left: 0.219em;">⋅</span><span class="mo" id="MathJax-Span-13" style="font-family: MathJax_Main; padding-left: 0.219em;">…</span><span class="mo" id="MathJax-Span-14" style="font-family: MathJax_Main; padding-left: 0.219em;">⋅</span><span class="msubsup" id="MathJax-Span-15" style="padding-left: 0.219em;"><span style="display: inline-block; position: relative; width: 1.085em; height: 0px;"><span style="position: absolute; clip: rect(3.412em, 1000.54em, 4.169em, -999.997em); top: -4.002em; left: 0em;"><span class="mi" id="MathJax-Span-16" style="font-family: MathJax_Math-italic;">x</span><span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="position: absolute; top: -3.839em; left: 0.598em;"><span class="mi" id="MathJax-Span-17" style="font-size: 70.7%; font-family: MathJax_Math-italic;">n</span><span style="display: inline-block; width: 0px; height: 4.007em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="position: absolute; clip: rect(3.574em, 1006.44em, 3.953em, -999.997em); top: -4.38em; left: 0.814em;"><span style="display: inline-block; position: relative; width: 6.442em; height: 0px;"><span style="position: absolute; font-family: MathJax_Main; top: -4.002em; left: -0.106em;">−<span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="position: absolute; font-family: MathJax_Main; top: -4.002em; left: 5.739em;">−<span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="font-family: MathJax_Main; position: absolute; top: -4.002em; left: 0.436em;">−<span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="font-family: MathJax_Main; position: absolute; top: -4.002em; left: 0.977em;">−<span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="font-family: MathJax_Main; position: absolute; top: -4.002em; left: 1.464em;">−<span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="font-family: MathJax_Main; position: absolute; top: -4.002em; left: 2.005em;">−<span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="font-family: MathJax_Main; position: absolute; top: -4.002em; left: 2.546em;">−<span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="font-family: MathJax_Main; position: absolute; top: -4.002em; left: 3.087em;">−<span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="font-family: MathJax_Main; position: absolute; top: -4.002em; left: 3.628em;">−<span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="font-family: MathJax_Main; position: absolute; top: -4.002em; left: 4.115em;">−<span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="font-family: MathJax_Main; position: absolute; top: -4.002em; left: 4.656em;">−<span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="font-family: MathJax_Main; position: absolute; top: -4.002em; left: 5.198em;">−<span style="display: inline-block; width: 0px; height: 4.007em;"></span></span></span><span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="position: absolute; clip: rect(3.033em, 1000.87em, 4.386em, -999.997em); top: -3.839em; left: 0em;"><span style="font-family: MathJax_Main;">√</span><span style="display: inline-block; width: 0px; height: 4.007em;"></span></span><span style="position: absolute; clip: rect(3.628em, 1000.44em, 4.169em, -999.997em); top: -4.272em; left: 0.111em;"><span class="mi" id="MathJax-Span-18" style="font-size: 50%; font-family: MathJax_Math-italic;">m</span><span style="display: inline-block; width: 0px; height: 4.007em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.221em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.451em; border-left: 0px solid; width: 0px; height: 1.302em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mroot><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>⋅</mo><msub><mi>x</mi><mn>2</mn></msub><mo>⋅</mo><mo>…</mo><mo>⋅</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><mi>m</mi></mroot></math></span></span><script type="math/tex" id="MathJax-Element-1"> \sqrt[m]{ x_1 \cdot x_2 \cdot … \cdot x_n } </script> este un număr natural. În caz afirmativ să se afișeze acest număr descompus în factori primi.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>exp.in</code> conține pe prima linie <code>m</code>, pe linia a doua <code>n</code>, iar pe linia a treia numerele <code>x1</code>, <code>x2</code>, …, <code>xn</code> separate între ele prin câte un spațiu.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>În fișierul de ieșire <code>exp.out</code> se va scrie pe prima linie cifra <code>0</code>, dacă valoarea expresiei nu este un număr natural, respectiv <code>1</code> dacă este un număr natural. Dacă valoarea expresiei este un număr natural pe următoarele linii se vor scrie perechi de forma <code>p e</code> (<code>p</code> este factor prim care apare în descompunere la puterea <code>e&gt;=1</code>). Aceste perechi se vor scrie în ordine crescătoare după primul număr (adică <code>p</code>).</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>0 &lt; n &lt; 5000</code></li>
+	<li><code>0 &lt; xi &lt; 30.001</code>, pentru orice <code>i=1..n</code></li>
+	<li><code>m</code> poate fi una din cifrele <code>2</code>, <code>3</code>, <code>4</code>.</li>
+</ul>
+
+<h1>Exemplul 1:</h1>
+
+<p><code>exp.in</code></p>
+
+<pre contenteditable="true" editable="true">2
+4
+32 81 100 19</pre>
+
+<p><code>exp.out</code></p>
+
+<pre contenteditable="true" editable="true">0</pre>
+
+<h1>Exemplul 2:</h1>
+
+<p><code>exp.in</code></p>
+
+<pre contenteditable="true" editable="true">2
+4
+32 81 100 18</pre>
+
+<p><code>exp.out</code></p>
+
+<pre contenteditable="true" editable="true">1
+2 4
+3 3
+5 1</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+ifstream cin("exp.in");
+ofstream cout("exp.out");
+int f[5001];
+int main()
+{
+    int n , x , rad , ok = 0;
+    cin >> rad;
+    cin >> n;
+    for(int i = 1 ; i <= n ; i++)
+    {
+        cin >> x;
+        int d = 2;
+        while(x > 1)
+        {
+            int p = 0;
+            while(x % d == 0) p++ , x /= d;
+            if(p) f[d] += p;
+            d++;
+            if(d * d > x) d = x;
+        }
+    }
+    for(int  i = 1 ; i <= 5000 ; i++)
+        if(f[i] != 0)
+            if(f[i] % rad != 0) ok = 1;
+    if(ok == 1)cout << 0;
+    else
+    {
+        cout << 1 << '\n';
+        for(int  i = 1 ; i <= 100 ; i++)
+        if(f[i] != 0)
+            cout << i << " " << f[i] / rad << '\n';
+    }
+}</pre>

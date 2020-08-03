@@ -1,0 +1,73 @@
+<h1>Cerința</h1>
+
+<p>Se dau <code>n</code> numere naturale prime. Pentru <code>t</code> perechi de numere naturale <code>s</code> şi <code>d</code> să se afle câte numere naturale din intervalul <code>[s,d]</code> sunt divizibile prin cel puţin unul dintre cele <code>n</code> numere prime. </p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>eratostene8.in</code> conține pe prima linie numerele <code>n</code> şi <code>t</code>, pe a doua linie cele <code>n</code> numere prime, iar pe următoarele <code>t</code> linii câte o pereche de numere <code>s</code> şi <code>d</code>.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>eratostene8.out</code> va conține pe linia <code>i</code> răspunsul la întrebarea <code>i</code>, pentru orice <code>i</code> de la <code>1</code> la <code>t</code>.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 10.000</code></li>
+	<li><code>1 ≤ t ≤ 100.000</code></li>
+	<li><code>1 ≤ s ≤ d ≤ 10.000.000</code></li>
+	<li>numerele prime sunt mai mici sau egale cu <code>1.000.000</code></li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595361239&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3319%2Feratostene8&amp;flash=0&amp;wgl=1&amp;dt=1595361239619&amp;bpp=6&amp;bdt=194&amp;idt=129&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=7345327013112&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595361240&amp;ga_hid=1894147892&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1066&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066358&amp;oid=3&amp;pvsid=2640369639836079&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2576%2Fciurul-lui-eratosthenes&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=vsajbOyK0m&amp;p=https%3A//www.pbinfo.ro&amp;dtd=136" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CPfd79-P3-oCFUXXuwgdT7MCQg"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>eratostene8.in</code></p>
+
+<pre contenteditable="true" editable="true">2 3
+2 3
+1 5
+4 6
+5 20</pre>
+
+<p><code>eratostene8.out</code></p>
+
+<pre contenteditable="true" editable="true">3
+2
+10</pre>
+
+<h3>Explicație</h3>
+
+<p>Numerele prime date sunt <code>2</code> şi <code>3</code>. În intervalul <code>[1,5]</code> sunt 3 numere divizibile cu 2 sau 3, în intervalul <code>[4,6]</code> sunt 2 numere divizibile cu 2 sau 3, iar în intervalul <code>[5,20]</code> sunt 10 numere divizibile cu 2 sau 3.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin("eratostene8.in");
+ofstream cout("eratostene8.out");
+
+int n,t,s,d,E[10000001], P[10001];
+bool F[1000001];
+
+int main(){
+    cin >> n >> t;
+    for(int i = 1; i <= n; ++i)
+        cin >> P[i];
+    for(int i = 1; i <= n; ++i){
+        E[P[i]]=1;
+        if(F[P[i]] == 0){
+            for(int j = 2; j * P[i] <= 10000000; ++j)
+                E[P[i] * j] = 1;
+            F[P[i]] = 1;
+        }
+    }
+    for(int i = 1; i <= 10000000; ++i)
+        E[i] = E[i-1] + E[i];
+    for(int i = 1; i <= t; ++i){
+        cin >> s >> d;
+        cout << E[d] - E[s-1] << '\n';
+    }
+}</pre>

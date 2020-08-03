@@ -1,0 +1,103 @@
+<h1>Cerinţa</h1>
+
+<p>Se dau <code>n</code> numere întregi. Calculaţi cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi <code>n</code> numere întregi, separate prin spaţii.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Programul afișează pe ecran numărul <code>MIN</code>, reprezentând cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1000</code></li>
+	<li>cele <code>n</code> numere citite vor avea cel mult <code>9</code> cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Date de intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+7 6 9 6 8</pre>
+
+<p><strong>Date de ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">6</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <vector>
+#include <queue>
+#include <algorithm>
+using namespace std;
+
+ifstream cin("festivaluri.in");
+ofstream cout("festivaluri.out");
+using VVP = vector <vector <pair<int , int> > >;
+using VI = vector <int>;
+using PI = pair<int , int>;
+VI d;
+VVP G;
+const int Inf = 0x3f3f3f3f;
+int n , m , p , z , r , rez[101] , sum , cnt;
+
+void Dijkstra(int x)
+{
+    d = VI(n + 1, Inf);
+    priority_queue<PI, vector<PI>, greater<PI>> Q;
+    int y , cost , dist;
+    d[x] = 0;
+    Q.push({0 , x});
+    while(!Q.empty())
+    {
+        x = Q.top().second;
+        dist = Q.top().first;
+        Q.pop();
+        if(dist > d[x]) continue;
+        for(auto&amp; p : G[x])
+        {
+            y = p.first;
+            cost = p.second;
+            if(d[y] > d[x] + cost)
+            {
+                d[y] = d[x] + cost;
+                Q.push({d[y] , y});
+            }
+        }
+    }
+}
+
+int main()
+{
+    cin >> n >> m >> p >> z >> r;
+    G = VVP(n + 1);
+    int x , y , w;
+    for(int i = 1 ; i <= m ; i++)
+    {
+        cin >> x >> y >> w;
+        G[x].push_back({y , w});
+    }
+
+    Dijkstra(z);
+    for(int i = 1 ; i <= r ; i++)
+    {
+        cin >> x;
+        rez[x] = d[x];
+    }
+
+    sort(rez + 1 , rez + n + 1);
+    for(int i = 1 ; i <= n ; i++)
+        if(rez[i] > 0)
+        {
+            if(sum + rez[i] < p) sum += rez[i] , cnt++;
+            else break;
+        }
+    cout << cnt;
+}</pre>

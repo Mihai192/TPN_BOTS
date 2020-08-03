@@ -1,0 +1,84 @@
+<h1>Cerința</h1>
+
+<p>Se dă un şir format din <code>n</code> numere naturale . Un număr din şir se numeşte <em>special de ordin <code>k</code></em> dacă suma cifrelor sale este divizibilă cu <code>9</code>, iar cele <code>k</code> numere situate înaintea sa în şir şi cele <code>k</code> numere situate după el în şir sunt prime. Se cere să se afle câte numere <em>speciale de ordin <code>0</code></em> şi câte numere <em>speciale de ordin <code>1</code></em> sunt în şir, precum şi ordinul maxim al unui număr <em>special</em> din şir. </p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>numarspecial.in</code> conține pe prima linie numărul <code>n</code>, iar pe a doua linie <code>n</code> numere naturale separate prin spații.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>numarspecial.out</code> va conține pe prima linie numărul <code>A</code>, reprezentând numărul numerelor <em>speciale de ordin <code>0</code></em> din şir, pe a doua linie numărul <code>B</code>, reprezentând numărul numerelor <em>speciale de ordin <code>1</code></em> din şir, iar pe a treia linie ordinul maxim al unui număr <em>special</em> din şir.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1.000.000</code></li>
+	<li>numerele din şir sunt mai mici decât <code>1.000.000</code></li>
+	<li>dacă un număr este <em>special de ordin <code>k</code></em>, atunci el este şi <em>special de ordin <code>k-1</code>, <code>k-2</code>,…, <code>1</code> , <code>0</code></em></li>
+	<li>prima cerinţă se notează cu <code>40p</code>, a doua cu <code>40p</code> şi a treia cu <code>20p</code></li>
+	<li>pentru a obţine punctaje parţiale trebuie ca în fişierul <code>numarspecial.out</code> să afişaţi trei numere</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595362468&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1926%2Fnumarspecial&amp;flash=0&amp;wgl=1&amp;dt=1595362467830&amp;bpp=16&amp;bdt=223&amp;idt=172&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=2846622634543&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595362468&amp;ga_hid=1755580426&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1194&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066717&amp;oid=3&amp;pvsid=4244852165346983&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2370%2Fna&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=1OBC3PCBMe&amp;p=https%3A//www.pbinfo.ro&amp;dtd=177" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CL-bxamU3-oCFcbxsgodMwoItg"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>numarspecial.in</code></p>
+
+<pre contenteditable="true" editable="true">13
+3 72 5 7 2 2 891 2 13 29 5 27 1</pre>
+
+<p><code>numarspecial.out</code></p>
+
+<pre contenteditable="true" editable="true">3
+2
+4</pre>
+
+<h3>Explicație</h3>
+
+<p>În şir sunt <code>3</code> numere <em>speciale de ordin <code>0</code></em>, şi anume  <code>72</code>, <code>891</code> şi <code>27</code> , două numere <em>speciale de ordin <code>1</code></em>, respectiv <code>72</code> şi <code>891</code>, iar ordinul maxim al unui număr special este <code>4</code>, al numărului <code>891</code> ( are <code>4</code> numere prime înaintea sa şi <code>4</code> după el).</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+ifstream cin("numarspecial.in");
+ofstream cout("numarspecial.out");
+int n , a[1000001] , c1 , c2 , c3 , k , x , y;
+int E[1000001];
+int main()
+{
+    int max=1000000;
+    for(int i = 2 ; i <= max ; i++) E[i] = 1;
+    for(int i = 2 ; i*i <= max ; i++)
+        if(E[i] == 1)
+            for(int j = i*i; j <= max; j += i) E[j]=0;
+    cin >> n;
+    for(int i = 1 ; i <= n ; i++)
+    {
+        cin >> a[i];
+        if(a[i] % 9 == 0) c1++;
+        if(i > 2)
+            if(a[i-1] % 9 == 0 &amp;&amp; E[a[i]] &amp;&amp; E[a[i-2]]) c2++;
+    }
+    cout << c1 << '\n' << c2 << '\n';
+    for(int i = 1 ; i <= n ; i++)
+    {
+        x = i - 1 ;
+        y = i + 1 ;
+        k = 0 ;
+        if(i > 1 &amp;&amp; i < n &amp;&amp; a[i] % 9 == 0)
+        while(E[a[x]] &amp;&amp; E[a[y]])
+        {
+            k++;
+            x--;
+            y++;
+            if(x < 1 &amp;&amp; y > n) break;
+        }
+        if(k > c3) c3 = k;
+    }
+    cout << c3;
+    return 0;
+
+}</pre>

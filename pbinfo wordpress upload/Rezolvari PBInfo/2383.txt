@@ -1,0 +1,89 @@
+<h1>Cerinţa</h1>
+
+<p>Se dau <code>n</code> numere întregi. Calculaţi cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi <code>n</code> numere întregi, separate prin spaţii.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Programul afișează pe ecran numărul <code>MIN</code>, reprezentând cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1000</code></li>
+	<li>cele <code>n</code> numere citite vor avea cel mult <code>9</code> cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Date de intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+7 6 9 6 8</pre>
+
+<p><strong>Date de ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">6</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+ifstream cin("plaja1.in");
+ofstream cout("plaja1.out");
+bool a[2005][2005];
+int n , m , b[2005][2005] , c[2005][2005] , d[2005][2005];
+int main()
+{
+    int u , x , y , nr ,s1 , d1 , s2 , d2 , cnt1 = 0 , cnt2 = 0;
+    cin >> n >> m >> u;
+    for(int i = 1; i <= u; ++i)
+    {
+        cin >> x >> y;
+        a[x][y] = 1;
+        b[x][y]++;
+        b[x+1][y]--;
+        b[x][y+1]--;
+        b[x+1][y+1]++;
+    }
+    for(int i = 1; i <= n; ++i)
+        for (int j = 1; j <= m; ++j)
+            c[i][j] = c[i-1][j]+c[i][j-1]-c[i-1][j-1]+a[i][j];
+    cin >> u;
+    for(int i = 1; i <= u; ++i)
+    {
+        cin >> s1 >> d1 >> s2 >> d2;
+        nr = c[s2][d2] - c[s2][d1-1] - c[s1-1][d2] + c[s1-1][d1-1];
+        if (nr==0)
+        {
+            cnt1++;
+            b[s1][d1]++;
+            b[s2+1][d2+1]++;
+            b[s2+1][d1]--;
+            b[s1][d2+1]--;
+        }
+    }
+    for(int i = 1; i <= n; ++i)
+        for(int j = 1; j <= m; ++j)
+            d[i][j] = d[i-1][j]+d[i][j-1]-d[i-1][j-1]+b[i][j];
+    for(int i = 1; i <= n; ++i)
+        for(int j = 1; j <= m; ++j)
+        {
+            if(d[i][j] > 0) c[i][j] = c[i-1][j]+c[i][j-1]-c[i-1][j-1]+1;
+            else c[i][j] = c[i-1][j]+c[i][j-1]-c[i-1][j-1];
+        }
+    cin >> u;
+    for(int i = 1; i <= u; ++i)
+    {
+        cin >> s1 >> d1 >> s2 >> d2;
+        nr = c[s2][d2] - c[s2][d1-1] - c[s1-1][d2] + c[s1-1][d1-1];
+        if(nr==0) cnt2++;
+    }
+    cout << cnt1 << " " << cnt2;
+    return 0;
+}</pre>

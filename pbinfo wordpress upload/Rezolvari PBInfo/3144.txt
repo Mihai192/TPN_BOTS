@@ -1,0 +1,116 @@
+<h1>Cerință</h1>
+
+<p>Alexandru a învățat azi despre numerele romane și cum se scriu acestea. Fiind distras de ce spuneau colegii a ajuns acasă și a realizat că nu știe cum să transforme un număr din cifre arabe în cifre romane. Deoarece a doua zi are un test numai din acest capitol, vă roagă să îl ajutați la transformarea unui număr <code>N</code> dat, scris cu cifre arabe în cifre romane.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul <code>cifre_romane.in</code> conține un număr natural <code>N</code> scris cu cifre arabe.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul <code>cifre_romane.out</code> va conține scrierea cu cifre romane a lui <code>N</code>.</p>
+
+<h1>Restricții</h1>
+
+<ul>
+	<li><code>1≤N≤3999</code></li>
+	<li>cifrele romane sunt:
+	<ul>
+		<li><code>I=1</code></li>
+		<li><code>V=5</code></li>
+		<li><code>X=10</code></li>
+		<li><code>L=50</code></li>
+		<li><code>C=100</code></li>
+		<li><code>D=500</code></li>
+		<li><code>M=1000</code></li>
+	</ul></li>
+	</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595360477&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3144%2Fcifre-romane&amp;flash=0&amp;wgl=1&amp;dt=1595360477728&amp;bpp=23&amp;bdt=203&amp;idt=169&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=2218702682148&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595360478&amp;ga_hid=1801566003&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1226&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=2865013031667643&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2845%2Fwildfire1&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=LMbz2ER8y2&amp;p=https%3A//www.pbinfo.ro&amp;dtd=177" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CPbrzPSM3-oCFZPKuwgdg5MB1g"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>cifre_romane.in</code></p>
+
+<pre contenteditable="true" editable="true">4</pre>
+
+<p><code>cifre_romane.out</code></p>
+
+<pre contenteditable="true" editable="true">IV</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin("cifre_romane.in");
+ofstream cout("cifre_romane.out");
+
+char cif_rom[1001] , rez[256];
+int n , cnt = 1 , t;
+
+int main()
+{
+    cin >> n;
+    cif_rom[1] = 'I';
+    cif_rom[5] = 'V';
+    cif_rom[10] = 'X';
+    cif_rom[50] = 'L';
+    cif_rom[100] = 'C';
+    cif_rom[500] = 'D';
+    cif_rom[1000] = 'M';
+    while(n != 0)
+    {
+        int cif = n % 10;
+        if(cif == 1)
+        {
+            rez[++t] = cif_rom[cif * cnt];
+        }
+        else if(cif == 2)
+        {
+            rez[++t] = cif_rom[cnt];
+            rez[++t] = cif_rom[cnt];
+        }
+        else if(cif == 3)
+        {
+            rez[++t] = cif_rom[cnt];
+            rez[++t] = cif_rom[cnt];
+            rez[++t] = cif_rom[cnt];
+        }
+        else if(cif == 4)
+        {
+            rez[++t] = cif_rom[5 * cnt];
+            rez[++t] = cif_rom[cnt];
+        }
+        else if(cif == 5)
+        {
+            rez[++t] = cif_rom[5 * cnt];
+        }
+        else if(cif == 6)
+        {
+            rez[++t] = cif_rom[cnt];
+            rez[++t] = cif_rom[5 * cnt];
+        }
+        else if(cif == 7)
+        {
+            rez[++t] = cif_rom[cnt];
+            rez[++t] = cif_rom[cnt];
+            rez[++t] = cif_rom[5 * cnt];
+        }
+        else if(cif == 8)
+        {
+            rez[++t] = cif_rom[cnt];
+            rez[++t] = cif_rom[cnt];
+            rez[++t] = cif_rom[cnt];
+            rez[++t] = cif_rom[5 * cnt];
+        }
+        else if(cif == 9)
+        {
+            rez[++t] = cif_rom[10 * cnt];
+            rez[++t] = cif_rom[cnt];
+        }
+        n /= 10;
+        cnt *= 10;
+    }
+    for(int i = t ; i >= 1 ; i--) cout << rez[i];
+}</pre>

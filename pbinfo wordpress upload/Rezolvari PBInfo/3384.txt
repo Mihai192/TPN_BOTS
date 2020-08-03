@@ -1,0 +1,66 @@
+<p>În vacanța de iarnă Alex a primit un joc captivant și astfel a tot amânat lecturile de vacanță, fapt pentru care în prima săptămană din semestrul al II-lea a primit o notă mică la școală. Supărat, tatăl său i-a parolat jocul cu un cod de acces. Pentru că a început să recupereze din lecturi, tatăl îi dă un indiciu pentru obținerea codului de acces: îi arată un număr, dar după ce acesta a fost scris, cifrele încep să-i dispară în ordinea în care sunt scrise (adică de la stânga la dreapta), codul de acces fiind suma tuturor numerelor vizibile (obținute prin eliminarea pe rând a câte unei cifre).</p>
+
+<h1>Cerința</h1>
+
+<p>Vreți să îl ajutați pe Alex să găsească acest cod de acces pentru un număr <code>n</code> primit? Scrieți un program care determină și afișează codul de acces al jocului. Puteți primi 100 de puncte.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>codjoc.in</code> conține pe prima linie un număr n, reprezentând numărul arătat lui Alex  de tatăl lui.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>codjoc.out</code> va conține  numărul ce reprezintă codul de acces al jocului lui Alex.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li>•	<code>0 &lt; n ≤ 2.000.000.000</code>, <code>n</code> număr natural</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595359709&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3384%2Fcodjoc&amp;flash=0&amp;wgl=1&amp;dt=1595359709313&amp;bpp=5&amp;bdt=260&amp;idt=191&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=6146494304307&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595359709&amp;ga_hid=446384265&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1226&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=3927599047076428&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3432%2Ftai&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=nytup6INEv&amp;p=https%3A//www.pbinfo.ro&amp;dtd=197" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CJrimoaK3-oCFdvAuwgdJkkFXQ"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>codjoc.in</code></p>
+
+<pre contenteditable="true" editable="true">123456</pre>
+
+<p><code>codjoc.out</code></p>
+
+<pre contenteditable="true" editable="true">150886</pre>
+
+<h3>Explicație</h3>
+
+<p>Suma numerelor <code>123456</code>, <code>23456</code>, <code>3456</code>, <code>456</code>, <code>56</code>, <code>6</code> este egală cu <code>150886</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin("codjoc.in");
+ofstream cout("codjoc.out");
+
+long long n , sum;
+
+int nrcif(int n)
+{
+    int c = 0;
+    while(n != 0) c++ , n /= 10;
+    return c;
+}
+
+int main()
+{
+    cin >> n;
+    sum += n;
+    long long p = nrcif(n) , pp = 1;
+    while(p > 0)
+    {
+        sum += n % pp;
+        pp *= 10;
+        p--;
+    }
+    cout << sum;
+}</pre>

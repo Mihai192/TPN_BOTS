@@ -1,0 +1,112 @@
+<h1>Cerința</h1>
+
+<p>Dându-se o dată calendaristică și un număr <code>nr</code> de zile, să se determine care este data aflată la o diferență de <code>nr</code> de zile.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură 3 numere naturale <code>Z</code>, <code>L</code> și <code>A</code>, reprezentând ziua, luna si anul curent, iar pe al doilea rând numărul <code>nr</code> de zile.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Programul va afișa pe ecran 3 numere naturale <code>ZI</code>, <code>LUNA</code>, <code>AN</code> reprezentând data cerută.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>-100.000 ≤ nr ≤ 100000</code></li>
+	<li>Datele calendaristice din fișierul de intrare sunt între <code>1 ianuarie 1900</code> și <code>31 decembrie 2100</code></li>
+	<li>Nu se vor fi date calendaristice invalide precum <code>29 februarie 2015</code> sau <code>31 noiembrie 1980</code></li>
+	<li>Dacă <code>nr</code> este negativ, data cerută se afla înaintea cele curente.</li>
+</ul>
+
+<h1>Exemple:</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">6 1 2015
+15</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">21 1 2015</pre>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">6 1 2015
+-7</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">30 12 2014</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+using namespace std;
+
+int zileLuna[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+int esteBisect(int an)
+{
+    return (an % 400) == 0 || ( an % 4 == 0  &amp;&amp;  an % 100 != 0 );
+}
+
+void calculeazaData(int &amp;zi, int &amp;luna, int &amp;an, int nr)
+{
+    int nrzileluna, lunacrt = luna;
+    if( nr >= 0)
+    {
+        nrzileluna = zileLuna[lunacrt];
+        if( luna == 2 &amp;&amp; esteBisect(an)) nrzileluna++;
+        if( zi + nr > nrzileluna )
+        {
+            nr = nr - nrzileluna + zi;
+            zi = nrzileluna;
+        }
+        while( zi + nr > nrzileluna )
+        {
+            lunacrt = lunacrt + 1;
+            if(lunacrt > 12)
+            {
+                lunacrt = 1;
+                an++;
+            }
+            nrzileluna = zileLuna[lunacrt];
+            if( lunacrt == 2 &amp;&amp; esteBisect(an)) nrzileluna++;
+            nr = nr - nrzileluna;
+            zi = nrzileluna;
+            luna = lunacrt;
+        }
+        zi = zi + nr;
+    }
+    else
+    {
+
+        if( zi + nr < 1 )
+        {
+            nr += zi - 1;
+            zi = 1;
+        }
+        while( zi + nr < 1 )
+        {
+            lunacrt = lunacrt - 1;
+            if(lunacrt < 1)
+            {
+                lunacrt = 12;
+                an--;
+            }
+            nrzileluna = zileLuna[lunacrt];
+            if( lunacrt == 2 &amp;&amp; esteBisect(an)) nrzileluna++;
+            nr = nr + nrzileluna;
+            zi = 1;
+            luna = lunacrt;
+        }
+        zi = zi + nr;
+    }
+}
+
+int main()
+{
+    int zi, luna, an, nr;
+    cin >> zi >> luna >> an >> nr;
+    calculeazaData(zi, luna, an, nr);
+    cout << zi << ' ' << luna << ' ' << an;
+    return 0;
+}</pre>

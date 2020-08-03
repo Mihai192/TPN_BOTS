@@ -1,0 +1,66 @@
+<h1>Cerinţa</h1>
+
+<p>Se dau <code>n</code> numere întregi. Calculaţi cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi <code>n</code> numere întregi, separate prin spaţii.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Programul afișează pe ecran numărul <code>MIN</code>, reprezentând cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1000</code></li>
+	<li>cele <code>n</code> numere citite vor avea cel mult <code>9</code> cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Date de intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+7 6 9 6 8</pre>
+
+<p><strong>Date de ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">6</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+ifstream fin("msuma.in");
+ofstream fout("msuma.out");
+int a[101][101] , b[101][101] , c[101][101];
+int main()
+{
+    int n , m , p , q , max1 = 0 , max2 = 0;
+    fin >> n >> m;
+    for(int i = 1 ; i <= n ; i++)
+        for(int j = 1 ; j <= m ; j++)
+            fin >> a[i][j];
+    fin >> p >> q;
+    for(int i = 1 ; i <= p ; i++)
+        for(int j = 1 ; j <= q ; j++)
+            fin >> b[i][j];
+    if(n > p) max1 = n;
+    else max1 = p;
+    if(m > q) max2 = m;
+    else max2 = q;
+    for(int i = 1 ; i <= max1 ; i++)
+        for(int j = 1 ; j <= max2 ; j++)
+            c[i][j] = a[i][j] + b[i][j];
+    fout << max1 << " " << max2 <<endl;
+    for(int i = 1 ; i <= max1 ; i++)
+    {
+        for(int j = 1 ; j <= max2 ; j++)
+            fout << c[i][j] << " ";
+        fout<<endl;
+    }
+    return 0;
+}</pre>

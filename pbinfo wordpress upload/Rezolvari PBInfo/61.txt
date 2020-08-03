@@ -1,0 +1,55 @@
+<h1>Cerinţa</h1>
+
+<p>Să se scrie un program care afișează divizorii comuni ai două numere naturale citite de la tastatură.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură două numere naturale <code>a</code> și <code>b</code>.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Programul afișează pe ecran, în ordine crescătoare, divizorii comuni ai numerelor <code>a</code> și <code>b</code>, separați printr-un spațiu.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>0 &lt; a, b &lt; 1.000.000.000</code></li>
+</ul>
+
+<h1>Exemplu1:</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">24 36</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">1 2 3 4 6 12</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+using namespace std;
+void rezolvare()
+{
+    unsigned long long a,b,r,d;
+    cin>>a>>b;
+    if(a==0) d=b;
+    else
+        if(b==0) d=a;
+    else
+    {while(b!=0)
+    {
+        r=a%b;
+        a=b;
+        b=r;
+    }
+    d=a;
+    }
+    for(int i=1;i<=d;i++)
+    {
+        if(d%i==0) cout<<i<<" ";
+    }
+}
+int main()
+{
+    rezolvare();
+    return 0;
+}</pre>

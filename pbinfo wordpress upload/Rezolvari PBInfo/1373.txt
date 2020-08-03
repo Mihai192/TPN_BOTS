@@ -1,0 +1,79 @@
+<h1>Cerinţa</h1>
+
+<p>Se dau <code>n</code> numere întregi. Calculaţi cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi <code>n</code> numere întregi, separate prin spaţii.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Programul afișează pe ecran numărul <code>MIN</code>, reprezentând cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1000</code></li>
+	<li>cele <code>n</code> numere citite vor avea cel mult <code>9</code> cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Date de intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+7 6 9 6 8</pre>
+
+<p><strong>Date de ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">6</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <algorithm>
+using namespace std;
+
+ifstream cin("reactivi.in");
+ofstream cout("reactivi.out");
+
+struct elem
+{
+    int i , j;
+};
+elem a[8002];
+
+int comp(elem a , elem b)
+{
+    return a.j > b.j || a.j == b.j &amp;&amp; a.i < b.i;
+}
+int n , nr, fr[8002];
+
+int main()
+{
+    cin >> n;
+    for(int i = 1 ; i <= n ; i++)
+    {
+        cin >> a[i].i >> a[i].j;
+        fr[i] = 1;
+    }
+
+    sort(a + 1 , a+ n + 1 , comp);
+
+    for(int i = 1; i <= n - 1 ; i++)
+      for(int j = i + 1 ; j <= n ; j++)
+             if(fr[i] != 0 &amp;&amp; fr[j] != 0)
+                    if(a[i].j >= a[j].i &amp;&amp; a[j].j >= a[i].i)
+                    {
+                        if(a[i].i < a[j].i) a[i].i = a[j].i;
+                        if(a[i].j > a[j].j) a[i].j = a[j].j;
+                        fr[i]++;
+                        fr[j] = 0;
+                    }
+    for(int i = 1 ; i <= n ; i++)
+      if(fr[i] >= 1)nr++;
+    cout << nr;
+    return 0;
+}</pre>

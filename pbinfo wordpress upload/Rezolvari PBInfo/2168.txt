@@ -1,0 +1,154 @@
+Costel trebuie să realizeze, împreună cu echipa sa, o aplicaţie software pentru gestiunea fişierelor de pe hard-disc, sarcina sa fiind aceea de a scrie un modul pentru determinarea căilor tuturor fişierelor de date aflate în structura arborescentă a folderelor de pe disc. Membrii echipei au stabilit o codificare proprie pentru memorarea structurii fişierelor de pe disc, utilizând un şir de caractere. Specificaţiile tehnice sunt următoarele:
+<ul>
+	<li>folderul este un fişier de tip special, care poate conţine fişiere şi/sau foldere (acestea fiind considerate subfoldere ale folderului respectiv);</li>
+	<li>numele folderelor încep cu o literă, au maxim <code>30</code> de caractere și sunt scrise cu majuscule;</li>
+	<li>numele fișierelor de date încep cu o literă, au maxim <code>30</code> de caractere și sunt scrise cu minuscule;</li>
+	<li>caracterele utilizate pentru numele fişierelor şi folderelor sunt literele alfabetului englez şi cifrele arabe;</li>
+	<li>reprezentarea structurii fişierelor sub forma unui şir de caractere se realizează după următoarea regulă: <code>NUME_FOLDER(lista_de_foldere_si_fisiere)</code>, unde <code>lista_de_foldere_si_fisiere</code>, posibil vidă, conţine fişierele şi/sau subfolderele folderului <code>NUME_FOLDER</code>, separate prin virgulă. Subfolderele se reprezintă respectând aceeaşi regulă.</li>
+</ul>
+
+<p>De exemplu, structura de fişiere şi foldere din figura de mai jos:</p>
+
+<p><img alt="" src="/resurse/16a4b0/dir_oji2007.jpg"></p>
+
+<p>se reprezintă prin şirul de caractere: <code>FOLDER1(FOLDER2(),FOLDER3(FOLDER4(poveste,basm),basm))</code></p>
+
+<h1>Cerința</h1>
+
+<p>Scrieţi un program care, cunoscând şirul de caractere ce codifică o structură de fişiere de pe disc, determină calea pentru fiecare fişier de date din structură. Prin cale a unui fişier se înţelege o succesiune de foldere, fiecare folder fiind urmat de caracterul <code>\(backslash)</code>, începând de la folderul aflat pe cel mai înalt nivel al structurii (primul specificat în şirul ce codifică structura de fişiere), până la subfolderul în care se află fişierul de date respectiv şi terminată cu numele fişierului. Căile determinate vor fi afişate în ordine lexicografică.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>dir.in</code> conţine pe prima linie şirul de caractere ce codifică structura de fişiere de pe disc.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>dir.out</code> va conţine pe prima linie un număr natural <code>N</code> reprezentând numărul de fişiere de date găsite. Pe următoarele <code>N</code> linii se vor scrie, în ordine lexicografică, căile ce permit identificarea fişierelor găsite, în formatul: <code>F1\F2\...\Fn\fisier</code>, câte o cale pe o linie.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li>Şirul de caractere ce codifică structura de fişiere este nevid şi conţine maxim <code>1600</code> de caractere.</li>
+	<li>Structura de foldere conţine cel puţin un folder şi cel puţin un fişier.</li>
+	<li>Numărul de fişiere de date este cel mult <code>100</code>.</li>
+	<li>Lungimea căii unui fişier este de cel mult <code>255</code> caractere.</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595356852&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2168%2Fdir&amp;flash=0&amp;wgl=1&amp;adsid=NT&amp;dt=1595356852653&amp;bpp=7&amp;bdt=213&amp;idt=173&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=842337804101&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595356853&amp;ga_hid=1532752465&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1763&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066624&amp;oid=3&amp;pvsid=3211798310907960&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1098%2Freteta&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=0kVujfZddE&amp;p=https%3A//www.pbinfo.ro&amp;dtd=181" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CJ_0h7T_3uoCFQzJsgodRfIH7A"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>dir.in</code></p>
+
+<pre contenteditable="true" editable="true">FOLDER1(FOLDER2(),FOLDER3(FOLDER4(poveste,basm),basm))</pre>
+
+<p><code>dir.out</code></p>
+
+<pre contenteditable="true" editable="true">3
+FOLDER1\FOLDER3\FOLDER4\basm
+FOLDER1\FOLDER3\FOLDER4\poveste
+FOLDER1\FOLDER3\basm</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+#include <fstream>
+#include <cstring>
+#include <cctype>
+
+using namespace std;
+
+ifstream f("dir.in");
+ofstream g("dir.out");
+
+char sir[1605], st[256];
+char a[105][256];
+
+int i, j, cnt, k, l;
+
+int main()
+{
+    if (f.is_open())
+    {
+        f >> sir;
+
+        for (i = 0; sir[i] != 0; i++)
+        {
+            if (islower(sir[i]))
+            {
+                cnt++;
+                while (islower(sir[i]) || isdigit(sir[i]))
+                    i++;
+            }
+        }
+
+        g << cnt << "\n";
+
+        for (i = 0; sir[i] != 0; i++)
+        {
+            if (isdigit(sir[i]) || (sir[i] >= 'A'&amp;&amp;sir[i] <= 'z'))
+            {
+                st[k++] = sir[i];
+                continue;
+            }
+
+            if (sir[i] == ',' &amp;&amp; ((st[k - 1] >= 'a'&amp;&amp;st[k - 1] <= 'z') || (st[k - 1] >= '0'&amp;&amp;st[k - 1] <= '9')))
+            {
+                st[k] = '\0';
+                l++;
+                strcpy(a[l], st);
+                while (st[k] != '\\')
+                    k--;
+                k++;
+                continue;
+            }
+
+            if (sir[i] == '(')
+            {
+                st[k++] = '\\';
+                continue;
+            }
+
+            if (sir[i] == ')') {
+                if ((st[k - 1] >= 'a'&amp;&amp;st[k - 1] <= 'z') || (st[k - 1] >= '0'&amp;&amp;st[k - 1] <= '9'))
+                {
+                    st[k] = '\0';
+                    l++;
+                    strcpy(a[l], st);
+                    while (st[k] != '\\')
+                        k--;
+                    k--;
+                    while (st[k] != '\\')
+                        k--;
+                    k++;
+                }
+
+                else
+                {
+                    if (st[k - 1] == '\\')
+                    {
+                        k -= 2;
+                        while (st[k] != '\\')
+                            k--;
+                        k++;
+                    }
+                }
+            }
+        }
+
+        for (i = 1; i < l; i++) {
+            for (j = i + 1; j <= l; j++)
+            {
+                if (strcmp(a[i], a[j]) > 0)
+                {
+                    swap(a[i], a[j]);
+                }
+            }
+        }
+
+        for (i = 1; i <= l; i++) {
+            g << a[i] << "\n";
+        }
+    }
+    return 0;
+}</pre>

@@ -1,0 +1,31 @@
+<h1>Cerinţa</h1>
+
+<p>Să se scrie o funcție C++ care să returneze numărul de cifre egale cu zero ale unui număr natural transmis ca parametru.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li>numele funcției va fi <code>nr_cif_zero</code></li>
+	<li>funcția va avea un parametru reprezentând numărul dat</li>
+	<li>numărul pentru care se calculează numarul de cifre egale cu zero va fi mai mic decât <code>2.000.000.000</code></li>
+</ul>
+
+
+<h1>Important</h1>
+
+<p>Soluţia propusă va conţine doar definiţia funcţiei cerute. Prezenţa în soluţie a altor instrucţiuni poate duce erori de compilare sau de execuţie care vor avea ca efect depunctarea soluţiei.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">int nr_cif_zero(int n)
+{
+    int cnt=0;
+    int m=n;
+    while (n)
+    {
+        if (n%10==0)
+            cnt++;
+        n/=10;
+    }
+    if (m==0)
+    return 1;
+    else
+    return cnt;
+}</pre>

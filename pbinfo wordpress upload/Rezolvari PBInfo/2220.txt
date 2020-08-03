@@ -1,0 +1,86 @@
+<p>Se consideră un șir <code>a[1]</code>, <code>a[2]</code>, …, <code>a[n]</code> de numere întregi.</p>
+
+<h1>Cerința</h1>
+
+<p>Să se determine diferența maximă de forma <code>a[i] - a[j]</code>, unde <code>1 ≤ i &lt; j ≤ n</code>.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi șirul de <code>n</code> numere întregi, separate prin spații.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Programul va afișa pe ecran un singur număr întreg reprezentând diferența maximă cerută.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 100 000</code></li>
+	<li><code>-1 000 000 000 ≤ a[i] ≤ 1 000 000 000</code></li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595362546&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2220%2Fdifmax&amp;flash=0&amp;wgl=1&amp;dt=1595362546095&amp;bpp=15&amp;bdt=154&amp;idt=205&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=3563788567841&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595362546&amp;ga_hid=379195386&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1000&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=4239447432138974&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2084%2Fwater-trap&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=WGUp5u4Zk6&amp;p=https%3A//www.pbinfo.ro&amp;dtd=210" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CJDW7s6U3-oCFZbGuwgdKgYJOA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Intrare</strong></p>
+
+<pre contenteditable="true" editable="true">8
+3 5 2 7 6 3 9 8</pre>
+
+<p><strong>Ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">4</pre>
+
+<h3>Explicație</h3>
+
+<p>Diferența maximă <code>4</code> se obține din <code>a[4]-a[6]=7-3=4</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <iostream>
+#include <fstream>
+#include <climits>
+using namespace std;
+
+ifstream fin("secvente.in");
+ofstream fout("secvente.out");
+
+int main()
+{
+    const int Inf = 0x3f3f3f3f;
+    int a[100002];  
+    int minim[100002];  
+    int maxim[100002];  
+    int n; 
+    cin >> n;
+    maxim[0] = -Inf;
+    for (int i = 1; i <= n; ++i)
+    {
+        cin >> a[i];
+        if (a[i] > maxim[i - 1])
+            maxim[i] = a[i];
+        else
+            maxim[i] = maxim[i - 1];
+    }
+    
+    minim[n + 1] = Inf;
+    for (int i = n; i >= 1; --i)
+        if (a[i] < minim[i + 1])
+            minim[i] = a[i];
+        else
+            minim[i] = minim[i + 1];        
+    int dif, dif_max = -Inf;
+    for (int i = 1; i < n; ++i)
+    {
+        dif = maxim[i] - minim[i + 1];
+        if (dif > dif_max)
+            dif_max = dif;
+    }
+    cout << dif_max;
+    
+    fin.close();
+    fout.close();
+    
+    return 0;
+}</pre>

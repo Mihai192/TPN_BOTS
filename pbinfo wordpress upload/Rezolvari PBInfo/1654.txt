@@ -1,0 +1,33 @@
+<h3>Cerința</h3>
+
+<p>Să se scrie o <strong>funcţie C/C++ recursivă</strong> care primeşte ca parametru un şir de caractere format din litere mari/mici ale alfabetului englez şi spaţii şi returnează numărul de vocale din şir.</p>
+
+<h3>Restricţii şi precizări</h3>
+
+<ul>
+	<li>Numele funcţiei este <code>nr_vocale</code></li>
+</ul>
+
+<ul>
+	<li>Funcţia are un singur parametru (şirul format din maxim <code>10000</code> caractere).</li>
+</ul>
+
+<h3>Exemplu:</h3>
+
+<p><code>nr_vocale("Ana are mere") = 6</code></p>
+
+<h3>Important:</h3>
+
+<p>Dacă doriţi să folosiţi funcţiile predefinite pe şiruri de caractere (<code>strlen</code>, <code>strchr</code> etc), includeţi biblioteca <code>cstring</code> (<code>string.h</code>) înainte de a scrie definiţia funcţiei.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <bits/stdc++.h>
+int nr_vocale(char s[])
+{
+    if(s[0] == NULL)  return 0;
+    int lu = strlen(s);
+    char ch = s[lu - 1];
+    s[lu - 1] = NULL; 
+    if(strchr("aeiouAEIOU", ch))
+        return 1 + nr_vocale(s);
+
+    return nr_vocale(s);
+}</pre>

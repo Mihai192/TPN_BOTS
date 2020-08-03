@@ -1,0 +1,139 @@
+<p><i>Românii au talent!</i>    Atraşi de marele premiu oferit de organizatorii concursului <i>Românii au talent</i>, la preselecţia organizată la Piatra Neamţ au venit foarte mulţi români să demonstreze că au talent. </p>
+
+<p>La înscriere, fiecare participant a primit câte un număr de concurs, reprezentat de un număr natural nenul. Unii dintre participanţi pot avea statut special, fiind admişi direct în semifinale, ca urmare a rezultatelor deosebite obţinute la ediţiile anterioare, numărul de concurs primit de aceştia având proprietatea că toate cifrele lui pot fi aranjate astfel încăt să formeze un număr palindrom. </p>
+
+<p>Printre numerele de concurs primite de participanţii cu statut special, există numere care au în scrierea lor zecimală un număr maxim de cifre distincte. Cel mai mic dintre aceste numere reprezintă numărul de concurs al participantului <span class="caps">VIP</span>. </p>
+
+<h1>Cerinta</h1>
+
+<p>Scrieţi un program care citeşte numărul natural <code>n</code> (reprezentând numărul de participanţi înscrişi la concurs), <code>n</code> numere naturale (reprezentând numerele de concurs ale celor n participanţi) şi determină:</p>
+
+<p>a)	numărul <code>x</code> de participanţi admişi direct în semifinale;<br>
+b)	numărul <code>y</code> de concurs al participantului <code>VIP</code>, dacă există un astfel de participant printre cei înscrişi.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fişierul <code>talent.in</code> conţine pe prima linie numărul n de participanţi, iar pe fiecare dintre următoarele n linii câte un număr natural reprezentând numărul de concurs al unui participant. </p>
+
+<h1>Date de ieșire </h1>
+
+<p>Fişierul <code>talent.out</code> va conţine pe prima linie cele două valori <code>x</code> şi <code>y</code>, separate printr-un singur spaţiu, în această ordine. Dacă nu există participanţi admişi direct în semifinală, atunci prima linie a fişierului va conţine două valori nule, separate printr-un singur spaţiu: <code>0 0</code>.</p>
+
+<h2>Restricții și precizări</h2>
+
+<p>•	<code>0 &lt;n ≤ 15000</code><br>
+•	numerele de concurs sunt distincte două câte două şi sunt mai mici sau egale cu <code>2000000000</code><br>
+•	un număr palindrom este un număr natural care este egal cu numărul natural obţinut prin scrierea în ordine inversă a cifrelor lui (de exemplu, numărul <code>12021</code> este un număr palindrom) <br>
+•	pentru rezolvarea corectă a primei cerinţe se acordă <code>50%</code> din punctaj, iar pentru rezolvarea corectă a celei de a doua cerinţe se acordă <code>50%</code> din punctaj.</p>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595360583&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2192%2Ftalent&amp;flash=0&amp;wgl=1&amp;dt=1595360583478&amp;bpp=17&amp;bdt=194&amp;idt=188&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=7361712720860&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595360584&amp;ga_hid=1101554368&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1546&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066392&amp;oid=3&amp;pvsid=3100660220616392&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2175%2Ffactori&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=XPMMpL5oYO&amp;p=https%3A//www.pbinfo.ro&amp;dtd=195" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CLbshKeN3-oCFarHuwgdYQcKZA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>talent.in</code></p>
+
+<pre contenteditable="true" editable="true">8
+17864
+9900
+90321
+4704
+351
+83181
+46476
+7432</pre>
+
+
+<p><code>talent.out</code></p>
+
+<pre contenteditable="true" editable="true">3 46476</pre>
+
+<h3>Explicație</h3>
+
+<p>Sunt <code>3</code> participanţi calificaţi direct în semifinală. Numerele lor de concurs sunt numere ale căror cifre pot fi aranjate astfel încât să formeze un palindrom : <code>9900</code>(format din <code>2</code> cifre distincte), <code>83181</code> (format din <code>3</code> cifre distincte) şi <code>46476</code> (format din <code>3</code> cifre distincte). Dintre acestea, cel mai mic număr format dintr-un număr maxim de cifre distincte este <code>46476</code> reprezentând numărul de concurs al participantului <code>VIP</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin("talent.in");
+ofstream cout("talent.out");
+
+int pal(int n)
+{
+    int f[10]={0};
+    int cn=0;
+    while(n)
+    {
+        f[n%10]++;
+        n/=10;
+        cn++;
+    }
+    int cnt=0;
+    for(int i = 0 ; i < 10 ; ++i)
+    {
+        if(f[i]%2==1)
+        cnt++;
+        if(f[0]%2==0 &amp;&amp; cn==f[0]+1 &amp;&amp; f[0]!=0)
+        {
+            cnt++;    
+        }
+    }
+    if(cnt==0 || cnt==1)
+    return 1;
+    else
+    return 0;
+}
+
+int mult(int n)
+{
+    int f[10]={0};
+    while(n)
+    {
+        f[n%10]++;
+        n/=10;
+    }
+    int ok=0;
+    for(int i = 0 ; i < 10 ; ++i)
+    {
+        if(f[i]!=0)
+        ok++;
+    }
+    return ok;
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    int a[15001];
+    int cnt=0;
+    int max=0;
+    for(int i = 0 ; i < n ; ++i)
+    {
+    cin >> a[i];
+    if(pal(a[i]))
+    {
+        cnt++;
+        if(max < mult(a[i]))
+        max=mult(a[i]);
+    }
+    }
+    cout << cnt;
+    int nmax=2000000001;
+    if(cnt!=0)
+    {
+        for(int i = 0 ; i < n ; ++i)
+        {
+        if(mult(a[i])==max &amp;&amp; pal(a[i]))
+        {
+            if(a[i]<nmax)
+            nmax=a[i];
+        }
+        }
+        cout << ' ' << nmax;
+    }
+    else
+    cout << ' ' << 0;
+    return 0;    
+}</pre>

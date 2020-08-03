@@ -1,0 +1,115 @@
+<h1>Cerința </h1>
+
+<p><i><span class="caps">NOTĂ</span> : aceasta este o problemă introductivă în funcțiile care procesează șiruri de caractere. Povestea din cerința NU este adevărată.</i> </p>
+
+<p>Hacker-ul Gogu și-a neglijat serios activitatea în ultima vreme, așa că și-a propus să mai spargă încă un site, care, din întâmplare, este chiar www.pbinfo.ro. </p>
+
+<h1>Date de intrare </h1>
+
+<p>Pe prima linie se citește un șir reprezentând un link al site-ului PbInfo. Pe linia a doua, se citește un număr întreg <code>n</code> (<code>1 &lt;= n &lt;= 20</code>), iar pe următoarele <code>n</code> linii se citesc <code>n</code> cuvinte cheie. Scopul vostru este să aflați dacă hacker-ul Gogu s-a infiltrat și a schimbat link-ul original. </p>
+
+<h1>Date de ieșire</h1>
+
+<p>Dacă link-ul dat conține unul din cuvintele cheie precizate în fișierul de intrare sau conține cuvântul “virus”, afișați <code>DA</code>, altfel afișați <code>NU</code>. </p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li>cuvintele vor fi mai scurte decât link-ul precizat, iar link-ul va avea maxim <code>100</code> de caractere;</li>
+	<li>hacker-ul Gogu nu este profesionist, așa că nu este nevoie să va alarmați;</li>
+	<li>input-ul va conține numai litere mici ale alfabetului englez și separatorii <code>,.!?/:</code>.</li>
+</ul>
+
+<h1>Exemplul 1</h1>
+
+<p><code>pbinfo.in</code></p>
+
+<pre contenteditable="true" editable="true">//htttp:www.pbinfo.ro
+3
+hacked
+gogu
+htttp</pre>
+
+<p><code>pbinfo.out</code></p>
+
+<pre contenteditable="true" editable="true">DA</pre>
+
+<h1>Exemplul 2</h1>
+
+<p><code>pbinfo.in</code></p>
+
+<pre contenteditable="true" editable="true">//http:www.pbinfo.ro 
+3
+hacked
+gogu
+htttp</pre>
+
+<p><code>pbinfo.out</code></p>
+
+<pre contenteditable="true" editable="true">NU</pre>
+
+<h1>Exemplul 3</h1>
+
+<p><code>pbinfo.in</code></p>
+
+<pre contenteditable="true" editable="true">//http:www.pbinfo.virus.ro
+1
+gogu</pre>
+
+<p><code>pbinfo.out</code></p>
+
+<pre contenteditable="true" editable="true">DA</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin("pbinfo.in");
+ofstream cout("pbinfo.out");
+
+int main()
+{
+    char a[101] , b[101];
+    cin.getline(a , 101);
+    int n;
+    cin >> n;
+    bool ok=false;
+    for(int k = 0 ; k < n ; ++k)
+    {
+        cin >> b;
+        int i = 0;
+        while(a[i]!='\0')
+        {
+            int j = 0;
+            bool adev=true;
+            while(b[j]!='\0')
+            {
+                if(a[i+j]!=b[j])
+                    adev=false;
+                j++;
+            }
+            if(adev)
+                ok=true;
+            i++;    
+        }
+    }
+    int i = 0;
+    b[0]='v' , b[1]='i' , b[2]='r' , b[3]='u' , b[4]='s' , b[5]='\0';
+    while(a[i]!='\0')
+    {
+        int j = 0;
+        bool adev=true;
+        while(b[j]!='\0')
+        {
+            if(a[i+j]!=b[j])
+                adev=false;
+            j++;
+        }
+        if(adev)
+            ok=true;
+        i++;    
+    }
+    if(ok)
+        cout << "DA";
+    else
+        cout << "NU";
+    return 0;    
+}</pre>

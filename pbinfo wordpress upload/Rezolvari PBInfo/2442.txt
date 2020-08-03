@@ -1,0 +1,70 @@
+<h1>Cerința</h1>
+
+<p>Valentin, elev în clasa a V-a, e fascinat de cifre. Îi place să mute cifrele unui număr de pe o poziție pe alta. Astfel, pentru un număr <code>N</code> și o cifră <code>k</code>, mută toate cifrele egale cu <code>k</code> la început, după care așază celelalte cifre în ordinea în care apăreau în <code>N</code>. Desigur, există și situații în care numărul cifrelor lui <code>N</code> se micșorează sau situații în care numărul <code>N</code> nu se modifică.<br>
+De exemplu, dacă numărul <code>N</code> este <code>134112</code> și cifra <code>k</code> este <code>1</code>, după mutarea cifrelor se obține <code>111342</code>. <br>
+Pornind de la numărul <code>N</code> și cifra <code>k</code> știți ce număr obține Valentin?<br>
+Scrieţi un program care să citească numărul natural <code>N</code> şi cifra <code>k</code> și care să determine:</p>
+
+<p><b>a)</b> de câte ori apare cifra <code>k</code> în numărul <code>N</code>;     <i>(30% din punctaj)</i><br>
+<b>b)</b> numărul obținut după modificarea numărului <code>N</code>; <i>(70% din punctaj)</i></p>
+
+
+<h1>Date de intrare</h1>
+
+<p>Pe prima linie a fișierului <code>cifre006.in</code> se află numărul natural <code>N</code> și cifra <code>k</code> separate printr-un spațiu.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>cifre006.out</code> va conține două valori, fiecare pe câte un rând. Prima valoare este numărul de cifre <code>k</code> existente în <code>N</code>, iar a doua valoare este numărul obținut din <code>N</code> după modificare.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ N ≤ 1000000000</code></li>
+	<li>numărul <code>N</code> după modificare poate avea cifre mai puține</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display: inline-block; width: 728px; height: 0px;" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display: inline-table; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 728px; background-color: transparent;"><ins id="aswift_1_anchor" style="display: block; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 728px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595359831&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2442%2Fcifre006&amp;flash=0&amp;wgl=1&amp;adsid=NT&amp;dt=1595359831315&amp;bpp=16&amp;bdt=257&amp;idt=180&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=6052692896541&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595359831&amp;ga_hid=1347550401&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1186&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066717&amp;oid=3&amp;pvsid=2511927116659949&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1122%2Fbabilon&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=fjR019FsAq&amp;p=https%3A//www.pbinfo.ro&amp;dtd=186" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-google-query-id="CL2lscCK3-oCFcqJsgodXnoNtQ" data-load-complete="true"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>cifre006.in</code></p>
+
+<pre contenteditable="true" editable="true">134112 1</pre>
+
+<p><code>cifre006.out</code></p>
+
+<pre contenteditable="true" editable="true">3
+111342</pre>
+
+<h3>Explicație</h3>
+
+<p>cifra <code>1</code> apare de <code>3</code> ori. <br>
+<code>134112</code> → <code>111342</code>, cele trei cifre <code>1</code> se mută la început iar cifrele <code>3</code>, <code>4</code>, <code>2</code> se pun la sfârșit în ordinea în care au apărut în <code>134112</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+ifstream cin("cifre006.in");
+ofstream cout("cifre006.out");
+int main()
+{
+    int n , a[10] , p = 1 , k , cnt = 0 , nr = 0;
+    cin >> n >> k;
+    int aux = n;
+    while(aux != 0)
+    {
+        if(aux % 10 == k) cnt++;
+        aux /= 10;
+    }
+    cout << cnt << endl;
+    for(int i = 0 ; i < cnt ; ++i) cout << k;
+    while(n != 0)
+    {
+        if(n % 10 != k) a[p] = n % 10 , p++;
+        n /= 10;
+    }
+    for(int i = p - 1 ; i >= 1 ; --i) cout << a[i];
+    return 0;
+}</pre>

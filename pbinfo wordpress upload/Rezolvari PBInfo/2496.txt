@@ -1,0 +1,161 @@
+<p>Se consideră o matrice cu <code>N</code> linii și <code>N</code> coloane care memorează doar cifre. Liniile și coloanele sunt numerotate de la <code>1</code> la <code>N</code>. Se consideră de asemenea un vector <code>v</code> de lungime <code>10</code>, în care <code>v[i]</code> = costul cifrei <code>i</code> (<code>i = 0..9</code>). Trebuie să determinăm un drum de la coloana <code>1</code> la coloana <code>N</code>, deci care pornește de la o componentă aflată pe coloana <code>1</code> la o componentă de pe coloana <code>N</code> și fiecare pas se face dintr-o poziție <code>(i,j)</code> într-una din pozițiile învecinate pe linie sau coloană, adică <code>(i+1,j)</code>, <code>(i-1,j)</code>, <code>(i,j+1)</code>, <code>(i,j-1)</code>, cu condiția să nu iasă din matrice. Costul unui astfel de drum este suma costurilor asociate componentelor prin care trece drumul.</p>
+
+<h1>Cerința</h1>
+
+<p>Să se determine numărul minim de cifre distincte prin care trece un drum de la coloana <code>1</code> la coloana <code>N</code>. Dacă există mai multe astfel de drumuri, atunci se va determina costul minim al unui astfel de drum.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>road.in</code> conține pe prima linie valoarea <code>N</code>. Pe a doua linie se află exact <code>10</code> numere naturale <code>v[0]</code>, <code>v[1]</code>, …, <code>v[9]</code> separate prin câte un spațiu. Pe următoarele <code>N</code> linii se află câte <code>N</code> cifre, fără spații între ele.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>road.out</code> va conține pe prima linie un număr natural <code>K</code> reprezentând numărul minim de cifre distincte prin care trece un drum de la coloana <code>1</code> la coloana <code>N</code>. Pe linia a doua se află un singur număr natural reprezentând costul minim al unui drum care trece prin <code>K</code> cifre distincte.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>2 ≤ N ≤ 100</code></li>
+	<li><code>1 ≤ v[i] ≤ 100</code>, <code>i=0..9</code></li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595353624&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2496%2Froad&amp;flash=0&amp;wgl=1&amp;dt=1595353623959&amp;bpp=4&amp;bdt=208&amp;idt=171&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=8545797309045&amp;frm=20&amp;pv=1&amp;ga_vid=1744050990.1595352838&amp;ga_sid=1595353624&amp;ga_hid=724289260&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=814&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1304&amp;biw=1200&amp;bih=647&amp;scr_x=0&amp;scr_y=0&amp;eid=21066715&amp;oid=3&amp;pvsid=3511893825927369&amp;pem=168&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2894%2Fbarlog&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C770%2C1200%2C647&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=dvzEmlUwgR&amp;p=https%3A//www.pbinfo.ro&amp;dtd=179" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CIOWvrDz3uoCFbzKuwgdMowK1Q"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>road.in</code></p>
+
+<pre contenteditable="true" editable="true">6
+8 1 2 1 9 14 8 8 6 9
+287566
+123444
+983070
+071311
+548739
+353665</pre>
+
+<p><code>road.out</code></p>
+
+<pre contenteditable="true" editable="true">3
+9</pre>
+
+<h3>Explicație</h3>
+
+<p>Drumul este marcat cu fundal gri în matricea de mai jos și folosește doar trei cifre distincte (<code>1</code>, <code>2</code> și <code>3</code>), iar costul drumului este <code>9</code>.</p>
+
+<p><img alt="" src="/resurse/16a4b0/road.jpg"></p>
+
+<p>De remarcat că mai există un drum care utilizează doar trei cifre distincte (format din toate elementele de pe ultima linie), dar are cost mai mare.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <queue>
+using namespace std;
+
+ifstream fin("road.in");
+ofstream fout("road.out");
+
+struct pozitie{
+    int i,j;
+};
+
+const int di[]={1,0,-1,0};
+const int dj[]={0,1,0,-1};
+
+int B[102][102],A[102][102],C[102][102],cc[11];
+int n,dmin=10,cmin=1000000;
+
+int inside(int i, int j)
+{
+    return i>=1 &amp;&amp; j>=1 &amp;&amp; i<=n &amp;&amp; j<=n;
+}
+
+int verif(int x, int y)
+{
+    return (x&amp;(1<<y))!=0;
+}
+
+int nrdist(int x)
+{
+    int c=0;
+    while(x)
+    {
+        c=c+x%2;
+        x=x/2;
+    }
+    return c;
+}
+
+queue<pozitie> Q;
+
+void LEE(int cod)
+{
+    for(int i=1;i<=n;i++)
+    {
+        pozitie p;
+        p.i=i; p.j=1;
+        if(verif(cod,A[i][1]))
+           {
+               Q.push(p);
+               B[i][1]=1;
+               C[i][1]=cc[A[i][1]];
+           }
+    }
+    while(!Q.empty())
+    {
+        int i=Q.front().i;
+        int j=Q.front().j;
+        for(int d=0;d<4;d++)
+        {
+            int ii=i+di[d];
+            int jj=j+dj[d];
+            if(inside(ii,jj) &amp;&amp; verif(cod,A[ii][jj]))
+                if(C[ii][jj]>C[i][j]+cc[A[ii][jj]])
+                {
+                    B[ii][jj]=B[i][j]+1;
+                    C[ii][jj]=C[i][j]+cc[A[ii][jj]];
+                    pozitie pnou;
+                    pnou.i=ii;
+                    pnou.j=jj;
+                    Q.push(pnou);
+                }
+        }
+        Q.pop();
+    }
+    int costmin=100000;
+    for(int i=1;i<=n;i++)
+        if(B[i][n]>0 &amp;&amp; C[i][n]<costmin)
+            costmin=C[i][n];
+    if(costmin!=100000)
+    {
+          if(nrdist(cod)<dmin) { dmin=nrdist(cod); cmin=costmin; }
+          else if(nrdist(cod)==dmin &amp;&amp; cmin>costmin) cmin=costmin;
+    }
+}
+
+int main()
+{
+    fin>>n;
+    for(int i=0;i<=9;i++)
+        fin>>cc[i];
+    for(int i=1;i<=n;i++)
+          for(int j=1;j<=n;j++)
+             {
+                 char x;
+                 fin>>x;
+                 A[i][j]=x-'0';
+             }
+    for(int k=0;k<=1023;k++)
+    {
+        for(int i=1;i<=n;i++)
+          for(int j=1;j<=n;j++)
+            {
+                B[i][j]=0;
+                C[i][j]=1000000;
+            }
+        LEE(k);
+    }
+    fout<<dmin<<'\n'<<cmin;
+    return 0;
+}</pre>

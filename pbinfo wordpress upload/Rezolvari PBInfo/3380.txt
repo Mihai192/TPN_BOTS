@@ -1,0 +1,179 @@
+<h1>Cerința</h1>
+
+<p>Se consideră un castel de formă dreptunghiulară, alcătuit din <code>n*m</code> camere dispuse pe <code>n</code> linii și <code>m</code> coloane. Intrarea în castel este în camera de coordonate <code>(1,1)</code>, ieșirea în camera de coordonate <code>(n,m)</code>, iar unele camere sunt închise. Dintr-o cameră se poate trece în camerele învecinate pe linie sau pe coloană. Unele camere sunt ocupate de zmei gripați; fiecare zmeu transmite viruși gripali în camera sa și în camerele aflate în jurul său la distanță mai mică sau egală cu <code>k</code>.</p>
+
+<p>Pentru a câștiga inima Ilenei Cosânzeana, Făt-Frumos trebuie să traverseze castelul. Deoarece nu se pricepe la informatică vă roagă pe voi să determinați care este lungimea minimă a unui traseu care traversează castelul, trece doar prin camere deschise și nu trece prin camere afectate de zmei.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>castel2.in</code> conține pe prima linie numerele <code>n m k</code>, iar pe următoarele <code>n</code> linii câte <code>m</code> caractere, care pot fi:</p>
+
+<ul>
+	<li><code>-</code> – reprezentând cameră deschisă în care nu se află zmeu</li>
+	<li><code>Z</code> – reprezentând cameră deschisă în care se află zmeu</li>
+	<li><code>#</code> – reprezentând cameră închisă</li>
+</ul>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>castel2.out</code> va conține pe prima linie numărul <code>L</code>, reprezentând lungimea minimă determinată.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n,m ≤ 1000</code></li>
+	<li><code>1 ≤ k ≤ 100</code></li>
+	<li>dacă nu există niciun traseu, se va afișa valoarea <code>-1</code></li>
+	<li>pentru 40 de puncte, <code>k=0</code></li>
+	<li>pentru alte 20 de puncte, <code>k=1</code></li>
+	<li>lungimea traseului este egală cu numărul de camere conținute de acesta, inclusiv camera de intrare în castel și cea de ieșire</li>
+	<li>virușii nu pot intra în camerele închise</li>
+</ul>
+
+<h1>Exemplul 2</h1>
+
+<p><code>castel2.in</code></p>
+
+<pre contenteditable="true" editable="true">5 7 0
+-#--#--
+-----Z-
+##---#-
+---#---
+-----#-</pre>
+
+<p><code>castel2.out</code></p>
+
+<pre contenteditable="true" editable="true">11</pre>
+
+<h2>Explicație</h2>
+
+<p>Un traseu posibil este următorul:</p>
+
+<pre contenteditable="true" editable="true">1  #  -  -  #  -  - 
+2  3  4  5  6  Z  - 
+#  #  -  -  7  #  - 
+-  -  -  #  8  9 10 
+-  -  -  -  -  # 11</pre>
+
+<h1>Exemplul 2</h1>
+
+<p><code>castel2.in</code></p>
+
+<pre contenteditable="true" editable="true">5 7 2
+-#--#--
+-----Z-
+##---#-
+---#---
+-----#-</pre>
+
+<p><code>castel2.out</code></p>
+
+<pre contenteditable="true" editable="true">13</pre>
+
+<h2>Explicație</h2>
+
+<p>Un traseu posibil este următorul:</p>
+
+<pre contenteditable="true" editable="true">1  #  -  -  #  -  -
+2  3  4  -  -  Z  -
+#  #  5  -  -  #  -
+-  -  6  # 10 11 12
+-  -  7  8  9  # 13</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <queue>
+using namespace std;
+#define inf 9999
+ifstream cin("castel2.in");
+ofstream cout("castel2.out");
+
+const int di[] = { 0 , 0 , -1 , 1};
+const int dj[] = {-1 , 1 ,  0 , 0};
+
+int n , m , k , a[1001][1001] , b[1001][1001];
+char c;
+struct poz
+{
+    int i , j;
+    poz(int i_, int j_)
+    {
+        i = i_;
+        j = j_;
+    }
+    poz(){};
+};
+queue <poz> Q;
+
+bool inside(int i , int j)
+{
+    return i >= 1 &amp;&amp; i <= n &amp;&amp; j >= 1 &amp;&amp; j <= m;
+}
+
+void lee(int i , int j)
+{
+    poz x;
+    x.i = i;
+    x.j = j;
+    Q.push(x);
+    b[x.i][x.j] = 1;
+    while(!Q.empty())
+    {
+        poz r;
+        r = Q.front();
+        for(int d = 0 ; d < 4 ; d++)
+        {
+            int inou = r.i + di[d];
+            int jnou = r.j + dj[d];
+            if(inside(inou , jnou) &amp;&amp; b[inou][jnou] == 0 &amp;&amp; a[inou][jnou] != -1 &amp;&amp; a[inou][jnou] != -2)
+            {
+                Q.push({inou , jnou});
+                b[inou][jnou] = b[r.i][r.j] + 1;
+            }
+        }
+        Q.pop();
+    }
+}
+
+int main()
+{
+    cin >> n >> m >> k;
+    for(int i = 1 ; i <= n ; i++)
+    {
+        for(int j = 1 ; j <= m ; j++)
+        {
+            cin >> c;
+            if(c == '#') a[i][j] = -1;
+            if(c == 'Z') a[i][j] = -2;
+        }
+    }
+
+    queue< pair<poz, int> > Q;
+
+    for (int i = 1; i <= n; ++ i)
+        for (int j = 1; j <= m; ++ j)
+            if (a[i][j] == -2)///zmeu
+                Q.push({poz(i, j), 0});
+
+    ///leezmeu
+    poz x;
+    int dist;
+    while (!Q.empty())
+    {
+        x = Q.front().first;
+        dist = Q.front().second;
+        Q.pop();
+
+        for(int d = 0 ; d < 4 ; d++)
+        {
+            int inou = x.i + di[d];
+            int jnou = x.j + dj[d];
+            if(inside(inou , jnou) &amp;&amp; a[inou][jnou] != -1 &amp;&amp; a[inou][jnou] != -2 &amp;&amp; dist + 1 <= k)
+            {
+                Q.push({poz(inou , jnou), dist + 1});
+                a[inou][jnou] = -2;
+            }
+        }
+    }
+    lee(1 , 1);
+    if (b[n][m] == 0) cout << "-1";
+    else cout << b[n][m];
+}</pre>

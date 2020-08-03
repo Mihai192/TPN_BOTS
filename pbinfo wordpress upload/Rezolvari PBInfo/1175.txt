@@ -1,0 +1,38 @@
+<p>Se consideră o listă liniară simplu înlănțuită, alocată dinamic, în care elementele sunt de tipul declarat mai jos:</p>
+
+<pre class="code_c cm-s-default" data-lang="text/x-csrc" contenteditable="true" editable="true"><span class="cm-keyword">struct</span> <span class="cm-variable">nod</span>{
+    <span class="cm-keyword">int</span> <span class="cm-variable">info</span>;
+    <span class="cm-variable">nod</span> <span class="cm-operator">*</span> <span class="cm-variable">urm</span>;
+};</pre>
+
+<p>în care câmpul <code>info</code> memorează un număr natural, iar câmpul <code>urm</code> memorează adresa următorului element al listei.</p>
+
+<h1>Cerinţa</h1>
+
+<p>Să se scrie o funcție C++ cu următorul prototip:</p>
+
+<pre class="code_c cm-s-default" data-lang="text/x-csrc" contenteditable="true" editable="true"><span class="cm-keyword">int</span> <span class="cm-variable">suma</span>(<span class="cm-variable">nod</span> <span class="cm-operator">*</span> <span class="cm-variable">p</span>);</pre>
+
+<p>care determina și returnează suma elementelor impare situate între două elemente pare din lista pentru care primul element are adresa memorată în pointerul <code>p</code>. </p>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595353574&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1175%2Fflistasuma&amp;flash=0&amp;wgl=1&amp;dt=1595353574643&amp;bpp=4&amp;bdt=272&amp;idt=190&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=3185178297563&amp;frm=20&amp;pv=1&amp;ga_vid=1744050990.1595352838&amp;ga_sid=1595353575&amp;ga_hid=282156882&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=814&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1013&amp;biw=1200&amp;bih=647&amp;scr_x=0&amp;scr_y=0&amp;eid=21066623&amp;oid=3&amp;pvsid=991341899814096&amp;pem=168&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1170%2Ffadaugareinaintelista&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C770%2C1200%2C647&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=oNUpSj1S2Q&amp;p=https%3A//www.pbinfo.ro&amp;dtd=196" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CLyU_Zjz3uoCFYJE5QodAIsDlA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p>Dacă lista conține valorile <code>(4 7 8 9 1 2 5 8)</code> funcția va returna valoarea <code>12</code>, adică <code>7 + 5</code>. Elementele <code>9</code> și <code>1</code> nu respectă condiția cerută.</p>
+
+<h1>Important</h1>
+
+<p>Soluţia propusă va conţine definiţia funcţiei cerute. Prezenţa în soluţie a altor instrucţiuni poate duce erori de compilare sau de execuţie care vor avea ca efect depunctarea soluţiei.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">int suma(nod *prim)
+{
+    int s=0;
+    if(prim!=NULL &amp;&amp; prim->urm!=NULL &amp;&amp; prim->urm->urm!=NULL)
+        for(nod *p=prim;p->urm->urm!=NULL;p=p->urm)
+            if(p->info%2==0 &amp;&amp; p->urm->info%2==1 &amp;&amp; p->urm->urm->info%2==0)
+            s=s+p->urm->info;
+        return s;
+}</pre>

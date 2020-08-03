@@ -1,0 +1,56 @@
+<h1>Cerinţă </h1>
+
+<p>Citindu-se un număr natural <code>n</code> şi un şir de caractere să se afişeze de <code>n</code> ori şirul de caractere. De fiecare dată se va trece pe rând nou. </p>
+
+<h1>Date de intrare </h1>
+
+<p>Fişierul de intrare <code>afisaren.in</code> conţine pe prima linie numărul <code>n</code>, iar pe a două şirul de caractere. </p>
+
+<h1>Date de ieşire </h1>
+
+<p>Fişierul de ieşire <code>afisaren.out</code> va afişa pe fiecare linie de la <code>1</code> la <code>n</code> şirul de caractere. </p>
+
+<h1>Restricţii şi precizări </h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 50</code></li>
+	<li>lungimea şirului de caractere este maxim <code>1.000.000</code></li>
+	<li><strong>daca <code>n = 0</code> nu se va afisa nimic</strong></li>
+</ul>
+
+<h1>Exemplu: </h1>
+
+<p><code>afisaren.în</code> </p>
+
+<pre contenteditable="true" editable="true">3 
+AfisareN </pre>
+
+<p><code>afisaren.out</code> </p>
+
+<pre contenteditable="true" editable="true">AfisareN 
+AfisareN 
+AfisareN </pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin("afisaren.in");
+ofstream cout("afisaren.out");
+
+int main()
+{
+    int n;
+    cin >> n;
+    cin.close();
+    for(int i = 0 ; i < n ; ++i)
+    {
+        ifstream cin("afisaren.in");
+        int x;
+        cin >> x;
+        char ch;
+        while(cin >> ch)
+        cout << ch;
+        cout << endl;
+        cin.close();
+    }
+    return 0;
+}</pre>

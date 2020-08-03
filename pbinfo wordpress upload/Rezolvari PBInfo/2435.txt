@@ -1,0 +1,147 @@
+<h1>Cerinţa</h1>
+
+<p>Se dau <code>n</code> numere întregi. Calculaţi cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi <code>n</code> numere întregi, separate prin spaţii.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Programul afișează pe ecran numărul <code>MIN</code>, reprezentând cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1000</code></li>
+	<li>cele <code>n</code> numere citite vor avea cel mult <code>9</code> cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Date de intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+7 6 9 6 8</pre>
+
+<p><strong>Date de ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">6</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <algorithm>
+#include <stack>
+using namespace std;
+
+ifstream cin("fadema.in");
+ofstream cout("fadema.out");
+
+const int MaxN = 1001;
+
+int h[MaxN][MaxN];
+const int Nmax=1001;
+
+bool a[Nmax][Nmax];
+int mat[Nmax][Nmax] , mat1[Nmax][Nmax] , n , m;
+
+int maxAreaInHist(int x[], int L)
+{
+    stack<int> st;
+
+    int j = 0, tp;
+    int amax = 0, area;
+
+    while (j < max(n , m))
+    {
+        if (st.empty() || x[st.top()] <=  x[j])
+            st.push(j++);
+        else
+        {
+            tp = st.top();
+            st.pop();
+            area = x[tp] * (st.empty() ? j : j - st.top() - 1);
+            amax = max(amax, area);
+        }
+    }
+
+    while (!st.empty())
+    {
+        tp = st.top();
+        st.pop();
+        area = x[tp] * (st.empty() ? j : j - st.top() - 1);
+        amax = max(amax, area);
+    }
+
+    return amax;
+}
+
+int main()
+{
+    cin >> n >> m;
+    for(int i = 0 ; i < n ; ++i)
+        for(int j = 0 ; j < m ; ++j)
+            cin >> a[i][j];
+    mat[0][0]=1;
+    for(int i = 1 ; i < m ; ++i)
+        mat[0][i]=!mat[0][i-1];
+    for(int i = 1 ; i < n ; ++i)
+        for(int j = 0 ; j < m ; ++j)
+            if(j==0)
+                mat[i][j]=!mat[i-1][j];
+            else
+                mat[i][j]=!mat[i][j-1];
+    for(int i = 0 ; i < n ; ++i)
+        for(int j = 0 ; j < m ; ++j)
+            if(mat[i][j]!=a[i][j])
+                mat1[i][j]=0;
+            else
+                mat1[i][j]=1;
+    for(int i = 0 ; i < n ; ++i)
+        for(int j = 0 ; j < m ; ++j)
+            a[i][j]=mat1[i][j];
+    int maxArea = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            if (a[i][j] == 0)
+                h[i][j] = 0;
+            else
+            {
+                if ( i == 0 )
+                    h[i][j] = 1;
+                else
+                    h[i][j] = h[i - 1][j] + 1;
+            }
+
+    int area;
+    for (int i = 0; i < max(n , m); i++)
+    {
+        area = maxAreaInHist(h[i], i);
+        if (area > maxArea)
+            maxArea = area;
+    }
+    for(int i = 0 ; i < n ; ++i)
+        for(int j = 0 ; j < m ; ++j)
+            a[i][j]=!a[i][j];
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            if (a[i][j] == 0)
+                h[i][j] = 0;
+            else
+            {
+                if ( i == 0 )
+                    h[i][j] = 1;
+                else
+                    h[i][j] = h[i - 1][j] + 1;
+            }
+    for (int i = 0; i < max(n , m); i++)
+    {
+        area = maxAreaInHist(h[i], i);
+        if (area > maxArea)
+            maxArea = area;
+    }
+    cout << maxArea;
+}</pre>

@@ -1,0 +1,80 @@
+<h1>Cerinţa</h1>
+
+<p>Se dă un fişier text care conţine mai multe linii, pe fiecare linie existând câte un şir de numere naturale nenule, despărţite prin câte un spaţiu; fiecare linie se termină cu numarul <code>0</code> (care se consideră că nu face parte din şirul aflat pe linia respectivă) şi conţine cel puţin două valori. </p>
+
+<p>Se cere să se afişeze valoarea maximă din şirul care conţine cele mai puţine numere. În cazul în care există mai multe şiruri cu acelaşi număr minim de numere, se va afişa cea mai mare valoare care apare în unul dintre aceste şiruri.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fişierul de intrare <code>maxim5.in</code> conţine şirurile de numere, aşa cu a fost descris mai sus.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Fişierul de ieşire <code>maxim5.out</code> va conţine pe prima linie numărul <code>M</code>, reprezentând valoarea maximă din şirul care conţine cele mai puţine numere.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li>numerele din şirurile date au cel mult <code>9</code> cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=1958414068&amp;w=728&amp;lmt=1595362797&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F281%2Fmaxim5&amp;flash=0&amp;wgl=1&amp;dt=1595362797497&amp;bpp=36&amp;bdt=241&amp;idt=263&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=4144847283161&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595362798&amp;ga_hid=1496035646&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1076&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=2&amp;pvsid=4335409673422876&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2275%2Fminimdoua&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=lKW1qsvgNm&amp;p=https%3A//www.pbinfo.ro&amp;dtd=276" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CPvq4saV3-oCFbPFuwgd1YMACg"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>maxim5.in</code></p>
+
+<pre contenteditable="true" editable="true">2 253 34 3 0
+6 88 9 3 0
+4 54 88 12345 98 234 546 0</pre>
+
+<p><code>maxim5.out</code></p>
+
+<pre contenteditable="true" editable="true">253</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin("maxim5.in");
+ofstream cout("maxim5.out");
+
+int main()
+{
+    int n=0;
+    int a[100000];
+    a[0]=0;
+    n=1;
+    while(cin >> a[n])
+        n++;
+    int l = 0 , lmax = 100000 , st , dr;
+    for(int i = 1 ; i < n ; ++i)
+    {
+        if(a[i]==0)
+        {
+            if(l<lmax &amp;&amp; l>0)
+            lmax=l , st=i-l , dr=i;
+            l=0;
+        }
+        else
+        l++;
+    }
+    int max=0;
+    for(int i = 1 ; i < n ; ++i)
+    {
+        if(a[i]==0)
+        {
+            if(l==lmax)
+            {
+                for(int j = i - lmax ; j <= i ; ++j)
+                    if(a[j]>max)
+                        max=a[j];
+            }
+            l=0;
+        }
+        else
+        l++;
+    }
+    cout << max;
+}</pre>

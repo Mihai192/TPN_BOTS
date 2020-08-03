@@ -1,0 +1,48 @@
+<h1>Cerința</h1>
+
+<p>Se dă un șir <code>V</code>. Știind <code>V</code><sub><code>0</code></sub><code> = 3</code> și regula de formare a șirului:</p>
+
+<p><code>V</code><sub><code>i</code></sub><code> = ([ V</code><sub><code>i-1</code></sub> <code>* V</code><sub><code>i-1</code></sub><code> / (i + 2)] +  V </code><sub><code>i-1</code></sub><code> * i + i + 1) % 666013</code>.</p>
+
+<p>să se determine al <code>n</code>-lea termen al șirului. (unde <code>[x]</code> reprezintă partea întreagă a numărului <code>x</code>)</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>smen.in</code> conține numărul <code>n</code>.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>smen.out</code> va conține al <code>n</code>-lea termen al șirului.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 20.000.000</code></li>
+	<li><b>Atenție la limitele de timp și de memorie!</b></li>
+</ul>
+
+<h1>Exemple:</h1>
+
+<p><code>smen.in</code></p>
+
+<pre contenteditable="true" editable="true">10000000</pre>
+
+<p><code>smen.out</code></p>
+
+<pre contenteditable="true" editable="true">22230</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+ifstream cin("smen.in");
+ofstream cout("smen.out");
+int main()
+{
+    unsigned long long n , a = 0 , b;
+    cin >> n;
+    for(int i = 1 ; i <= n ; i++)
+    {
+        b = ( a * a / (i + 2) +  a * i + i + 1) % 666013;
+        a = b;
+        if(i!=n) b = 0;
+    }
+    cout << b << ' ';
+}</pre>

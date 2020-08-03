@@ -1,0 +1,100 @@
+<h1>Cerința</h1>
+
+<p>Se consideră un poligon militar, pe care este stabilit un sistem de axe de coordonate <code>xOy</code>. Se dau <code>n</code> bombe, numerotate de la <code>1</code> la <code>n</code>, pentru fiecare cunoscându-se coordonatele <code>x y</code> și puterea de distrugere <code>p</code>. La explozia unei bombe de putere <code>p</code> se va distruge totul în interiorul și pe cercul de centru <code>x y</code> și rază <code>p</code>, iar dacă există alte bombe în această zonă, vor exploda la rândul lor.</p>
+
+<p>Dându-se numărul de ordine <code>I</code> al unei bombe care explodează, să se determine câte bombe rămân intacte la finalul șirului de explozii declanșate.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>bomber.in</code> conține pe prima linie numerele <code>n I</code>, fiecare dintre următoarele <code>n</code> linii conține câte trei numere <code>x y p</code>, cu semnificația din enunț.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>bomber.out</code> va conține pe prima linie numărul <code>C</code>, reprezentând numărul de bombe rămase neexplodate.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 100</code></li>
+	<li><code>1 ≤ I ≤ n</code></li>
+	<li>coordonatele <code>x y</code> sunt numere întregi, iar puterile <code>p</code> sunt numere naturale</li>
+	<li><code>-200 ≤ x , y ≤ 200</code></li>
+	<li>* <code>1 ≤ p ≤ 30</code></li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595357811&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F841%2Fbomber&amp;flash=0&amp;wgl=1&amp;dt=1595357811377&amp;bpp=4&amp;bdt=290&amp;idt=115&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=640149630351&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595357811&amp;ga_hid=2004179254&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1186&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=44717730&amp;oid=3&amp;pvsid=695989486454359&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F957%2Fzana&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=WmVUbODaoC&amp;p=https%3A//www.pbinfo.ro&amp;dtd=128" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CPOel_2C3-oCFcnQuwgdNOkE1A"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>bomber.in</code></p>
+
+<pre contenteditable="true" editable="true">9 5
+0 3 2
+-1 1 3
+1 4 1
+3 4 4
+-1 -2 3
+3 1 3
+0 -4 2
+3 -2 5
+4 -1 2</pre>
+
+<p><code>bomber.out</code></p>
+
+<pre contenteditable="true" editable="true">4</pre>
+
+<h1>Explicație</h1>
+
+<p>Bombele sunt dispuse ca în desen:<br>
+<img alt="" height="452" src="/resurse/probleme/801-850/841-bomber.png" width="376"></p>
+
+<p>Mai întâi va exploda bomba colorată cu verde, apoi cele colorate cu roșu, apoi cea colorată cu mov, apoi cea colorată cu negru.</p>
+
+<p>Cele <code>4</code> bombe colorate cu albastru nu vor exploda.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <cmath>
+using namespace std;
+
+ifstream cin("bomber.in");
+ofstream cout("bomber.out");
+
+int n , I;
+
+struct shen
+{
+    int x , y , p;
+}v[101];
+
+bool puscate[101];
+
+int dist(int a , int b , int c , int d)
+{
+    return sqrt((a - c) * (a - c) + (b - d) * (b - d));
+}
+
+void pusc(int i , int j , int putere , int q)
+{
+    puscate[q]=1;
+    for(int k = 1 ; k <= n ; ++k)
+    {
+        if(dist(v[k].x , v[k].y , i , j) <= putere &amp;&amp; k!=q &amp;&amp; puscate[k]==0)
+            pusc(v[k].x , v[k].y , v[k].p , k);
+    }
+}
+
+int main()
+{
+    cin >> n >> I;
+    for(int i = 1 ; i <= n ; ++i)
+        cin >> v[i].x >> v[i].y >> v[i].p;
+    pusc(v[I].x , v[I].y , v[I].p , I);
+    int cnt=0;
+    for(int i = 1 ; i <= n ; ++i)
+        if(puscate[i]==0)
+            cnt++;
+    cout << cnt;
+    return 0;
+}</pre>

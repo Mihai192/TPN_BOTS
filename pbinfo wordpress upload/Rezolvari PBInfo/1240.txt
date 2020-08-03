@@ -1,0 +1,74 @@
+<h1>Cerința</h1>
+
+<p>Se se determine pentru <code>n</code> numere <code>a</code> valoarea <code>b</code> maximă astfel încât <code>b</code><sup><code>3</code></sup><code> + b ≤ a</code>.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>ab3.in</code> conține pe prima linie numărul <code>n</code>, iar pe următoarele <code>n</code> linii câte un număr <code>a</code>.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>ab3.out</code> va conține <code>n</code> linii cu câte un număr fiecare, răspunsul la fiecare întrebare.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 100.000</code></li>
+	<li><code>0 ≤ a ≤ 10</code><sup><code>18</code></sup></li>
+	<li>Pentru <code>40%</code> din teste, se garantează că <code>n * b ≤ 10</code><sup><code>6</code></sup></li>
+	<li><b>Atenție la limita de memorie!</b></li>
+</ul>
+
+<h1>Exemple:</h1>
+
+<p><code>ab3.in</code></p>
+
+<pre contenteditable="true" editable="true">5
+1 
+9 
+36
+27
+89</pre>
+
+<p><code>ab3.out</code></p>
+
+<pre contenteditable="true" editable="true">0
+1
+3
+2
+4</pre>
+
+<h1>Explicație</h1>
+
+<p><code>1</code><sup><code>3</code></sup><code> + 1 = 2</code><br>
+<code>2</code><sup><code>3</code></sup><code> + 2 = 10</code><br>
+<code>3</code><sup><code>3</code></sup><code> + 3 = 30</code><br>
+<code>4</code><sup><code>3</code></sup><code> + 4 = 68</code><br>
+<code>5</code><sup><code>3</code></sup><code> + 5 = 130</code></p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin ("ab3.in");
+ofstream cout ("ab3.out");
+
+unsigned long long cautare(unsigned long long x , unsigned long long st , unsigned long long dr)
+{
+    unsigned long long mij = (st + dr) / 2;
+    if(x == 1) return 0;
+    if(mij * mij * mij + mij == x || (mij * mij * mij + mij < x &amp;&amp; (mij + 1) * (mij + 1) * (mij + 1) + (mij + 1) > x))
+       return mij;
+    if(mij * mij * mij + mij < x) return cautare(x , mij + 1 , dr);
+    if(mij * mij * mij + mij > x) return cautare(x , st , mij - 1);
+}
+
+int main()
+{
+    unsigned long long n , x;
+    cin >> n;
+    for(int i = 1 ; i <= n ; i++)
+    {
+        cin >> x;
+        cout << cautare(x , 1 , 1000000000) << '\n';
+    }
+    return 0;
+}</pre>

@@ -1,0 +1,65 @@
+<h1>Cerința</h1>
+
+<p>Se dau două numere <code>b1 b2</code>, reprezentând două baze de numeraţie şi două şiruri de cifre <code>x y</code>, reprezentând două numere: <code>x</code> în baza <code>b1</code>, <code>y</code> în baza <code>b2</code>. Determinaţi suma numerelor <code>x</code> şi <code>y</code> în baza <code>10</code>.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>baze1.in</code> conține pe prima linie numerele <code>b1 b2</code>, iar pe a doua linie cele două şiruri de cifre cu semnificaţia de mai sus.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>baze1.out</code> va conține pe prima linie numărul <code>S</code>, reprezentând suma dintre <code>x</code> şi <code>y</code>.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>2 ≤ b1,b2 ≤ 10</code></li>
+	<li>reprezentările în baza <code>10</code> ale lui <code>x</code>, <code>y</code> şi suma lor nu depăşesc <code>2 000 000 000</code></li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595356983&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1003%2Fbaze1&amp;flash=0&amp;wgl=1&amp;dt=1595356983772&amp;bpp=5&amp;bdt=212&amp;idt=131&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=8471657558740&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595356984&amp;ga_hid=1967249725&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1022&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=3479381974085561&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F850%2Frepetitii&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=AynEh4CqsW&amp;p=https%3A//www.pbinfo.ro&amp;dtd=137" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CO2kxvL_3uoCFUrHuwgdEogNBw"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>baze1.in</code></p>
+
+<pre contenteditable="true" editable="true">2 5 
+110 213</pre>
+
+<p><code>baze1.out</code></p>
+
+<pre contenteditable="true" editable="true">64</pre>
+
+<h1>Explicație</h1>
+
+<p><code>110</code><sub><code>(2)</code></sub><code> = 6</code><br>
+<code>213</code><sub><code>(5)</code></sub><code> = 58</code><br>
+<code>6 + 58 = 64</code></p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <cstring>
+using namespace std;
+
+ifstream fin("baze1.in");
+ofstream fout("baze1.out");
+
+char am[25] , an[25];
+int b1 , b2 , n1 , n2 , v;
+
+int main()
+{
+    fin >> b1 >> b2 >> am >> an;
+    for(int i = 0 ; i < strlen(am) ; i++)
+    {
+        v = am[i] - '0';
+        n1 = n1 * b1 + v;
+    }
+    for(int i = 0 ; i < strlen(an) ; i++)
+    {
+        v = an[i] - '0';
+        n2 = n2 * b2 + v;
+    }
+    fout << n1 + n2;
+}</pre>

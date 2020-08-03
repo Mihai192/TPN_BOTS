@@ -1,0 +1,122 @@
+<p>Mama mea este profesoară de informatică, dar îi place foarte mult să gătească. Recent am descoperit caietul ei de reţete, care arată foarte neobişnuit. Fiecare reţetă este scrisă pe un singur rând pe care sunt precizate produsele folosite, cantităţile, precum şi ordinea în care se execută operaţiile. De exemplu:<br>
+<code>(unt 50 zahar 250 ou 4)5</code><br>
+ceea ce înseamnă că se amestecă <code>50</code> grame unt cu <code>250</code> grame zahăr şi cu <code>4</code> ouă timp de <code>5</code> minute. Pentru fiecare produs mama foloseşte întotdeauna aceeaşi unitate de măsură, aşa că unităţile de măsură nu mai sunt precizate. Numele produsului este scris întotdeauna cu litere mici, iar produsele şi cantităţile sunt separate prin spaţii (unul sau mai multe). Produsele care se amestecă împreună sunt încadrate între paranteze rotunde; după paranteza rotundă închisă este specificat timpul de preparare.</p>
+
+<p>Evident, mama are şi reţeţe mai complicate:<br>
+<code>(((zahar 100 ou 3)5 unt 100 nuca 200)4 (lapte 200 cacao 50 zahar 100) 3)20</code></p>
+
+<p>Să traducem această reţetă: se amestecă <code>100</code> grame zahăr cu <code>3</code> ouă timp de cinci minute; apoi se adaugă <code>100</code> grame unt şi <code>200</code> grame nucă, amestecând totul încă <code>4</code> minute. Se amestecă <code>200</code> ml lapte cu <code>50</code> grame de cacao şi <code>100</code> grame zahăr timp de <code>3</code> minute, apoi se toarnă peste compoziţia precedentă şi se amestecă totul timp de <code>20</code> minute.</p>
+
+<p>Observaţi că înainte sau după parantezele rotunde pot să apară sau nu spaţii.</p>
+
+<h1>Cerinţă</h1>
+
+<p>Dată fiind o reţetă să se determine timpul total de preparare, precum şi cantităţile necesare din fiecare produs.</p>
+
+<h1>Date de intrare </h1>
+
+<p>Fişierul de intrare <code>reteta.in</code> conţine pe prima linie un şir de caractere care reprezintă o reţetă.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Fişierul de ieşire <code>reteta.out</code> va conţine pe prima linie timpul total necesar pentru prepararea reţetei. Pe următoarele linii sunt scrise ingredientele în ordine lexicografică (ordinea din dicţionar), câte un ingredient pe o linie. Pentru fiecare ingredient este specificat numele urmat de un spaţiu apoi de cantitatea totală necesară.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>0 &lt;</code> Lungimea unei reţete <code>≤ 1000</code></li>
+	<li><code>1 ≤</code> Numărul de ingrediente  <code>≤ 100</code></li>
+	<li>Numele unui ingredient este scris cu maxim <code>20</code> litere mici ale alfabetului englez.</li>
+	<li>Timpii de preparare sunt numere naturale <code>&lt; 100</code></li>
+	<li>Cantităţile specificate în reţete sunt numere naturale <code>&lt; 1000</code></li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595356847&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1098%2Freteta&amp;flash=0&amp;wgl=1&amp;dt=1595356847497&amp;bpp=17&amp;bdt=225&amp;idt=131&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=1547849917872&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595356848&amp;ga_hid=1914668134&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1576&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=2912626694575783&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1087%2Fcuvinte4&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=9eCh42uDMV&amp;p=https%3A//www.pbinfo.ro&amp;dtd=137" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CODryLH_3uoCFanGuwgdfW8Onw"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>reteta.in</code></p>
+
+<pre contenteditable="true" editable="true">(((zahar 100 ou 3)5 unt 100 nuca 200)4 (lapte 200 cacao 50 zahar 100) 3)20</pre>
+
+<p><code>reteta.out</code></p>
+
+<pre contenteditable="true" editable="true">32
+cacao 50
+lapte 200
+nuca 200
+ou 3
+unt 100
+zahar 200</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <map>
+using namespace std;
+
+ifstream cin("reteta.in");
+ofstream cout("reteta.out");
+
+map<string , int> M;
+
+bool cif(char ch)
+{
+    return ch >= '0' &amp;&amp; ch <= '9';
+}
+
+bool lit(char ch)
+{
+    return (ch >= 'a' &amp;&amp; ch <= 'z') || (ch >= 'A' &amp;&amp; ch <= 'Z');
+}
+
+int main()
+{
+    char s[1001];
+    cin.getline(s , 1001);
+    int i = 0;
+    string t;
+    int su = 0;
+    int nr = 0;
+    while(s[i])
+    {
+        if(cif(s[i]) || lit(s[i]))
+        {
+            bool ok = false;
+            while(cif(s[i]))
+            {
+                ok=true;
+                nr = nr * 10 + s[i] - '0';
+                i++;
+            }
+            while(lit(s[i]))
+            {
+                t = t + s[i];
+                i++;
+                nr = 0;
+            }
+            if(nr!=0 &amp;&amp; t != "" &amp;&amp; ok)
+                M[t]+=nr , nr = 0 , t = "";
+            i--;
+        }
+        else if(s[i]==')')
+        {
+            i++;
+            while(s[i]==' ')
+                i++;
+            int ci = 0;
+            while(cif(s[i]))
+            {
+                ci = ci * 10 + s[i] - '0';
+                i++;
+            }
+            i--;
+            su+=ci;
+        }
+        i++;
+    }
+    cout << su << endl;
+    for(auto x:M)
+        cout << x.first << ' ' << x.second << endl;
+    return 0;
+}</pre>

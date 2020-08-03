@@ -1,0 +1,218 @@
+<h1>Cerinţa</h1>
+
+<p>Se dau <code>n</code> numere întregi. Calculaţi cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Programul citește de la tastatură numărul <code>n</code>, iar apoi <code>n</code> numere întregi, separate prin spaţii.</p>
+
+<h1>Date de ieşire</h1>
+
+<p>Programul afișează pe ecran numărul <code>MIN</code>, reprezentând cel mai mic dintre cele <code>n</code> numere date.</p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 1000</code></li>
+	<li>cele <code>n</code> numere citite vor avea cel mult <code>9</code> cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><strong>Date de intrare</strong></p>
+
+<pre contenteditable="true" editable="true">5
+7 6 9 6 8</pre>
+
+<p><strong>Date de ieșire</strong></p>
+
+<pre contenteditable="true" editable="true">6</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <iostream>
+#include <vector>
+#include <bitset>
+#include <queue>
+#include <stack>
+using namespace std;
+    
+const int N = 205, oo = 1e9;
+using VI  = vector<int>;
+using VVI = vector<VI>;
+
+VI dx = {1, -1, 0, 0, -2, 2, 1, 1, -1, -1, 0, 0};
+VI dy = {0, 0, 1, -1, 0, 0, 1, -1, 1, -1, 2, -2};
+
+VVI a(N, VI(N)), d(N, VI(N));
+
+queue <pair<int, int>> q;
+VI eulcycle;
+vector<pair<int, int>> L[N * N];
+bitset<105> used;   
+int n, m, task, xc, yc;
+    
+inline bool Inside (int x, int y)
+{
+    return (x > 0 &amp;&amp; y > 0 &amp;&amp; x <= n &amp;&amp; y <= m);    
+}
+    
+void Initiate ()
+{
+    for (int i = 1; i <= n; i++)    
+        for (int j = 1; j <= m; j++)
+            d[i][j] = oo;
+}
+
+void Lee (int xc, int yc)   
+{
+    d[xc][yc] = 0;  
+    q.push({xc, yc});
+    
+    while (!q.empty())
+    {
+        int i = q.front().first;
+        int j = q.front().second;
+        q.pop();
+        for (int dir = 0; dir < 4; dir++)
+        {
+            int x = i + dx[dir];
+            int y = j + dy[dir];
+            if (Inside(x, y) &amp;&amp; !a[x][y] &amp;&amp; d[x][y] > 1 + d[i][j])
+            {
+                d[x][y] = 1 + d[i][j];
+                q.push({x, y});
+            }
+        }
+    }
+}
+    
+inline int Convert(int x, int y)    
+{
+    return (x - 1) * m + y; 
+}
+    
+void Eulerian_Cycle(int start)  
+{
+    stack <int> st; 
+    st.push(start);
+    
+    while (!st.empty())
+    {
+        int currnode = st.top();
+        if (L[currnode].size())
+        {
+            pair <int, int> next = L[currnode].back();
+            L[currnode].pop_back();
+            if (!used[next.second])
+            {
+                used[next.second] = 1;
+                st.push(next.first);
+            }
+        }
+        else
+        {
+            st.pop();
+            eulcycle.push_back(currnode);
+        }
+    }
+}
+    
+void Solve()
+{
+    ifstream fin ("cartite.in");    
+    int i, j, k, t, x, y, G;
+    fin >> task;
+    fin >> n >> m;
+    fin >> xc >> yc;
+    fin >> k;
+    
+    for (i = 1; i <= k; i++)
+    {
+        fin >> x >> y >> t;
+        a[x][y] = 1;
+        if (t >= 1)
+        {
+            for (int dir = 0; dir < 4; dir++)
+            {
+                int xx = x + dx[dir];
+                int yy = y + dy[dir];
+                if (Inside(xx, yy)) 
+                    a[xx][yy] = 1;
+            }
+            if (t == 2)
+            {
+                for (int dir = 4; dir < 12; dir++)
+                {
+                    int xx = x + dx[dir];
+                    int yy = y + dy[dir];
+                    if (Inside(xx, yy)) 
+                        a[xx][yy] = 1;
+                }
+            }
+        }
+    }
+    
+    Initiate();
+    
+    Lee(xc, yc);
+    fin >> G;
+    
+    int mindist = oo, posx, posy, x1, y1;
+    
+    for (int step = 1; step <= G; step++)
+    {
+        fin >> i >> j >> x1 >> y1;
+    
+        if (d[i][j] < mindist)
+        {
+            mindist = d[i][j];
+            posx = i;
+            posy = j;
+        }
+    
+        if (d[x1][y1] < mindist)
+        {
+            mindist = d[x1][y1];
+            posx = x1;
+            posy = y1;
+        }
+    
+        y = Convert(x1, y1);
+        x = Convert(i, j);
+        L[x].push_back({y, step});
+        L[y].push_back({x, step});
+    }
+    
+    ofstream fout ("cartite.out");
+    if (task == 1)
+    {
+        fout << posx << " " << posy << " " << mindist << "\n";
+    }
+    else
+    {
+        Eulerian_Cycle(Convert(posx, posy));
+    
+        for (size_t i = 0; i < eulcycle.size(); i++)
+        {
+            int r = eulcycle[i] / m;
+            int mod = eulcycle[i] % m;
+            if (mod != 0) r++;
+            fout << r << " ";
+    
+            if (mod == 0) mod = m;
+            fout << mod << "\n";
+        } 
+    }
+    fout.close();
+}
+    
+int main()  
+{
+    Solve();
+    
+    return 0;   
+}</pre>

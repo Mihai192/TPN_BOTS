@@ -1,0 +1,55 @@
+<h1>Cerința</h1>
+
+<p>Un tort dreptunghiular de dimensiuni <code>MxN</code> trebuie împărţit în porţii pătrate de aceeaşi mărime. Găsiţi numărul minim de porţii care se pot obţine şi dimensiunea <code>L</code> a acestora. Atât dimensiunile dreptunghiului cât şi ale pătratelor în care se împarte sunt numere întregi.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fişierul de intrare <code>tort.in</code> va conţine pe prima linie numerele <code>M</code> şi <code>N</code> separate printr-un spaţiu. </p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fişierul de ieşire <code>tort.out</code> va conţine pe o singură linie, două numere naturale separate printr-un spaţiu, primul fiind numărul minim de porţii, iar celălalt dimensiunea <code>L</code>.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ M ≤ N ≤ 10000</code></li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595358928&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3118%2Ftorto&amp;flash=0&amp;wgl=1&amp;dt=1595358928493&amp;bpp=4&amp;bdt=261&amp;idt=114&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=6965322036538&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595358929&amp;ga_hid=491160916&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1150&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=649791611460629&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1377%2Fmaxd&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=xNBzbsO0z8&amp;p=https%3A//www.pbinfo.ro&amp;dtd=119" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CN__7ZGH3-oCFYrLuwgdDsQNeA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>tort.in</code></p>
+
+<pre contenteditable="true" editable="true">20 24</pre>
+
+<p><code>tort.out</code></p>
+
+<pre contenteditable="true" editable="true">30 4</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin("tort.in");
+ofstream cout("tort.out");
+
+int cmmdc(int a, int b){
+    while(b){
+        int r = a % b;
+        a = b;
+        b = r;
+    }
+    return a;
+}
+
+int main(){
+    int n, m;
+    cin >> n >> m;
+    int prod = n * m;
+    int cm = cmmdc(n, m);
+    cout << prod / (cm * cm) << ' ' << cm;
+    return 0;
+}</pre>

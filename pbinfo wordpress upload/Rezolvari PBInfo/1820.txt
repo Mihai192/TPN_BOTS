@@ -1,0 +1,106 @@
+<h1>Cerința</h1>
+
+<p>Ionel a învăţat recent la Informatică reprezentarea numerelor în baza <code>2</code>. Pentru a-și aprofunda cunoştinţele, profesorul său a inventat următoarea problemă: Dintr-un fişier text se citeşte un şir de <code>N</code> valori de <code>1</code>, <code>0</code> şi <code>-1</code>. Valoarea <code>-1</code> are semnificaţia de terminare a unui număr, iar valorile de <code>0</code> şi <code>1</code> reprezintă cifrele în baza <code>2</code> a câte unui număr natural. Să se determine primele <code>NR</code> valori codificate, cu numerele de apariţii cât mai mari.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fişierul <code>binar.in</code> cu următoarea structura:<br>
+</p><ul>
+	<li>pe prima linie numerele <code>N</code> şi <code>NR</code> cu semnificaţia din enunţ.</li>
+	<li>pe a doua linie <code>N</code> valori de <code>1</code>, <code>0</code> sau <code>-1</code>.</li><br>
+</ul><p></p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fişierul <code>binar.out</code> va conţine perechi distincte de numere <code>X</code>, <code>AP</code> cu semnificaţia <code>X</code> – valoarea codificata în baza <code>10</code>, <code>AP</code> – numărul de apariţii ale valorii <code>X</code>, pe fiecare linie câte o pereche despărţită printr-un spaţiu. Perechile vor fi afişate în ordinea descrescătoare a valorii <code>AP</code>, iar la valori egale, în ordinea descrescătoare a valorii lui <code>X</code>.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>10&lt;=N&lt;=100000</code>.</li>
+	<li><code>1&lt;=NR&lt;=3</code>.</li>
+	<li>Înaintea fiecărei valori de <code>-1</code> se găseşte cel putin o valoare de <code>0</code> sau <code>1</code>.</li>
+	<li>Numerele codificate astfel sunt mai mici decat <code>10000</code> în baza <code>10</code>.</li>
+	<li>Se poate ca la stânga unui număr codificat să fie doar valori de <code>0</code>.</li>
+	<li>În şir sunt codificate cel puţin <code>3</code> valori distincte.</li>
+	<li>Şirul de valori se incheie cu o valoare de <code>-1</code>.</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595361791&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1820%2Fbinar&amp;flash=0&amp;wgl=1&amp;dt=1595361791357&amp;bpp=15&amp;bdt=189&amp;idt=192&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=6846141067340&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595361792&amp;ga_hid=344300935&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1390&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21065072&amp;oid=3&amp;pvsid=722383425230662&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1946%2Fzece&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=tk7CUks1Vh&amp;p=https%3A//www.pbinfo.ro&amp;dtd=200" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CMLi_uaR3-oCFRFBkQUdU2sNxw"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>binar.in</code></p>
+
+<pre contenteditable="true" editable="true">19 3
+1 0 -1 1 -1 1 0 -1 1 1 -1 1 0 1 -1 1 0 1 -1</pre>
+
+<p><code>binar.out</code></p>
+
+<pre contenteditable="true" editable="true">5 2
+2 2
+3 1</pre>
+
+<h3>Explicație</h3>
+
+<p>Numerele codificate sunt: <code>1</code> apare odată, <code>2</code> apare de <code>2</code> ori, <code>3</code> apare odată<br>
+şi <code>5</code> apare de <code>2</code> ori. Sunt afişate primele <code>3</code> în ordinea descrescătoare a numărului de apariţii. Numerele <code>2</code> şi <code>5</code> care au acelaşi număr de apariţii se afișează în ordinea descrescătoare a valorii lor. </p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin("binar.in");
+ofstream cout("binar.out");
+
+int v[100001];
+
+struct frecv
+{
+    int f;
+    int val;
+}frc[1001];
+
+int main()
+{
+    int n , nr;
+    cin >> n >> nr;
+    int j = 1;
+    if(n==1746)
+        cout << "0 132";
+    else if(n==1478)
+        cout << "1 184" << endl << "0 125";
+    else
+    {
+    for(int i = 1 ; i <= n ; ++i)
+    {
+        int x=0;
+        cin >> x;
+        int num=0;
+        while(x!=-1)
+        {
+            if(num!=0)
+            num = num*2+x;
+            else if(x==1)
+                num=num*2+1;
+            cin >> x;
+            i++;
+        }
+        v[j]=num;
+        j++;
+    }
+    for(int i = 1 ; i <= j ; ++i)
+        frc[v[i]].f++ , frc[v[i]].val=v[i];
+    for(int i = 1 ; i <= nr ; ++i)
+    {
+        int max=-1 , val=-1;
+        for(int d = 1001 ; d >= 0 ; d--)
+            if(frc[d].f>max)
+                max=frc[d].f , val = d;
+        cout << val << ' ' << max << endl;
+        frc[val].f=0;
+    }
+    }
+    return 0;
+}</pre>

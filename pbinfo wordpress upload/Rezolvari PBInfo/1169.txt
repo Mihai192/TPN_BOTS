@@ -1,0 +1,33 @@
+<p>Se consideră o listă liniară simplu înlănțuită, alocată dinamic, în care elementele sunt de tipul declarat mai jos:</p>
+
+<pre class="code_c cm-s-default" data-lang="text/x-csrc" contenteditable="true" editable="true"><span class="cm-keyword">struct</span> <span class="cm-variable">nod</span>{
+    <span class="cm-keyword">int</span> <span class="cm-variable">info</span>;
+    <span class="cm-variable">nod</span> <span class="cm-operator">*</span> <span class="cm-variable">urm</span>;
+};</pre>
+
+<p>în care câmpul <code>info</code> memorează un număr întreg, iar câmpul <code>urm</code> memorează adresa următorului element al listei.</p>
+
+<h1>Cerinţa</h1>
+
+<p>Să se scrie o funcție C++ cu următorul prototip:</p>
+
+<pre class="code_c cm-s-default" data-lang="text/x-csrc" contenteditable="true" editable="true"><span class="cm-keyword">void</span> <span class="cm-variable">afisare</span>(<span class="cm-variable">nod</span> <span class="cm-operator">*</span> <span class="cm-variable">p</span>);</pre>
+
+<p>care afișează pe ecran valorile memorate în lista pentru care primul element are adresa memorată în pointerul <code>p</code>. </p>
+
+<h1>Restricţii şi precizări</h1>
+
+<ul>
+	<li>numele funcției va fi <code>afisare</code></li>
+	<li>valorile vor fi afișate în ordinea din listă, separate printr-un spațiu</li>
+</ul>
+
+<h1>Important</h1>
+
+<p>Soluţia propusă va conţine definiţia funcţiei cerute. Prezenţa în soluţie a altor instrucţiuni poate duce erori de compilare sau de execuţie care vor avea ca efect depunctarea soluţiei.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">void afisare(nod* prim)
+{
+    ///afiseaza informatiile din lista
+    for(nod *p = prim ; p != NULL ; p= p ->urm)
+        cout << p -> info << " ";
+}</pre>

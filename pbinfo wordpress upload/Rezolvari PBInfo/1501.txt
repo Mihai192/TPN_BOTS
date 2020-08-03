@@ -1,0 +1,25 @@
+<p>Se spune despre numărul natural nenul <code>n</code> că este norocos dacă numărul <code>n</code><sup><code>2</code></sup> se poate scrie ca suma a <code>n</code> numere naturale nenule consecutive. De exemplu, <code>7</code> este norocos, deoarece <code>7</code><sup><code>2</code></sup><code>=4+5+6+7+8+9+10</code>.</p>
+
+<h3>Cerința</h3>
+
+<p>Scrieţi în limbajul <code>C/C++</code> definiţia completă a funcţiei <code>norocoase</code>, care primeşte ca argumente două numere naturale <code>a</code> şi <code>b</code> şi returnează câte numere norocoase se află în intervalul <code>[a, b]</code>.</p>
+
+<h3>Restricții și precizări</h3>
+
+<ul>
+	<li><code>1 ≤ a &lt; b ≤ 10</code> <sup> <code>9</code> </sup></li>
+	<li>numele funcţiei este <code>norocoase</code></li>
+	<li>parametrii sunt, în această ordine: <code>a</code>, <code>b</code></li>
+</ul>
+
+<h3>Exemplu:</h3>
+
+<p><code>norocoase(1, 15) = 8</code></p>
+
+<h3>Notă</h3>
+
+<p>Puteţi defini şi alte subprograme care vă ajută să rezolvaţi mai uşor problema.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">int norocoase (int a ,int b)
+{
+    return b-a+1-(b/2-(a-1)/2);
+}</pre>

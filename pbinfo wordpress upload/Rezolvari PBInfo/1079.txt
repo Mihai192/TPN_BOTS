@@ -1,0 +1,133 @@
+<p>Locuitorii planetei Eudora folosesc o reprezentare mai ciudată a numerelor naturale, astfel că orice număr natural va fi scris notând câte mii, sute, zeci, respectiv unităţi conţine acesta. De exemplu, numărul <code>3207</code> se poate reprezenta în mai multe moduri echivalente: <code>3m2s7u</code> (<code>3</code> mii <code>2</code> sute şi <code>7</code> unităţi), <code>32s0z7u</code> (<code>32</code> sute <code>0</code> zeci şi <code>7</code> unităţi), <code>32s7u</code>, <code>3207u</code>, etc.</p>
+
+<p>Pentru a compara două numere naturale, eudorienii folosesc semnele <code>&lt;</code> şi <code>&gt;</code>, acestea având semnificaţia cunoscută şi pe Terra, iar pentru a calcula suma a două numere naturale utilizează semnul <code>+</code>.</p>
+
+<p>Pentru a testa abilităţile pământenilor în privinţa lucrului cu numere naturale, eudorienii au trimis pe Terra un fişier text ce conţine <code>N</code> linii, fiecare linie fiind o comparaţie de forma:</p>
+
+<p style="text-align:center;"><code>expresie1&gt;expresie2</code><br>
+sau <br>
+<code>expresie1&lt;expresie2</code></p>
+
+<p>Observaţi că o comparaţie este constituită din două expresii separate prin semnul <code>&lt;</code> sau prin semnul <code>&gt;</code>. </p>
+
+<p>O expresie este compusă dintr-un număr natural sau dintr-o sumă de două sau mai multe numere naturale, toate scrise în forma eudoriană. Fişierul nu conţine caractere spaţiu. </p>
+
+<h1>Cerinţă</h1>
+
+<p>Scrieţi un program care determină câte dintre comparaţiile date utilizează semnul <code>&lt;</code>, precum şi valoarea de adevăr a fiecărei comparaţii dintre cele <code>N</code> date (afişând <code>0</code> dacă acea comparaţie e falsă, respectiv <code>1</code> dacă acea comparaţie e adevărată).</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>comp.in</code> conține pe prima linie numărul natural nenul <code>N</code>, reprezentând numărul de comparaţii, iar pe fiecare dintre următoarele <code>N</code> linii câte un şir de caractere corespunzător unei comparaţii.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>comp.out</code> va conține pe prima linie un număr natural reprezentând numărul de comparaţii în care se utilizează semnul <code>&lt;</code>. Urmează <code>N</code> linii, fiecare linie conţinând doar valoarea <code>0</code> sau valoarea <code>1</code>. Valoarea de pe a <code>i</code>-a linie dintre cele <code>N</code> este <code>0</code>, dacă cea de-a <code>i</code>-a comparaţie din fişierul de intrare este falsă, respectiv <code>1</code> în caz contrar.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>0 &lt; N ≤1000</code></li>
+	<li>Numerele din fişier nu depăşesc în valoare numărul eudorian <code>1000m1000s1000z1000u</code>.</li>
+	<li>Lungimea fiecărei linii din fişier este cel mult <code>250</code>.</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=4172662253&amp;w=728&amp;lmt=1595356831&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1079%2Fcomp&amp;flash=0&amp;wgl=1&amp;adsid=NT&amp;dt=1595356831202&amp;bpp=51&amp;bdt=309&amp;idt=142&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=8400376039536&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595356831&amp;ga_hid=1410020058&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1574&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=1886276803400618&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1620%2Finteresant&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=1n1xGOUhl7&amp;p=https%3A//www.pbinfo.ro&amp;dtd=150" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CISt56n_3uoCFZfAuwgdIeQDZA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>comp.in</code></p>
+
+<pre contenteditable="true" editable="true">2
+120u+7z13u&gt;2s13u
+1m11s+2z+1u&lt;2m1s2z5u+0u</pre>
+
+<p><code>comp.out</code></p>
+
+<pre contenteditable="true" editable="true">1
+0
+1</pre>
+
+<h1>Explicație</h1>
+
+<ul>
+	<li>O comparaţie foloseşte semnul <code>&lt;</code>.</li>
+	<li>Prima comparaţie e falsă (<code>203&gt;213</code>).</li>
+	<li>A doua comparaţie e adevărată (<code>2121&lt;2125</code>).</li>
+</ul>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <cstring>
+using namespace std;
+
+ifstream cin("comp.in");
+ofstream cout("comp.out");
+
+int sum[3];
+
+bool cif(char ch)
+{
+    return ch >= '0' &amp;&amp; ch <= '9';
+}
+
+int main()
+{
+    char s[255];
+    int n;
+    cin >> n;
+    int ind=0;
+    int b[1001] , p = 0;
+    for(int k = 1 ; k <= n ; ++k)
+    {
+        cin >> s;
+        int i = 0;
+        bool mm = true;
+        int nr = 0 , cnt = 1;
+        sum[1]=0 , sum[2]=0;
+        while(s[i])
+        {
+            while(cif(s[i]))
+            {
+                nr = nr * 10 + s[i] - '0';
+                i++;
+            }
+            if(s[i]=='u')
+                sum[cnt] += nr , nr = 0;
+            if(s[i]=='z')
+                sum[cnt] += nr * 10 , nr = 0;
+            if(s[i]=='s')
+                sum[cnt] += nr * 100 , nr = 0;
+            if(s[i]=='m')
+                sum[cnt] += nr * 1000 , nr = 0;
+            if(s[i]=='<')
+                mm = true , cnt++;
+            if(s[i]=='>')
+                mm = false , cnt++;
+            i++;
+            nr=0;
+        }
+        if(mm)
+        {
+            if(sum[1] < sum[2])
+                b[p]=1 , p++;
+            else
+                b[p]=0 , p++;
+        }
+        else
+        {
+            if(sum[1] > sum[2])
+                b[p]=1 , p++;
+            else
+                b[p]=0 , p++;
+        }
+        if(mm)
+            ind++;
+
+    }
+    cout << ind << endl;
+    for(int i = 0 ; i < p ; ++i)
+        cout << b[i] << endl;
+    return 0;
+}</pre>

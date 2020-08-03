@@ -1,0 +1,151 @@
+<p>Ștefan a împlinit 15 ani. Fiind un pasionat membru al Clubului de Robotică, familia i-a dăruit de ziua lui foarte mulți roboți, fiecare dotat cu o armă de o anumită putere. El a așezat toți roboții în jurul său, pe circumferința unui cerc imaginar, în sensul acelor de ceasornic. Aceste dispozitive inteligente pot comunica între ele, unindu-și puterile armelor.</p>
+
+<h1>Cerința</h1>
+
+<p>Cunoscând numărul de roboți, precum și puterea fiecăruia, să se scrie un program care determină:<br>
+1. Dimensiunea celei mai lungi secvențe de roboți pentru care puterile armelor lor formează un șir strict crescător. <br>
+2. O aranjare a roboților pe cerc, astfel încât suma produselor de câte două puteri vecine să fie maximă. Dacă există mai multe modalităţi de aranjare astfel încât să se obţină aceeaşi sumă maximă, se va determina cea minimă din punct de vedere lexicografic.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Pe prima linie a fișierului de intrare <code>roboti2.in</code> se găsește un număr natural <code>v</code> a cărui valoare poate fi doar <code>1</code> sau <code>2</code>. Pe a doua linie a fișierului de intrare se găsește un singur număr natural <code>n</code> reprezentând numărul de roboți. Pe a treia linie a fișierului de intrare se găsesc <code>n</code> numere naturale <code>p[1]</code>, <code>p[2]</code>, …, <code>p[n­]</code>, separate  prin câte un spațiu, <code>p[i]</code> reprezentând puterea armei robotului <code>i</code>.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Dacă valoarea lui <code>v</code> este <code>1</code>, atunci fişierul de ieşire <code>roboti2.out</code> va conţine pe prima linie un singur număr natural reprezentând dimensiunea celei mai lungi secvențe de roboți pentru care puterile armelor lor formează un șir strict crescător.</p>
+
+<p>Dacă valoarea lui <code>v</code> este <code>2</code>, atunci fişierul de ieşire va conţine pe prima linie <code>n</code> numere naturale separate prin câte un spaţiu, reprezentând puterile celor <code>n</code> roboți așezați pe cerc astfel încât suma produselor de câte două puteri vecine să fie maximă, iar aşezarea să fie minimă din punct de vedere lexicografic.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>2 ≤ n ≤ 100 000</code></li>
+	<li>Pentru cerinţa <code>1</code>, secvenţa de lungime maximă se alege pe cerc în sensul acelor de ceasornic.</li>
+	<li>Dacă avem două şiruri de numere <code>a[1]</code>, <code>a[2]</code>, …, <code>a[n]</code> şi <code>b[1]</code>, <code>b[2]</code>, …, <code>b[n]</code> şi există <code>1≤k≤n</code>, cea mai mică poziţie pentru care are loc <code>a[1]=b[1]</code>, <code>a[2]=b[2]</code>, …, <code>a[k-1]=b[k-1]</code> şi <code>a[k]&lt;b[k]</code>, atunci spunem că şirul <code>a</code> este mai mic lexicografic decât şirul <code>b</code>.</li>
+	<li>În concurs, pentru rezolvarea corectă a cerinței <code>1</code> s-au acordat <code>30</code> puncte, pentru rezolvarea corectă a cerinței <code>2</code> s-au acordat  <code>60</code> de puncte, iar din oficiu s-au acordat <code>10</code> puncte. Pe site, se acordă 10 puncte pentru exemple.</li>
+	<li>Pentru cerința <code>2</code>, dacă soluția afișată nu este minimă lexicografic, dar produce suma maximă corectă se acordă <code>50%</code> din punctajul testului respectiv.</li>
+	<li>Pentru cerința <code>2</code>, teste în valoare totală de <code>36</code> puncte vor avea <code>n ≤ 1000</code>.</li>
+	<li><code>1 ≤ p[1], p[2],..., p[n] ≤ 1000</code>.</li>
+</ul>
+
+<h1>Exemplul 1:</h1>
+
+<p><code>roboti2.in</code></p>
+
+<pre contenteditable="true" editable="true">1
+7
+4 7 2 6 5 1 3</pre>
+
+<p><code>roboti2.out</code></p>
+
+<pre contenteditable="true" editable="true">4</pre>
+
+<h3>Explicație</h3>
+
+<p><code>v = 1</code>, deci se va rezolva <span class="caps">DOAR</span> prima cerință. Cea mai lungă secvență strict crescătoare este <code>1 3 4 7</code> și are lungimea <code>4</code>.</p>
+
+<h1>Exemplul 2:</h1>
+
+<p><code>roboti2.in</code></p>
+
+<pre contenteditable="true" editable="true">2 
+5
+3 9 1 12 5</pre>
+
+<p><code>roboti2.out</code></p>
+
+<pre contenteditable="true" editable="true">1 3 9 12 5</pre>
+
+<h3>Explicație</h3>
+
+<p><code>v = 2</code>, deci se va rezolva <span class="caps">DOAR</span> a doua cerință. <code>1*3+3*9+9*12+12*5+5*1=203</code> şi este suma maximă care se poate obţine. Această aranjare nu este singura pentru care se obține suma maximă, dar este cea mai mică lexicografic.</p>
+
+<h1>Exemplul 3:</h1>
+
+<p><code>roboti2.in</code></p>
+
+<pre contenteditable="true" editable="true">2 
+4
+1 2 1 1</pre>
+
+<p><code>roboti2.out</code></p>
+
+<pre contenteditable="true" editable="true">1 1 1 2</pre>
+
+<h3>Explicație</h3>
+
+<p><code>v = 2</code>, deci se va rezolva <span class="caps">DOAR</span> a doua cerință. <code>1*1+1*1+1*2+2*1=6</code> şi este suma maximă care se poate obţine.<br>
+Această aranjare nu este singura pentru care se obține suma maximă, dar este cea mai mică lexicografic.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include<fstream>
+using namespace std;
+
+ifstream  fin("roboti2.in");
+ofstream fout("roboti2.out");
+
+int v, n, p[200005], q[200005], r[200005], f[200005];
+
+int main(){
+    int i,j,lmax,k,nr,m,M;
+    fin>>v>>n;
+    for(i=1;i<=n;i++) fin>>p[i];
+    if(v==1){
+        for(i=1;i<=n;i++) p[n+i]=p[i];
+        lmax=0; j=1;
+        for(i=2;i<=2*n;i++)
+            if(p[i-1]>=p[i]){
+                lmax=max(i-j,lmax);
+                j=i;
+            }
+        fout<<lmax;
+    }
+    else{
+        for(i=1;i<=1000;i++)q[i]=0;
+        for(i=1;i<=n;i++)q[p[i]]++;
+        nr=0;
+        for(i=1;i<=1000;i++){
+            if(q[i]>0){
+                nr++; f[nr]=q[i]; r[nr]=i;
+                q[i]=0;
+            }
+        }
+        m=n+1;
+        for(i=1;i<=f[nr];i++)  q[--m]=r[nr];
+        M=n;
+        for(i=nr-1;i>=2;i--){
+            if(f[i]>1){
+                q[++M]=r[i];
+                for(j=1;j<f[i];j++)  q[--m]=r[i];
+            }
+            else{
+                j=i;
+                while(j-1>=2 &amp;&amp; f[j-1]==1) j--;
+                if(q[m]==q[M]){
+                    if((i-j+1)%2==1) q[--m]=r[i--];
+                    for(k=i;k>=j;k=k-2){
+                        q[++M]=r[k];
+                        q[--m]=r[k-1];
+                    }
+                }
+                else{
+                    if(q[m]>q[M]){
+                        for(k=0;k<=i-j;k++){
+                            if(k%2==0) q[--m]=r[i+k];
+                            else  q[++M]=r[i+k];
+                        }
+                    }
+                    else{
+                        for(k=0;k<=i-j;k++){
+                            if(k%2==1)  q[--m]=r[i+k];
+                            else  q[++M]=r[i+k];
+                        }
+                    }
+                }
+                i=j;
+            }
+        }
+        for(i=1;i<=f[1];i++)  q[--m]=r[1];
+        for(i=m;i<=M;i++)  fout<<q[i]<<" ";
+    }
+    fout.close();
+    return 0;
+}</pre>

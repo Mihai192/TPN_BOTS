@@ -1,0 +1,71 @@
+<p>Împăratul Persiei, Seram dă de ştire în toată împărăția sa, că vrea să-şi aleagă vistiernic care să-i administreze averea. El precizează că visteria palatului are <code>n</code> încăperi numerotate cu numere naturale diferite de <code>0</code>. Suma de bani pe care o are în aceste încăperi este egală cu produsul numerelor cu care sunt numerotate încăperile visteriei. De asemenea împăratul dă  de ştire că va alege pe acel supus vistiernic, care ştie să calculeze în câte zerouri se termină numărul ce reprezintă averea sa.</p>
+
+<h1>Cerința</h1>
+
+<p>Scrieţi un program care determină  numărul de zerouri în care se termină averea  împăratului.</p>
+
+<h1>Date de intrare</h1>
+
+<p>De pe prima linie din fişierul de intrare  <code>vistiernic.in</code> se citeşte un număr natural <code>n</code>, ce reprezintă numărul de încăperi ale visteriei.</p>
+
+<p>De pe linia următoare se citesc <code>n</code> numere naturale separate prin spaţii reprezentând numerele înscrise pe uşile încăperilor visteriei. </p>
+
+<h1>Date de ieșire</h1>
+
+<p>Pe prima linie în fişierul  <code>vistiernic.out</code> se va afişa un număr ce reprezintă numărul de  zerouri în care se termină averea împăratului.</p>
+
+<h1>Restricții și precizări</h1>
+
+<p><code>1 ≤ n ≤ 1000</code><br>
+<code>1 ≤</code> numărul de pe uşă <code>≤ 32767</code>, pentru fiecare încăpere.</p>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595358873&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2097%2Fvistiernic&amp;flash=0&amp;wgl=1&amp;dt=1595358872973&amp;bpp=17&amp;bdt=246&amp;idt=194&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=148950539639&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595358873&amp;ga_hid=731411316&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1310&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=3048280022879579&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2114%2Fvapoare&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=tTDHWOmvmU&amp;p=https%3A//www.pbinfo.ro&amp;dtd=199" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CK3vtveG3-oCFZmssgodmWgC9Q"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>vistiernic.in</code></p>
+
+<pre contenteditable="true" editable="true">4
+8 225 64 15</pre>
+
+<p><code>vistiernic.out</code></p>
+
+<pre contenteditable="true" editable="true">3</pre>
+
+<h3>Explicație</h3>
+
+<p>Averea împăratului este egală cu numărul dat de produsul <code>8*225*64*15</code>. Acest număr se termină în <code>3</code> zerouri.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream fin("vistiernic.in");
+ofstream fout("vistiernic.out");
+
+int main()
+{
+    int n;
+    fin >> n;
+    long long int tmp , cnt2=0 , cnt5=0;
+    for(int i = 0 ; i < n ; ++i)
+    {
+        fin >> tmp;
+        while(tmp%2==0)
+        {
+            cnt2++;
+            tmp/=2;
+        }
+        while(tmp%5==0)
+        {
+            cnt5++;
+            tmp/=5;
+        }
+    }
+    if(cnt2>cnt5)
+    fout << cnt5;
+    else
+    fout << cnt2;
+    return 0;
+}</pre>

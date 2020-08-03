@@ -1,0 +1,115 @@
+<p>Având mai multe cuburi la dispoziţie, Crina şi Rareş au hotărât să construiască clădiri prin alipirea a două sau mai multor turnuri. Turnurile au fost obţinute prin aşezarea cuburilor unul peste celălalt. Înălţimea unui turn este dată de numărul de cuburi din care este format.<br>
+Clădirile construite au fost aşezate în linie, una lângă alta formând astfel o stradă, pe care cei doi copii se vor plimba.</p>
+
+<p><img alt="" height="128" src="/resurse/9dc152/p-1051-1075/cladiri.png" width="621"></p>
+
+<p>Pentru numerotarea clădirilor Crina şi Rareş au stabilit următoarele reguli:</p>
+
+<ul>
+	<li>Crina porneşte dintr-un capăt al străzii, iar Rareş din celălalt capăt al acesteia; fiecare dintre ei traversează strada complet, trecând prin dreptul fiecărei clădiri</li>
+	<li>Crina  lipeşte pe fiecare clădire câte un bileţel pe care scrie înălţimea turnurilor din care aceasta este construită, în ordinea în care ea le vede când trece prin dreptul lor (de exemplu, pentru imaginea de mai sus, Crina va lipi pe prima clădire un bileţel pe care va scrie numărul <code>3112</code> deoarece, primul turn e format din <code>3</code> cuburi, următoarele două turnuri ale acestei clădiri sunt formate din câte un cub iar cel de-al patrulea turn e format din <code>2</code> cuburi);</li>
+	<li>Rareş va proceda la fel, dar începe plimbarea din celalalt capăt al străzii. În exemplul din imagine, el va lipi pe prima clădire pe care o întâlneşte un bileţel pe care scrie numărul <code>2121</code>.</li>
+	<li>La finalul plimbării, Crina şi Rareş îşi dau seama că există clădiri pe care au lipit amândoi bileţele cu numere identice.</li>
+</ul>
+
+<h1>Cerinţe</h1>
+
+<p>a)  Care este înălţimea celui mai înalt turn şi care este numărul clădirilor care au în construcţia lor un astfel de turn?<br>
+b)  Care este numărul clădirilor pe care cei doi copii au lipit bileţele cu numere identice?<br>
+c)  Care este cel mai mic număr de cuburi  necesar pentru a completa clădirile astfel încât, pe fiecare clădire, bileţelul pe care îl va lipi Crina să conţină acelaşi număr cu cel pe care îl va lipi Rareş? Cuburile din care a fost construită iniţial clădirea nu se pot muta.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>cladiri.in</code> conține pe prima linie un număr natural <code>N</code>, reprezentând numărul clădirilor de pe stradă, iar de pe următoarele <code>N</code> linii câte un număr  natural cu toate cifrele nenule, reprezentând numerele scrise de Crina pe bileţele, în ordinea în care au fost lipite de ea pe clădiri.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>În fișierul de ieșire <code>cladiri.out</code> se vor scrie pe prima linie două numere naturale despărţite printr-un singur spaţiu ce reprezintă, în ordine, valorile cerute la cerinţa a). Pe cea de-a doua linie a fişierului se va scrie un număr natural, mai mare sau egal cu zero, reprezentând răspunsul la cerinţa b). Pe cea de-a treia linie a fişierului se va scrie un număr natural, mai mare sau egal cu zero, reprezentând răspunsul la cerinţa c).</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 ≤ n ≤ 10000</code></li>
+	<li>Fiecare clădire este alcătuită din cel mult <code>9</code> turnuri, iar înălţimea fiecărui turn este exprimată printr-o cifră nenulă.</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display: inline-block; width: 728px; height: 0px;" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display: inline-table; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 728px; background-color: transparent;"><ins id="aswift_1_anchor" style="display: block; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 728px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595359814&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1053%2Fcladiri&amp;flash=0&amp;wgl=1&amp;dt=1595359814355&amp;bpp=3&amp;bdt=240&amp;idt=224&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280%2C0x0&amp;nras=1&amp;correlator=4126764389320&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595359814&amp;ga_hid=52635785&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1704&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=1630036046810549&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F1935%2Fplimbare&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=hseODB2M3W&amp;p=https%3A//www.pbinfo.ro&amp;dtd=229" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-google-query-id="CLG4qLiK3-oCFYDKuwgdbssPJw" data-load-complete="true"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>cladiri.in</code></p>
+
+<pre contenteditable="true" editable="true">6
+3112 
+2772
+42422
+1741
+27372
+1212</pre>
+
+<p><code>cladiri.out</code></p>
+
+<pre contenteditable="true" editable="true">7 3
+2
+8</pre>
+
+<h1>Explicație</h1>
+
+<p>Cel mai înalt turn este format din <code>7</code> cuburi. Sunt <code>3</code> clădiri care au în construcţia lor turnuri cu această înălţime, cele pe care Crina lipeşte numerele: <code>2772</code>, <code>1741</code> şi <code>27372</code>. Rareş lipeşte pe clădiri bileţele cu numerele: <code>2121</code>, <code>27372</code>, <code>1471</code>, <code>22424</code>, <code>2772</code> şi <code>2113</code>. Două dintre aceste clădiri au primit aceleaşi numere și de la Crina: <code>2772</code> şi <code>27372</code>. Valoarea determinată conform cerinţei c) este <code>8</code>. Se adaugă <code>un</code> cub la clădirea cu numărul <code>3112</code>, <code>2</code> cuburi la cea cu numărul <code>42422</code>, <code>3</code> cuburi la clădirea cu  numărul <code>1741</code> şi <code>2</code> cuburi la cea cu numărul <code>1212</code>.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+ifstream cin("cladiri.in");
+ofstream cout("cladiri.out");
+int cmax(long long n)
+{
+    int max = 0;
+    while(n != 0){if(n % 10 > max) max = n % 10 ; n /= 10;}
+    return max;
+}
+int pal(long long n)
+{
+    long long aux = n , ogl = 0;
+    while(aux!=0){ogl=ogl*10+aux%10;aux/=10;}
+    if(ogl==n)return 1;
+    else return 0;
+}
+
+int lipsa(long long int n)
+{
+    long long aux = n , ogl = 0 , cnt = 0;
+    while(aux != 0){ogl = ogl * 10 + aux % 10 ; aux /= 10;}
+    while(n!=0)
+    {
+        if(n % 10 > ogl % 10)cnt += n % 10 - ogl % 10;
+        else cnt += ogl % 10 - n % 10;
+        n /= 10;
+        ogl /= 10;
+    }return cnt;
+}
+
+long long a[10001];
+
+int main()
+{
+    int n , cnt = 0 , max = 0 , nr = 0;
+    cin >> n;
+    for(int i = 0 ; i < n ; ++i)
+        cin >> a[i];
+    for(int i = 0 ; i < n ; ++i)
+    {
+        if(cmax(a[i]) > max)max = cmax(a[i]) , cnt=0;
+        if(cmax(a[i]) == max) cnt++;
+    }
+    cout << max << ' ' << cnt << endl;
+    cnt = 0;
+    for(int i = 0 ; i < n ; ++i)
+    {
+        if(pal(a[i])) nr++;
+        else cnt+=lipsa(a[i]);
+    }
+    cout << nr << endl << cnt/2;
+    return 0;
+}</pre>

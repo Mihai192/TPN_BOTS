@@ -1,0 +1,13 @@
+1. remove script tag - DONE
+2. replace includes with '#include <bits/stdc++.h>' and delete the rest of includes - DONE
+3. title ===> 'Problema #{id} - {nume} - Rezolvari Pbinfo'  - DONE
+4. modify thumbnails ---> write thumbnails with specific id - DONE
+
+algorithm
+
+1. Login
+2. get request to https://tutoriale-pe.net/wp-admin/post-new.php
+3. write title
+4. press button with id "content-html"
+5. (algoritm upload thumbnail)
+6. press button "Publica"

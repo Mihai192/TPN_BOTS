@@ -1,0 +1,78 @@
+<h1>Vigenere</h1>
+
+<p>La fel ca <a href="https://ro.wikipedia.org/wiki/Cifrul_Cezar">cifrul Cezar</a>, cifrul Vigenere deplasează literele, dar acesta folosește o deplasare multiplă. Cheia este constituită din câțiva întregi <code>k</code><sub><code>i</code></sub>, unde <code>0 ≤ k</code><sub><code>i</code></sub><code> ≤ 25</code>.</p>
+
+<p>Aceşti întregi pot fi, de exemplu, <code>k = (21, 4, 2 19, 14, 17)</code>. Această cheie ar provoca deplasare primei litere cu <code>21</code>, <code>c1 = p1 + 21 (mod 26)</code>, a celei de-a doua cu <code>4</code>, <code>c2 = p2 + 4 (mod 26)</code>, ş.a.m.d. până la sfârşitul cheii și apoi de la început, din nou. </p>
+
+<p>Pentru o memorare mai ușoară cheia este de regulă dată printr-un cuvânt – cheia de mai sus corespunde cuvântului <code>vector</code>, litera <code>'v'</code>” corespondând numărului <code>21</code> (numerotarea începe de la <code>0</code>), litera <code>'e'</code> cu <code>4</code>, etc.</p>
+
+<p>Un exemplu de cifru Vigenere:</p>
+
+<p>Textul clar: <code>thisisanexampleofthevigenerecipher</code><br>
+Cheia: <code>vector</code><br>
+Textul cifrat: <code>olklwjvrgqodkpghtkcixbuviitxqzklgk</code></p>
+
+<h1>Cerința</h1>
+
+<p>Se citesc două texte <code>a</code> și <code>b</code> cu lungimea maximă de <code>255</code> de caractere. Să se afișeze textul după aplicarea cifrului Vigenere la textul <code>a</code> cu cheia <code>b</code>.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>vigenere.in</code> conține pe prima linie textul <code>a</code> iar pe a doua linie textul <code>b</code>.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>vigenere.out</code> va conține pe prima linie rezultatul criptării.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li>lungimea lui <code>b ≤</code> Lungimea lui <code>a ≤ 255</code>;</li>
+	<li>cele două șiruri vor conține doar litere mici din alfabetul englez.</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595357126&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3190%2Fvigenere&amp;flash=0&amp;wgl=1&amp;dt=1595357126336&amp;bpp=11&amp;bdt=218&amp;idt=159&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=5846588152785&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595357126&amp;ga_hid=931096855&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1335&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=1952926389451478&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F3116%2Fcifrab&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=JKRWSGIKxE&amp;p=https%3A//www.pbinfo.ro&amp;dtd=166" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CM6myLaA3-oCFQ-asgodQIcLvA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>vigenere.in</code></p>
+
+<pre contenteditable="true" editable="true">pbinfo
+dio</pre>
+
+<p><code>vigenere.out</code></p>
+
+<pre contenteditable="true" editable="true">sjwqnc</pre>
+
+<h3>Explicație</h3>
+
+<p>În Cifrul Vigenere începem numărătoarea caracterelor din cheie de la 0, astfel, caracterul <code>'d'</code> din cheie deplasează caractrrul corespunzător din text cu 3 caractere; astfel, <code>'p'</code> devine <code>'s'</code>. Acest procedeu se repetă și pentru restul șirului.</p>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <cstring>
+using namespace std;
+
+ifstream cin("vigenere.in");
+ofstream cout("vigenere.out");
+
+char a[260], b[260];
+int v[260];
+
+int main(){
+    cin >> a >> b;
+    int i = 0;
+    int n = strlen(b);
+    while(a[i]){
+        v[i] = a[i] + b[i % n];
+        i++;
+    }
+    for(int k = 0; k < i; ++k){
+        v[k] -= 'a';
+        if(v[k] > 'z')
+            v[k] = v[k] - 'z' + 'a' - 1;
+        cout << (char)v[k];
+    }
+    return 0;
+}</pre>

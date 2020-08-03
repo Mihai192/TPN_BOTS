@@ -1,0 +1,132 @@
+<p>Un fermier are un teren care are forma unui tablou dreptunghiular de <code>N x M</code> unități. Pe teren sunt plantați din loc în loc copaci, pe care fermierul nu dorește sa-i taie. Dorind să-și supravegheze cultura, fermierul realizează un mic robot de forma pătrată având latura de <code>3</code> unități pe care îl poate teleghida prin fermă, parcurgând unitate cu unitate o anumită suprafață. Robotul se poate mișca pe verticală și pe orizontală dar nu poate trece peste copaci, nu îi poate distruge, nu se poate roti și are nevoie pentru mișcare de o suprafață corespunzătoare dimensiunii lui.</p>
+
+<h1>Cerința</h1>
+
+<p>Ajutați-l pe fermier sa determine suprafața maxima pe care o poate urmări, folosind acest sistem.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>ferma1.in</code> conține pe prima linie doua numere naturale nenule <code>N</code> și <code>M</code>, separate printr-un spațiu, reprezentând numărul de linii, respectiv numărul de coloane. Fiecare din următoarele <code>N</code> linii conține câte <code>M</code> caractere (fără sa fie separate prin spatii) având semnificația:<br>
+<code>.</code> – teren liber;<br>
+<code>+</code> – locul în care este plantat un copac;<br>
+<code>R</code> – centrul robotului.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>ferma1.out</code> va conține <code>N</code> linii, fiecare linie având câte <code>M</code> caractere (fără spații) având semnificația:<br>
+<code>.</code> – teren neacoperit de robot;<br>
+<code>*</code> – teren ce poate fi verificat de robot;<br>
+<code>+</code> – loc în care a rămas copacul.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li><code>1 &lt;= N,M &lt;= 50</code></li>
+	<li>Inițial robotul se află pe o poziție pe care nu se află copaci</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=872686288&amp;w=728&amp;lmt=1595353216&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2313%2Fferma1&amp;flash=0&amp;wgl=1&amp;adsid=NT&amp;dt=1595353216727&amp;bpp=16&amp;bdt=222&amp;idt=146&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=4991241562263&amp;frm=20&amp;pv=1&amp;ga_vid=1744050990.1595352838&amp;ga_sid=1595353217&amp;ga_hid=987906392&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=814&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1414&amp;biw=1200&amp;bih=647&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=3974970225289382&amp;pem=168&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2565%2Fcatchy&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C770%2C1200%2C647&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=2&amp;fsb=1&amp;xpc=QIcdaVPj6D&amp;p=https%3A//www.pbinfo.ro&amp;dtd=153" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CO-upe7x3uoCFSDiuwgdW30ASw"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>ferma1.in</code></p>
+
+<pre contenteditable="true" editable="true">12 11
+...........
+...+.....+.
+...........
+...........
+.+.........
+...+.......
+.+...R.....
+.........+.
+..+.......+
+......+....
+...........
+......+....</pre>
+
+<p><code>ferma1.out</code></p>
+
+<pre contenteditable="true" editable="true">....*****..
+...+*****+.
+..*********
+..*********
+.+*********
+...+*******
+.+.********
+...******+.
+..+******.+
+******+....
+******.....
+******+....</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+using namespace std;
+
+ifstream cin("ferma1.in");
+ofstream cout("ferma1.out");
+
+const int di[] = {-1 , 0 ,  1 , 0};
+const int dj[] = { 0 , 1 , 0 , -1};
+
+int a[53][53] , n , m , ir , jr;
+char b[53][53];
+
+int inside(int i , int j)
+{
+    return i >= 1 &amp;&amp; i <= n &amp;&amp; j >= 1 &amp;&amp; j <= m;
+}
+
+int ok(int i , int j)
+{
+    for(int x = -1 ; x <= 1 ; x++)
+        for(int y = -1 ; y <= 1 ; y++)
+            if(!(inside(i+x , j+y)) || a[i+x][j+y] == 1)
+                return 0;
+    return 1;
+}
+
+void afisare()
+{
+    for(int i = 1 ; i <= n ; i++)
+    {
+        for(int j = 1 ; j <= m; j ++)
+            cout << b[i][j];
+        cout << '\n';
+    }
+}
+
+void fill(int i , int j)
+{
+    a[i][j] = 2;
+    for(int x = -1 ; x <= 1 ; x++)
+        for(int y = -1 ; y <= 1 ; y++)
+            b[i+x][j+y] = '*';
+    for(int d = 0 ; d < 4 ; d++)
+    {
+        int inou = i + di[d];
+        int jnou = j + dj[d];
+        if(ok(inou , jnou) &amp;&amp; a[inou][jnou] == 0) fill(inou , jnou);
+    }
+}
+int main()
+{
+    cin >> n >> m;
+    for(int i = 1 ; i <= n ; i++)
+        for(int j = 1 ; j <= m ; j++)
+        {
+            char c;
+            cin >> c;
+            b[i][j] = c;
+            if(c == 'R')
+            {
+                ir = i;
+                jr = j;
+            }
+            else if(c == '+') a[i][j] = 1;
+        }
+    fill(ir , jr);
+    afisare();
+}</pre>

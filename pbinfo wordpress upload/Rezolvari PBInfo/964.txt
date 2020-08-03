@@ -1,0 +1,115 @@
+<p>Pentru codificarea textului unui mesaj s-a folosit codificarea <span class="caps">ASCII</span>, asociindu-se literelor mari ale alfabetului englez numerele distincte de la <code>65</code> la <code>90</code>, literelor mici ale alfabetului englez numerele distincte de la <code>97</code> la <code>122</code>, spaţiului numărul <code>32</code>, iar punctului (<code>.</code>) numărul <code>46</code>.</p>
+
+<p>Fiecare linie a mesajului ce urmează a fi codificat, are cel mult <code>80</code> de caractere, textul lui fiind format din cuvinte separate printr-un singur spaţiu sau printr-un singur punct, iar cuvintele sunt formate numai din litere ale alfabetului </p>
+
+<p>Codificarea textului mesajului este realizată astfel: fiecare cuvânt din text se scrie în ordine inversă, înlocuindu-se fiecare caracter cu şirul rezultat prin scrierea în ordine inversă a codului asociat acestuia. De exemplu codificarea caracterului <code>z</code> este şirul <code>221</code>. Aceeaşi regulă de codificare se aplică atât spaţiului cât şi punctului. </p>
+
+<p>Textul rezultat în urma codificării va conţine doar cifre, fără spaţii şi fără simboluri de punctuaţie.</p>
+
+<h1>Cerința</h1>
+
+<p>să se scrie un program care să citească codificarea textului unui mesaj, să decodifice textul şi să afișeze rezultatul decodificării.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>cod.in</code> conține conţine mai multe linii pe care sunt scrise doar cifre.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>cod.out</code> va conține un număr de linii egal cu numărul de linii din fişierul de intrare, fiecare linie conţinând decodificarea liniei corespunzătoare din fişierul de intrare.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li>fișierul de intrare va conține maximum <code>18</code>, fiecare linie conținând maximum <code>18</code> cifre</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595357032&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F964%2Fcod&amp;flash=0&amp;wgl=1&amp;dt=1595357032802&amp;bpp=4&amp;bdt=211&amp;idt=153&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=5088882666426&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595357033&amp;ga_hid=2139293650&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1268&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;eid=21066623&amp;oid=3&amp;pvsid=630801990109995&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F2029%2Fafisaren&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=3D0h94MMkO&amp;p=https%3A//www.pbinfo.ro&amp;dtd=162" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CMO_-YmA3-oCFdLOsgod_GYCiQ"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>cod.in</code></p>
+
+<pre contenteditable="true" editable="true">79001795012119015018019723101001237999501611799014111112010113764
+9989796410100164
+4111116119910138</pre>
+
+<p><code>cod.out</code></p>
+
+<pre contenteditable="true" editable="true">Olimpiada de Informatica.
+abc.de.
+Sector</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <cstring>
+using namespace std;
+
+ifstream cin("cod.in");
+ofstream cout("cod.out");
+
+char s[1001];
+
+bool valid(int n)
+{
+    if(n == '.')
+        return 1;
+    if(n == ' ')
+        return 1;
+    if((n >= 'A' &amp;&amp; n <= 'Z') || (n >= 'a' &amp;&amp; n <= 'z'))
+        return 1;
+    return 0;
+}
+
+int ogl(int n)
+{
+    int ogl=0;
+    while(n)
+        ogl=ogl*10+n%10 , n/=10;
+    return ogl;
+}
+
+int main()
+{
+    while(cin>>s)
+    {
+        int i = 0;
+        int cnt = 0;
+        int nr = 0 , p = 1;
+        char v[200]="" ;
+        int n = 0;
+        while(s[i]!='\0')
+        {
+            nr+=(s[i]-48) * p;
+            p*=10;
+            cnt++;
+            if(cnt%2==0)
+                if(!valid(nr))
+                    i++ , nr+=(s[i]-48) * p;
+            if(cnt%2==0)
+            {
+                v[++n]=nr;
+                nr=0;
+                p=1;
+            }
+            i++;
+        }
+        for(int i = 1 ; i <= n+1 ; ++i)
+        {
+            if(v[i]=='.' || v[i]==' ' || v[i]=='\0')
+            {
+                int j = i-1;
+                while(v[j]!='.' &amp;&amp; v[j]!=' ' &amp;&amp; j > 0)
+                {
+                    cout << (char)v[j];
+                    j--;
+                }
+                if(v[i]!='\0')
+                cout << (char)v[i];
+            }
+        }
+        cout << endl;
+    }
+    return 0;
+}</pre>

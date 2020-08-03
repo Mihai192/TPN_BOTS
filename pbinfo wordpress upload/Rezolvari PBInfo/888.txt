@@ -1,0 +1,136 @@
+<h1>Cerința</h1>
+
+<p>Cele mai multe editoare de text moderne oferă utilizatorilor o serie de opțiuni pentru modificarea textului grupate sub numele <strong>Change Case</strong>. Aceste opțiuni sunt:</p>
+
+<ol>
+	<li><code>lowercase</code> – toate literele din text sunt transformate în litere mici. Celelalte caractere rămân neschimbate;</li>
+	<li><code>UPPERCASE</code> – toate literele din text sunt transformate în litere mari. Celelalte caractere rămân neschimbate;</li>
+	<li><code>TitleCase</code> – primul caracter a fiecărui cuvânt se transformă în literă mare, dacă este literă; celelalte litere se transformă în litere mici;</li>
+	<li><code>iNVERTcASE</code> – primul caracter a fiecărui cuvânt se transformă în literă mică, dacă este literă; celelalte litere se transformă în litere mari;</li>
+	<li><code>Sentencecase</code> – prima literă a fiecărei propoziții este transformată în literă mare, celelalte în litere mici.</li>
+</ol>
+
+<p>Se dă un sir de caractere format din litere mari și mici ale alfabetului englez, cifre, spații și semnele de punctuație <code>.,;</code>, în care cuvintele sunt alcătuite din litere sau cifre, iar propozițiile sunt separate prin punct (<code>.</code>), precum și o transformare dintre cele date care trebuie aplicată.</p>
+
+<p>Aplicați asupra șirului dat transformarea precizată și afișați șirul.</p>
+
+<h1>Date de intrare</h1>
+
+<p>Fișierul de intrare <code>changecase.in</code> conține pe prima linie unul dintre cuvintele <code>lowercase UPPERCASE TitleCase iNVERTcASE Sentencecase</code>, iar pe a doua linie șirul dat.</p>
+
+<h1>Date de ieșire</h1>
+
+<p>Fișierul de ieșire <code>changecase.out</code> va conține pe prima linie șirul transformat în concordanță cu operația precizată.</p>
+
+<h1>Restricții și precizări</h1>
+
+<ul>
+	<li>șirul dat va avea cel mult <code>255</code> de caractere.</li>
+</ul>
+
+<br><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- link-unit -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7152921241438800" data-ad-slot="6421896419" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:15px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="15" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-7152921241438800&amp;output=html&amp;h=15&amp;slotname=6421896419&amp;adk=1130877403&amp;adf=3283908322&amp;w=728&amp;lmt=1595356902&amp;psa=1&amp;guci=1.2.0.0.2.2.0.0&amp;url=https%3A%2F%2Fwww.pbinfo.ro%2Fprobleme%2F888%2Fchangecase&amp;flash=0&amp;wgl=1&amp;dt=1595356901994&amp;bpp=4&amp;bdt=185&amp;idt=177&amp;shv=r20200716&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=336x280&amp;correlator=3003584678254&amp;frm=20&amp;pv=1&amp;ga_vid=704522989.1595356494&amp;ga_sid=1595356902&amp;ga_hid=168724380&amp;ga_fc=0&amp;iag=0&amp;icsg=17380323360767&amp;dssz=47&amp;mdo=0&amp;mso=0&amp;u_tz=180&amp;u_his=50&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=816&amp;u_aw=1440&amp;u_cd=30&amp;u_nplug=3&amp;u_nmime=4&amp;adx=41&amp;ady=1294&amp;biw=1200&amp;bih=649&amp;scr_x=0&amp;scr_y=0&amp;oid=3&amp;pvsid=166937681647361&amp;pem=564&amp;ref=https%3A%2F%2Fwww.pbinfo.ro%2F%3Fpagina%3Dprobleme-cautare%26what%3D2295-2%26denumire%3Don&amp;rx=0&amp;eae=0&amp;fc=896&amp;brdim=22%2C45%2C22%2C45%2C1440%2C23%2C1200%2C772%2C1200%2C649&amp;vis=1&amp;rsz=%7Co%7CeEbr%7C&amp;abl=NS&amp;pfx=0&amp;fu=8192&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;xpc=DfT935OhQQ&amp;p=https%3A//www.pbinfo.ro&amp;dtd=182" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="COCWy8v_3uoCFYLHuwgdtP0GnA"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><h1>Exemplu</h1>
+
+<p><code>changecase.in</code></p>
+
+<pre contenteditable="true" editable="true">UPPERCASE
+Ana are   mere. Multe</pre>
+
+<p><code>changecase.out</code></p>
+
+<pre contenteditable="true" editable="true">ANA ARE   MERE. MULTE</pre>						
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp">#include <fstream>
+#include <cstring>
+using namespace std;
+
+ifstream cin("changecase.in");
+ofstream cout("changecase.out");
+
+void LC(char s[])
+{
+    int i = 0;
+    while(s[i])
+    {
+        if(isalpha(s[i]))
+            s[i]=tolower(s[i]);
+        i++;
+    }
+}
+
+void UC(char s[])
+{
+    int i = 0;
+    while(s[i])
+    {
+        if(isalpha(s[i]))
+            s[i] = toupper(s[i]);
+        i++;
+    }
+}
+
+void TC(char s[])
+{
+    LC(s);
+    int i = 0;
+    while(s[i])
+    {
+        if((i == 0 &amp;&amp; isalpha(s[i])) ||
+           (strchr(".,; " , s[i-1]) &amp;&amp; !strchr(".,; " , s[i])))
+            s[i] = toupper(s[i]);
+        i++;
+    }
+}
+
+void IC(char s[])
+{
+    UC(s);
+    int i = 0;
+    while(s[i])
+    {
+        if((i == 0 &amp;&amp; isalpha(s[i])) ||
+           (strchr(".,; " , s[i-1]) &amp;&amp; !strchr(".,; " , s[i])))
+            s[i] = tolower(s[i]);
+        i++;
+    }
+}
+
+void SC(char s[])
+{
+    LC(s);
+    bool ok = true;
+    int i = 0;
+    while(s[i])
+    {
+        if(isalpha(s[i]) &amp;&amp; ok)
+            s[i] = toupper(s[i]) , ok = false;
+        if(s[i] == '.')
+            ok = true;
+        i++;
+    }
+}
+
+char c[15];
+char s[256];
+
+int main()
+{
+    cin >> c;
+    cin.get();
+    cin.getline(s , 255);
+    if(strcmp("lowercase" , c) == 0)
+        LC(s);
+    if(strcmp("UPPERCASE" , c) == 0)
+        UC(s);
+    if(strcmp("TitleCase" , c) == 0)
+        TC(s);
+    if(strcmp("iNVERTcASE" , c) == 0)
+        IC(s);
+    if(strcmp("Sentencecase" , c) == 0)
+        SC(s);
+    cout << s;
+    return 0;
+}</pre>
