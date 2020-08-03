@@ -142,12 +142,16 @@ class TPN_post_problems_bot:
 		self.click_on_element_with_id('wp-submit')
 
 	def start_posting_problems(self):
-		problem_file = '.\\Rezolvari PBInfo'
-		
+		# problem_file = '.\\Rezolvari PBInfo' #Windows
+
+		problem_file = 'Rezolvari PBInfo'  # Linux
+
 		files = os.listdir(problem_file)
 		
 		for file in files:
-			open_file = open('{}\\{}'.format(problem_file, file), 'rt', encoding='UTF-8')
+			# open_file = open('{}\\{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Windows
+
+			open_file = open('{}/{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Linux
 
 			problem_str = str(open_file.read())
 
@@ -176,8 +180,11 @@ def main():
 	password = input('password:')
 
 	# modify here path according to your os
-	path = f'.\\chromedriver.exe'
-	problem_path = f'.\\Rezolvari PBInfo'
+	# path = f'.\\chromedriver.exe' #Windows
+	path = "./chromedriver" #Linux
+
+	# problem_path = f'.\\Rezolvari PBInfo' #Windows
+	problem_path = '/Rezolvari PBInfo' #Linux
 
 	bot = TPN_post_problems_bot(email, password, webdriver.Chrome(executable_path=path, options=options))
 	bot.login()
