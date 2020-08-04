@@ -187,14 +187,14 @@ class TPN_post_problems_bot:
 			problem_str = self.replace_less_then(problem_str)
 
 			print(problem_str)
-			'''
+			
 			try:
 				self.post_problem(file[:-4], problem_title, problem_str)
 			except Exception:
 				return
 			
 			print(f"[{time.ctime()}]: Am postat problema cu id-ul {'#' + file[:-4]}!")
-			'''
+			
 
 def main():
 	set_options(options)
@@ -209,7 +209,7 @@ def main():
 	# problem_path = '/Rezolvari PBInfo' #Linux
 
 	bot = TPN_post_problems_bot(email, password, webdriver.Chrome(executable_path=path, options=options))
-	# bot.login()
+	bot.login()
 	bot.start_posting_problems()
 	bot.driver.quit()
 
