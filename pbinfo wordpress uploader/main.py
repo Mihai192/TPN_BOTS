@@ -1,5 +1,5 @@
 '''
-	Add db functionality
+  TODO:Add db functionality
 '''
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -9,6 +9,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import StaleElementReferenceException
 
+import sqlite3
 import os
 import platform
 import time 
@@ -17,6 +18,9 @@ import re
 pbinfo_url = 'https://www.pbinfo.ro/'
 login_page = 'https://tutoriale-pe.net/wp-login.php'
 options = Options()
+
+def change_string_at_index(string, index, string_to_change):
+	return string[:index] + string_to_change + string[index + 1:]
 
 def set_options(options):
 	options.add_argument('no-sandbox')
@@ -58,8 +62,11 @@ class TPN_post_problems_bot:
 			return file
 
 	def replace_includes(self, file):
+		# &lt; <
+		# &gt; > 
+
 		find = re.search('#include <\\w+>', file)
-		change = '#include <bits/stdc++.h>'
+		change = '#include &lt;bits/stdc++.h&gt;'
 
 		while find:
 			include = find[0]
@@ -69,7 +76,23 @@ class TPN_post_problems_bot:
 			change = ''
 
 		return file
-	
+
+	def replace_less_then(self, file):
+		# &lt; <
+		code_tag = '<pre class="EnlighterJSRAW" data-enlighter-language="cpp">'
+		index = int(file.find(code_tag))
+		str_len = len(code_tag)
+		
+		find_index = file.find('<', index + str_len)
+
+		while find_index != -1:
+			file = change_string_at_index(file, find_index, '&lt;')
+			find_index = file.find('<', find_index)			
+
+		find_index = file.rfind('&lt;')
+		file = file[:find_index] + '<' + file[find_index + 4:]
+		return file
+		
 	def check_boxes(self):
 		check_box_pbinfo = WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable((By.ID, "in-category-706")))
 		check_box_cpp = WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable((By.ID, "in-category-8")))
@@ -78,7 +101,6 @@ class TPN_post_problems_bot:
 		check_box_pbinfo.click()
 		check_box_cpp.click()
 		check_box_tutoriale.click()
-
 
 	def send_keys_to_element_with_id(self, id, keys):
 		element = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.ID, id)))
@@ -129,6 +151,7 @@ class TPN_post_problems_bot:
 		except StaleElementReferenceException:
 			thumbnail = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.XPATH, f'//*[@aria-label="#{problem_id}"]')))
 
+
 		thumbnail.click()
 		self.click_on_element_with_xpath('//*[@id="__wp-uploader-id-0"]/div[4]/div/div[2]/button')
 		self.driver.execute_script('window.scrollTo(0, 0)')
@@ -142,16 +165,14 @@ class TPN_post_problems_bot:
 		self.click_on_element_with_id('wp-submit')
 
 	def start_posting_problems(self):
-		# problem_file = '.\\Rezolvari PBInfo' #Windows
-
-		problem_file = 'Rezolvari PBInfo'  # Linux
+		problem_file = '.\\Rezolvari PBInfo' #Windows
+		# problem_file = 'Rezolvari PBInfo'  # Linux
 
 		files = os.listdir(problem_file)
 		
 		for file in files:
-			# open_file = open('{}\\{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Windows
-
-			open_file = open('{}/{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Linux
+			open_file = open('{}\\{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Windows
+			# open_file = open('{}/{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Linux
 
 			problem_str = str(open_file.read())
 
@@ -163,13 +184,13 @@ class TPN_post_problems_bot:
 
 			problem_str = self.remove_ad(problem_str)
 			problem_str = self.replace_includes(problem_str)
+			problem_str = self.replace_less_then(problem_str)
 			
-
 			try:
 				self.post_problem(file[:-4], problem_title, problem_str)
 			except Exception:
 				return
-				
+			
 			print(f"[{time.ctime()}]: Am postat problema cu id-ul {'#' + file[:-4]}!")
 			
 
@@ -179,12 +200,11 @@ def main():
 	email = input('email:')
 	password = input('password:')
 
-	# modify here path according to your os
-	# path = f'.\\chromedriver.exe' #Windows
-	path = "./chromedriver" #Linux
+	path = '.\\chromedriver.exe' #Windows
+	# path = "./chromedriver" #Linux
 
-	# problem_path = f'.\\Rezolvari PBInfo' #Windows
-	problem_path = '/Rezolvari PBInfo' #Linux
+	problem_path = '.\\Rezolvari PBInfo' #Windows
+	# problem_path = '/Rezolvari PBInfo' #Linux
 
 	bot = TPN_post_problems_bot(email, password, webdriver.Chrome(executable_path=path, options=options))
 	bot.login()
