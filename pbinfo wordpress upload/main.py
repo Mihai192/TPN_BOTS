@@ -1,5 +1,5 @@
 '''
-	Add db functionality
+  TODO:Add db functionality
 '''
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -72,7 +72,21 @@ class TPN_post_problems_bot:
 			change = ''
 
 		return file
-	
+
+	def replace_less_then(self, file):
+		# &lt; <
+
+		index = int(file.find('<pre class="EnlighterJSRAW" data-enlighter-language="cpp">'))
+		str_len = len('<pre class="EnlighterJSRAW" data-enlighter-language="cpp">')
+		
+		find_index = file.find('<', index+str_len)
+
+		while find_index != -1:
+			file = file[:find_index] + '&lt;' + file[find_index + 1:]
+			find_index = file.find('<', find_index)			
+
+		return file
+		
 	def check_boxes(self):
 		check_box_pbinfo = WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable((By.ID, "in-category-706")))
 		check_box_cpp = WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable((By.ID, "in-category-8")))
@@ -81,7 +95,6 @@ class TPN_post_problems_bot:
 		check_box_pbinfo.click()
 		check_box_cpp.click()
 		check_box_tutoriale.click()
-
 
 	def send_keys_to_element_with_id(self, id, keys):
 		element = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.ID, id)))
@@ -132,7 +145,7 @@ class TPN_post_problems_bot:
 		except StaleElementReferenceException:
 			thumbnail = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.XPATH, f'//*[@aria-label="#{problem_id}"]')))
 
-		
+
 		thumbnail.click()
 		self.click_on_element_with_xpath('//*[@id="__wp-uploader-id-0"]/div[4]/div/div[2]/button')
 		self.driver.execute_script('window.scrollTo(0, 0)')
@@ -147,14 +160,12 @@ class TPN_post_problems_bot:
 
 	def start_posting_problems(self):
 		problem_file = '.\\Rezolvari PBInfo' #Windows
-
 		# problem_file = 'Rezolvari PBInfo'  # Linux
 
 		files = os.listdir(problem_file)
 		
 		for file in files:
 			open_file = open('{}\\{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Windows
-
 			# open_file = open('{}/{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Linux
 
 			problem_str = str(open_file.read())
@@ -167,7 +178,7 @@ class TPN_post_problems_bot:
 
 			problem_str = self.remove_ad(problem_str)
 			problem_str = self.replace_includes(problem_str)
-			
+			problem_str = self.replace_less_then(problem_str)
 
 			try:
 				self.post_problem(file[:-4], problem_title, problem_str)
@@ -180,18 +191,20 @@ class TPN_post_problems_bot:
 def main():
 	set_options(options)
 
-	email = input('email:')
-	password = input('password:')
+	# email = input('email:')
+	# password = input('password:')
 
-	# modify here path according to your os
-	path = f'.\\chromedriver.exe' #Windows
+	email = 0
+	password = 0
+
+	path = '.\\chromedriver.exe' #Windows
 	# path = "./chromedriver" #Linux
 
 	problem_path = '.\\Rezolvari PBInfo' #Windows
 	# problem_path = '/Rezolvari PBInfo' #Linux
 
 	bot = TPN_post_problems_bot(email, password, webdriver.Chrome(executable_path=path, options=options))
-	bot.login()
+	# bot.login()
 	bot.start_posting_problems()
 	bot.driver.quit()
 
