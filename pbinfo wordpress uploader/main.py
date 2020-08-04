@@ -38,29 +38,23 @@ class TPN_post_problems_bot:
 		self.email = email
 		self.password = password
 		self.driver = driver
-
-	def problem_title_TPN(self, id):
-		self.driver.get(pbinfo_url)
-		
-		search_box = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.ID, 'search_box')))
-		search_box.send_keys('#' + str(id))
-		search_box.submit()
-
-		h1 = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.CLASS_NAME, 'text-primary')))
-		h1 = h1.text.replace(' ', '-')
-		h1 = h1.split('-')
-
-		return 'Problema ' + h1[0] + ' - ' + h1[1] + ' - Rezolvari PBInfo'
 	
 	def remove_ad(self, file):
+		index = file.find('</div>')
+
+		# remove 1st ad
+		if index != -1:
+			file = file[index + len('</div>'):]
+
 		first_index = file.find('<br>')
-		last_index = file.rfind('</script>')
+		second_index = file.rfind('</script>')
 
-		if last_index != -1:
-			return file[:first_index] + file[last_index + len('</script>'):]
-		else:
-			return file
+		# remove 2st ad
+		if first_index != -1:
+			file = file[:first_index] + file[second_index + len('</script>'):]
 
+		return file
+		
 	def replace_includes(self, file):
 		# &lt; <
 		# &gt; > 
@@ -91,8 +85,10 @@ class TPN_post_problems_bot:
 
 		find_index = file.rfind('&lt;')
 		file = file[:find_index] + '<' + file[find_index + 4:]
+
 		return file
-		
+
+
 	def check_boxes(self):
 		check_box_pbinfo = WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable((By.ID, "in-category-706")))
 		check_box_cpp = WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable((By.ID, "in-category-8")))
@@ -117,7 +113,34 @@ class TPN_post_problems_bot:
 		time.sleep(2)
 		element.click()
 
+	def get_solution(self, file):
+		return file[file.find('<pre class="EnlighterJSRAW" data-enlighter-language="cpp">'):]
+
+	# problem_id = '#{int}'
+	def get_statement(self, problem_id):
+		self.driver.get(pbinfo_url)
+
+		search_box = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.ID, 'search_box')))
+		search_box.send_keys(problem_id)
+		search_box.submit()
+		
+		time.sleep(2)
+
+		statement = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.TAG_NAME, "article")))
+		
+		h1 = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.CLASS_NAME, 'text-primary')))
+		h1 = h1.text.replace(' ', '-')
+		h1 = h1.split('-')
+
+		h1 = 'Problema ' + h1[0] + ' - ' + h1[1] + ' - Rezolvari PBInfo'
+
+		return statement.get_attribute('innerHTML'), h1
+
 	def post_problem(self, problem_id, post_title, post_problems):
+		self.driver.get('https://tutoriale-pe.net/wp-admin/post-new.php')
+
+		time.sleep(2)
+
 		self.send_keys_to_element_with_id("title", post_title)
 		self.click_on_element_with_id("content-html")
 
@@ -176,23 +199,28 @@ class TPN_post_problems_bot:
 
 			problem_str = str(open_file.read())
 
-			problem_title = self.problem_title_TPN('{}'.format(file[:-4]))
-
 			open_file.close()
+		
+			
+			problem_statement, post_title = self.get_statement('#' + file[:-4])
+			problem_solution = self.get_solution(problem_str)
 
-			self.driver.get('https://tutoriale-pe.net/wp-admin/post-new.php')
+			problem = problem_statement + problem_solution
 
-			problem_str = self.remove_ad(problem_str)
-			problem_str = self.replace_includes(problem_str)
-			problem_str = self.replace_less_then(problem_str)
+
+			problem = self.remove_ad(problem)
+
+			problem = self.replace_includes(problem)
+
+			problem = self.replace_less_then(problem)
+
 			
 			try:
-				self.post_problem(file[:-4], problem_title, problem_str)
+				self.post_problem(file[:-4], post_title, problem)
 			except Exception:
 				return
 			
 			print(f"[{time.ctime()}]: Am postat problema cu id-ul {'#' + file[:-4]}!")
-			
 
 def main():
 	set_options(options)
