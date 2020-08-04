@@ -185,8 +185,6 @@ class TPN_post_problems_bot:
 			problem_str = self.remove_ad(problem_str)
 			problem_str = self.replace_includes(problem_str)
 			problem_str = self.replace_less_then(problem_str)
-
-			print(problem_str)
 			
 			try:
 				self.post_problem(file[:-4], problem_title, problem_str)
