@@ -9,6 +9,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import StaleElementReferenceException
 
+import sqlite3
 import os
 import platform
 import time 
@@ -17,6 +18,9 @@ import re
 pbinfo_url = 'https://www.pbinfo.ro/'
 login_page = 'https://tutoriale-pe.net/wp-login.php'
 options = Options()
+
+def change_string_at_index(string, index, string_to_change):
+	return string[:index] + string_to_change + string[index + 1:]
 
 def set_options(options):
 	options.add_argument('no-sandbox')
@@ -75,16 +79,18 @@ class TPN_post_problems_bot:
 
 	def replace_less_then(self, file):
 		# &lt; <
-
-		index = int(file.find('<pre class="EnlighterJSRAW" data-enlighter-language="cpp">'))
-		str_len = len('<pre class="EnlighterJSRAW" data-enlighter-language="cpp">')
+		code_tag = '<pre class="EnlighterJSRAW" data-enlighter-language="cpp">'
+		index = int(file.find(code_tag))
+		str_len = len(code_tag)
 		
-		find_index = file.find('<', index+str_len)
+		find_index = file.find('<', index + str_len)
 
 		while find_index != -1:
-			file = file[:find_index] + '&lt;' + file[find_index + 1:]
+			file = change_string_at_index(file, find_index, '&lt;')
 			find_index = file.find('<', find_index)			
 
+		find_index = file.rfind('&lt;')
+		file = file[:find_index] + '<' + file[find_index + 4:]
 		return file
 		
 	def check_boxes(self):
@@ -180,22 +186,21 @@ class TPN_post_problems_bot:
 			problem_str = self.replace_includes(problem_str)
 			problem_str = self.replace_less_then(problem_str)
 
+			print(problem_str)
+			'''
 			try:
 				self.post_problem(file[:-4], problem_title, problem_str)
 			except Exception:
 				return
 			
 			print(f"[{time.ctime()}]: Am postat problema cu id-ul {'#' + file[:-4]}!")
-			
+			'''
 
 def main():
 	set_options(options)
 
-	# email = input('email:')
-	# password = input('password:')
-
-	email = 0
-	password = 0
+	email = input('email:')
+	password = input('password:')
 
 	path = '.\\chromedriver.exe' #Windows
 	# path = "./chromedriver" #Linux
