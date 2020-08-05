@@ -43,7 +43,7 @@ def sql_check_id(db_file, id):
 
 	cur = db_file.cursor()
 	cur.execute(sql)
-
+	
 	return cur.fetchone()[0]
 
 def change_string_at_index(string, index, string_to_change):
@@ -206,7 +206,6 @@ class TPN_post_problems_bot:
 		files = os.listdir(problem_file)
 		
 		for file in files:
-			print(sql_check_id(self.db, '#' + file[:-4]))
 			if not sql_check_id(self.db, '#' + file[:-4]):
 
 				open_file = open('{}\\{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Windows
