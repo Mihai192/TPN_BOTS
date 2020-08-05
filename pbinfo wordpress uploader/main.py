@@ -42,9 +42,9 @@ def sql_check_id(db_file, id):
 	sql = f"""SELECT EXISTS (SELECT 1 FROM problems WHERE ID='{id}');"""
 
 	cur = db_file.cursor()
-	check = cur.execute(sql)
+	cur.execute(sql)
 
-	return check
+	return cur.fetchone()[0]
 
 def change_string_at_index(string, index, string_to_change):
 	return string[:index] + string_to_change + string[index + 1:]
@@ -206,7 +206,9 @@ class TPN_post_problems_bot:
 		files = os.listdir(problem_file)
 		
 		for file in files:
+			print(sql_check_id(self.db, '#' + file[:-4]))
 			if not sql_check_id(self.db, '#' + file[:-4]):
+
 				open_file = open('{}\\{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Windows
 				# open_file = open('{}/{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Linux
 
@@ -236,9 +238,6 @@ class TPN_post_problems_bot:
 
 				sql_insert(self.db, file[:-4])
 
-	def __del__(self):
-		self.driver.close()
-		self.db.close()
 		
 def main():
 	set_options(options)
@@ -258,7 +257,8 @@ def main():
 	bot = TPN_post_problems_bot(email, password, webdriver.Chrome(executable_path=path, options=options), db)
 	bot.login()
 	bot.start_posting_problems()
-	
+	bot.driver.close()
+	db.close()
 
 if __name__ == '__main__':
 	main()
