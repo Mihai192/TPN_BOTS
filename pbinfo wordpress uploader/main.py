@@ -43,9 +43,9 @@ def sql_check_id(db_file, id):
 	sql = f"""SELECT EXISTS (SELECT 1 FROM problems WHERE ID='{id}');"""
 
 	cur = db_file.cursor()
-	check = cur.execute(sql)
-
-	return check
+	cur.execute(sql)
+	
+	return cur.fetchone()[0]
 
 def change_string_at_index(string, index, string_to_change):
 	return string[:index] + string_to_change + string[index + 1:]
@@ -261,9 +261,6 @@ class TPN_post_problems_bot:
 
 				sql_insert(self.db, file[:-4])
 
-	def __del__(self):
-		self.driver.close()
-		self.db.close()
 		
 def main():
 	set_options(options)
@@ -281,7 +278,8 @@ def main():
 	bot = TPN_post_problems_bot(email, password, webdriver.Chrome(executable_path=path, options=options), db)
 	bot.login()
 	bot.start_posting_problems()
-	
+	bot.driver.close()
+	db.close()
 
 if __name__ == '__main__':
 	main()
