@@ -140,7 +140,7 @@ class TPN_post_problems_bot:
 	def get_statement(self, problem_id):
 		self.driver.get(pbinfo_url)
 
-		time.sleep(2)
+		# time.sleep(2)
 
 		search_box = self.send_keys_to_element_with_id('search_box', problem_id)
 		search_box.submit()
@@ -158,7 +158,7 @@ class TPN_post_problems_bot:
 	def post_problem(self, problem_id, post_title, post_problems):
 		self.driver.get('https://tutoriale-pe.net/wp-admin/post-new.php')
 
-		time.sleep(2)
+		# time.sleep(2)
 
 		self.send_keys_to_element_with_id("title", post_title)
 		self.click_on_element_with_id("content-html")
@@ -206,7 +206,6 @@ class TPN_post_problems_bot:
 			problem_str = str(open_file.read())
 
 			open_file.close()
-		
 			
 			problem_statement, post_title = self.get_statement('#' + file[:-4])
 			problem_solution = self.get_solution(problem_str)
