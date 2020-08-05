@@ -5,16 +5,19 @@ import os
 
 WHITE = (255, 255, 255) 
 
-thumbnail_path = '.\\Thumbnails'
+#thumbnail_path = '.\\Thumbnails' # Windows
+thumbnail_path = './Thumbnails' # Linux
 thumbnail_frame = 'cpp_pbinfo.png'
 
 font_size = 300
-font_path = '.\\Fonts'
+#font_path = '.\\Fonts' # Windows
+font_path = './Fonts' # Linux
 font_name = 'malgunbd.ttf'
 
 save_path = thumbnail_path
 
-problem_path = '.\\Rezolvari PBInfo'
+#problem_path = '.\\Rezolvari PBInfo' # Windows
+problem_path = 'Rezolvari2'  # Linux
 
 # image.size ==> width, height
 # width = x
@@ -27,10 +30,12 @@ def generate_thumbnail_for_problems(problem_files):
 		problem_tb.create_thumbnail()
 
 def get_image(path, name):
-	return Image.open('{}\\{}'.format(path, name))
+	#return Image.open('{}\\{}'.format(path, name)) # Windows
+	return Image.open('{}/{}'.format(path, name)) # Linux
 
 def get_font(path, name):
-	return '{}\\{}'.format(path, name)
+	#return '{}\\{}'.format(path, name) # Windows
+	return '{}/{}'.format(path, name) # Linux
 
 class Thumbnail_Generator:
 	def __init__(self, image, file_name, save_path, text, color, font, font_size):
@@ -56,7 +61,8 @@ class Thumbnail_Generator:
 		draw = ImageDraw.Draw(thumbnail)
 		font = ImageFont.truetype(self.font, self.font_size)
 		draw.text(self.center(), self.text, self.color, font=font)
-		thumbnail.save('{}\\{}.png'.format(self.save_path, self.file_name))
+		#thumbnail.save('{}\\{}.png'.format(self.save_path, self.file_name)) # Windows
+		thumbnail.save('{}/{}.png'.format(self.save_path, self.file_name)) # Linux
 
 	def __del__(self):
 		self.image.close()
