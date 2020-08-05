@@ -259,12 +259,11 @@ class TPN_post_problems_bot:
 				
 				try:
 					self.post_problem(file[:-4], post_title, problem)
+					print(f"[{time.ctime()}]: Am postat problema cu id-ul {'#' + file[:-4]}!")
+					sql_insert(self.db, file[:-4])
 				except Exception:
-					return
+					print("[EROARE]: Nu am putut posta problema cu id #" + problem_id + ".(poate nu exista pe pbinfo...)")
 				
-				print(f"[{time.ctime()}]: Am postat problema cu id-ul {'#' + file[:-4]}!")
-
-				sql_insert(self.db, file[:-4])
 
 	def __del__(self):
 		self.driver.close()
