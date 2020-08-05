@@ -22,20 +22,31 @@ pbinfo_url = 'https://www.pbinfo.ro/'
 login_page = 'https://tutoriale-pe.net/wp-login.php'
 options = Options()
 
-'''
+
 def sql_create_connection(db_file):
-	pass  
+	return sqlite3.connect(db_file)
+	 
 
 def sql_create_table(db_file, table):
 	c = db_file.cursor()
 	c.execute(table)
 
-def sql_insert(db_file, object_to_insert):
-	c = db_file.cursor()
+def sql_insert(db_file, id):
+	sql = f"""INSERT INTO problems(ID) VALUES('{id}')"""
+	
+	cur = db_file.cursor()
+	cur.execute(sql)
 
-	c.execute('INSERT INTO problems(problem_id) VALUES (?)', object_to_insert)
 	db_file.commit()
-'''
+	
+
+def sql_check_id(db_file, id):
+	sql = f"""SELECT EXISTS (SELECT 1 FROM problems WHERE ID='{id}');"""
+
+	cur = db_file.cursor()
+	check = cur.execute(sql)
+
+	return check
 
 def change_string_at_index(string, index, string_to_change):
 	return string[:index] + string_to_change + string[index + 1:]
@@ -52,10 +63,11 @@ def get_driver(path, options):
 	return webdriver.Chrome(executable_path=path, options=options)
 
 class TPN_post_problems_bot:
-	def __init__(self, email, password, driver):
+	def __init__(self, email, password, driver, db):
 		self.email = email
 		self.password = password
 		self.driver = driver
+		self.db = db
 	
 	def remove_ad(self, file):
 		index = file.find('</div>')
@@ -139,7 +151,7 @@ class TPN_post_problems_bot:
 	# problem_id = '#{int}'
 	def get_statement(self, problem_id):
 		self.driver.get(pbinfo_url)
-		
+
 		search_box = self.send_keys_to_element_with_id('search_box', problem_id)
 		search_box.submit()
 
@@ -196,49 +208,47 @@ class TPN_post_problems_bot:
 		files = os.listdir(problem_file)
 		
 		for file in files:
-			open_file = open('{}\\{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Windows
-			# open_file = open('{}/{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Linux
+			if not sql_check_id(self.db, '#' + file[:-4]):
+				open_file = open('{}\\{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Windows
+				# open_file = open('{}/{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Linux
 
-			problem_str = str(open_file.read())
+				problem_str = str(open_file.read())
 
-			open_file.close()
-			
-			problem_statement, post_title = self.get_statement('#' + file[:-4])
-			problem_solution = self.get_solution(problem_str)
+				open_file.close()
+				
+				problem_statement, post_title = self.get_statement('#' + file[:-4])
+				problem_solution = self.get_solution(problem_str)
 
-			problem = problem_statement + problem_solution
+				problem = problem_statement + problem_solution
 
 
-			problem = self.remove_ad(problem)
+				problem = self.remove_ad(problem)
 
-			problem = self.replace_includes(problem)
+				problem = self.replace_includes(problem)
 
-			problem = self.replace_less_then(problem)
+				problem = self.replace_less_then(problem)
 
-			
-			try:
-				self.post_problem(file[:-4], post_title, problem)
-			except Exception:
-				return
-			
-			print(f"[{time.ctime()}]: Am postat problema cu id-ul {'#' + file[:-4]}!")
+				
+				try:
+					self.post_problem(file[:-4], post_title, problem)
+				except Exception:
+					return
+				
+				print(f"[{time.ctime()}]: Am postat problema cu id-ul {'#' + file[:-4]}!")
 
+				sql_insert(self.db, file[:-4])
+
+	def __del__(self):
+		self.driver.close()
+		self.db.close()
+		
 def main():
 	set_options(options)
 
-	'''
+	
 	db = sql_create_connection('posted_problems.sqlite')
+	sql_create_table(db, """CREATE TABLE IF NOT EXISTS problems (ID TEXT NOT NULL);""")
 
-	table = """CREATE TABLE problems (
-    			problem_id VARCHAR(30) primary key
-			);"""
-
-
-	sql_create_table(db, table)
-
-	sql_insert(db, '#1003')
-	sql_insert(db, '#998')
-	'''
 	email = input('email:')
 	password = input('password:')
 
@@ -248,11 +258,9 @@ def main():
 	problem_path = '.\\Rezolvari PBInfo' #Windows
 	# problem_path = '/Rezolvari PBInfo' #Linux
 	
-	
-	bot = TPN_post_problems_bot(email, password, webdriver.Chrome(executable_path=path, options=options))
+	bot = TPN_post_problems_bot(email, password, webdriver.Chrome(executable_path=path, options=options), db)
 	bot.login()
 	bot.start_posting_problems()
-	bot.driver.quit()
 	
 
 if __name__ == '__main__':
