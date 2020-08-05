@@ -1,6 +1,3 @@
-'''
-  TODO:Add db functionality
-'''
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -18,7 +15,7 @@ import platform
 import time 
 import re
 
-opersys = 2 # 1 - Windows | 2 - Linux
+opersys = 1 # 1 - Windows | 2 - Linux
 
 pbinfo_url = 'https://www.pbinfo.ro/'
 login_page = 'https://tutoriale-pe.net/wp-login.php'
@@ -165,6 +162,11 @@ class TPN_post_problems_bot:
 		time.sleep(2)
 		element.click()
 
+	def click_on_element_with_class_name(self, class_name):
+		element = WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable((By.CLASS_NAME, class_name)))
+		time.sleep(2)
+		element.click()
+
 	def click_on_element_with_xpath(self, xpath):
 		element = WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable((By.XPATH, xpath)))
 		time.sleep(2)
@@ -202,6 +204,7 @@ class TPN_post_problems_bot:
 		text_area.send_keys(Keys.CONTROL, 'v')
 
 		self.check_boxes()
+		
 		try:
 			self.click_on_element_with_id('set-post-thumbnail')
 			self.send_keys_to_element_with_id("media-search-input", f"/{problem_id}.png")
@@ -216,6 +219,8 @@ class TPN_post_problems_bot:
 			self.click_on_element_with_xpath('//*[@id="__wp-uploader-id-0"]/div[4]/div/div[2]/button')
 		except Exception:
 			print("[EROARE]: Problema #" + problem_id + " NU are thumbnail.")
+			# asta trebuia adaugat...
+			self.click_on_element_with_xpath('//*[@id="__wp-uploader-id-2"]/div[1]/button')
 
 		self.driver.execute_script('window.scrollTo(0, 0)')
 		self.click_on_element_with_id('publish')
@@ -261,6 +266,9 @@ class TPN_post_problems_bot:
 
 				sql_insert(self.db, file[:-4])
 
+	def __del__(self):
+		self.driver.close()
+		self.db.close()
 		
 def main():
 	set_options(options)
@@ -268,8 +276,8 @@ def main():
 	db = sql_create_connection('posted_problems.sqlite')
 	sql_create_table(db, """CREATE TABLE IF NOT EXISTS problems (ID TEXT NOT NULL);""")
 
-	email = ""
-	password = ""
+	email = input("email:") 	
+	password = input("password:")
 
 	path = convertToOS("path")
 
@@ -278,8 +286,7 @@ def main():
 	bot = TPN_post_problems_bot(email, password, webdriver.Chrome(executable_path=path, options=options), db)
 	bot.login()
 	bot.start_posting_problems()
-	bot.driver.close()
-	db.close()
+
 
 if __name__ == '__main__':
 	main()
