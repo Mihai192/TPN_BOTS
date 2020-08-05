@@ -18,6 +18,8 @@ import platform
 import time 
 import re
 
+opersys = 2 # 1 - Windows | 2 - Linux
+
 pbinfo_url = 'https://www.pbinfo.ro/'
 login_page = 'https://tutoriale-pe.net/wp-login.php'
 options = Options()
@@ -36,7 +38,6 @@ def sql_insert(db_file, id):
 	cur.execute(sql)
 
 	db_file.commit()
-	
 
 def sql_check_id(db_file, id):
 	sql = f"""SELECT EXISTS (SELECT 1 FROM problems WHERE ID='{id}');"""
@@ -59,6 +60,32 @@ def set_options(options):
 
 def get_driver(path, options):
 	return webdriver.Chrome(executable_path=path, options=options)
+
+def convertToOS(variable):
+	if variable == "path":
+		if opersys == 1:
+			return '.\\chromedriver.exe'
+		else:
+			return "./chromedriver"
+
+	if variable == "problem_path":
+		if opersys == 1:
+			return '.\\Rezolvari PBInfo'
+		else:
+			return '/Rezolvari PBInfo'
+
+	if variable == "problem_file":
+		if opersys == 1:
+			return '.\\Rezolvari PBInfo'
+		else:
+			return 'Rezolvari PBInfo'
+
+	if variable == "open_file":
+		if opersys == 1:
+			return '{}\\{}'
+		else:
+			return '{}/{}'
+
 
 class TPN_post_problems_bot:
 	def __init__(self, email, password, driver, db):
@@ -200,16 +227,13 @@ class TPN_post_problems_bot:
 		self.click_on_element_with_id('wp-submit')
 
 	def start_posting_problems(self):
-		problem_file = '.\\Rezolvari PBInfo' #Windows
-		# problem_file = 'Rezolvari PBInfo'  # Linux
+		problem_file =  convertToOS("problem_file")
 
 		files = os.listdir(problem_file)
 		
 		for file in files:
 			if not sql_check_id(self.db, '#' + file[:-4]):
-
-				open_file = open('{}\\{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Windows
-				# open_file = open('{}/{}'.format(problem_file, file), 'rt', encoding='UTF-8') # Linux
+				open_file = open(convertToOS("open_file").format(problem_file, file), 'rt', encoding='UTF-8')
 
 				problem_str = str(open_file.read())
 
@@ -244,14 +268,12 @@ def main():
 	db = sql_create_connection('posted_problems.sqlite')
 	sql_create_table(db, """CREATE TABLE IF NOT EXISTS problems (ID TEXT NOT NULL);""")
 
-	email = input('email:')
-	password = input('password:')
+	email = ""
+	password = ""
 
-	path = '.\\chromedriver.exe' #Windows
-	# path = "./chromedriver" #Linux
+	path = convertToOS("path")
 
-	problem_path = '.\\Rezolvari PBInfo' #Windows
-	# problem_path = '/Rezolvari PBInfo' #Linux
+	problem_path = convertToOS("problem_path")
 	
 	bot = TPN_post_problems_bot(email, password, webdriver.Chrome(executable_path=path, options=options), db)
 	bot.login()
