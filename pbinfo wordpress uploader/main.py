@@ -10,6 +10,9 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import StaleElementReferenceException
 
 import sqlite3
+from sqlite3 import Error
+
+import pyperclip
 import os
 import platform
 import time 
@@ -18,6 +21,21 @@ import re
 pbinfo_url = 'https://www.pbinfo.ro/'
 login_page = 'https://tutoriale-pe.net/wp-login.php'
 options = Options()
+
+'''
+def sql_create_connection(db_file):
+	pass  
+
+def sql_create_table(db_file, table):
+	c = db_file.cursor()
+	c.execute(table)
+
+def sql_insert(db_file, object_to_insert):
+	c = db_file.cursor()
+
+	c.execute('INSERT INTO problems(problem_id) VALUES (?)', object_to_insert)
+	db_file.commit()
+'''
 
 def change_string_at_index(string, index, string_to_change):
 	return string[:index] + string_to_change + string[index + 1:]
@@ -101,7 +119,9 @@ class TPN_post_problems_bot:
 	def send_keys_to_element_with_id(self, id, keys):
 		element = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.ID, id)))
 		time.sleep(2)
-		element.send_keys(keys)
+		pyperclip.copy(keys)
+		element.send_keys(Keys.CONTROL, 'v')
+		return element
 
 	def click_on_element_with_id(self, id):
 		element = WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable((By.ID, id)))
@@ -120,11 +140,10 @@ class TPN_post_problems_bot:
 	def get_statement(self, problem_id):
 		self.driver.get(pbinfo_url)
 
-		search_box = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.ID, 'search_box')))
-		search_box.send_keys(problem_id)
-		search_box.submit()
-		
 		time.sleep(2)
+
+		search_box = self.send_keys_to_element_with_id('search_box', problem_id)
+		search_box.submit()
 
 		statement = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.TAG_NAME, "article")))
 		
@@ -145,23 +164,10 @@ class TPN_post_problems_bot:
 		self.click_on_element_with_id("content-html")
 
 		text_area = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.XPATH, '//*[@id="content"]')))
-		
-		post_problems = post_problems.split('\n') 
-		newline = False
 
-		for line in post_problems:
-			for character in line:
-				if character == '\t':
-					text_area.send_keys(Keys.TAB)
-				else:
-					text_area.send_keys(character)
+		pyperclip.copy(post_problems)
+		text_area.send_keys(Keys.CONTROL, 'v')
 
-			if line.find('<pre class="EnlighterJSRAW" data-enlighter-language="cpp">') != -1:
-				newline = True
-
-			if newline:
-				text_area.send_keys(Keys.RETURN)
-		
 		self.check_boxes()
 		self.click_on_element_with_id('set-post-thumbnail')
 		self.send_keys_to_element_with_id("media-search-input", f"/{problem_id}.png")
@@ -225,6 +231,19 @@ class TPN_post_problems_bot:
 def main():
 	set_options(options)
 
+	'''
+	db = sql_create_connection('posted_problems.sqlite')
+
+	table = """CREATE TABLE problems (
+    			problem_id VARCHAR(30) primary key
+			);"""
+
+
+	sql_create_table(db, table)
+
+	sql_insert(db, '#1003')
+	sql_insert(db, '#998')
+	'''
 	email = input('email:')
 	password = input('password:')
 
@@ -233,11 +252,13 @@ def main():
 
 	problem_path = '.\\Rezolvari PBInfo' #Windows
 	# problem_path = '/Rezolvari PBInfo' #Linux
-
+	
+	
 	bot = TPN_post_problems_bot(email, password, webdriver.Chrome(executable_path=path, options=options))
 	bot.login()
 	bot.start_posting_problems()
 	bot.driver.quit()
+	
 
 if __name__ == '__main__':
 	main()
