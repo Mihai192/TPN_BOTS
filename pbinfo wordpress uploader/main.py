@@ -22,11 +22,9 @@ pbinfo_url = 'https://www.pbinfo.ro/'
 login_page = 'https://tutoriale-pe.net/wp-login.php'
 options = Options()
 
-
 def sql_create_connection(db_file):
 	return sqlite3.connect(db_file)
 	 
-
 def sql_create_table(db_file, table):
 	c = db_file.cursor()
 	c.execute(table)
@@ -244,7 +242,6 @@ class TPN_post_problems_bot:
 		
 def main():
 	set_options(options)
-
 	
 	db = sql_create_connection('posted_problems.sqlite')
 	sql_create_table(db, """CREATE TABLE IF NOT EXISTS problems (ID TEXT NOT NULL);""")
