@@ -175,23 +175,23 @@ class TPN_post_problems_bot:
 		text_area.send_keys(Keys.CONTROL, 'v')
 
 		self.check_boxes()
-		self.click_on_element_with_id('set-post-thumbnail')
-		self.send_keys_to_element_with_id("media-search-input", f"/{problem_id}.png")
-				
-		# dummy value
-		thumbnail_list = 0
-		
 		try:
-			thumbnail = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.XPATH, f'//*[@aria-label="#{problem_id}"]')))
-		except StaleElementReferenceException:
-			thumbnail = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.XPATH, f'//*[@aria-label="#{problem_id}"]')))
+			self.click_on_element_with_id('set-post-thumbnail')
+			self.send_keys_to_element_with_id("media-search-input", f"/{problem_id}.png")
+
+			try:
+				thumbnail = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.XPATH, f'//*[@aria-label="#{problem_id}"]')))
+			except StaleElementReferenceException:
+				thumbnail = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.XPATH, f'//*[@aria-label="#{problem_id}"]')))
 
 
-		thumbnail.click()
-		self.click_on_element_with_xpath('//*[@id="__wp-uploader-id-0"]/div[4]/div/div[2]/button')
+			thumbnail.click()
+			self.click_on_element_with_xpath('//*[@id="__wp-uploader-id-0"]/div[4]/div/div[2]/button')
+		except Exception:
+			print("[EROARE]: Problema #" + problem_id + " NU are thumbnail.")
+
 		self.driver.execute_script('window.scrollTo(0, 0)')
 		self.click_on_element_with_id('publish')
-		
 		
 	def login(self):
 		self.driver.get(login_page)
