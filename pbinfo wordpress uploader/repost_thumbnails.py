@@ -20,9 +20,9 @@ class TPN_reupload_thumbnails(TPN_post_problems_bot):
 
 	def get_problem_id(self, post):
 		try:
-			text = WebDriverWait(post, 20).until(ec.visibility_of_element_located((By.CLASS_NAME, 'row-title'))).get_attribute('innerHTML').split()
+			text = WebDriverWait(post, 20).until(ec.visibility_of_element_located((By.TAG_NAME, 'a'))).get_attribute('innerHTML').split()
 		except StaleElementReferenceException:
-			text = WebDriverWait(post, 20).until(ec.visibility_of_element_located((By.CLASS_NAME, 'row-title'))).get_attribute('innerHTML').split()
+			text = WebDriverWait(post, 20).until(ec.visibility_of_element_located((By.TAG_NAME, 'a'))).get_attribute('innerHTML').split()
 		return text[1]
 
 	def post_thumbnail(self, post, problem_id):
@@ -38,12 +38,11 @@ class TPN_reupload_thumbnails(TPN_post_problems_bot):
 			except StaleElementReferenceException:
 				thumbnail = WebDriverWait(self.driver, 20).until(ec.visibility_of_element_located((By.XPATH, f'//*[@aria-label="{problem_id}"]')))
 
-
 			thumbnail.click()
 			self.click_on_element_with_xpath('//*[@id="__wp-uploader-id-0"]/div[4]/div/div[2]/button')
 
 		except Exception:
-			print("[EROARE]: Problema #" + problem_id + " NU are thumbnail.")
+			print("[EROARE]: Problema " + problem_id + " NU are thumbnail.")
 			self.click_on_element_with_xpath('//*[@id="__wp-uploader-id-2"]/div[1]/button')
 
 		self.driver.execute_script('window.scrollTo(0, 0)')
@@ -66,7 +65,7 @@ class TPN_reupload_thumbnails(TPN_post_problems_bot):
 			for post in list_of_posts:
 				if not self.has_thumbnail(post):
 					self.post_thumbnail(post, self.get_problem_id(post))
-					time.sleep(1)
+					time.sleep(2)
 					self.driver.get(page + str(index))					
 			
 	def __del__(self):
