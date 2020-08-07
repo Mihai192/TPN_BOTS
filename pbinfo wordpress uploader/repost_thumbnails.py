@@ -78,9 +78,9 @@ class TPN_reupload_thumbnails(TPN_post_problems_bot):
 		
 		for index in range(first_index, last_index):
 			self.analyze_page(page, index)
-			print('----------------------------------------------')
+			print('------------------------------------------------')
 			print(f"[{time.ctime()}]: Am terminat pagina {index}!")
-			print('----------------------------------------------')
+			print('------------------------------------------------')
 
 
 def main():
@@ -92,6 +92,7 @@ def main():
 	bot = TPN_reupload_thumbnails(email, password, get_driver(path, options))
 	bot.login()
 	bot.start_reuploading_thumbnails()
+	bot.driver.close()
 	bot.driver.quit()
 	
 	

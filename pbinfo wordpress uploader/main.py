@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as ec
-from selenium.common.exceptions import StaleElementReferenceException
+from selenium.common.exceptions import *
 
 import sqlite3
 from sqlite3 import Error
@@ -48,12 +48,21 @@ def change_string_at_index(string, index, string_to_change):
 	return string[:index] + string_to_change + string[index + 1:]
 
 def set_options(options):
-	options.add_argument('no-sandbox')
-	options.add_argument('--ignore-certificate-errors')
-	options.add_argument('--ignore-ssl-errors')
+	options.add_argument('window-size=1920x1080');
+	options.add_argument('--headless')
+	# options.add_argument('--no-sandbox')
 	options.add_argument('--disable-gpu')
-	options.add_argument('--incognito')
-	options.add_argument('--start-maximized')
+	options.add_argument('--user-data-dir=/tmp/user-data')
+	options.add_argument('--hide-scrollbars')
+	options.add_argument('--enable-logging')
+	options.add_argument('--log-level=0')
+	options.add_argument('--v=99')
+	options.add_argument('--single-process')
+	options.add_argument('--data-path=/tmp/data-path')
+	options.add_argument('--ignore-certificate-errors')
+	options.add_argument('--homedir=/tmp')
+	options.add_argument('--disk-cache-dir=/tmp/cache-dir')
+	options.add_argument('user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36')
 
 def get_driver(path, options):
 	return webdriver.Chrome(executable_path=path, options=options)
@@ -106,7 +115,7 @@ class TPN_post_problems_bot:
 			file = file[:first_index] + file[second_index + len('</script>'):]
 
 		return file
-		
+	
 	def replace_includes(self, file):
 		# &lt; <
 		# &gt; > 
@@ -139,7 +148,6 @@ class TPN_post_problems_bot:
 		file = file[:find_index] + '<' + file[find_index + 4:]
 
 		return file
-
 
 	def check_boxes(self):
 		check_box_pbinfo = WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable((By.ID, "in-category-706")))
@@ -264,7 +272,6 @@ class TPN_post_problems_bot:
 				except Exception:
 					print("[EROARE]: Nu am putut posta problema cu id #" + problem_id + ".(poate nu exista pe pbinfo...)")
 				
-
 	def __del__(self):
 		self.driver.close()
 		self.db.close()
@@ -282,7 +289,7 @@ def main():
 
 	problem_path = convertToOS("problem_path")
 	
-	bot = TPN_post_problems_bot(email, password, webdriver.Chrome(executable_path=path, options=options), db)
+	bot = TPN_post_problems_bot(email, password, get_driver(path, options), db)
 	bot.login()
 	bot.start_posting_problems()
 
