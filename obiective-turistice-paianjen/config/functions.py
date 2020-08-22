@@ -1,9 +1,33 @@
 from config.constants import *
 
-def q_print(string):
-    if debug >= 1 and defaultStream is "console":
-        print(string)
+from unidecode import unidecode
 
-def m_print(string):
+from fileHandler import printLog
+
+non_url_safe = ['"', '#', '$', '%', '&', '+',
+                ',', '/', ':', ';', '=', '?',
+                '@', '[', '\\', ']', '^', '`',
+                '{', '|', '}', '~', "'"]
+translate_table = {ord(char): u'' for char in non_url_safe}
+
+
+def build_slug(string):
+    clean_string = unidecode(string.lower())
+    text = clean_string.translate(translate_table)
+    text = u'-'.join(text.split())
+    return text
+
+def c_print(string):
+    if debug is 3 and defaultStream is "console":
+        print(string)
+    printLog(string)
+
+def a_print(string):
+    if debug is 1 or debug is 2 and defaultStream is "console":
+        print(string)
+    printLog(string)
+
+def b_print(string):
     if debug is 1 and defaultStream is "console":
         print(string)
+    printLog(string)
