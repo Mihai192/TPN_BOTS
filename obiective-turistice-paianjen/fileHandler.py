@@ -2,11 +2,10 @@ import sys
 
 inputObjectives = []
 
-consoleFile = open("log_console.txt", "a")
+consoleFile = open("log_console.txt", "w")
 
 def printLog(string):
     consoleFile.write(string + "\n")
-    print(string)
 
 def closeFiles():
     consoleFile.close()
