@@ -11,9 +11,10 @@ browser = RoboBrowser(parser="html5lib", session=session)
 
 def processWikiPage(soup, objTitle):
     result = WikiResult(soup, objTitle)
-    #result.setTitle()
-    #result.setGeopoints()
+    result.setTitle()
+    result.setGeopoints()
     result.setCityId()
+    result.print()
 
 def isPageValid(soup):
     canonical = str(soup.find('link', {'rel': 'canonical'}))

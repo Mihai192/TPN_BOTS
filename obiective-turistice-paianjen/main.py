@@ -21,6 +21,7 @@ def main():
         objective.is_Valid = isPageValid(objective.soup)
         if objective.is_Valid == 2:
             delayed_obj.put(objective)
+            q_print("[Warning]: " + inputName + " nu a fost gasit din prima, aman procesarea...")
         elif objective.is_Valid == 1:
             processWikiPage(objective.soup, objective.title)
 
