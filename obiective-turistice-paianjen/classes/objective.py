@@ -7,6 +7,6 @@ class Objective:
     description = ""
     meta_title = ""
     meta_keywords = ""
-
+    is_Valid = 0
     def __init__(self, title):
         self.title = title

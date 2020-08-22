@@ -1,23 +1,28 @@
 # RUNNING ARGS python3 main.py fisier.txt
+from classes.dbCity import DBCity
+from fileHandler import *
+from classes.objective import *
+from spyder import *
 
-from mauFileHandler import *
-from mauObjective import *
-from mauSpyder import *
+import queue
 
-from robobrowser import RoboBrowser
-from bs4 import BeautifulSoup
-import requests
-
+db_city_conn = DBCity().connect()
 
 def main():
     #f.write(getWikiPage("Delta Dunarii"))
     #f.write(getWikiPage("dsadsadsasdasdaas"))
 
+    delayed_obj = queue.Queue()
     objectives = readInputFile()
+
     for inputName in objectives:
         objective = Objective(inputName)
-        soup = getWikiPage(inputName)
-        printLog(inputName + " -> " + str(isPageValid(soup)))
+        objective.soup = getWikiPage(inputName)
+        objective.is_Valid = isPageValid(objective.soup)
+        if objective.is_Valid == 2:
+            delayed_obj.put(objective)
+        elif objective.is_Valid == 1:
+            processWikiPage(objective.soup, objective.title)
 
     closeFiles()
 
