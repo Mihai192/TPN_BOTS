@@ -28,7 +28,7 @@ class Objective:
     def insertToDB(self):
         if check_output_name(db_output_conn, self.title, self.url) == 0:
             insert_output_obj(db_output_conn, self)
-            b_print("[OB. Turistic]: Inserat in DB")
+            b_print("[Obiectiv]: Inserat in DB")
             return True
         else:
             b_print("[EROARE]: Nu a fost inserat in DB, exista deja")

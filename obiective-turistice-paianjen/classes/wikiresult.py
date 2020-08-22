@@ -1,5 +1,5 @@
 from classes.dbCity import check_name
-from config.functions import a_print, b_print
+from config.functions import a_print, b_print, c_print
 
 import unidecode as unidecode
 
@@ -35,20 +35,28 @@ class WikiResult:
         a_print("[wResult]: ObjTitle: " + self.obj_title + " Lat: " + str(self.longitude) + " Long: " + str(self.latitude))
 
     def setCityId(self):
-        soup_all_tr = self.soup.find("table", {"class": "infocaseta"}).find_all("tr")
-        for tr_elem in soup_all_tr:
-            soup_tr = tr_elem.find('th', string=["Orașe", "Localitate"])
-            if soup_tr is not None:
-                self.city_name = tr_elem.find('a').text
-                from main import db_city_conn
-                self.city_id = check_name(db_city_conn, unidecode.unidecode(self.city_name))
-                a_print("[wResult]: Locatie: " + self.city_name + " [#" + str(self.city_id) + "]")
+        try:
+            soup_all_tr = self.soup.find("table", {"class": "infocaseta"}).find_all("tr")
+            for tr_elem in soup_all_tr:
+                soup_tr = tr_elem.find('th', string=["Orașe", "Localitate"])
+                if soup_tr is not None:
+                    self.city_name = tr_elem.find('a').text
+                    from main import db_city_conn
+                    self.city_id = check_name(db_city_conn, unidecode.unidecode(self.city_name))
+                    a_print("[wResult]: Locatie: " + self.city_name + " [#" + str(self.city_id) + "]")
+        except:
+            c_print("[EROARE]: " + self.title)
+
+    def setImage(self):
+        soup_image = self.soup.find("table", {"class": "infocaseta"}).find("img")
+        print(soup_image)
 
     def setAll(self):
         self.setUrl()
         self.setTitle()
         self.setGeopoints()
         self.setCityId()
+        #self.setImage()
 
     def print(self):
         b_print("[OB. Turistic]: " + self.title + " Locatie: " + self.city_name + " [#" + str(self.city_id) + "][Geo: " + str(self.latitude) + " / " + str(self.longitude) + "]")

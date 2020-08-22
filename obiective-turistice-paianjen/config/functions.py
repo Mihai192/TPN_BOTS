@@ -22,12 +22,12 @@ def c_print(string):
         print(string)
     printLog(string)
 
-def a_print(string):
+def b_print(string):
     if debug is 1 or debug is 2 and defaultStream is "console":
         print(string)
     printLog(string)
 
-def b_print(string):
+def a_print(string):
     if debug is 1 and defaultStream is "console":
         print(string)
     printLog(string)

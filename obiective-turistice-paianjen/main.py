@@ -44,5 +44,9 @@ def main():
 
     closeFiles()
 
+def temp():
+    readTempFile()
+
 if __name__ == "__main__":
     main()
+    #temp()
