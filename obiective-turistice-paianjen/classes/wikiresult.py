@@ -45,7 +45,7 @@ class WikiResult:
                     self.city_id = check_name(db_city_conn, unidecode.unidecode(self.city_name))
                     a_print("[wResult]: Locatie: " + self.city_name + " [#" + str(self.city_id) + "]")
         except:
-            c_print("[EROARE]: " + self.title)
+            c_print("[EROARE][ORAS]: " + self.title)
 
     def setImage(self):
         soup_image = self.soup.find("table", {"class": "infocaseta"}).find("img")

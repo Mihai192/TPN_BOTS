@@ -1,47 +1,100 @@
 [SPIDER]: In fisier sunt: 594 obiective.
+[# 0/594]: Abaţia Cisterciana de la Cârţa
 [Warning]: Abaţia Cisterciana de la Cârţa nu a fost gasit din prima, aman procesarea...
+[# 1/594]: Alexandria
 [wResult]: ObjTitle: Alexandria WikiTitle: Alexandria
 [wResult]: ObjTitle: Alexandria Lat: 0.0 Long: 0.0
 [EROARE]: Alexandria
 [OB. Turistic]: Alexandria Locatie: null [#0][Geo: 0.0 / 0.0]
-[OB. Turistic]: Inserat in DB
+[ADAUGAT] Alexandria
+[# 1/594]: INSERAT
+[# 2/594]: Ansamblu bisericii Sfinții Arhangheli Mihail și Gavril
 [Warning]: Ansamblu bisericii Sfinții Arhangheli Mihail și Gavril nu a fost gasit din prima, aman procesarea...
+[# 3/594]: Ansamblu de arhitectură  tehnică populară
 [Warning]: Ansamblu de arhitectură  tehnică populară nu a fost gasit din prima, aman procesarea...
+[# 4/594]: Ansamblu de arhitectură tehnică populară – complex vâltori
 [Warning]: Ansamblu de arhitectură tehnică populară – complex vâltori nu a fost gasit din prima, aman procesarea...
+[# 5/594]: Ansamblul bisericii Adormirea Maicii  Domnului Șișești
 [Warning]: Ansamblul bisericii Adormirea Maicii  Domnului Șișești nu a fost gasit din prima, aman procesarea...
+[# 6/594]: Ansamblul bisericii Adormirea Maicii Domnului
 [Warning]: Ansamblul bisericii Adormirea Maicii Domnului nu a fost gasit din prima, aman procesarea...
+[# 7/594]: Ansamblul bisericii Sfinții Arhangheli Mihail și  Gavril
 [Warning]: Ansamblul bisericii Sfinții Arhangheli Mihail și  Gavril nu a fost gasit din prima, aman procesarea...
+[# 8/594]: Aria de pretecţie specială avifaunistică Divici-Pojejena sau Zona Umedă Divici-Pojejena
 [Warning]: Aria de pretecţie specială avifaunistică Divici-Pojejena sau Zona Umedă Divici-Pojejena nu a fost gasit din prima, aman procesarea...
+[# 9/594]: Avenul Borţigului
 [wResult]: ObjTitle: Avenul Borţigului WikiTitle: Avenul Borțigului
 [wResult]: ObjTitle: Avenul Borţigului Lat: 46.55833 Long: 46.55833
 [OB. Turistic]: Avenul Borțigului Locatie: null [#0][Geo: 46.55833 / 46.55833]
-[OB. Turistic]: Inserat in DB
+[ADAUGAT] Avenul Borţigului
+[# 9/594]: INSERAT
+[# 10/594]: Avenul V5 (Peştera V5, Avenul din Fața Muncelului )
 [Warning]: Avenul V5 (Peştera V5, Avenul din Fața Muncelului ) nu a fost gasit din prima, aman procesarea...
+[# 11/594]: Bacău
 [wResult]: ObjTitle: Bacău WikiTitle: Bacău
 [wResult]: ObjTitle: Bacău Lat: 46.58333 Long: 46.58333
 [OB. Turistic]: Bacău Locatie: null [#0][Geo: 46.58333 / 46.58333]
-[OB. Turistic]: Inserat in DB
+[ADAUGAT] Bacău
+[# 11/594]: INSERAT
+[# 12/594]: Baia Mare
 [wResult]: ObjTitle: Baia Mare WikiTitle: Baia Mare
 [wResult]: ObjTitle: Baia Mare Lat: 47.65 Long: 47.65
 [OB. Turistic]: Baia Mare Locatie: null [#0][Geo: 47.65 / 47.65]
-[OB. Turistic]: Inserat in DB
+[ADAUGAT] Baia Mare
+[# 12/594]: INSERAT
+[# 13/594]: Băile Felix
 [wResult]: ObjTitle: Băile Felix WikiTitle: Băile Felix
 [wResult]: ObjTitle: Băile Felix Lat: 46.98944 Long: 46.98944
 [OB. Turistic]: Băile Felix Locatie: null [#0][Geo: 46.98944 / 46.98944]
-[OB. Turistic]: Inserat in DB
+[ADAUGAT] Băile Felix
+[# 13/594]: INSERAT
+[# 14/594]: Băile Govora
 [wResult]: ObjTitle: Băile Govora WikiTitle: Băile Govora
 [wResult]: ObjTitle: Băile Govora Lat: 45.08 Long: 45.08
 [OB. Turistic]: Băile Govora Locatie: null [#0][Geo: 45.08 / 45.08]
-[OB. Turistic]: Inserat in DB
+[ADAUGAT] Băile Govora
+[# 14/594]: INSERAT
+[# 15/594]: Băile Herculane
 [wResult]: ObjTitle: Băile Herculane WikiTitle: Băile Herculane
 [wResult]: ObjTitle: Băile Herculane Lat: 44.87861 Long: 44.87861
 [OB. Turistic]: Băile Herculane Locatie: null [#0][Geo: 44.87861 / 44.87861]
-[OB. Turistic]: Inserat in DB
+[ADAUGAT] Băile Herculane
+[# 15/594]: INSERAT
+[# 16/594]: Băile Romane
 [Warning]: Băile Romane nu a fost gasit din prima, aman procesarea...
+[# 17/594]: Balta Comana (Delta Neajlovului)
 [Warning]: Balta Comana (Delta Neajlovului) nu a fost gasit din prima, aman procesarea...
+[# 18/594]: Barajul Gâtul Berbecului
 [Warning]: Barajul Gâtul Berbecului nu a fost gasit din prima, aman procesarea...
+[# 19/594]: Barajul şi Lacul Bâtca Doamnei
 [Warning]: Barajul şi Lacul Bâtca Doamnei nu a fost gasit din prima, aman procesarea...
+[# 20/594]: Barajul şi Lacul de acumulare Cinciş
 [Warning]: Barajul şi Lacul de acumulare Cinciş nu a fost gasit din prima, aman procesarea...
+[# 21/594]: Barajul şi Lacul de acumulare Drăgan sau Lacul Floroiu
 [Warning]: Barajul şi Lacul de acumulare Drăgan sau Lacul Floroiu nu a fost gasit din prima, aman procesarea...
+[# 22/594]: Barajul şi Lacul de acumulare Oaşa
 [Warning]: Barajul şi Lacul de acumulare Oaşa nu a fost gasit din prima, aman procesarea...
+[# 23/594]: Barajul şi Lacul de acumulare Râuşor
 [Warning]: Barajul şi Lacul de acumulare Râuşor nu a fost gasit din prima, aman procesarea...
+[# 24/594]: Barajul şi Lacul de acumulare Valea lui Iovan
+[Warning]: Barajul şi Lacul de acumulare Valea lui Iovan nu a fost gasit din prima, aman procesarea...
+[# 25/594]: Barajul Siriu (Buzău)
+[Warning]: Barajul Siriu (Buzău) nu a fost gasit din prima, aman procesarea...
+[# 26/594]: Barajul Vidra
+[wResult]: ObjTitle: Barajul Vidra WikiTitle: Barajul Vidra
+[wResult]: ObjTitle: Barajul Vidra Lat: 45.430555555556 Long: 45.430555555556
+[OB. Turistic]: Barajul Vidra Locatie: null [#0][Geo: 45.430555555556 / 45.430555555556]
+[ADAUGAT] Barajul Vidra
+[# 26/594]: INSERAT
+[# 27/594]: Barul din Brădeşti, Râmeţ
+[Warning]: Barul din Brădeşti, Râmeţ nu a fost gasit din prima, aman procesarea...
+[# 28/594]: Beliş Fântânele
+[wResult]: ObjTitle: Beliş Fântânele WikiTitle: Stațiunea Fântânele, Cluj
+[wResult]: ObjTitle: Beliş Fântânele Lat: 0.0 Long: 0.0
+[EROARE]: Stațiunea Fântânele, Cluj
+[OB. Turistic]: Stațiunea Fântânele, Cluj Locatie: null [#0][Geo: 0.0 / 0.0]
+[ADAUGAT] Beliş Fântânele
+[# 28/594]: INSERAT
+[# 29/594]: Biseica de lemn Adormirea Maicii Domnului
+[Warning]: Biseica de lemn Adormirea Maicii Domnului nu a fost gasit din prima, aman procesarea...
+[# 30/594]: Biserica Arhangheli Mihail și Gavril

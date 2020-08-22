@@ -3,7 +3,7 @@
     Debug 2 -> Mai finut
     Debug 3 -> Rezumat
 '''
-debug = 2
+debug = 3
 defaultStream = "console" # console / file
 
 postURL = "https://ro.wikipedia.org/wiki/w/index.php?search="

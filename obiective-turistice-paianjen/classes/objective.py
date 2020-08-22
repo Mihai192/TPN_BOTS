@@ -15,7 +15,7 @@ class Objective:
 
     def __init__(self, title):
         self.title = title
-
+        self.url = build_slug(title)
 
     def clone(self, wikiObj):
         self.url = build_slug(wikiObj.title)
@@ -28,8 +28,11 @@ class Objective:
     def insertToDB(self):
         if check_output_name(db_output_conn, self.title, self.url) == 0:
             insert_output_obj(db_output_conn, self)
-            b_print("[Obiectiv]: Inserat in DB")
+            b_print("[ADAUGAT] " + self.title)
             return True
         else:
-            b_print("[EROARE]: Nu a fost inserat in DB, exista deja")
+            b_print("[EROARE][DUPLICAT]: " + self.title + " exista deja in DB")
             return False
+
+    def checkDB(self):
+        return check_output_name(db_output_conn, self.title, self.url)
