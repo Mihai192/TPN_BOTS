@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html class="client-nojs" dir="ltr" lang="ro"><head>
+<meta charset="utf-8"/>
+<title>Căutare - Wikipedia</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","ianuarie","februarie","martie","aprilie","mai","iunie","iulie","august","septembrie","octombrie","noiembrie","decembrie"],"wgRequestId":"eef35c23-d7ba-48a8-94a0-f540b7fd8d46","wgCSPNonce":!1,"wgCanonicalNamespace":"Special","wgCanonicalSpecialPageName":"Search","wgNamespaceNumber":-1,"wgPageName":"Special:Căutare","wgTitle":"Căutare","wgCurRevisionId":0,"wgRevisionId":0,"wgArticleId":0,"wgIsArticle":!1,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"ro","wgPageContentModel":"wikitext","wgRelevantPageName":"Special:Căutare","wgRelevantArticleId":0,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wgPopupsReferencePreviews":
+!1,"wgPopupsConflictsWithNavPopupGadget":!1,"wgVisualEditor":{"pageLanguageCode":"ro","pageLanguageDir":"ltr","pageVariantFallbacks":"ro"},"wgMFDisplayWikibaseDescriptions":{"search":!0,"nearby":!0,"watchlist":!0,"tagline":!0},"wgWMESchemaEditAttemptStepOversample":!1,"wgULSCurrentAutonym":"română","wgNoticeProject":"wikipedia","advancedSearch.mimeTypes":{"tiff":"image/tiff","png":"image/png","gif":"image/gif","jpg":"image/jpeg","webp":"image/webp","xcf":"image/x-xcf","pdf":"application/pdf","mid":"audio/midi","ogg":"application/ogg","svg":"image/svg+xml","djvu":"image/vnd.djvu","flac":"audio/x-flac","wav":"audio/x-wav","webm":"video/webm","mp3":"audio/mpeg","mpg":"video/mpeg"},"advancedSearch.tooltips":{"advancedsearch-help-plain":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for these words in the title or text.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EMultiple words can be entered here.\u003C/li\u003E\n\u003Cli\u003EPunctuation marks and other non-alphanumeric characters (with exception of the colon and comma) will be ignored.\u003C/li\u003E\n\u003Cli\u003EThere may be results that do not contain one or more of your search terms.\u003C/li\u003E\n\u003Cli\u003EWord stemming is applied. Example: If \u003Ci\u003Ecar\u003C/i\u003E is entered, the search will also consider \u003Ci\u003Ecars\u003C/i\u003E. The word stemming is language specific.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Full_text_search\"\u003EFull text search\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003E\u003Ccode\u003Esesame street car\u003C/code\u003E\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-phrase":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for a specific sequence of characters. Punctuation marks are ignored.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E(only valid when using quotation marks, see example below)\n\u003Cul\u003E\u003Cli\u003ESeparate the search phrases by comma or space e.g. \u003Ccode\u003E\"good morning\"\u003C/code\u003E, \u003Ccode\u003E\"hello friend!\"\u003C/code\u003E.\u003C/li\u003E\n\u003Cli\u003EPunctuation marks and other non-alphanumeric characters (with exception of the colon and comma) will be ignored.\u003C/li\u003E\n\u003Cli\u003ESearch is not case-sensitive.\u003C/li\u003E\n\u003Cli\u003EWord stemming is not applied.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers\"\u003EWords, phrases, and modifiers\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords in quotation marks, for example \u003Ccode\u003E\"Begin at the beginning\"\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-or":"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003EAt least one of the search terms has to be included in the page.\u003C/dd\u003E\n\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers\"\u003EWords, phrases, and modifiers\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords with \u003Ccode\u003EOR\u003C/code\u003E in between them like \u003Ccode\u003ELaptop OR Notebook\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E","advancedsearch-help-not":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003EExcludes pages containing these words from the search.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EWord stemming is applied. Example: If \u003Ci\u003Ecar\u003C/i\u003E is entered, the search will also consider \u003Ci\u003Ecars\u003C/i\u003E. The word stemming is language specific.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers\"\u003EWords, phrases, and modifiers\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords with \u003Ccode\u003E-\u003C/code\u003E before them, for example \u003Ccode\u003E-elephant\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E",
+"advancedsearch-help-deepcategory":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for pages that are in these categories and subcategories.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EOnly the first 5 subcategory levels will be included in your search.\u003C/li\u003E\n\u003Cli\u003EThe number of categories is limited to 256.\u003C/li\u003E\n\u003Cli\u003EYou can look for pages in multiple categories.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Deepcategory\"\u003EDeepcategory\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003E\u003Ccode\u003Edeepcategory:\u003C/code\u003E followed by a category name like \u003Ccode\u003Edeepcategory:Help\u003C/code\u003E. Use double quotes if the name contains spaces: \u003Ccode\u003Edeepcategory:\"Hidden categories\"\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-hastemplate":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for pages that contain exactly these templates.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EYou can find transcluded templates (templates consisting of other templates).\u003C/li\u003E\n\u003Cli\u003EThe autosuggest function can only find templates which start the same way as your search e.g. a search for \u003Ccode\u003E\"com...\"\u003C/code\u003E will suggest \u003Ci\u003E\"commons\"\u003C/i\u003E but not \u003Ci\u003E\"nowcommons\"\u003C/i\u003E.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Hastemplate\"\u003EHastemplate\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords in quotation marks with \u003Ccode\u003Ehastemplate:\u003C/code\u003E before them like \u003Ccode\u003Ehastemplate:\"missing information\"\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-inlanguage":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cp\u003EWill only search in the language you choose.\n\u003C/p\u003E\n\u003Cdl\u003E\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EYou can only search for pages in one language.\u003C/li\u003E\n\u003Cli\u003EThis field will only be visible in wikis that have the translatewiki extension enabled.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Inlanguage\"\u003EInlanguage\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003E\u003Ccode\u003Einlanguage:\u003C/code\u003E followed by a language code like \u003Ccode\u003Einlanguage:es\u003C/code\u003E. You can exclude languages by adding a \u003Ccode\u003E-\u003C/code\u003E in front of the keyword e.g. \u003Ccode\u003E-inlanguage:en\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-intitle":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for pages with titles that contain this word\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EThe search includes redirects.\u003C/li\u003E\n\u003Cli\u003EWord stemming is applied. Example: If \u003Ci\u003Ecar\u003C/i\u003E is entered, the search will also consider \u003Ci\u003Ecars\u003C/i\u003E. The word stemming is language specific.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Intitle_and_incategory\"\u003EIntitle and incategory\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords with \u003Ccode\u003Eintitle:\u003C/code\u003E before them like \u003Ccode\u003Eintitle:queen\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-subpageof":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for pages that are subpages of this page.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EYou can only search for subpages of one page at a time.\u003C/li\u003E\n\u003Cli\u003EDon’t forget to enable the namespaces you want to limit your search to in the namespace filter.\u003C/li\u003E\n\u003Cli\u003EDo not include the namespace in front of the page name like this: \u003Cdel\u003E\u003Ccode\u003EWikipedia:Redirect\u003C/code\u003E\u003C/del\u003E.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#subpageof\"\u003ESubpageof\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003E\u003Ccode\u003Esubpageof:\u003C/code\u003E followed by a page name like \u003Ccode\u003Esubpageof:Redirect\u003C/code\u003E. Use double quotes if the parent page contains spaces: \u003Ccode\u003Esubpageof:\"Requests for comment\"\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-filetype":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches only for files of the selected type.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EYou can only search for one file type.\u003C/li\u003E\n\u003Cli\u003EYou can only select the given file types from the drop-down menu.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp pages\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#filetype\"\u003EFiletype\u003C/a\u003E and \u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#filemime\"\u003Efilemime\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords with \u003Ccode\u003Efiletype:\u003C/code\u003E before them like \u003Ccode\u003Efiletype:ogg\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-filew":"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003EThese fields allow you to specify the width of the file.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EThis is only applicable to file types that have width and height, like videos and images.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures\"\u003EFilemeasures\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003ENumbers with \u003Ccode\u003Efilew\u003C/code\u003E before them like \u003Ccode\u003Efilew:\u0026gt;800\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E","advancedsearch-help-fileh":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003EThese fields allow you to specify the height of the file.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EThis is only applicable to file types that have width and height, like videos and images.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures\"\u003EFilemeasures\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003ENumbers with \u003Ccode\u003Efileh\u003C/code\u003E before them like \u003Ccode\u003Efileh:\u0026gt;600\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E","advancedsearch-help-sort":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003EChange the sorting order of results. The standard is that most relevant pages are placed on top of the results.\u003C/dd\u003E\n\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Explicit_sort_orders\"\u003EExplicit sort orders\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EThis feature has no keyword that you can type in the search input field since the function is specified via a parameter in the URL.\u003C/dd\u003E\u003C/dl\u003E"},"advancedSearch.namespacePresets":{"defaultNamespaces":{"enabled":!0,"provider":"defaultNamespaces","label":"advancedsearch-namespaces-preset-default"},"discussion":{"enabled":!0,"provider":"discussion","label":"advancedsearch-namespaces-preset-discussion"},"generalHelp":{"enabled":!0,"namespaces":["4","12"
+],"label":"advancedsearch-namespaces-preset-general-help"},"all":{"enabled":!0,"provider":"all","label":"advancedsearch-namespaces-preset-all"}},"advancedSearch.deepcategoryEnabled":!0,"advancedSearch.searchableNamespaces":{"0":"(Articole)","1":"Discuție","2":"Utilizator","3":"Discuție_Utilizator","4":"Wikipedia","5":"Discuție_Wikipedia","6":"Fișier","7":"Discuție_Fișier","8":"MediaWiki","9":"Discuție_MediaWiki","10":"Format","11":"Discuție_Format","12":"Ajutor","13":"Discuție_Ajutor","14":"Categorie","15":"Discuție_Categorie","100":"Portal","101":"Discuție_Portal","102":"Proiect","103":"Discuție_Proiect","108":"Cod","109":"Discuție_Cod","110":"Carte","111":"Discuție_Carte","460":"Campaign","461":"Campaign_talk","828":"Modul","829":"Discuție_Modul","2300":"Gadget","2301":"Gadget_talk","2302":"Gadget_definition","2303":"Gadget_definition_talk"},"searchTerm":"","wgCentralAuthMobileDomain":!1,"wgEditSubmitButtonLabelPublish":!0,"wgULSPosition":"interlanguage"};
+RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","ext.advancedSearch.searchtoken":"loading","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","ext.advancedSearch.initialstyles":"ready","mediawiki.helplink":"ready","mediawiki.special":"ready","mediawiki.special.search.styles":"ready","mediawiki.ui":"ready","mediawiki.ui.button":"ready","mediawiki.ui.input":"ready","mediawiki.widgets.SearchInputWidget.styles":"ready","oojs-ui-core.styles":"ready","oojs-ui.styles.indicators":"ready","mediawiki.widgets.styles":"ready","oojs-ui-core.icons":"ready","skins.vector.styles.legacy":"ready","ext.tmh.thumbnail.styles":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready"};RLPAGEMODULES=["ext.advancedSearch.init","mediawiki.special.search","site","mediawiki.page.ready","skins.vector.legacy.js","mw.MediaWikiPlayer.loader","mw.PopUpMediaTransform",
+"ext.centralauth.centralautologin","ext.popups","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.uls.compactlinks","ext.uls.interface","ext.cx.eventlogging.campaigns","ext.centralNotice.geoIP"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("ext.advancedSearch.searchtoken@1v7b7",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set("searchnamespaceToken","+\\");
+});mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"ro"});
+});});</script>
+<link href="/w/load.php?lang=ro&amp;modules=ext.advancedSearch.initialstyles%7Cext.tmh.thumbnail.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediaBadges%7Cmediawiki.helplink%2Cspecial%2Cui%7Cmediawiki.special.search.styles%7Cmediawiki.ui.button%2Cinput%7Cmediawiki.widgets.SearchInputWidget.styles%7Cmediawiki.widgets.styles%7Coojs-ui-core.icons%2Cstyles%7Coojs-ui.styles.indicators%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/w/load.php?lang=ro&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/w/load.php?lang=ro&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.36.0-wmf.5" name="generator"/>
+<meta content="origin" name="referrer"/>
+<meta content="origin-when-crossorigin" name="referrer"/>
+<meta content="origin-when-cross-origin" name="referrer"/>
+<meta content="noindex,nofollow" name="robots"/>
+<link href="//ro.m.wikipedia.org/wiki/Special:C%C4%83utare" media="only screen and (max-width: 720px)" rel="alternate"/>
+<link href="/static/apple-touch/wikipedia.png" rel="apple-touch-icon"/>
+<link href="/static/favicon/wikipedia.ico" rel="shortcut icon"/>
+<link href="/w/opensearch_desc.php" rel="search" title="Wikipedia (ro)" type="application/opensearchdescription+xml"/>
+<link href="//ro.wikipedia.org/w/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="//creativecommons.org/licenses/by-sa/3.0/" rel="license"/>
+<link href="https://ro.wikipedia.org/wiki/w/index.php?search=" rel="canonical"/>
+<link href="//login.wikimedia.org" rel="dns-prefetch"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns--1 ns-special mw-special-Search page-Special_Căutare rootpage-Special_Căutare skin-vector action-view skin-vector-legacy"><div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+	<a id="top"></a>
+	<div class="mw-body-content" id="siteNotice"><!-- CentralNotice --></div>
+	<div class="mw-indicators mw-body-content">
+	<div class="mw-indicator" id="mw-indicator-mw-helplink"><a class="mw-helplink" href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch" target="_blank">Ajutor</a></div>
+	</div>
+	<h1 class="firstHeading" id="firstHeading" lang="ro">Căutare</h1>
+	<div class="mw-body-content" id="bodyContent">
+		
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text"><div class="mw-search-spinner"><div class="mw-search-spinner-bounce"></div></div><div class="mw-search-form-wrapper"><form action="/w/index.php" id="search" method="get"><div id="mw-search-top-table"><div class="oo-ui-layout oo-ui-fieldLayout oo-ui-fieldLayout-align-top oo-ui-actionFieldLayout"><div class="oo-ui-fieldLayout-body"><span class="oo-ui-fieldLayout-header"><label class="oo-ui-labelElement-label" for="ooui-php-1"></label></span><div class="oo-ui-fieldLayout-field"><div class="oo-ui-actionFieldLayout-input"><div aria-disabled="false" class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-iconElement oo-ui-textInputWidget oo-ui-textInputWidget-type-text oo-ui-textInputWidget-php mw-widget-titleInputWidget mw-widget-searchInputWidget" data-ooui='{"_":"mw.widgets.SearchInputWidget","performSearchOnClick":true,"dataLocation":"content","$overlay":true,"highlightFirst":false,"validateTitle":false,"autofocus":true,"name":"search","inputId":"ooui-php-1","title":"C\u0103utare \u00een Wikipedia","icon":"search"}' id="searchText"><input aria-disabled="false" autofocus="autofocus" class="oo-ui-inputWidget-input" id="ooui-php-1" name="search" tabindex="0" title="Căutare în Wikipedia" type="search" value=""/><span class="oo-ui-iconElement-icon oo-ui-icon-search"></span><span class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator"></span></div></div><span class="oo-ui-actionFieldLayout-button"><span aria-disabled="false" class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-labelElement oo-ui-flaggedElement-progressive oo-ui-flaggedElement-primary oo-ui-buttonInputWidget"><button aria-disabled="false" class="oo-ui-inputWidget-input oo-ui-buttonElement-button" tabindex="0" type="submit" value=""><span class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon oo-ui-image-invert"></span><span class="oo-ui-labelElement-label">Căutare</span><span class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator oo-ui-image-invert"></span></button></span></span></div></div></div><input name="title" type="hidden" value="Special:Căutare"/><input name="profile" type="hidden" value="default"/><input name="fulltext" type="hidden" value="1"/></div><div class="mw-search-visualclear"></div><div class="mw-search-profile-tabs"><div class="search-types"><ul><li class="current"><a href="/w/index.php?title=Special:C%C4%83utare&amp;profile=default&amp;search=&amp;fulltext=1" title="Caută în (Articole)">Pagini cu conținut</a></li><li class="normal"><a href="/w/index.php?title=Special:C%C4%83utare&amp;profile=images&amp;search=&amp;fulltext=1" title="Caută fișiere">Multimedia</a></li><li class="normal"><a href="/w/index.php?title=Special:C%C4%83utare&amp;profile=all&amp;search=&amp;fulltext=1" title="Caută în tot conținutul (incluzând paginile de discuție)">Totul</a></li><li class="normal"><a href="/w/index.php?title=Special:C%C4%83utare&amp;profile=advanced&amp;search=&amp;fulltext=1" title="Caută în spații de nume personalizate">Avansat</a></li></ul></div><div style="clear:both"></div></div></form></div><noscript><img alt="" height="1" src="//ro.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" style="border: none; position: absolute;" title="" width="1"/></noscript>
+<div class="printfooter">Adus de la <a dir="ltr" href="https://ro.wikipedia.org/wiki/Special:Căutare">https://ro.wikipedia.org/wiki/Special:Căutare</a></div></div>
+		<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div>
+	</div>
+</div>
+<div id="mw-data-after-content">
+	<div class="read-more-container"></div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Meniu de navigare</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-personal-label" class="vector-menu" id="p-personal" role="navigation">
+	<h3 id="p-personal-label">
+		<span>Unelte personale</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-anonuserpage">Nu sunteți autentificat</li><li id="pt-anontalk"><a accesskey="n" href="/wiki/Special:Discu%C8%9Biile_mele" title="Discuții despre editări pentru adresa IP curentă [n]">Discuții</a></li><li id="pt-anoncontribs"><a accesskey="y" href="/wiki/Special:Contribu%C8%9Biile_mele" title="O listă de modificări efectuate de la această adresă IP [y]">Contribuții</a></li><li id="pt-createaccount"><a href="/w/index.php?title=Special:%C3%8Enregistrare&amp;returnto=Special%3AC%C4%83utare" title="Vă încurajăm să vă creați un cont și să vă autentificați; totuși, nu este obligatoriu">Creare cont</a></li><li id="pt-login"><a accesskey="o" href="/w/index.php?title=Special:Autentificare&amp;returnto=Special%3AC%C4%83utare" title="Sunteți încurajat să vă autentificați, deși acest lucru nu este obligatoriu. [o]">Autentificare</a></li></ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-namespaces-label" class="vector-menu vector-menu-tabs vectorTabs" id="p-namespaces" role="navigation">
+	<h3 id="p-namespaces-label">
+		<span>Spații de nume</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li class="selected" id="ca-nstab-special"><a href="/wiki/w/index.php?search=" title="Aceasta este o pagină specială; n-o puteți modifica direct.">Pagină specială</a></li></ul>
+		
+	</div>
+</nav>
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-variants-label" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" id="p-variants" role="navigation">
+	<input aria-labelledby="p-variants-label" class="vector-menu-checkbox vectorMenuCheckbox" type="checkbox"/>
+	<h3 id="p-variants-label">
+		<span>Variante</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-views-label" class="vector-menu-empty emptyPortlet vector-menu vector-menu-tabs vectorTabs" id="p-views" role="navigation">
+	<h3 id="p-views-label">
+		<span>Vizualizări</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-cactions-label" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" id="p-cactions" role="navigation">
+	<input aria-labelledby="p-cactions-label" class="vector-menu-checkbox vectorMenuCheckbox" type="checkbox"/>
+	<h3 id="p-cactions-label">
+		<span>Mai mult</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+			<div id="p-search" role="search">
+	<h3>
+		<label for="searchInput">Căutare</label>
+	</h3>
+	<form action="/w/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input accesskey="c" id="searchInput" name="search" placeholder="Căutare în Wikipedia" title="Căutare în Wikipedia [c]" type="search"/>
+			<input name="title" type="hidden" value="Special:Căutare"/>
+			<input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Caută în pagini pentru acest text" type="submit" value="Căutare"/>
+			<input class="searchButton" id="searchButton" name="go" title="Deschide pagina cu acest nume, dacă există" type="submit" value="Salt"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/wiki/Pagina_principal%C4%83" title="Pagina principală"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-navigation-label" class="vector-menu vector-menu-portal portal portal-first" id="p-navigation" role="navigation">
+	<h3 id="p-navigation-label">
+		<span>Navigare</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage"><a accesskey="z" href="/wiki/Pagina_principal%C4%83" title="Vedeți pagina principală [z]">Pagina principală</a></li><li id="n-recentchanges"><a accesskey="r" href="/wiki/Special:Schimb%C4%83ri_recente" title="Lista ultimelor schimbări realizate în acest wiki [r]">Schimbări recente</a></li><li id="n-currentevents"><a href="/wiki/Wikipedia:Cafenea" title="Informații despre evenimentele curente">Cafenea</a></li><li id="n-randompage"><a accesskey="x" href="/wiki/Special:Aleatoriu" title="Afișează o pagină aleatoare [x]">Articol aleatoriu</a></li><li id="n-Facebook"><a href="https://www.facebook.com/WikipediaRomana" rel="nofollow">Facebook</a></li></ul>
+		
+	</div>
+</nav>
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-Participare-label" class="vector-menu vector-menu-portal portal" id="p-Participare" role="navigation">
+	<h3 id="p-Participare-label">
+		<span>Participare</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-Cum-încep-pe-Wikipedia"><a href="/wiki/Ajutor:Bun_venit">Cum încep pe Wikipedia</a></li><li id="n-help"><a href="/wiki/Ajutor:Cuprins" title="Locul în care găsiți ajutor">Ajutor</a></li><li id="n-Portals"><a href="/wiki/Portal:R%C4%83sfoire">Portaluri tematice</a></li><li id="n-Articole-cerute"><a href="/wiki/Wikipedia:Articole_cerute">Articole cerute</a></li><li id="n-sitesupport"><a href="//donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_ro.wikipedia.org&amp;uselang=ro" title="Sprijiniți-ne">Donații</a></li></ul>
+		
+	</div>
+</nav>
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-tb-label" class="vector-menu vector-menu-portal portal" id="p-tb" role="navigation">
+	<h3 id="p-tb-label">
+		<span>Trusa de unelte</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-upload"><a accesskey="u" href="/wiki/Wikipedia:Trimite_fi%C8%99ier" title="Încărcare fișiere [u]">Trimite fișier</a></li><li id="t-specialpages"><a accesskey="q" href="/wiki/Special:Pagini_speciale" title="Lista tuturor paginilor speciale [q]">Pagini speciale</a></li><li id="t-print"><a accesskey="p" href="javascript:print();" rel="alternate" title="Versiunea de tipărit a acestei pagini [p]">Versiune de tipărit</a></li></ul>
+		
+	</div>
+</nav>
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-lang-label" class="vector-menu vector-menu-portal portal" id="p-lang" role="navigation">
+	<h3 id="p-lang-label">
+		<span>În alte limbi</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"></ul>
+		<div class="after-portlet after-portlet-lang"><span class="uls-after-portlet-link"></span></div>
+	</div>
+</nav>
+
+</div>
+
+</div>
+<footer class="mw-footer" id="footer" role="contentinfo">
+	<ul id="footer-info">
+	</ul>
+	<ul id="footer-places">
+		<li id="footer-places-privacy"><a class="extiw" href="https://foundation.wikimedia.org/wiki/Privacy_policy" title="wmf:Privacy policy">Politica de confidențialitate</a></li>
+		<li id="footer-places-about"><a class="mw-redirect" href="/wiki/Wikipedia:Despre" title="Wikipedia:Despre">Despre Wikipedia</a></li>
+		<li id="footer-places-disclaimer"><a class="mw-redirect" href="/wiki/Wikipedia:Termeni" title="Wikipedia:Termeni">Termeni</a></li>
+		<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="//ro.m.wikipedia.org/w/index.php?title=Special:C%C4%83utare&amp;search=&amp;mobileaction=toggle_view_mobile">Versiune mobilă</a></li>
+		<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Dezvoltatori</a></li>
+		<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/#/ro.wikipedia.org">Statistics</a></li>
+		<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Cookie_statement">Cookie statement</a></li>
+	</ul>
+	<ul class="noprint" id="footer-icons">
+		<li id="footer-copyrightico"><a href="https://wikimediafoundation.org/"><img alt="Wikimedia Foundation" height="31" loading="lazy" src="/static/images/footer/wikimedia-button.png" srcset="/static/images/footer/wikimedia-button-1.5x.png 1.5x, /static/images/footer/wikimedia-button-2x.png 2x" width="88"/></a></li>
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" loading="lazy" src="/static/images/footer/poweredby_mediawiki_88x31.png" srcset="/static/images/footer/poweredby_mediawiki_132x47.png 1.5x, /static/images/footer/poweredby_mediawiki_176x62.png 2x" width="88"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.log.warn("This page is using the deprecated ResourceLoader module \"mediawiki.ui\".\nPlease use OOUI instead.");mw.config.set({"wgBackendResponseTime":92,"wgHostname":"mw1272"});});</script>
+</body></html><!DOCTYPE html>
+<html class="client-nojs" dir="ltr" lang="ro"><head>
+<meta charset="utf-8"/>
+<title>Căutare - Wikipedia</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","ianuarie","februarie","martie","aprilie","mai","iunie","iulie","august","septembrie","octombrie","noiembrie","decembrie"],"wgRequestId":"ed67c78d-f6dc-4556-9f79-3cbc02c8ecfd","wgCSPNonce":!1,"wgCanonicalNamespace":"Special","wgCanonicalSpecialPageName":"Search","wgNamespaceNumber":-1,"wgPageName":"Special:Căutare","wgTitle":"Căutare","wgCurRevisionId":0,"wgRevisionId":0,"wgArticleId":0,"wgIsArticle":!1,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"ro","wgPageContentModel":"wikitext","wgRelevantPageName":"Special:Căutare","wgRelevantArticleId":0,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wgPopupsReferencePreviews":
+!1,"wgPopupsConflictsWithNavPopupGadget":!1,"wgVisualEditor":{"pageLanguageCode":"ro","pageLanguageDir":"ltr","pageVariantFallbacks":"ro"},"wgMFDisplayWikibaseDescriptions":{"search":!0,"nearby":!0,"watchlist":!0,"tagline":!0},"wgWMESchemaEditAttemptStepOversample":!1,"wgULSCurrentAutonym":"română","wgNoticeProject":"wikipedia","advancedSearch.mimeTypes":{"tiff":"image/tiff","png":"image/png","gif":"image/gif","jpg":"image/jpeg","webp":"image/webp","xcf":"image/x-xcf","pdf":"application/pdf","mid":"audio/midi","ogg":"application/ogg","svg":"image/svg+xml","djvu":"image/vnd.djvu","flac":"audio/x-flac","wav":"audio/x-wav","webm":"video/webm","mp3":"audio/mpeg","mpg":"video/mpeg"},"advancedSearch.tooltips":{"advancedsearch-help-plain":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for these words in the title or text.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EMultiple words can be entered here.\u003C/li\u003E\n\u003Cli\u003EPunctuation marks and other non-alphanumeric characters (with exception of the colon and comma) will be ignored.\u003C/li\u003E\n\u003Cli\u003EThere may be results that do not contain one or more of your search terms.\u003C/li\u003E\n\u003Cli\u003EWord stemming is applied. Example: If \u003Ci\u003Ecar\u003C/i\u003E is entered, the search will also consider \u003Ci\u003Ecars\u003C/i\u003E. The word stemming is language specific.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Full_text_search\"\u003EFull text search\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003E\u003Ccode\u003Esesame street car\u003C/code\u003E\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-phrase":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for a specific sequence of characters. Punctuation marks are ignored.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E(only valid when using quotation marks, see example below)\n\u003Cul\u003E\u003Cli\u003ESeparate the search phrases by comma or space e.g. \u003Ccode\u003E\"good morning\"\u003C/code\u003E, \u003Ccode\u003E\"hello friend!\"\u003C/code\u003E.\u003C/li\u003E\n\u003Cli\u003EPunctuation marks and other non-alphanumeric characters (with exception of the colon and comma) will be ignored.\u003C/li\u003E\n\u003Cli\u003ESearch is not case-sensitive.\u003C/li\u003E\n\u003Cli\u003EWord stemming is not applied.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers\"\u003EWords, phrases, and modifiers\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords in quotation marks, for example \u003Ccode\u003E\"Begin at the beginning\"\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-or":"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003EAt least one of the search terms has to be included in the page.\u003C/dd\u003E\n\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers\"\u003EWords, phrases, and modifiers\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords with \u003Ccode\u003EOR\u003C/code\u003E in between them like \u003Ccode\u003ELaptop OR Notebook\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E","advancedsearch-help-not":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003EExcludes pages containing these words from the search.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EWord stemming is applied. Example: If \u003Ci\u003Ecar\u003C/i\u003E is entered, the search will also consider \u003Ci\u003Ecars\u003C/i\u003E. The word stemming is language specific.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers\"\u003EWords, phrases, and modifiers\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords with \u003Ccode\u003E-\u003C/code\u003E before them, for example \u003Ccode\u003E-elephant\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E",
+"advancedsearch-help-deepcategory":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for pages that are in these categories and subcategories.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EOnly the first 5 subcategory levels will be included in your search.\u003C/li\u003E\n\u003Cli\u003EThe number of categories is limited to 256.\u003C/li\u003E\n\u003Cli\u003EYou can look for pages in multiple categories.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Deepcategory\"\u003EDeepcategory\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003E\u003Ccode\u003Edeepcategory:\u003C/code\u003E followed by a category name like \u003Ccode\u003Edeepcategory:Help\u003C/code\u003E. Use double quotes if the name contains spaces: \u003Ccode\u003Edeepcategory:\"Hidden categories\"\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-hastemplate":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for pages that contain exactly these templates.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EYou can find transcluded templates (templates consisting of other templates).\u003C/li\u003E\n\u003Cli\u003EThe autosuggest function can only find templates which start the same way as your search e.g. a search for \u003Ccode\u003E\"com...\"\u003C/code\u003E will suggest \u003Ci\u003E\"commons\"\u003C/i\u003E but not \u003Ci\u003E\"nowcommons\"\u003C/i\u003E.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Hastemplate\"\u003EHastemplate\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords in quotation marks with \u003Ccode\u003Ehastemplate:\u003C/code\u003E before them like \u003Ccode\u003Ehastemplate:\"missing information\"\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-inlanguage":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cp\u003EWill only search in the language you choose.\n\u003C/p\u003E\n\u003Cdl\u003E\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EYou can only search for pages in one language.\u003C/li\u003E\n\u003Cli\u003EThis field will only be visible in wikis that have the translatewiki extension enabled.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Inlanguage\"\u003EInlanguage\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003E\u003Ccode\u003Einlanguage:\u003C/code\u003E followed by a language code like \u003Ccode\u003Einlanguage:es\u003C/code\u003E. You can exclude languages by adding a \u003Ccode\u003E-\u003C/code\u003E in front of the keyword e.g. \u003Ccode\u003E-inlanguage:en\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-intitle":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for pages with titles that contain this word\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EThe search includes redirects.\u003C/li\u003E\n\u003Cli\u003EWord stemming is applied. Example: If \u003Ci\u003Ecar\u003C/i\u003E is entered, the search will also consider \u003Ci\u003Ecars\u003C/i\u003E. The word stemming is language specific.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Intitle_and_incategory\"\u003EIntitle and incategory\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords with \u003Ccode\u003Eintitle:\u003C/code\u003E before them like \u003Ccode\u003Eintitle:queen\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-subpageof":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for pages that are subpages of this page.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EYou can only search for subpages of one page at a time.\u003C/li\u003E\n\u003Cli\u003EDon’t forget to enable the namespaces you want to limit your search to in the namespace filter.\u003C/li\u003E\n\u003Cli\u003EDo not include the namespace in front of the page name like this: \u003Cdel\u003E\u003Ccode\u003EWikipedia:Redirect\u003C/code\u003E\u003C/del\u003E.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#subpageof\"\u003ESubpageof\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003E\u003Ccode\u003Esubpageof:\u003C/code\u003E followed by a page name like \u003Ccode\u003Esubpageof:Redirect\u003C/code\u003E. Use double quotes if the parent page contains spaces: \u003Ccode\u003Esubpageof:\"Requests for comment\"\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-filetype":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches only for files of the selected type.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EYou can only search for one file type.\u003C/li\u003E\n\u003Cli\u003EYou can only select the given file types from the drop-down menu.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp pages\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#filetype\"\u003EFiletype\u003C/a\u003E and \u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#filemime\"\u003Efilemime\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords with \u003Ccode\u003Efiletype:\u003C/code\u003E before them like \u003Ccode\u003Efiletype:ogg\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-filew":"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003EThese fields allow you to specify the width of the file.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EThis is only applicable to file types that have width and height, like videos and images.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures\"\u003EFilemeasures\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003ENumbers with \u003Ccode\u003Efilew\u003C/code\u003E before them like \u003Ccode\u003Efilew:\u0026gt;800\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E","advancedsearch-help-fileh":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003EThese fields allow you to specify the height of the file.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EThis is only applicable to file types that have width and height, like videos and images.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures\"\u003EFilemeasures\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003ENumbers with \u003Ccode\u003Efileh\u003C/code\u003E before them like \u003Ccode\u003Efileh:\u0026gt;600\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E","advancedsearch-help-sort":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003EChange the sorting order of results. The standard is that most relevant pages are placed on top of the results.\u003C/dd\u003E\n\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Explicit_sort_orders\"\u003EExplicit sort orders\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EThis feature has no keyword that you can type in the search input field since the function is specified via a parameter in the URL.\u003C/dd\u003E\u003C/dl\u003E"},"advancedSearch.namespacePresets":{"defaultNamespaces":{"enabled":!0,"provider":"defaultNamespaces","label":"advancedsearch-namespaces-preset-default"},"discussion":{"enabled":!0,"provider":"discussion","label":"advancedsearch-namespaces-preset-discussion"},"generalHelp":{"enabled":!0,"namespaces":["4","12"
+],"label":"advancedsearch-namespaces-preset-general-help"},"all":{"enabled":!0,"provider":"all","label":"advancedsearch-namespaces-preset-all"}},"advancedSearch.deepcategoryEnabled":!0,"advancedSearch.searchableNamespaces":{"0":"(Articole)","1":"Discuție","2":"Utilizator","3":"Discuție_Utilizator","4":"Wikipedia","5":"Discuție_Wikipedia","6":"Fișier","7":"Discuție_Fișier","8":"MediaWiki","9":"Discuție_MediaWiki","10":"Format","11":"Discuție_Format","12":"Ajutor","13":"Discuție_Ajutor","14":"Categorie","15":"Discuție_Categorie","100":"Portal","101":"Discuție_Portal","102":"Proiect","103":"Discuție_Proiect","108":"Cod","109":"Discuție_Cod","110":"Carte","111":"Discuție_Carte","460":"Campaign","461":"Campaign_talk","828":"Modul","829":"Discuție_Modul","2300":"Gadget","2301":"Gadget_talk","2302":"Gadget_definition","2303":"Gadget_definition_talk"},"searchTerm":"","wgCentralAuthMobileDomain":!1,"wgEditSubmitButtonLabelPublish":!0,"wgULSPosition":"interlanguage"};
+RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","ext.advancedSearch.searchtoken":"loading","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","ext.advancedSearch.initialstyles":"ready","mediawiki.helplink":"ready","mediawiki.special":"ready","mediawiki.special.search.styles":"ready","mediawiki.ui":"ready","mediawiki.ui.button":"ready","mediawiki.ui.input":"ready","mediawiki.widgets.SearchInputWidget.styles":"ready","oojs-ui-core.styles":"ready","oojs-ui.styles.indicators":"ready","mediawiki.widgets.styles":"ready","oojs-ui-core.icons":"ready","skins.vector.styles.legacy":"ready","ext.tmh.thumbnail.styles":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready"};RLPAGEMODULES=["ext.advancedSearch.init","mediawiki.special.search","site","mediawiki.page.ready","skins.vector.legacy.js","mw.MediaWikiPlayer.loader","mw.PopUpMediaTransform",
+"ext.centralauth.centralautologin","ext.popups","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.uls.compactlinks","ext.uls.interface","ext.cx.eventlogging.campaigns","ext.centralNotice.geoIP"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("ext.advancedSearch.searchtoken@1v7b7",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set("searchnamespaceToken","+\\");
+});mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"ro"});
+});});</script>
+<link href="/w/load.php?lang=ro&amp;modules=ext.advancedSearch.initialstyles%7Cext.tmh.thumbnail.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediaBadges%7Cmediawiki.helplink%2Cspecial%2Cui%7Cmediawiki.special.search.styles%7Cmediawiki.ui.button%2Cinput%7Cmediawiki.widgets.SearchInputWidget.styles%7Cmediawiki.widgets.styles%7Coojs-ui-core.icons%2Cstyles%7Coojs-ui.styles.indicators%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/w/load.php?lang=ro&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/w/load.php?lang=ro&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.36.0-wmf.5" name="generator"/>
+<meta content="origin" name="referrer"/>
+<meta content="origin-when-crossorigin" name="referrer"/>
+<meta content="origin-when-cross-origin" name="referrer"/>
+<meta content="noindex,nofollow" name="robots"/>
+<link href="//ro.m.wikipedia.org/wiki/Special:C%C4%83utare" media="only screen and (max-width: 720px)" rel="alternate"/>
+<link href="/static/apple-touch/wikipedia.png" rel="apple-touch-icon"/>
+<link href="/static/favicon/wikipedia.ico" rel="shortcut icon"/>
+<link href="/w/opensearch_desc.php" rel="search" title="Wikipedia (ro)" type="application/opensearchdescription+xml"/>
+<link href="//ro.wikipedia.org/w/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="//creativecommons.org/licenses/by-sa/3.0/" rel="license"/>
+<link href="https://ro.wikipedia.org/wiki/w/index.php?search=" rel="canonical"/>
+<link href="//login.wikimedia.org" rel="dns-prefetch"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns--1 ns-special mw-special-Search page-Special_Căutare rootpage-Special_Căutare skin-vector action-view skin-vector-legacy"><div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+	<a id="top"></a>
+	<div class="mw-body-content" id="siteNotice"><!-- CentralNotice --></div>
+	<div class="mw-indicators mw-body-content">
+	<div class="mw-indicator" id="mw-indicator-mw-helplink"><a class="mw-helplink" href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch" target="_blank">Ajutor</a></div>
+	</div>
+	<h1 class="firstHeading" id="firstHeading" lang="ro">Căutare</h1>
+	<div class="mw-body-content" id="bodyContent">
+		
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text"><div class="mw-search-spinner"><div class="mw-search-spinner-bounce"></div></div><div class="mw-search-form-wrapper"><form action="/w/index.php" id="search" method="get"><div id="mw-search-top-table"><div class="oo-ui-layout oo-ui-fieldLayout oo-ui-fieldLayout-align-top oo-ui-actionFieldLayout"><div class="oo-ui-fieldLayout-body"><span class="oo-ui-fieldLayout-header"><label class="oo-ui-labelElement-label" for="ooui-php-1"></label></span><div class="oo-ui-fieldLayout-field"><div class="oo-ui-actionFieldLayout-input"><div aria-disabled="false" class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-iconElement oo-ui-textInputWidget oo-ui-textInputWidget-type-text oo-ui-textInputWidget-php mw-widget-titleInputWidget mw-widget-searchInputWidget" data-ooui='{"_":"mw.widgets.SearchInputWidget","performSearchOnClick":true,"dataLocation":"content","$overlay":true,"highlightFirst":false,"validateTitle":false,"autofocus":true,"name":"search","inputId":"ooui-php-1","title":"C\u0103utare \u00een Wikipedia","icon":"search"}' id="searchText"><input aria-disabled="false" autofocus="autofocus" class="oo-ui-inputWidget-input" id="ooui-php-1" name="search" tabindex="0" title="Căutare în Wikipedia" type="search" value=""/><span class="oo-ui-iconElement-icon oo-ui-icon-search"></span><span class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator"></span></div></div><span class="oo-ui-actionFieldLayout-button"><span aria-disabled="false" class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-labelElement oo-ui-flaggedElement-progressive oo-ui-flaggedElement-primary oo-ui-buttonInputWidget"><button aria-disabled="false" class="oo-ui-inputWidget-input oo-ui-buttonElement-button" tabindex="0" type="submit" value=""><span class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon oo-ui-image-invert"></span><span class="oo-ui-labelElement-label">Căutare</span><span class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator oo-ui-image-invert"></span></button></span></span></div></div></div><input name="title" type="hidden" value="Special:Căutare"/><input name="profile" type="hidden" value="default"/><input name="fulltext" type="hidden" value="1"/></div><div class="mw-search-visualclear"></div><div class="mw-search-profile-tabs"><div class="search-types"><ul><li class="current"><a href="/w/index.php?title=Special:C%C4%83utare&amp;profile=default&amp;search=&amp;fulltext=1" title="Caută în (Articole)">Pagini cu conținut</a></li><li class="normal"><a href="/w/index.php?title=Special:C%C4%83utare&amp;profile=images&amp;search=&amp;fulltext=1" title="Caută fișiere">Multimedia</a></li><li class="normal"><a href="/w/index.php?title=Special:C%C4%83utare&amp;profile=all&amp;search=&amp;fulltext=1" title="Caută în tot conținutul (incluzând paginile de discuție)">Totul</a></li><li class="normal"><a href="/w/index.php?title=Special:C%C4%83utare&amp;profile=advanced&amp;search=&amp;fulltext=1" title="Caută în spații de nume personalizate">Avansat</a></li></ul></div><div style="clear:both"></div></div></form></div><noscript><img alt="" height="1" src="//ro.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" style="border: none; position: absolute;" title="" width="1"/></noscript>
+<div class="printfooter">Adus de la <a dir="ltr" href="https://ro.wikipedia.org/wiki/Special:Căutare">https://ro.wikipedia.org/wiki/Special:Căutare</a></div></div>
+		<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div>
+	</div>
+</div>
+<div id="mw-data-after-content">
+	<div class="read-more-container"></div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Meniu de navigare</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-personal-label" class="vector-menu" id="p-personal" role="navigation">
+	<h3 id="p-personal-label">
+		<span>Unelte personale</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-anonuserpage">Nu sunteți autentificat</li><li id="pt-anontalk"><a accesskey="n" href="/wiki/Special:Discu%C8%9Biile_mele" title="Discuții despre editări pentru adresa IP curentă [n]">Discuții</a></li><li id="pt-anoncontribs"><a accesskey="y" href="/wiki/Special:Contribu%C8%9Biile_mele" title="O listă de modificări efectuate de la această adresă IP [y]">Contribuții</a></li><li id="pt-createaccount"><a href="/w/index.php?title=Special:%C3%8Enregistrare&amp;returnto=Special%3AC%C4%83utare" title="Vă încurajăm să vă creați un cont și să vă autentificați; totuși, nu este obligatoriu">Creare cont</a></li><li id="pt-login"><a accesskey="o" href="/w/index.php?title=Special:Autentificare&amp;returnto=Special%3AC%C4%83utare" title="Sunteți încurajat să vă autentificați, deși acest lucru nu este obligatoriu. [o]">Autentificare</a></li></ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-namespaces-label" class="vector-menu vector-menu-tabs vectorTabs" id="p-namespaces" role="navigation">
+	<h3 id="p-namespaces-label">
+		<span>Spații de nume</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li class="selected" id="ca-nstab-special"><a href="/wiki/w/index.php?search=" title="Aceasta este o pagină specială; n-o puteți modifica direct.">Pagină specială</a></li></ul>
+		
+	</div>
+</nav>
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-variants-label" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" id="p-variants" role="navigation">
+	<input aria-labelledby="p-variants-label" class="vector-menu-checkbox vectorMenuCheckbox" type="checkbox"/>
+	<h3 id="p-variants-label">
+		<span>Variante</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-views-label" class="vector-menu-empty emptyPortlet vector-menu vector-menu-tabs vectorTabs" id="p-views" role="navigation">
+	<h3 id="p-views-label">
+		<span>Vizualizări</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-cactions-label" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" id="p-cactions" role="navigation">
+	<input aria-labelledby="p-cactions-label" class="vector-menu-checkbox vectorMenuCheckbox" type="checkbox"/>
+	<h3 id="p-cactions-label">
+		<span>Mai mult</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+			<div id="p-search" role="search">
+	<h3>
+		<label for="searchInput">Căutare</label>
+	</h3>
+	<form action="/w/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input accesskey="c" id="searchInput" name="search" placeholder="Căutare în Wikipedia" title="Căutare în Wikipedia [c]" type="search"/>
+			<input name="title" type="hidden" value="Special:Căutare"/>
+			<input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Caută în pagini pentru acest text" type="submit" value="Căutare"/>
+			<input class="searchButton" id="searchButton" name="go" title="Deschide pagina cu acest nume, dacă există" type="submit" value="Salt"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/wiki/Pagina_principal%C4%83" title="Pagina principală"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-navigation-label" class="vector-menu vector-menu-portal portal portal-first" id="p-navigation" role="navigation">
+	<h3 id="p-navigation-label">
+		<span>Navigare</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage"><a accesskey="z" href="/wiki/Pagina_principal%C4%83" title="Vedeți pagina principală [z]">Pagina principală</a></li><li id="n-recentchanges"><a accesskey="r" href="/wiki/Special:Schimb%C4%83ri_recente" title="Lista ultimelor schimbări realizate în acest wiki [r]">Schimbări recente</a></li><li id="n-currentevents"><a href="/wiki/Wikipedia:Cafenea" title="Informații despre evenimentele curente">Cafenea</a></li><li id="n-randompage"><a accesskey="x" href="/wiki/Special:Aleatoriu" title="Afișează o pagină aleatoare [x]">Articol aleatoriu</a></li><li id="n-Facebook"><a href="https://www.facebook.com/WikipediaRomana" rel="nofollow">Facebook</a></li></ul>
+		
+	</div>
+</nav>
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-Participare-label" class="vector-menu vector-menu-portal portal" id="p-Participare" role="navigation">
+	<h3 id="p-Participare-label">
+		<span>Participare</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-Cum-încep-pe-Wikipedia"><a href="/wiki/Ajutor:Bun_venit">Cum încep pe Wikipedia</a></li><li id="n-help"><a href="/wiki/Ajutor:Cuprins" title="Locul în care găsiți ajutor">Ajutor</a></li><li id="n-Portals"><a href="/wiki/Portal:R%C4%83sfoire">Portaluri tematice</a></li><li id="n-Articole-cerute"><a href="/wiki/Wikipedia:Articole_cerute">Articole cerute</a></li><li id="n-sitesupport"><a href="//donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_ro.wikipedia.org&amp;uselang=ro" title="Sprijiniți-ne">Donații</a></li></ul>
+		
+	</div>
+</nav>
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-tb-label" class="vector-menu vector-menu-portal portal" id="p-tb" role="navigation">
+	<h3 id="p-tb-label">
+		<span>Trusa de unelte</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-upload"><a accesskey="u" href="/wiki/Wikipedia:Trimite_fi%C8%99ier" title="Încărcare fișiere [u]">Trimite fișier</a></li><li id="t-specialpages"><a accesskey="q" href="/wiki/Special:Pagini_speciale" title="Lista tuturor paginilor speciale [q]">Pagini speciale</a></li><li id="t-print"><a accesskey="p" href="javascript:print();" rel="alternate" title="Versiunea de tipărit a acestei pagini [p]">Versiune de tipărit</a></li></ul>
+		
+	</div>
+</nav>
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-lang-label" class="vector-menu vector-menu-portal portal" id="p-lang" role="navigation">
+	<h3 id="p-lang-label">
+		<span>În alte limbi</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"></ul>
+		<div class="after-portlet after-portlet-lang"><span class="uls-after-portlet-link"></span></div>
+	</div>
+</nav>
+
+</div>
+
+</div>
+<footer class="mw-footer" id="footer" role="contentinfo">
+	<ul id="footer-info">
+	</ul>
+	<ul id="footer-places">
+		<li id="footer-places-privacy"><a class="extiw" href="https://foundation.wikimedia.org/wiki/Privacy_policy" title="wmf:Privacy policy">Politica de confidențialitate</a></li>
+		<li id="footer-places-about"><a class="mw-redirect" href="/wiki/Wikipedia:Despre" title="Wikipedia:Despre">Despre Wikipedia</a></li>
+		<li id="footer-places-disclaimer"><a class="mw-redirect" href="/wiki/Wikipedia:Termeni" title="Wikipedia:Termeni">Termeni</a></li>
+		<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="//ro.m.wikipedia.org/w/index.php?title=Special:C%C4%83utare&amp;search=&amp;mobileaction=toggle_view_mobile">Versiune mobilă</a></li>
+		<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Dezvoltatori</a></li>
+		<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/#/ro.wikipedia.org">Statistics</a></li>
+		<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Cookie_statement">Cookie statement</a></li>
+	</ul>
+	<ul class="noprint" id="footer-icons">
+		<li id="footer-copyrightico"><a href="https://wikimediafoundation.org/"><img alt="Wikimedia Foundation" height="31" loading="lazy" src="/static/images/footer/wikimedia-button.png" srcset="/static/images/footer/wikimedia-button-1.5x.png 1.5x, /static/images/footer/wikimedia-button-2x.png 2x" width="88"/></a></li>
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" loading="lazy" src="/static/images/footer/poweredby_mediawiki_88x31.png" srcset="/static/images/footer/poweredby_mediawiki_132x47.png 1.5x, /static/images/footer/poweredby_mediawiki_176x62.png 2x" width="88"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.log.warn("This page is using the deprecated ResourceLoader module \"mediawiki.ui\".\nPlease use OOUI instead.");mw.config.set({"wgBackendResponseTime":94,"wgHostname":"mw1273"});});</script>
+</body></html><!DOCTYPE html>
+<html class="client-nojs" dir="ltr" lang="ro"><head>
+<meta charset="utf-8"/>
+<title>Căutare - Wikipedia</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","ianuarie","februarie","martie","aprilie","mai","iunie","iulie","august","septembrie","octombrie","noiembrie","decembrie"],"wgRequestId":"d8425cd4-4984-49af-b2ac-468032aeba8e","wgCSPNonce":!1,"wgCanonicalNamespace":"Special","wgCanonicalSpecialPageName":"Search","wgNamespaceNumber":-1,"wgPageName":"Special:Căutare","wgTitle":"Căutare","wgCurRevisionId":0,"wgRevisionId":0,"wgArticleId":0,"wgIsArticle":!1,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"ro","wgPageContentModel":"wikitext","wgRelevantPageName":"Special:Căutare","wgRelevantArticleId":0,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wgPopupsReferencePreviews":
+!1,"wgPopupsConflictsWithNavPopupGadget":!1,"wgVisualEditor":{"pageLanguageCode":"ro","pageLanguageDir":"ltr","pageVariantFallbacks":"ro"},"wgMFDisplayWikibaseDescriptions":{"search":!0,"nearby":!0,"watchlist":!0,"tagline":!0},"wgWMESchemaEditAttemptStepOversample":!1,"wgULSCurrentAutonym":"română","wgNoticeProject":"wikipedia","advancedSearch.mimeTypes":{"tiff":"image/tiff","png":"image/png","gif":"image/gif","jpg":"image/jpeg","webp":"image/webp","xcf":"image/x-xcf","pdf":"application/pdf","mid":"audio/midi","ogg":"application/ogg","svg":"image/svg+xml","djvu":"image/vnd.djvu","flac":"audio/x-flac","wav":"audio/x-wav","webm":"video/webm","mp3":"audio/mpeg","mpg":"video/mpeg"},"advancedSearch.tooltips":{"advancedsearch-help-plain":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for these words in the title or text.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EMultiple words can be entered here.\u003C/li\u003E\n\u003Cli\u003EPunctuation marks and other non-alphanumeric characters (with exception of the colon and comma) will be ignored.\u003C/li\u003E\n\u003Cli\u003EThere may be results that do not contain one or more of your search terms.\u003C/li\u003E\n\u003Cli\u003EWord stemming is applied. Example: If \u003Ci\u003Ecar\u003C/i\u003E is entered, the search will also consider \u003Ci\u003Ecars\u003C/i\u003E. The word stemming is language specific.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Full_text_search\"\u003EFull text search\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003E\u003Ccode\u003Esesame street car\u003C/code\u003E\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-phrase":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for a specific sequence of characters. Punctuation marks are ignored.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E(only valid when using quotation marks, see example below)\n\u003Cul\u003E\u003Cli\u003ESeparate the search phrases by comma or space e.g. \u003Ccode\u003E\"good morning\"\u003C/code\u003E, \u003Ccode\u003E\"hello friend!\"\u003C/code\u003E.\u003C/li\u003E\n\u003Cli\u003EPunctuation marks and other non-alphanumeric characters (with exception of the colon and comma) will be ignored.\u003C/li\u003E\n\u003Cli\u003ESearch is not case-sensitive.\u003C/li\u003E\n\u003Cli\u003EWord stemming is not applied.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers\"\u003EWords, phrases, and modifiers\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords in quotation marks, for example \u003Ccode\u003E\"Begin at the beginning\"\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-or":"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003EAt least one of the search terms has to be included in the page.\u003C/dd\u003E\n\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers\"\u003EWords, phrases, and modifiers\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords with \u003Ccode\u003EOR\u003C/code\u003E in between them like \u003Ccode\u003ELaptop OR Notebook\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E","advancedsearch-help-not":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003EExcludes pages containing these words from the search.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EWord stemming is applied. Example: If \u003Ci\u003Ecar\u003C/i\u003E is entered, the search will also consider \u003Ci\u003Ecars\u003C/i\u003E. The word stemming is language specific.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Words.2C_phrases.2C_and_modifiers\"\u003EWords, phrases, and modifiers\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords with \u003Ccode\u003E-\u003C/code\u003E before them, for example \u003Ccode\u003E-elephant\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E",
+"advancedsearch-help-deepcategory":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for pages that are in these categories and subcategories.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EOnly the first 5 subcategory levels will be included in your search.\u003C/li\u003E\n\u003Cli\u003EThe number of categories is limited to 256.\u003C/li\u003E\n\u003Cli\u003EYou can look for pages in multiple categories.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Deepcategory\"\u003EDeepcategory\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003E\u003Ccode\u003Edeepcategory:\u003C/code\u003E followed by a category name like \u003Ccode\u003Edeepcategory:Help\u003C/code\u003E. Use double quotes if the name contains spaces: \u003Ccode\u003Edeepcategory:\"Hidden categories\"\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-hastemplate":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for pages that contain exactly these templates.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EYou can find transcluded templates (templates consisting of other templates).\u003C/li\u003E\n\u003Cli\u003EThe autosuggest function can only find templates which start the same way as your search e.g. a search for \u003Ccode\u003E\"com...\"\u003C/code\u003E will suggest \u003Ci\u003E\"commons\"\u003C/i\u003E but not \u003Ci\u003E\"nowcommons\"\u003C/i\u003E.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Hastemplate\"\u003EHastemplate\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords in quotation marks with \u003Ccode\u003Ehastemplate:\u003C/code\u003E before them like \u003Ccode\u003Ehastemplate:\"missing information\"\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-inlanguage":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cp\u003EWill only search in the language you choose.\n\u003C/p\u003E\n\u003Cdl\u003E\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EYou can only search for pages in one language.\u003C/li\u003E\n\u003Cli\u003EThis field will only be visible in wikis that have the translatewiki extension enabled.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Inlanguage\"\u003EInlanguage\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003E\u003Ccode\u003Einlanguage:\u003C/code\u003E followed by a language code like \u003Ccode\u003Einlanguage:es\u003C/code\u003E. You can exclude languages by adding a \u003Ccode\u003E-\u003C/code\u003E in front of the keyword e.g. \u003Ccode\u003E-inlanguage:en\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-intitle":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for pages with titles that contain this word\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EThe search includes redirects.\u003C/li\u003E\n\u003Cli\u003EWord stemming is applied. Example: If \u003Ci\u003Ecar\u003C/i\u003E is entered, the search will also consider \u003Ci\u003Ecars\u003C/i\u003E. The word stemming is language specific.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Intitle_and_incategory\"\u003EIntitle and incategory\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords with \u003Ccode\u003Eintitle:\u003C/code\u003E before them like \u003Ccode\u003Eintitle:queen\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-subpageof":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches for pages that are subpages of this page.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EYou can only search for subpages of one page at a time.\u003C/li\u003E\n\u003Cli\u003EDon’t forget to enable the namespaces you want to limit your search to in the namespace filter.\u003C/li\u003E\n\u003Cli\u003EDo not include the namespace in front of the page name like this: \u003Cdel\u003E\u003Ccode\u003EWikipedia:Redirect\u003C/code\u003E\u003C/del\u003E.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#subpageof\"\u003ESubpageof\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003E\u003Ccode\u003Esubpageof:\u003C/code\u003E followed by a page name like \u003Ccode\u003Esubpageof:Redirect\u003C/code\u003E. Use double quotes if the parent page contains spaces: \u003Ccode\u003Esubpageof:\"Requests for comment\"\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-filetype":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003ESearches only for files of the selected type.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EYou can only search for one file type.\u003C/li\u003E\n\u003Cli\u003EYou can only select the given file types from the drop-down menu.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp pages\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#filetype\"\u003EFiletype\u003C/a\u003E and \u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#filemime\"\u003Efilemime\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EWords with \u003Ccode\u003Efiletype:\u003C/code\u003E before them like \u003Ccode\u003Efiletype:ogg\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E"
+,"advancedsearch-help-filew":"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003EThese fields allow you to specify the width of the file.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EThis is only applicable to file types that have width and height, like videos and images.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures\"\u003EFilemeasures\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003ENumbers with \u003Ccode\u003Efilew\u003C/code\u003E before them like \u003Ccode\u003Efilew:\u0026gt;800\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E","advancedsearch-help-fileh":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003EThese fields allow you to specify the height of the file.\u003C/dd\u003E\n\u003Cdt\u003EBe aware of the following\u003C/dt\u003E\n\u003Cdd\u003E\n\u003Cul\u003E\u003Cli\u003EThis is only applicable to file types that have width and height, like videos and images.\u003C/li\u003E\u003C/ul\u003E\u003C/dd\u003E\u003C/dl\u003E\n\u003Cdl\u003E\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#File_measures\"\u003EFilemeasures\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003ENumbers with \u003Ccode\u003Efileh\u003C/code\u003E before them like \u003Ccode\u003Efileh:\u0026gt;600\u003C/code\u003E.\u003C/dd\u003E\u003C/dl\u003E","advancedsearch-help-sort":
+"\u003Cdl\u003E\u003Cdt\u003EDescription\u003C/dt\u003E\n\u003Cdd\u003EChange the sorting order of results. The standard is that most relevant pages are placed on top of the results.\u003C/dd\u003E\n\u003Cdt\u003EHelp page\u003C/dt\u003E\n\u003Cdd\u003E\u003Ca class=\"external text\" href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch#Explicit_sort_orders\"\u003EExplicit sort orders\u003C/a\u003E\u003C/dd\u003E\n\u003Cdt\u003ESyntax-equivalent in the normal search\u003C/dt\u003E\n\u003Cdd\u003EThis feature has no keyword that you can type in the search input field since the function is specified via a parameter in the URL.\u003C/dd\u003E\u003C/dl\u003E"},"advancedSearch.namespacePresets":{"defaultNamespaces":{"enabled":!0,"provider":"defaultNamespaces","label":"advancedsearch-namespaces-preset-default"},"discussion":{"enabled":!0,"provider":"discussion","label":"advancedsearch-namespaces-preset-discussion"},"generalHelp":{"enabled":!0,"namespaces":["4","12"
+],"label":"advancedsearch-namespaces-preset-general-help"},"all":{"enabled":!0,"provider":"all","label":"advancedsearch-namespaces-preset-all"}},"advancedSearch.deepcategoryEnabled":!0,"advancedSearch.searchableNamespaces":{"0":"(Articole)","1":"Discuție","2":"Utilizator","3":"Discuție_Utilizator","4":"Wikipedia","5":"Discuție_Wikipedia","6":"Fișier","7":"Discuție_Fișier","8":"MediaWiki","9":"Discuție_MediaWiki","10":"Format","11":"Discuție_Format","12":"Ajutor","13":"Discuție_Ajutor","14":"Categorie","15":"Discuție_Categorie","100":"Portal","101":"Discuție_Portal","102":"Proiect","103":"Discuție_Proiect","108":"Cod","109":"Discuție_Cod","110":"Carte","111":"Discuție_Carte","460":"Campaign","461":"Campaign_talk","828":"Modul","829":"Discuție_Modul","2300":"Gadget","2301":"Gadget_talk","2302":"Gadget_definition","2303":"Gadget_definition_talk"},"searchTerm":"","wgCentralAuthMobileDomain":!1,"wgEditSubmitButtonLabelPublish":!0,"wgULSPosition":"interlanguage"};
+RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","ext.advancedSearch.searchtoken":"loading","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","ext.advancedSearch.initialstyles":"ready","mediawiki.helplink":"ready","mediawiki.special":"ready","mediawiki.special.search.styles":"ready","mediawiki.ui":"ready","mediawiki.ui.button":"ready","mediawiki.ui.input":"ready","mediawiki.widgets.SearchInputWidget.styles":"ready","oojs-ui-core.styles":"ready","oojs-ui.styles.indicators":"ready","mediawiki.widgets.styles":"ready","oojs-ui-core.icons":"ready","skins.vector.styles.legacy":"ready","ext.tmh.thumbnail.styles":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready"};RLPAGEMODULES=["ext.advancedSearch.init","mediawiki.special.search","site","mediawiki.page.ready","skins.vector.legacy.js","mw.MediaWikiPlayer.loader","mw.PopUpMediaTransform",
+"ext.centralauth.centralautologin","ext.popups","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.uls.compactlinks","ext.uls.interface","ext.cx.eventlogging.campaigns","ext.centralNotice.geoIP"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("ext.advancedSearch.searchtoken@1v7b7",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set("searchnamespaceToken","+\\");
+});mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"ro"});
+});});</script>
+<link href="/w/load.php?lang=ro&amp;modules=ext.advancedSearch.initialstyles%7Cext.tmh.thumbnail.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediaBadges%7Cmediawiki.helplink%2Cspecial%2Cui%7Cmediawiki.special.search.styles%7Cmediawiki.ui.button%2Cinput%7Cmediawiki.widgets.SearchInputWidget.styles%7Cmediawiki.widgets.styles%7Coojs-ui-core.icons%2Cstyles%7Coojs-ui.styles.indicators%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<script async="" src="/w/load.php?lang=ro&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta content="" name="ResourceLoaderDynamicStyles"/>
+<link href="/w/load.php?lang=ro&amp;modules=site.styles&amp;only=styles&amp;skin=vector" rel="stylesheet"/>
+<meta content="MediaWiki 1.36.0-wmf.5" name="generator"/>
+<meta content="origin" name="referrer"/>
+<meta content="origin-when-crossorigin" name="referrer"/>
+<meta content="origin-when-cross-origin" name="referrer"/>
+<meta content="noindex,nofollow" name="robots"/>
+<link href="//ro.m.wikipedia.org/wiki/Special:C%C4%83utare" media="only screen and (max-width: 720px)" rel="alternate"/>
+<link href="/static/apple-touch/wikipedia.png" rel="apple-touch-icon"/>
+<link href="/static/favicon/wikipedia.ico" rel="shortcut icon"/>
+<link href="/w/opensearch_desc.php" rel="search" title="Wikipedia (ro)" type="application/opensearchdescription+xml"/>
+<link href="//ro.wikipedia.org/w/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
+<link href="//creativecommons.org/licenses/by-sa/3.0/" rel="license"/>
+<link href="https://ro.wikipedia.org/wiki/w/index.php?search=" rel="canonical"/>
+<link href="//login.wikimedia.org" rel="dns-prefetch"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns--1 ns-special mw-special-Search page-Special_Căutare rootpage-Special_Căutare skin-vector action-view skin-vector-legacy"><div class="noprint" id="mw-page-base"></div>
+<div class="noprint" id="mw-head-base"></div>
+<div class="mw-body" id="content" role="main">
+	<a id="top"></a>
+	<div class="mw-body-content" id="siteNotice"><!-- CentralNotice --></div>
+	<div class="mw-indicators mw-body-content">
+	<div class="mw-indicator" id="mw-indicator-mw-helplink"><a class="mw-helplink" href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:CirrusSearch" target="_blank">Ajutor</a></div>
+	</div>
+	<h1 class="firstHeading" id="firstHeading" lang="ro">Căutare</h1>
+	<div class="mw-body-content" id="bodyContent">
+		
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text"><div class="mw-search-spinner"><div class="mw-search-spinner-bounce"></div></div><div class="mw-search-form-wrapper"><form action="/w/index.php" id="search" method="get"><div id="mw-search-top-table"><div class="oo-ui-layout oo-ui-fieldLayout oo-ui-fieldLayout-align-top oo-ui-actionFieldLayout"><div class="oo-ui-fieldLayout-body"><span class="oo-ui-fieldLayout-header"><label class="oo-ui-labelElement-label" for="ooui-php-1"></label></span><div class="oo-ui-fieldLayout-field"><div class="oo-ui-actionFieldLayout-input"><div aria-disabled="false" class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-iconElement oo-ui-textInputWidget oo-ui-textInputWidget-type-text oo-ui-textInputWidget-php mw-widget-titleInputWidget mw-widget-searchInputWidget" data-ooui='{"_":"mw.widgets.SearchInputWidget","performSearchOnClick":true,"dataLocation":"content","$overlay":true,"highlightFirst":false,"validateTitle":false,"autofocus":true,"name":"search","inputId":"ooui-php-1","title":"C\u0103utare \u00een Wikipedia","icon":"search"}' id="searchText"><input aria-disabled="false" autofocus="autofocus" class="oo-ui-inputWidget-input" id="ooui-php-1" name="search" tabindex="0" title="Căutare în Wikipedia" type="search" value=""/><span class="oo-ui-iconElement-icon oo-ui-icon-search"></span><span class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator"></span></div></div><span class="oo-ui-actionFieldLayout-button"><span aria-disabled="false" class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-labelElement oo-ui-flaggedElement-progressive oo-ui-flaggedElement-primary oo-ui-buttonInputWidget"><button aria-disabled="false" class="oo-ui-inputWidget-input oo-ui-buttonElement-button" tabindex="0" type="submit" value=""><span class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon oo-ui-image-invert"></span><span class="oo-ui-labelElement-label">Căutare</span><span class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator oo-ui-image-invert"></span></button></span></span></div></div></div><input name="title" type="hidden" value="Special:Căutare"/><input name="profile" type="hidden" value="default"/><input name="fulltext" type="hidden" value="1"/></div><div class="mw-search-visualclear"></div><div class="mw-search-profile-tabs"><div class="search-types"><ul><li class="current"><a href="/w/index.php?title=Special:C%C4%83utare&amp;profile=default&amp;search=&amp;fulltext=1" title="Caută în (Articole)">Pagini cu conținut</a></li><li class="normal"><a href="/w/index.php?title=Special:C%C4%83utare&amp;profile=images&amp;search=&amp;fulltext=1" title="Caută fișiere">Multimedia</a></li><li class="normal"><a href="/w/index.php?title=Special:C%C4%83utare&amp;profile=all&amp;search=&amp;fulltext=1" title="Caută în tot conținutul (incluzând paginile de discuție)">Totul</a></li><li class="normal"><a href="/w/index.php?title=Special:C%C4%83utare&amp;profile=advanced&amp;search=&amp;fulltext=1" title="Caută în spații de nume personalizate">Avansat</a></li></ul></div><div style="clear:both"></div></div></form></div><noscript><img alt="" height="1" src="//ro.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" style="border: none; position: absolute;" title="" width="1"/></noscript>
+<div class="printfooter">Adus de la <a dir="ltr" href="https://ro.wikipedia.org/wiki/Special:Căutare">https://ro.wikipedia.org/wiki/Special:Căutare</a></div></div>
+		<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div>
+	</div>
+</div>
+<div id="mw-data-after-content">
+	<div class="read-more-container"></div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Meniu de navigare</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-personal-label" class="vector-menu" id="p-personal" role="navigation">
+	<h3 id="p-personal-label">
+		<span>Unelte personale</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-anonuserpage">Nu sunteți autentificat</li><li id="pt-anontalk"><a accesskey="n" href="/wiki/Special:Discu%C8%9Biile_mele" title="Discuții despre editări pentru adresa IP curentă [n]">Discuții</a></li><li id="pt-anoncontribs"><a accesskey="y" href="/wiki/Special:Contribu%C8%9Biile_mele" title="O listă de modificări efectuate de la această adresă IP [y]">Contribuții</a></li><li id="pt-createaccount"><a href="/w/index.php?title=Special:%C3%8Enregistrare&amp;returnto=Special%3AC%C4%83utare" title="Vă încurajăm să vă creați un cont și să vă autentificați; totuși, nu este obligatoriu">Creare cont</a></li><li id="pt-login"><a accesskey="o" href="/w/index.php?title=Special:Autentificare&amp;returnto=Special%3AC%C4%83utare" title="Sunteți încurajat să vă autentificați, deși acest lucru nu este obligatoriu. [o]">Autentificare</a></li></ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-namespaces-label" class="vector-menu vector-menu-tabs vectorTabs" id="p-namespaces" role="navigation">
+	<h3 id="p-namespaces-label">
+		<span>Spații de nume</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li class="selected" id="ca-nstab-special"><a href="/wiki/w/index.php?search=" title="Aceasta este o pagină specială; n-o puteți modifica direct.">Pagină specială</a></li></ul>
+		
+	</div>
+</nav>
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-variants-label" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" id="p-variants" role="navigation">
+	<input aria-labelledby="p-variants-label" class="vector-menu-checkbox vectorMenuCheckbox" type="checkbox"/>
+	<h3 id="p-variants-label">
+		<span>Variante</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-views-label" class="vector-menu-empty emptyPortlet vector-menu vector-menu-tabs vectorTabs" id="p-views" role="navigation">
+	<h3 id="p-views-label">
+		<span>Vizualizări</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-cactions-label" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" id="p-cactions" role="navigation">
+	<input aria-labelledby="p-cactions-label" class="vector-menu-checkbox vectorMenuCheckbox" type="checkbox"/>
+	<h3 id="p-cactions-label">
+		<span>Mai mult</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+			<div id="p-search" role="search">
+	<h3>
+		<label for="searchInput">Căutare</label>
+	</h3>
+	<form action="/w/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input accesskey="c" id="searchInput" name="search" placeholder="Căutare în Wikipedia" title="Căutare în Wikipedia [c]" type="search"/>
+			<input name="title" type="hidden" value="Special:Căutare"/>
+			<input class="searchButton mw-fallbackSearchButton" id="mw-searchButton" name="fulltext" title="Caută în pagini pentru acest text" type="submit" value="Căutare"/>
+			<input class="searchButton" id="searchButton" name="go" title="Deschide pagina cu acest nume, dacă există" type="submit" value="Salt"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/wiki/Pagina_principal%C4%83" title="Pagina principală"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-navigation-label" class="vector-menu vector-menu-portal portal portal-first" id="p-navigation" role="navigation">
+	<h3 id="p-navigation-label">
+		<span>Navigare</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage"><a accesskey="z" href="/wiki/Pagina_principal%C4%83" title="Vedeți pagina principală [z]">Pagina principală</a></li><li id="n-recentchanges"><a accesskey="r" href="/wiki/Special:Schimb%C4%83ri_recente" title="Lista ultimelor schimbări realizate în acest wiki [r]">Schimbări recente</a></li><li id="n-currentevents"><a href="/wiki/Wikipedia:Cafenea" title="Informații despre evenimentele curente">Cafenea</a></li><li id="n-randompage"><a accesskey="x" href="/wiki/Special:Aleatoriu" title="Afișează o pagină aleatoare [x]">Articol aleatoriu</a></li><li id="n-Facebook"><a href="https://www.facebook.com/WikipediaRomana" rel="nofollow">Facebook</a></li></ul>
+		
+	</div>
+</nav>
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-Participare-label" class="vector-menu vector-menu-portal portal" id="p-Participare" role="navigation">
+	<h3 id="p-Participare-label">
+		<span>Participare</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-Cum-încep-pe-Wikipedia"><a href="/wiki/Ajutor:Bun_venit">Cum încep pe Wikipedia</a></li><li id="n-help"><a href="/wiki/Ajutor:Cuprins" title="Locul în care găsiți ajutor">Ajutor</a></li><li id="n-Portals"><a href="/wiki/Portal:R%C4%83sfoire">Portaluri tematice</a></li><li id="n-Articole-cerute"><a href="/wiki/Wikipedia:Articole_cerute">Articole cerute</a></li><li id="n-sitesupport"><a href="//donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_ro.wikipedia.org&amp;uselang=ro" title="Sprijiniți-ne">Donații</a></li></ul>
+		
+	</div>
+</nav>
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-tb-label" class="vector-menu vector-menu-portal portal" id="p-tb" role="navigation">
+	<h3 id="p-tb-label">
+		<span>Trusa de unelte</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-upload"><a accesskey="u" href="/wiki/Wikipedia:Trimite_fi%C8%99ier" title="Încărcare fișiere [u]">Trimite fișier</a></li><li id="t-specialpages"><a accesskey="q" href="/wiki/Special:Pagini_speciale" title="Lista tuturor paginilor speciale [q]">Pagini speciale</a></li><li id="t-print"><a accesskey="p" href="javascript:print();" rel="alternate" title="Versiunea de tipărit a acestei pagini [p]">Versiune de tipărit</a></li></ul>
+		
+	</div>
+</nav>
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav aria-labelledby="p-lang-label" class="vector-menu vector-menu-portal portal" id="p-lang" role="navigation">
+	<h3 id="p-lang-label">
+		<span>În alte limbi</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"></ul>
+		<div class="after-portlet after-portlet-lang"><span class="uls-after-portlet-link"></span></div>
+	</div>
+</nav>
+
+</div>
+
+</div>
+<footer class="mw-footer" id="footer" role="contentinfo">
+	<ul id="footer-info">
+	</ul>
+	<ul id="footer-places">
+		<li id="footer-places-privacy"><a class="extiw" href="https://foundation.wikimedia.org/wiki/Privacy_policy" title="wmf:Privacy policy">Politica de confidențialitate</a></li>
+		<li id="footer-places-about"><a class="mw-redirect" href="/wiki/Wikipedia:Despre" title="Wikipedia:Despre">Despre Wikipedia</a></li>
+		<li id="footer-places-disclaimer"><a class="mw-redirect" href="/wiki/Wikipedia:Termeni" title="Wikipedia:Termeni">Termeni</a></li>
+		<li id="footer-places-mobileview"><a class="noprint stopMobileRedirectToggle" href="//ro.m.wikipedia.org/w/index.php?title=Special:C%C4%83utare&amp;search=&amp;mobileaction=toggle_view_mobile">Versiune mobilă</a></li>
+		<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Dezvoltatori</a></li>
+		<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/#/ro.wikipedia.org">Statistics</a></li>
+		<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Cookie_statement">Cookie statement</a></li>
+	</ul>
+	<ul class="noprint" id="footer-icons">
+		<li id="footer-copyrightico"><a href="https://wikimediafoundation.org/"><img alt="Wikimedia Foundation" height="31" loading="lazy" src="/static/images/footer/wikimedia-button.png" srcset="/static/images/footer/wikimedia-button-1.5x.png 1.5x, /static/images/footer/wikimedia-button-2x.png 2x" width="88"/></a></li>
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" loading="lazy" src="/static/images/footer/poweredby_mediawiki_88x31.png" srcset="/static/images/footer/poweredby_mediawiki_132x47.png 1.5x, /static/images/footer/poweredby_mediawiki_176x62.png 2x" width="88"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.log.warn("This page is using the deprecated ResourceLoader module \"mediawiki.ui\".\nPlease use OOUI instead.");mw.config.set({"wgBackendResponseTime":98,"wgHostname":"mw1331"});});</script>
+</body></html>

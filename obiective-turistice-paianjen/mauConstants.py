@@ -1,0 +1,1 @@
+postURL = "https://ro.wikipedia.org/wiki/w/index.php?search="
