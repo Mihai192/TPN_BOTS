@@ -10,13 +10,14 @@ counties = [ "dolj", "bacau", "harghita", "bistrita-nasaud", "dambovita", "sucea
 db_cities_path = "databases/db_cities.sqlite"
 db_output_path = "databases/db_output.sqlite"
 pln_county_url = "https://planiada.ro/destinatii/"
+pln_base = "https://planiada.ro"
 
 '''
     Debug 1 -> Foarte sensibil, latra la orice
     Debug 2 -> Mai finut
     Debug 3 -> Rezumat
 '''
-debug = 2
+debug = 3
 defaultStream = "console" # console / file
 
 session = requests.Session()

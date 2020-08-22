@@ -19,8 +19,8 @@ def check_output_name(conn, string, url):
 
 def insert_output_obj(conn, obj):
     sqlConn = conn.cursor()
-    sqlQuery = """INSERT INTO objectives (title, url, county_id, city_id, description, short_descr,  meta_title, meta_description, op_hours) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);"""
-    sqlData = (obj.title, obj.url, obj.county_id, obj.city_id, obj.description, obj.short_descr, obj.meta_title, obj.meta_description, obj.opening_hours)
+    sqlQuery = """INSERT INTO objectives (title, url, county_id, city_id, description, short_descr,  meta_title, meta_description, op_hours, p_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"""
+    sqlData = (obj.title, obj.url, obj.county_id, obj.city_id, obj.description, obj.short_descr, obj.meta_title, obj.meta_description, obj.opening_hours, obj.p_id)
     sqlConn.execute(sqlQuery, sqlData)
 
     conn.commit()

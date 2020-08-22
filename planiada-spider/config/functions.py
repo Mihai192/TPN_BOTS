@@ -20,12 +20,12 @@ def build_slug(string):
     return text
 
 def c_print(string):
-    if debug is 3 and defaultStream is "console":
+    if debug <= 3 and defaultStream is "console":
         print(string)
     printLog(string)
 
 def b_print(string):
-    if debug is 1 or debug is 2 and defaultStream is "console":
+    if debug <= 2 and defaultStream is "console":
         print(string)
     printLog(string)
 

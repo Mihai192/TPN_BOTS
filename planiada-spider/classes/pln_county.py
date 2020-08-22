@@ -22,15 +22,13 @@ class pCounty:
             s_name = s_br.find('span').text
         self.title = s_name
 
-    def process(self):
-        t_added = 0
-        response = requests.get(pln_county_url + str(self.url))
+    def processPage(self, page):
+        c_added = 0
+        response = requests.get(pln_county_url + str(self.url) + "?&_page=" + str(page))
         soup = BeautifulSoup(response.text, "html5lib")
         self.setTitle(soup)
 
-        cObjectives = soup.find_all("div", {"class" : "activity-item"})
-
-        b_print("[Judetul][" + self.title + "] Am gasit: " + str(len(cObjectives)) + " obiective.")
+        cObjectives = soup.find_all("div", {"class": "activity-item"})
 
         for cObj in cObjectives:
             cTitle = cObj.find("h3").find("a").text.strip()
@@ -41,9 +39,16 @@ class pCounty:
             if objective.checkDB() == 0:
                 objective.set_short_ds(cShortDsc)
                 objective.process()
-                t_added = t_added + 1
+                c_added = c_added + 1
+        return c_added
 
-        c_print("[# " + str(self.id) + "/" + str(len(counties)) + "] Am gasit " + t_added + " obiective")
+    def process(self):
+        t_added = 0
+        c_page = 1
+        c_added = self.processPage(c_page)
+        while c_added >= 1:
+            t_added = t_added + c_added
+            c_page = c_page + 1
+            c_added = self.processPage(c_page)
 
-
-
+        c_print("[# " + str(self.id) + "/" + str(len(counties)) + "] Am gasit " + str(t_added) + " obiective")
