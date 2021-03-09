@@ -8,9 +8,10 @@ import time
 path = './chromedriver'
 options = Options()
 
-username = input('username:')
-password = input('password:')
-message = 'Am vazut ca te chinui sa rezolvi probleme pe pbinfo.Eu si echipa mea avem un canal cu tutoriale despre programare pe YT,poate vrei sa arunci un ochi;).\nhttps://www.youtube.com/user/MihaiMatraguna'
+username = "plaformadeinfo"
+password = "plaformadeinfo1"
+message1 = 'Salutare, nu stiu daca ai aflat, dar s-a deschis cea mai interactiva platforma de unde poti invata informatica: https://platforma-de.info/ - te asteptam sa iti faci cont.'
+message2 = 'De asemenea, arunca un ochi si pe canalul de YouTube: https://bit.ly/youtubeTPN - explicam algoritmi si structuri de date, rezolvam subiecte de Bacalaureat si multe altele!'
 
 def sql_connect(db_file):
     conn = None
@@ -37,7 +38,7 @@ def sql_checkUser(conn, paramUser):
         return True
 
 def set_options(options):
-    # options.add_argument('--headless')
+    options.add_argument('--headless')
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--ignore-ssl-errors')
     options.add_argument('--incognito')
@@ -63,10 +64,11 @@ def remove_duplicates_links(links):
 
 
 class Pbinfo_Bot:
-    def __init__(self, username, password, message, driver):
+    def __init__(self, username, password, message1, message2, driver):
         self.driver = driver
         self.username = username
-        self.message = message
+        self.message1 = message1
+        self.message2 = message2
         self.password = password
 
     def login(self):
@@ -78,13 +80,18 @@ class Pbinfo_Bot:
         password_box.send_keys(self.password)
         time.sleep(1)
         password_box.submit()
+        time.sleep(5)
 
     def sent_user_message(self, user):
         url = 'https://www.pbinfo.ro/?pagina=conversatii&partener=' + user
         self.driver.get(url)
         time.sleep(1)
         text_area = self.driver.find_element_by_id('mesaj')
-        text_area.send_keys(self.message)
+        text_area.send_keys(self.message1)
+        text_area.submit()
+        time.sleep(1)
+        text_area = self.driver.find_element_by_id('mesaj')
+        text_area.send_keys(self.message2)
         text_area.submit()
 
     def sent_message_to_all_users_on_problem_link(self, problem_link):
@@ -165,6 +172,6 @@ sqlFile = r"./dbpbinfo.sqlite"
 conn = sql_connect(sqlFile)
 
 set_options(options)
-bot = Pbinfo_Bot(username, password, message, get_browser(path, options))
+bot = Pbinfo_Bot(username, password, message1, message2, get_browser(path, options))
 bot.login()
 bot.start_sending_messages()
